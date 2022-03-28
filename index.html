@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+
+    <script src="jquery-3.6.0.js"></script>
+
+    <title>Morbik Fitness</title>
+</head>
+<body>
+
+    <article class="header_wrapper">
+        <header class="flex">
+            <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
+            <nav class="header_nav">
+                <ul class="nav_list flex">
+                    <li><a  class="nav_link" href="">Home</a></li>
+                    <li><a  class="nav_link" href="">about</a></li>
+                    <li><a class="nav_link" href="">contact</a></li>
+                </ul>
+            </nav>
+
+            <div id="sign_in">
+                <a href="createnewmember.html" ><button id="sign_in_btn">Sign In</button></a>
+                <button id="login_btn">Log In</button>
+            </div>
+            <script>
+            $("#login_btn").click(function(){
+                $("#login_btn").click(function(){
+      $(".setting_menu").toggle();
+    });
+              console.log("clicked")
+
+              window.location.href = "previlage.html";
+            });
+            </script>
+
+        </header>
+
+    </article>
+
+
+    <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="library"></div>
+
+    <h1 id="school_name"> Morbik Fitness </h1>
+<hr>
+        <article id="event_wrapper">
+
+                <section class="events_section flex">
+                    <div class="event_box" id="events_box_one">
+                        <p class="event_topic">First Day of School - Orientation</p>
+                        <p class="month">SEP</p>
+                        <h1>1</h1>
+                    </div>
+                    <div class="event_box" id="events_box_two">
+                        <p class="event_topic">Labor Day - School Closed</p>
+                        <p class="month">SEP</p>
+                        <h1>6</h1>
+                    </div>
+                    <div class="event_box" id="events_box_three">
+                        <p class="event_topic">Spelling Bee Comptition</p>
+                        <p class="month">SEP</p>
+                        <h1>14</h1>
+                    </div>
+                </section>
+        </article>
+
+        <article id="about_wrapper">
+
+            <div id="about_top" class="flex">
+                <section class="top_box">
+                    <h2>The Academy Experience</h2>
+
+                    <p>
+                        For more than 60 years, we have offered an education that<br> broadens
+                         perspectives, sharpens minds, strengthens<br> bodies, and engages hearts.<br><br><br>
+                    </p>
+                </section>
+                <section class="top_box">
+                    <h2>A Tradition of Excellence</h2>
+
+                    <p>
+                        Academy has a long, proud tradition of scholarly, artistic,<br> and
+                         athletic excellence and is considered one of the<br> nation’s top independent schools.<br><br><br>
+                    </p>
+                </section>
+            </div>
+
+            <div id="about_bottom" class="flex">
+
+                <section class="bottom_box">
+                    <h2>Beyond The Classroom</h2>
+
+                    <p>
+                        For Chargers, learning occurs in many<br> different
+                        settings beyond the walls of a <br>traditional classroom.<br><br><br>
+                    </p>
+                </section>
+                <section class="bottom_box">
+                    <h2>Inside The Classroom</h2>
+
+                    <p>
+                        Some of the best faculty in the country inspire,<br>
+                         mentor, and guide. Academy students on their<br> academic journey.<br><br><br>
+                    </p>
+                </section>
+                <section class="bottom_box">
+                    <h2>After The Academy</h2>
+
+                    <p>
+                        Albuquerque Academy has more than 7,000 <br>alumni
+                        living across the country and in nearly <br>50 countries.<br><br><br>
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article class="news_section flex">
+            <div id="news_img_wrapper"><img src="pics/pexels-pixabay-267885.jpg" alt=""></div>
+            <div id="news_para"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Inventore voluptatum assumenda consectetur similique sequi quam, reprehenderit
+                 veniam commodi maiores natus amet eum, rem dolore sit possimus provident aliquam,
+                  ducimus id. Aliquam laudantium quia commodi dolorem amet accusamus non perspiciatis
+                   assumenda culpa, blanditiis enim modi aspernatur cumque. Ratione, quisquam, rerum modi,
+                    corporis obcaecati temporibus fuga atque hic facilis odit vitae corrupti!<br><br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque laborum soluta, optio
+                 voluptas obcaecati cum deserunt facilis reiciendis, veniam labore nulla voluptates dolores,
+                 quidem quos ducimus corporis eius. Perferendis possimus similique vel praesentium animi.
+                 Culpa omnis architecto provident corporis itaque?</p></div>
+        </article>
+
+        <article class="news_section flex">
+            <div id="news_para_two"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Inventore voluptatum assumenda consectetur similique sequi quam, reprehenderit
+                 veniam commodi maiores natus amet eum, rem dolore sit possimus provident aliquam,
+                  ducimus id. Aliquam laudantium quia commodi dolorem amet accusamus non perspiciatis
+                   assumenda culpa, blanditiis enim modi aspernatur cumque. Ratione, quisquam, rerum modi,
+                    corporis obcaecati temporibus fuga atque hic facilis odit vitae corrupti!<br><br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque laborum soluta, optio
+                 voluptas obcaecati cum deserunt facilis reiciendis, veniam labore nulla voluptates dolores,
+                 quidem quos ducimus corporis eius. Perferendis possimus similique vel praesentium animi.
+                 Culpa omnis architecto provident corporis itaque?</p></div>
+            <div id="news_img_wrapper_two"><img src="pics/pexels-pixabay-267885.jpg" alt=""></div>
+
+        </article>
+
+        <footer>
+            <p>All rights reserved</p>
+            <p>Instagram <span class="media">Facebook</span><span class="media">Twitter</span></p>
+        </footer>
+ </body>
+
+</html>

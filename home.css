@@ -1,0 +1,838 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    font-size: 16px;
+    
+}
+
+tr { line-height: 2rem;}
+
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+a:hover,
+a:focus,
+button:hover,
+button:focus { 
+    cursor:pointer;
+    opacity: .7; 
+    text-decoration: underline #fff;
+}
+
+h1{ margin: 0;}
+
+.header_wrapper {
+    background-color: rgb(129, 65, 65);
+    position:fixed;
+    top: 0;
+    width: 100%;
+    max-height: ;
+}
+
+.flex {
+    display: flex;
+}
+
+#logo_link {
+    margin-left: 5%;
+    align-self: center;
+}
+
+
+
+.header_nav { width: 70%; }
+
+#sign_in { 
+    display: flex;
+    width: 14%;  }
+
+
+.setting_div {
+    margin-left: 3rem;
+}
+
+.setting_menu{
+    position: absolute;
+    top: 3rem;
+    right: .4rem;
+    background-color: rgb(129, 65, 65);
+    display: none;
+}
+
+#sign_in:hover,
+#sign_in:focus,
+.setting_menu:focus,
+.setting_menu:hover {  cursor: pointer;}
+.setting_menu ul {
+    list-style: none;
+}
+
+.setting_menu li {
+    border: none;
+    border-bottom: 1px solid rgb(77, 75, 75);
+    color: rgb(245, 245, 245);
+    padding-right: 2.5rem;
+    line-height: 2rem;
+    margin-right: 2.5rem;
+   
+}
+
+#sign_in_btn,
+#login_btn { 
+    border: 1px solid khaki;
+    background-color: inherit;
+    color: khaki;
+    padding: .7rem 2rem;
+    margin-top: .4rem;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#login_btn { 
+        margin-left: 2%;
+
+}
+.setting_menu a:hover,
+.setting_menu a:focus,
+#sign_in_btn:hover,
+#sign_in_btn:focus,
+#login_btn:hover,
+#login_btn:focus { text-decoration: none;}
+
+.header_nav .flex,
+#login_form .flex {
+    justify-content:center ;
+  
+}
+
+.nav_list li {
+    list-style: none;
+    margin-right: 4rem;
+
+}
+
+
+
+.nav_list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+
+/*------------------------------------------------*/
+
+.hero_img_container {
+    width: 100%;
+    height: 82vh;
+    margin-bottom: 0;
+}
+
+.hero_img_container img {
+    height: 100%;
+    width: 100%;
+}
+
+.form_container{
+    width: 25%;
+    height: 35rem;
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    background-color: rgba(0, 0, 0,.5);
+}
+.form_container form input{
+    width: 100%;
+    background-color: rgba(0, 0, 0,.5);
+    color: white;
+    border-color: purple;
+    padding: 1rem;
+ 
+ }
+
+.form_container--signin {
+    width: 86%;
+    top: 13%;
+    left: 7%;
+    height: 38rem;
+    color: white;
+    font-size:1.2rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0,.5);
+}
+.form_container--signin form {
+    margin-top: 5%;
+}
+.form_container--signin div { width: 50%; }
+
+.form_container--signin input {
+        width: 70%;
+        margin-left: 1%;
+        background-color: rgba(0, 0, 0,.5);
+        color: white;
+        border-color: purple;
+        padding: 1rem;
+}
+.form_container--signin label { 
+    display: block;
+    padding-left: 2%;
+    margin-top: 3%;
+}
+
+.gender_container  {
+    display: flex;
+    font-size: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+.gender_subcontainer {
+    display: flex;
+    margin-right: 3rem;
+    justify-content: end;
+}
+.gender_container input { width: 2rem; }
+.gender_container input:nth-of-type(2) { margin-right: 2rem; }
+
+.right-form { border-left: 2px solid white; }
+.right-form label { 
+    text-align: right;
+    padding-right: 2%;
+}
+.right-form input { 
+    margin-left: 29%;
+}
+
+#login_form .flex {
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#secondform { display: none; }
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#main_section .flex {
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+}
+#incorrect {
+    color: rgb(236, 83, 83);
+}
+
+
+.privilege_list {
+    list-style: none;
+  
+ 
+}
+
+.privilege_list li {
+    text-align: center;
+}
+
+.privilege_list li button {
+    width: 90%;
+    background-color: inherit;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+    line-height: 5rem;
+}
+
+#show_privilege {
+    color: white;
+    text-transform: capitalize;
+}
+
+
+#uname {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+
+#password { margin: 0;}
+
+
+#forget_password a {
+    color: rgb(172, 156, 156);
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+#submit {
+    margin-top: 3rem;
+    width: 80%;
+    justify-self: center;
+    padding: .5rem 1rem;
+    border:none;
+    border-radius: 100px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: capitalize;
+    color: honeydew;
+    background-color: rgb(9, 61, 114);
+    opacity: .8;
+}
+
+#submit:hover,
+#submit:focus {  text-decoration: none; opacity: 1;}
+
+#change_privilege {
+    border:none;
+    background-color: inherit;
+    color: white;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+#school_name {
+    font-family: Qahiri;
+    font-weight: 400;
+    font-size: 8rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+main { margin: 0; padding: 0;}
+
+
+/*--------------------------------------------------------------------*/
+
+.privlage_title {
+    text-align: center;
+    font-weight: 700;
+}
+
+/*--------------------------------------------------------------------*/
+
+#action_box_container {
+    margin: 3rem auto;
+    width: 10%;
+    border: 5px solid rgb(19, 9, 9);
+    
+}
+
+.action_box a {
+    background-color: inherit;
+    color: khaki;
+    font-weight: 900;
+    text-align: center;
+   padding: 1.5rem;
+}
+
+.action_box:focus,
+.action_box:hover {
+    opacity: .8;
+}
+
+.action_box {
+    padding: 3rem 5rem;
+    margin-bottom: 3rem;
+   /* background: linear-gradient(rgb(8, 92, 60),rgb(56, 28, 28));*/
+   background: linear-gradient(rgb(0, 0, 0),rgb(161, 5, 5));
+
+}
+
+.action_box button {
+    border: none;
+    background-color: inherit;
+    color: khaki;
+    font-weight: 900;
+    padding: 4rem;
+}
+
+
+
+
+/*------------------------------------------------*/
+
+
+.add_form
+{
+ 
+        width: 30%;
+        height: auto;
+        margin: 3rem auto 1rem auto;
+        background: linear-gradient(90deg,rgb(145, 18, 35),black 75%);
+        color: #fff;
+
+}
+
+#subject_choice_wrapper {  
+    
+    width: 30%;
+    height: auto;
+    margin: 3rem auto 1rem auto;
+    color: indigo;
+    background-color: #fff;
+    border-bottom: 1px solid lightcoral;
+}
+
+#subject_choice_wrapper button
+{
+    margin-left: 68%;
+    border: none;
+    padding: .5rem 3rem;
+    margin-bottom: 2rem;
+    background-color: rgb(43, 226, 165);
+}
+
+#subject_choice_wrapper input {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+
+#add_admin_form label,
+#add_teacher_form label,
+#add_student_form label,
+.gradeform_container label {
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.gradeform_container label{ 
+    color: darkslategray;
+}
+
+#add_admin_form input,
+#add_teacher_form input,
+#add_student_form input,
+.gradeform_container input {
+    background-color: inherit;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 1px solid rgba(246, 248, 248, 0.253);
+    padding: .3rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    color: #fff;
+    font-size: .9rem;
+    outline: none;
+     
+
+}
+
+
+.gradeform_container input{ 
+    color: darkslategray;
+    border-color: rgb(19, 9, 9);
+}
+
+#a_name,
+#a_mail,
+#a_phones,
+.a_phone,
+#d_name,
+#d_mail,
+#d_phones,
+.d_phone,
+#t_name,
+#t_mail,
+#t_phones,
+.t_phone,
+#s_name,
+#s_mail,
+#s_phones,
+.s_phone {
+    width: 75%;
+}
+
+#a_age,
+#d_age,
+#s_age { 
+    width: 25%;
+    margin-left: 1.8rem;
+}
+
+#add_phone_btn1,
+#add_phone_btn2,
+#add_phone_btn3,
+#add_phone_btn4 { 
+    background-color: inherit;
+    border: none;
+    font-size: 1.5rem;
+    display: inline;
+}
+
+.add_new_btn,
+#submit_grade{
+    padding: .6rem 1.3rem;
+    background-color: rgb(240, 197, 140);
+    border-radius: 100px;
+    color: rgb(10, 10, 39);
+    font-weight: bold;
+    margin-left: 40%;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+    border: none;
+}
+
+
+#showadmin_menu {
+    border: none;
+    background-color: #fff;
+    margin-top: 1rem;
+    margin-left:49%;
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 8rem;
+    padding: 3rem;
+    background-color: rgb(49, 36, 36);
+    color: khaki;
+    font-size: .7rem;
+}
+
+
+.media { margin-left : 3rem;  }
+
+
+/*-----------------------------------------------------------------*/
+.number_of{
+    margin: 2rem 4rem;
+} 
+.table_section{
+    margin-top: 2rem;
+    padding-bottom: 10rem;
+    text-align: center;
+}
+
+.display_table {
+ 
+          margin: 0 auto;
+          width:75%;
+          
+}
+
+td {
+    border-bottom: 1px solid rgb(27, 22, 22);
+}
+
+.display_table ul {
+    list-style: none;
+}
+
+
+#added_msg,
+#added_msg_two {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: .8rem;
+    color: red;
+    background-color: antiquewhite;
+    width: 60%;
+    margin-left: 20%;
+    display: none;
+}
+
+#added_msg_two { background-color: inherit; }
+
+#back_todirector,
+#back_toadmin {
+    color: blue;
+    text-align: center;
+    font-size: 1.1rem;
+    text-decoration:brown;
+}
+
+
+/*-----------------------------------------------------------*/
+
+#grade_box { margin-left: 5%;}
+
+#grade7_subjects,
+#grade8_subjects { margin-left: 15%; display: none;  }
+
+.red { color: red;}
+.purple { color: #0cc4a2; }
+
+/*-----------------------------------------------------------*/
+#sort_wrapper {  margin-left: 20%; }
+
+#sort_wrapper .flex { justify-content:left; }
+
+.sort { 
+    width: 20%;
+    align-items: flex-end;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.sort button { 
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 5rem;
+    text-align: center;
+    background-color: inherit;
+}
+
+.sort button:hover,
+.sort button:focus { opacity: .6; border-color: lightcoral;}
+
+.drop_down { display: none; }
+
+/*----------------------------------------------------------------*/
+
+.gradeform_container {
+    width: 40%;
+    margin: 0 auto;
+    background-color: rgba(189, 183, 107, 0.911);
+}
+
+.gradeform_container form { margin: 3rem; }
+
+.grade_radio { margin-left: 2rem;}
+
+.gradeform_container p { 
+    text-align: center;
+    color:rgb(145, 18, 35);
+    font-size: 1.2rem;
+}
+
+.student_input  {  width: 20%;  }
+
+#subject_choice_wrapper {  display:none; }
+
+#view_grade_choice { width: 25%;  }
+#view_grade_choice button { margin-left: 1.5rem;}
+
+.table_section h5 { color : indigo; text-decoration: underline; text-decoration-style: dotted; font-size: large;}
+th { color : indigo; }
+
+.sort a {
+    color: black;
+    padding: .2rem 1.7rem;
+}
+
+.tester {  
+    border: none;
+    border-bottom: 1px solid brown;
+    background-color: inherit;
+}
+
+#edit_info_form {
+    margin-left: 36%;
+    width: 30%;
+    margin-top: 5rem;
+}
+
+#edit_info_form p{ font-size: 1rem;  font-weight: 700; font-family: Georgia, 'Times New Roman', Times, serif;}
+#edit_info_form label { font-size: 1.2rem;  }
+#edit_info_form input { 
+    width : 55%;
+    border: none;
+    margin-left: 9rem; 
+    font-size: 1rem;
+}
+
+#submit_btn,
+#edit_btn {
+        margin-left: 80%; 
+        padding:.3rem 1rem;    
+}
+
+#submit_btn { display: none; }
+
+#back_btn { 
+    color: blue;
+    font-size: 1.1rem;
+    text-decoration:brown; 
+    margin-left: 50%; }
+
+.delete_btn,
+.edit_btn { color: red; border: none; }
+
+#grade_report_table input{
+      border: none;
+}
+
+.edit_col { color: green; }
+.delete_col { color: red; }
+.save_btn { display: none; }
+
+#grade_report_table input {
+    border: none;
+    background-color: #fff;
+}
+
+.display_table a { 
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #3dc7ce;
+    font-weight: 700;
+    padding: .4rem .8rem;
+}
+
+/*-----------------------------------------------------------*/
+/*home page */
+#event_wrapper{ 
+    margin-top: 3rem;
+    margin-bottom: 9rem;}
+.events_section{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.month {  
+    font-family: monospace;
+}
+.event_box {
+    padding: 4rem;
+    border-left: 1px solid red;
+    width: 100%;
+    margin-top: 5rem;
+    font-size: 1.2rem;
+}
+.event_box:last-of-type {
+    padding: 4rem;
+    border-right: 1px solid red;
+}
+.event_box p,
+.event_box h1 { text-align: center;}
+
+#event_wrapper .flex{
+    justify-content: space-between;
+}
+.event_box:hover {
+
+    border-left: 1px solid rgb(0, 255, 85);
+    border-top: 1px solid rgb(0, 255, 85);
+    color:rgb(9, 61, 114);
+}
+#about_wrapper{
+    background-color: rgb(9, 61, 114);
+    background-color:  rgb(11, 0, 33);
+}
+
+#about_wrapper .flex{
+    justify-content: space-between;
+   
+}
+#about_top { 
+        background-color: rgba(0, 0, 0, 0.3);
+}
+.top_box {
+    width: 40%;
+    margin-left: 13%;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    color: #dad983;
+    line-height: 1.7rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+}
+.top_box:last-of-type{ margin-right: 3rem;}
+.top_box h2,
+.bottom_box h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.top_box p,
+.bottom_box p { 
+    font-size: 1.1rem;
+    border-bottom:1px solid sienna;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bottom_box{
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-right: 4rem;
+    color: #dad983;
+    line-height: 1.7rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.top_box:hover,
+.bottom_box:hover { opacity: .6;}
+
+
+/*----------------------------------------------*/
+/*password reset  */
+
+#reset_form__container{
+    margin-top: 13rem;
+    margin-left: 40%;
+    margin-bottom: 5rem;
+    border: 1px solid gray;
+    width: 30%;
+    padding: 5rem 5rem 15rem 5rem;
+
+}
+
+#reset_form__container input[type=password],
+#password_reset_form input[type=text]{
+   width: 90%;
+   padding: .4rem;
+}
+
+.wrong_password {
+    color: red;
+    font-size: .8rem;
+}
+
+#dont_match{
+    display: none;
+}
+
+#save_changes{
+    margin-left: 60%;
+    border: none;
+    border-bottom:1px solid rgb(9, 61, 114);
+    padding: .6rem 1rem;
+}
+
+.news_section{ 
+    margin-bottom: 15rem;
+    margin-top: 2rem;
+}
+#news_img_wrapper,
+#news_img_wrappe_two{  
+    margin-top: 11rem;
+    margin-left: 9rem;
+}
+
+#news_para{
+    margin-top: 11rem;
+    border-left: 1px solid rgb(0, 255, 34);
+}
+#news_para_two{
+    border-right: 1px solid rgb(0, 255, 34);
+}
+#news_para p,
+#news_para_two p { 
+    padding-left: 5rem; 
+    padding-right: 5rem;
+    line-height: 1.5rem;
+    
+}
+#news_img_wrapper img,
+#news_img_wrapper_two img{  width: 80%; }
+
+#news_para_two { margin-top: 14rem; }
+#news_img_wrapper_two img { 
+    margin-left: 5rem;
+    margin-top: 15rem;
+}

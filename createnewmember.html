@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <script src="jquery-3.6.0.js"></script>
+
+
+    <title>Morbik Fitness</title>
+</head>
+
+<body>
+    <article class="header_wrapper">
+        <header class="flex">
+            <a href="index.html" id="logo_link"><img id="logo_img" src="pics/logo.svg" alt="logo"></a>
+            <nav class="header_nav">
+                <ul class="nav_list flex">
+                    <li><a class="nav_link" href="">Home</a></li>
+                    <li><a class="nav_link" href="">about</a></li>
+                    <li><a class="nav_link" href="">contact</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+    </article>
+    <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="library"></div>
+
+    <h1 id="school_name"> Morbik Fitness </h1>
+    <hr>
+
+
+    <section class=" form_container--signin">
+        <form action="#" method="post">
+            <section id="firstform" class="flex">
+
+                <div>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <label for="username">User Name</label>
+                    <input type="text" name="username" id="username">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone">
+                </div>
+                <div class="right-form">
+
+                    <label for="age">Date Of Birth</label>
+                    <input type="date" name="dob" id="dob">
+                    <label for="gender" class="" flex>Gender</label>
+                    <section class="gender_container">
+                        <section class="gender_subcontainer">
+                            <p>Male</p><input type="radio" name="gender" id="gender">
+                        </section>
+                        <section class="gender_subcontainer">
+                            <p>Female</p><input type="radio" name="gender" id="gender">
+                        </section>
+                    </section>
+                    <label for="weight">Weight</label>
+                    <input type="number" max="150" min="40" name="weight" id="weight" placeholder="Weight in kg">
+                    <label for="height">Height</label>
+                    <input type="number" max="250" min="130" name="height" id="height" placeholder="Height in meter">
+
+                </div>
+            </section>
+            <section id="secondform">
+               <label for="program">Program</label>
+               <input name="program" type="button" value="Normal Workout">
+               <label for="password">New Password</label>
+               <input type="password" name="password"  placeholder="atleast 8 characters" >
+               <label for="password_confirm">Confirm Password</label>
+               <input type="password" name="password_confirm">
+            </section>
+
+            <input type="submit" value="Submit">
+        </form>
+        <button id="nextbtn"  >Next</button>
+
+    </section>
+
+    <script>
+        const showNext = () => { console.log("hii")
+            $("#firstform").hide();
+            $("#secondform").show();
+        }
+
+        document.getElementById("nextbtn").addEventListener("click", () => showNext());
+    </script>
+</body>
+
+</html>
