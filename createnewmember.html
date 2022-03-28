@@ -57,10 +57,10 @@
                     <label for="gender" class="" flex>Gender</label>
                     <section class="gender_container">
                         <section class="gender_subcontainer">
-                            <p>Male</p><input type="radio" name="gender" id="gender">
+                            <p>Male</p><input type="radio" name="male" id="male">
                         </section>
                         <section class="gender_subcontainer">
-                            <p>Female</p><input type="radio" name="gender" id="gender">
+                            <p>Female</p><input type="radio" name="female" id="female">
                         </section>
                     </section>
                     <label for="weight">Weight</label>
@@ -70,25 +70,44 @@
 
                 </div>
             </section>
-            <section id="secondform">
-               <label for="program">Program</label>
-               <input name="program" type="button" value="Normal Workout">
-               <label for="password">New Password</label>
-               <input type="password" name="password"  placeholder="atleast 8 characters" >
-               <label for="password_confirm">Confirm Password</label>
-               <input type="password" name="password_confirm">
+            <section id="secondform" class="secondform">
+                <div>
+                    <label for="program">Program</label>
+                    <input name="program" type="button" value="Normal Workout">
+                    <label for="plan">Plan</label>
+                    <input name="program" type="button" value="15 days a month">
+                    <label for="trainer">Request a private trainer</label>
+                    <section class="trainer_bool-container">
+                        <section class="trainer_bool-subcontainer flex">
+                            <p>Yes</p><input type="radio" name="trainer_yes" id="trainer_yes">
+                        </section>
+                        <section class="trainer_bool-subcontainer flex">
+                            <p>No</p><input type="radio" name="trainer_no" id="trainer_no">
+                        </section>
+                    </section>
+                </div>
+                <div class="right-form">
+                    <label for="password">New Password</label>
+                    <input type="password" name="password" placeholder="atleast 8 characters">
+                    <label for="password_confirm">Confirm Password</label>
+                    <input type="password" name="password_confirm">
+                </div>
+
             </section>
 
-            <input type="submit" value="Submit">
+            <input id="submit_btn" type="submit" value="Submit">
         </form>
-        <button id="nextbtn"  >Next</button>
+        <button id="nextbtn">Next</button>
 
     </section>
 
     <script>
-        const showNext = () => { console.log("hii")
+        const showNext = () => {
             $("#firstform").hide();
-            $("#secondform").show();
+            $("#secondform").removeClass("secondform");
+            $("#secondform").addClass("flex");
+            $("nextbtn").hide();
+            $("#submit_btn").show();
         }
 
         document.getElementById("nextbtn").addEventListener("click", () => showNext());

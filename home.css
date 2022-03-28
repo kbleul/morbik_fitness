@@ -47,7 +47,7 @@ h1{ margin: 0;}
 
 
 
-.header_nav { width: 70%; }
+.header_nav { width: 80%; }
 
 #sign_in { 
     display: flex;
@@ -94,10 +94,9 @@ h1{ margin: 0;}
     font-weight: 900;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-#login_btn { 
-        margin-left: 2%;
 
-}
+.secondform { display: none;}
+#login_btn {   margin-left: 10%; }
 .setting_menu a:hover,
 .setting_menu a:focus,
 #sign_in_btn:hover,
@@ -187,7 +186,8 @@ h1{ margin: 0;}
     margin-top: 3%;
 }
 
-.gender_container  {
+.gender_container,
+.trainer_bool-container {
     display: flex;
     font-size: 1rem;
     margin-right: 2rem;
@@ -198,7 +198,8 @@ h1{ margin: 0;}
     margin-right: 3rem;
     justify-content: end;
 }
-.gender_container input { width: 2rem; }
+.gender_container input,
+.trainer_bool-container input { width: 2rem; }
 .gender_container input:nth-of-type(2) { margin-right: 2rem; }
 
 .right-form { border-left: 2px solid white; }
@@ -216,7 +217,10 @@ h1{ margin: 0;}
     
 }
 
-#secondform { display: none; }
+.trainer_bool-subcontainer { 
+    margin-left: 2rem;
+}
+
 
 .info {
     display: flex;
