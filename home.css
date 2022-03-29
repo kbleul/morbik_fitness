@@ -5,8 +5,8 @@
 body { 
     margin: 0;
     font-size: 16px;
-    background-color: #211e1e;
-    
+    background-color: #0e0e0e;
+    color: aliceblue;
 }
 
 a:active { text-decoration: none; }
@@ -804,7 +804,7 @@ th { color : indigo; }
 
     border-left: 1px solid rgb(0, 255, 85);
     border-top: 1px solid rgb(0, 255, 85);
-    color:rgb(9, 61, 114);
+    color: aqua;
 }
 #about_wrapper{
     background-color: rgb(9, 61, 114);
