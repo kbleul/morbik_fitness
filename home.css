@@ -186,11 +186,17 @@ h1{ margin: 0;}
     margin-top: 3%;
 }
 
-.gender_container,
+.gender_container{
+   display: flex;
+    justify-content: end;
+    font-size: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
 .trainer_bool-container {
     display: flex;
     font-size: 1rem;
-    margin-right: 2rem;
     margin-left: 2rem;
 }
 .gender_subcontainer {
@@ -217,9 +223,37 @@ h1{ margin: 0;}
     
 }
 
-.trainer_bool-subcontainer { 
-    margin-left: 2rem;
+.trainer_bool-subcontainer {  margin-left: 5rem;  }
+.trainer_bool-subcontainer p { margin-right: 2rem; }
+.trainer_bool-subcontainer input { width: 1.1rem; }
+
+.program_wrapper,
+.plan_wrapper { position: relative; }
+
+.program_wrapper ul,
+.plan_wrapper ul {
+    display: none;
+    position: absolute;
+    top: 2.15rem;
+    background-color: black;
+    width: 70%;
+    margin-left: 1%;
+    z-index: 10;
 }
+.program_wrapper ul li,
+.plan_wrapper ul li {
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid aqua;
+    margin-right: 3.7rem;
+    color: aliceblue;
+    padding-bottom: .7rem;
+    font-size: .9rem;
+    padding-top: .7rem;
+}
+.program_wrapper ul li:hover,
+.plan_wrapper ul li:hover{ border-bottom: 1px solid #ff5400; }
+
 
 
 .info {
@@ -650,13 +684,24 @@ th { color : indigo; }
     font-size: 1rem;
 }
 
-#submit_btn,
 #edit_btn {
         margin-left: 80%; 
         padding:.3rem 1rem;    
 }
+#nextbtn { 
+    margin-left: 45%;
+    background-color: inherit;
+    color: aqua;
+    font-size: 1.5rem;
+    width: 10%;
+    border: none;
+    margin-top: 3rem;
+}
 
-#submit_btn { display: none; }
+#submit_btn { 
+    margin-top: 3rem;
+    display: none; 
+}
 
 #back_btn { 
     color: blue;

@@ -72,10 +72,23 @@
             </section>
             <section id="secondform" class="secondform">
                 <div>
+
                     <label for="program">Program</label>
-                    <input name="program" type="button" value="Normal Workout">
+                    <section class="program_wrapper">
+                        <input id="programs_inputbtn" name="program" type="button" value="Normal Workout ">
+                        <ul id="program_ul">
+                            <li class="program_li">Aerobics</li>
+                            <li class="program_li">Yoga</li>
+                            <li class="program_li">Boxing</li>
+                        </ul>
+                    </section>
                     <label for="plan">Plan</label>
-                    <input name="program" type="button" value="15 days a month">
+                    <section class="plan_wrapper">
+                        <input id="plans_inputbtn" name="plan" type="button" value="15 days a month">
+                        <ul id="plan_ul">
+                            <li class="plan_li">Full Month</li>
+                        </ul>
+                    </section>
                     <label for="trainer">Request a private trainer</label>
                     <section class="trainer_bool-container">
                         <section class="trainer_bool-subcontainer flex">
@@ -85,6 +98,10 @@
                             <p>No</p><input type="radio" name="trainer_no" id="trainer_no">
                         </section>
                     </section>
+                    <label for="time">Working out time starts at : </label>
+                    <input type="time" name="time" id="time_input">
+                    <label for="time_end">Working out time ends at : </label>
+                    <input type="time" name="time_end" id="time_input-end">
                 </div>
                 <div class="right-form">
                     <label for="password">New Password</label>
@@ -97,7 +114,7 @@
 
             <input id="submit_btn" type="submit" value="Submit">
         </form>
-        <button id="nextbtn">Next</button>
+        <button id="nextbtn">Next >></button>
 
     </section>
 
@@ -106,11 +123,39 @@
             $("#firstform").hide();
             $("#secondform").removeClass("secondform");
             $("#secondform").addClass("flex");
-            $("nextbtn").hide();
+            $("#nextbtn").hide();
             $("#submit_btn").show();
         }
 
+        const showProgram = (type) => {  type === "program" ? $("#program_ul").toggle() :  $("#plan_ul").toggle()  }
+
+        const pickProgram = e => {
+            let temptxt = $("#programs_inputbtn").val();
+            $("#programs_inputbtn").val(e.target.innerHTML)
+            e.target.innerHTML = temptxt;
+            $("#program_ul").toggle();
+        }
+
+        const pickPlan = e => { 
+            let temptxt = $("#plans_inputbtn").val();
+            $("#plans_inputbtn").val(e.target.innerHTML)
+            e.target.innerHTML = temptxt;
+            $("#plan_ul").toggle();
+        }
+
         document.getElementById("nextbtn").addEventListener("click", () => showNext());
+        document.getElementById("programs_inputbtn").addEventListener("click", () => showProgram("program"));
+        document.getElementById("plans_inputbtn").addEventListener("click", () => showProgram("plan"));
+
+
+        const program_liarr = document.getElementsByClassName("program_li");
+        const plan_liarr = document.getElementsByClassName("plan_li");
+
+
+        for (let i = 0; i < program_liarr.length; i++) { program_liarr[i].addEventListener("click", e => pickProgram(e)) }
+        for (let i = 0; i < plan_liarr.length; i++) { plan_liarr[i].addEventListener("click", e => pickPlan(e)) }
+
+
     </script>
 </body>
 
