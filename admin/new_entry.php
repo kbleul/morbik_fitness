@@ -1,5 +1,5 @@
 
-<?php include('../constant/layout/head.php');?>
+<?php include('../constant/layout/head.php');  ?>
 <?php include('../constant/layout/header.php');?>
 
 <?php include('../constant/layout/sidebar.php');?> 
@@ -208,7 +208,5 @@ include('../constant/connect.php');
         </script>
 
 <?php include('../constant/layout/footer.php');?>
-  <!--  This Project Developed by: Mayuri K. 
- for any PHP, Codeignitor or Laravel work contact me through https://www.mayurik.com  -->
 
  

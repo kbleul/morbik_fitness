@@ -1,3 +1,8 @@
+<?php  include('../constant/connect.php');  ?>
+<?php include('head.php');?>
+
+
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
     <script src="jquery-3.6.0.js"></script>
 
 
@@ -33,7 +39,6 @@
     <h1 id="school_name"> Morbik Fitness </h1>
     <hr>
 
-
     <section class=" form_container--signin">
         <form action="#" method="post">
             <section id="firstform" class="flex">
@@ -41,7 +46,8 @@
                 <div>
 
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required="required" autocomplete="off" placeholder="xyz@mail.com">
+                    <input type="email" name="email" id="email" required="required" autocomplete="off"
+                        placeholder="xyz@mail.com">
                     <label for="username">User Name</label>
                     <input type="text" name="username" id="username" required="required">
                     <label for="fname">First Name</label>
@@ -78,9 +84,17 @@
                     <section class="program_wrapper">
                         <input id="programs_inputbtn" name="program" type="button" value="Normal Workout">
                         <ul id="program_ul">
-                            <li class="program_li">Aerobics</li>
-                            <li class="program_li">Yoga</li>
-                            <li class="program_li">Boxing</li>
+
+                            <?php
+                            $query="select * from main_program";
+                            $result=mysqli_query($con,$query);
+                            if(mysqli_affected_rows($con)!=0){
+                                while($row=mysqli_fetch_row($result)){
+                                    echo "<li class="program_li">".$row[1]."</li> ";
+                                }
+                            }
+    
+                        ?>
                         </ul>
                     </section>
                     <label for="plan">Plan</label>
@@ -100,14 +114,15 @@
                         </section>
                     </section>
                     <section id="time_wrapper">
-                        <label for="time">Working out time starts at : </label>
+                        <label for="time">Working out time starts at (in local time) </label>
                         <input type="time" name="time" id="time_input" required="required">
-                        <label for="time_end">Working out time ends at : </label>
+                        <label for="time_end">Working out time ends at  </label>
                         <input type="time" name="time_end" id="time_input-end" required="required">
                     </section>
                     <section class="schedule_wrapper">
                         <label for="schedule">Schedule</label>
-                        <input id="schedule_inputbtn" name="schedule" type="button" value="Morning (2am - 3:30am local time)" required="required">
+                        <input id="schedule_inputbtn" name="schedule" type="button"
+                            value="Morning (12:30am - 2:00am local time)" required="required">
                         <ul id="schedule_ul">
                             <li class="schedule_li">Afternoon (11pm - 12:30pm local time)</li>
                             <li class="schedule_li">Night (2am - 3:30pm local time)</li>
@@ -118,17 +133,20 @@
                 <div class="right-form">
                     <section class="package_wrapper">
                         <label for="package">Discount Package</label>
-                        <input id="package_inputbtn" name="package" type="button" value="Normal (No Discount)" required="required">
+                        <input id="package_inputbtn" name="package" type="button" value="Normal (No Discount)"
+                            required="required">
                         <ul id="package_ul">
-                            <li class="package_li">Student (10% Discount) <span>You will need to show school id!</span></li>
+                            <li class="package_li">Student (10% Discount) <span>You will need to show school id!</span>
+                            </li>
                             <li class="package_li">Pay annual payment (15% Discount)</li>
                         </ul>
                     </section>
                     <label for="password">New Password</label>
-                    <input type="password" name="password" placeholder="atleast 8 characters" required="required" autocomplete="off">
+                    <input type="password" name="password" placeholder="atleast 8 characters" required="required"
+                        autocomplete="off">
                     <label for="password_confirm">Confirm Password</label>
                     <input type="password" name="password_confirm" autocomplete="off">
-                    <input id="submit_btn" type="submit" value="Submit" required="required">
+                    <input id="submit_btn" type="submit" value="Create New Account" required="required">
 
                 </div>
 
@@ -142,33 +160,32 @@
     <script>
         const showNext = () => {
 
-            if(($("#email").val() !== "" && $("#email").val().includes("@")) && $("#username").val() !== "" 
-  && $("fname").val() !== "" && $("#lname").val() !== "" && ($("#phone").val() !== "" 
-  && $("#phone").val().length === 10) && $("#dob").val() !== "" && ($("#male").prop("checked") || ($("#female").prop("checked")) ) &&
-  $("#weight").val() !== "" && $("#height").val() !== "")
-  {
-            $("#firstform").hide();
-            $("#secondform").removeClass("secondform");
-            $("#secondform").addClass("flex");
-            $("#nextbtn").hide();
-            $("#submit_btn").show();
+            if (($("#email").val() !== "" && $("#email").val().includes("@")) && $("#username").val() !== ""
+                && $("fname").val() !== "" && $("#lname").val() !== "" && ($("#phone").val() !== ""
+                    && $("#phone").val().length === 10) && $("#dob").val() !== "" && ($("#male").prop("checked") || ($("#female").prop("checked"))) &&
+                $("#weight").val() !== "" && $("#height").val() !== "") {
+                $("#firstform").hide();
+                $("#secondform").removeClass("secondform");
+                $("#secondform").addClass("flex");
+                $("#nextbtn").hide();
+                $("#submit_btn").show();
+            }
+
+            else if ($("#email").val() === "" || $("#email").val().includes("@") === false) { $("#email").focus().css("border-color", "aqua"); }
+            else if ($("#username").val() === "") { $("#username").focus().css("border-color", "aqua"); }
+            else if ($("#fname").val() === "") { $("#fname").focus().css("border-color", "aqua"); }
+            else if ($("#lname").val() === "") { $("#lname").focus().css("border-color", "aqua"); }
+            else if (($("#phone").val() === "" || $("#phone").val().length !== 10)) { $("#phone").focus().css("border-color", "aqua"); }
+            else if ($("#dob").val() === "") { $("#dob").focus().css("border-color", "aqua"); }
+            else if ($("#weight").val() === "") { $("#weight").focus().css("border-color", "aqua"); }
+            else if ($("#height").val() === "") { $("#height").focus().css("border-color", "aqua"); }
         }
 
-     else if ($("#email").val() === "" || $("#email").val().includes("@") === false) { $("#email").focus().css("border-color", "aqua"); }
-     else if ($("#username").val() === "") { $("#username").focus().css("border-color", "aqua"); }
-     else if ($("#fname").val() === "") { $("#fname").focus().css("border-color", "aqua"); }
-     else if ($("#lname").val() === "") { $("#lname").focus().css("border-color", "aqua"); }
-     else if (($("#phone").val() === "" || $("#phone").val().length !== 10)) { $("#phone").focus().css("border-color", "aqua"); }
-     else if ( $("#dob").val() === "") { $("#dob").focus().css("border-color", "aqua"); }
-     else if ( $("#weight").val() === "") { $("#weight").focus().css("border-color", "aqua"); }
-     else if ( $("#height").val() === "") { $("#height").focus().css("border-color", "aqua"); }
-        }
-
-        const showItems = (type) => { 
-            if(type === "program") { $("#program_ul").toggle() }
-            else if(type === "plan") { $("#plan_ul").toggle() }
-            else if(type === "schedule") { $("#schedule_ul").toggle() }
-            else if(type === "package") { $("#package_ul").toggle() }
+        const showItems = (type) => {
+            if (type === "program") { $("#program_ul").toggle() }
+            else if (type === "plan") { $("#plan_ul").toggle() }
+            else if (type === "schedule") { $("#schedule_ul").toggle() }
+            else if (type === "package") { $("#package_ul").toggle() }
         }
 
         const pickProgram = e => {
@@ -185,14 +202,14 @@
             $("#plan_ul").toggle();
         }
 
-        const pickSchedule = e => { 
+        const pickSchedule = e => {
             let temptxt = $("#schedule_inputbtn").val();
             $("#schedule_inputbtn").val(e.target.innerHTML);
             e.target.innerHTML = temptxt;
             $("#schedule_ul").toggle();
         }
 
-        const pickPackage = e => { 
+        const pickPackage = e => {
             let temptxt = $("#package_inputbtn").val();
             $("#package_inputbtn").val(e.target.innerHTML);
             e.target.innerHTML = temptxt;
@@ -201,16 +218,14 @@
 
         //checkbox control
         const uncheckInput_gender = type => { type === "male" ? $("#female").prop("checked", false) : $("#male").prop("checked", false) }
-        const uncheckInput_trainer = type => { 
-            if(type==="yes")
-            { $("#trainer_no").prop("checked", false); $("#time_wrapper").show(); $(".schedule_wrapper").hide(); } 
-            else { 
-                $("#trainer_yes").prop("checked", false) ; 
+        const uncheckInput_trainer = type => {
+            if (type === "yes") { $("#trainer_no").prop("checked", false); $("#time_wrapper").show(); $(".schedule_wrapper").hide(); }
+            else {
+                $("#trainer_yes").prop("checked", false);
                 $("#time_wrapper").hide();
-                 
-                if($("#programs_inputbtn").val() === "Aerobics" || $("#programs_inputbtn").val() === "Yoga")
-                      { $(".schedule_wrapper").show(); }
-            }  
+
+                if ($("#programs_inputbtn").val() === "Aerobics" || $("#programs_inputbtn").val() === "Yoga") { $(".schedule_wrapper").show(); }
+            }
         }
 
 
@@ -219,11 +234,11 @@
         //show hidden items
         document.getElementById("programs_inputbtn").addEventListener("click", () => showItems("program"));
         document.getElementById("plans_inputbtn").addEventListener("click", () => showItems("plan"));
-        document.getElementById("schedule_inputbtn").addEventListener("click" , () => showItems("schedule"));
-        document.getElementById("package_inputbtn").addEventListener("click" , () => showItems("package"));
+        document.getElementById("schedule_inputbtn").addEventListener("click", () => showItems("schedule"));
+        document.getElementById("package_inputbtn").addEventListener("click", () => showItems("package"));
 
 
-        
+
 
         document.getElementById("male").addEventListener("click", () => uncheckInput_gender("male"));
         document.getElementById("female").addEventListener("click", () => uncheckInput_gender("female"));
