@@ -82,7 +82,7 @@
 
                     <label for="program">Program</label>
                     <section class="program_wrapper">
-                        <input id="programs_inputbtn" name="program" type="button" value="Normal Workout">
+                        <input id="programs_inputbtn" name="program" type="text" value="Normal Workout">
                         <ul id="program_ul">
 
                             <?php
@@ -112,21 +112,21 @@
                     <label for="trainer">Request a private trainer</label>
                     <section class="trainer_bool-container">
                         <section class="trainer_bool-subcontainer flex">
-                            <p>Yes</p><input type="radio" name="trainer" value="trainer_yes" id="trainer_yes">
+                            <p>Yes</p><input type="radio" name="trainer" value="yes" id="trainer_yes">
                         </section>
                         <section class="trainer_bool-subcontainer flex">
-                            <p>No</p><input type="radio" name="trainer" value="trainer_no" id="trainer_no">
+                            <p>No</p><input type="radio" name="trainer" value="no" id="trainer_no">
                         </section>
                     </section>
                     <section id="time_wrapper">
                         <label for="time">Working out time starts at (in local time) </label>
-                        <input type="time" name="time" id="time_input" >
+                        <input type="time" name="time_start" id="time_input" >
                         <label for="time_end">Working out time ends at  </label>
                         <input type="time" name="time_end" id="time_input-end" >
                     </section>
                     <section class="schedule_wrapper">
                         <label for="schedule">Schedule</label>
-                        <input id="schedule_inputbtn" name="schedule" type="button"
+                        <input id="schedule_inputbtn" name="schedule" type="text"
                             value="Morning (12:30am - 2:00am local time)" >
                         <ul id="schedule_ul">
                             <li class="schedule_li">Afternoon (11pm - 12:30pm local time)</li>
@@ -134,7 +134,7 @@
                         </ul>
                     </section>
                 </div>
-
+               
                 <div class="right-form">
                     <section class="package_wrapper">
                         <label for="package">Discount Package</label>
