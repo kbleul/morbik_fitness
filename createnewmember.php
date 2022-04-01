@@ -39,7 +39,7 @@
     <hr>
 
     <section class=" form_container--signin">
-        <form action="#" method="post">
+        <form action="add_member.php" method="post">
             <section id="firstform" class="flex">
 
                 <div>
@@ -56,6 +56,7 @@
                     <label for="phone">Phone Number</label>
                     <input type="tel" name="phone" id="phone" required="required">
                 </div>
+             
                 <div class="right-form">
 
                     <label for="age">Date Of Birth</label>
@@ -63,10 +64,10 @@
                     <label for="gender" class="" flex>Gender</label>
                     <section class="gender_container">
                         <section class="gender_subcontainer">
-                            <p>Male</p><input type="radio" value="male" name="male" id="male">
+                            <p>Male</p><input type="radio" value="male" name="gender" id="male">
                         </section>
                         <section class="gender_subcontainer">
-                            <p>Female</p><input type="radio" value="female" name="female" id="female">
+                            <p>Female</p><input type="radio" value="female" name="gender" id="female">
                         </section>
                     </section>
                     <label for="weight">Weight</label>
@@ -111,22 +112,22 @@
                     <label for="trainer">Request a private trainer</label>
                     <section class="trainer_bool-container">
                         <section class="trainer_bool-subcontainer flex">
-                            <p>Yes</p><input type="radio" name="trainer_yes" value="trainer_yes" id="trainer_yes">
+                            <p>Yes</p><input type="radio" name="trainer" value="trainer_yes" id="trainer_yes">
                         </section>
                         <section class="trainer_bool-subcontainer flex">
-                            <p>No</p><input type="radio" name="trainer_no" value="trainer_no" id="trainer_no">
+                            <p>No</p><input type="radio" name="trainer" value="trainer_no" id="trainer_no">
                         </section>
                     </section>
                     <section id="time_wrapper">
                         <label for="time">Working out time starts at (in local time) </label>
-                        <input type="time" name="time" id="time_input" required="required">
+                        <input type="time" name="time" id="time_input" >
                         <label for="time_end">Working out time ends at  </label>
-                        <input type="time" name="time_end" id="time_input-end" required="required">
+                        <input type="time" name="time_end" id="time_input-end" >
                     </section>
                     <section class="schedule_wrapper">
                         <label for="schedule">Schedule</label>
                         <input id="schedule_inputbtn" name="schedule" type="button"
-                            value="Morning (12:30am - 2:00am local time)" required="required">
+                            value="Morning (12:30am - 2:00am local time)" >
                         <ul id="schedule_ul">
                             <li class="schedule_li">Afternoon (11pm - 12:30pm local time)</li>
                             <li class="schedule_li">Night (2am - 3:30pm local time)</li>
@@ -137,20 +138,18 @@
                 <div class="right-form">
                     <section class="package_wrapper">
                         <label for="package">Discount Package</label>
-                        <input id="package_inputbtn" name="package" type="button" value="Normal (No Discount)"
-                            required="required">
+                        <input id="package_inputbtn" name="package" type="button" value="Normal (No Discount)">
                         <ul id="package_ul">
                             <li class="package_li">Student (10% Discount) <span>You will need to show school id!</span>
                             </li>
                             <li class="package_li">Pay annual payment (15% Discount)</li>
                         </ul>
-                    </section>
+                    </section> 
                     <label for="password">New Password</label>
-                    <input type="password" name="password" placeholder="atleast 8 characters" required="required"
-                        autocomplete="off">
+                    <input type="password" name="password" placeholder="atleast 8 characters" autocomplete="off">
                     <label for="password_confirm">Confirm Password</label>
                     <input type="password" name="password_confirm" autocomplete="off">
-                    <input id="submit_btn" type="submit" value="Create New Account" required="required">
+                    <input id="submit_btn" name="submit_member" type="submit" value="Create New Account">
 
                 </div>
 
