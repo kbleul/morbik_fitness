@@ -104,7 +104,7 @@
                     </section>
                     <label for="plan">Plan</label>
                     <section class="plan_wrapper">
-                        <input id="plans_inputbtn" name="plan" type="button" value="15 days a month">
+                        <input id="plans_inputbtn" name="plan" type="text" value="15 days a month">
                         <ul id="plan_ul">
                             <li class="plan_li">Full Month</li>
                         </ul>
@@ -138,17 +138,16 @@
                 <div class="right-form">
                     <section class="package_wrapper">
                         <label for="package">Discount Package</label>
-                        <input id="package_inputbtn" name="package" type="button" value="Normal (No Discount)">
+                        <input id="package_inputbtn" name="package" type="text" value="Normal (No Discount)">
                         <ul id="package_ul">
-                            <li class="package_li">Student (10% Discount) <span>You will need to show school id!</span>
-                            </li>
-                            <li class="package_li">Pay annual payment (15% Discount)</li>
+                            <li class="package_li">Student (10% Discount) You will need to show school id!</li>
+                            <li class="package_li">Annual (Pay annual payment 15% Discount)</li>
                         </ul>
                     </section> 
                     <label for="password">New Password</label>
-                    <input type="password" name="password" placeholder="atleast 8 characters" autocomplete="off">
-                    <label for="password_confirm">Confirm Password</label>
-                    <input type="password" name="password_confirm" autocomplete="off">
+                    <input type="password" name="password" id="password_signin" placeholder="atleast 8 characters" autocomplete="off">
+                    <label for="password_confirm"><span id="password_confirm-msg"> * Passwords don't match.</span>Confirm Password</label>
+                    <input type="password" name="password_confirm" id="password_confirm" autocomplete="off">
                     <input id="submit_btn" name="submit_member" type="submit" value="Create New Account">
 
                 </div>
@@ -249,6 +248,22 @@
         document.getElementById("female").addEventListener("click", () => uncheckInput_gender("female"));
         document.getElementById("trainer_no").addEventListener("click", () => uncheckInput_trainer("no"));
         document.getElementById("trainer_yes").addEventListener("click", () => uncheckInput_trainer("yes"));
+
+        document.getElementById("password_confirm").addEventListener("blur", () => { 
+            if($("#password_confirm").val() !== $("#password_signin").val())
+            {
+                $("#password_confirm").val('');
+                $("#password_confirm-msg").show();
+            } else { $("#password_confirm-msg").hide();}
+        })
+
+        document.getElementById("password_confirm").addEventListener("focus", () => { 
+            if($("#password_confirm").val() === $("#password_signin").val())
+            { $("#password_confirm-msg").hide(); } 
+            else { $("#password_confirm-msg").show(); }
+        });
+
+
 
 
 

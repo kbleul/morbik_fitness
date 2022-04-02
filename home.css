@@ -36,7 +36,6 @@ h1{ margin: 0;}
     position:fixed;
     top: 0;
     width: 100%;
-    max-height: ;
 }
 
 .flex {
@@ -289,6 +288,12 @@ h1{ margin: 0;}
 }
 #incorrect {
     color: rgb(236, 83, 83);
+}
+#password_confirm-msg {
+    color: red;
+    font-size:small;
+    margin-right: 27%;
+    display: none;
 }
 
 
