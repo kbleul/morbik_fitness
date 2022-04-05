@@ -127,10 +127,10 @@
                     <section class="schedule_wrapper">
                         <label for="schedule">Schedule</label>
                         <input id="schedule_inputbtn" name="schedule" type="text"
-                            value="Morning (12:30am - 2:00am local time)" >
+                            value="Morning (12:30am - 2:00am local time for group workouts)" >
                         <ul id="schedule_ul">
-                            <li class="schedule_li">Afternoon (11pm - 12:30pm local time)</li>
-                            <li class="schedule_li">Night (2am - 3:30pm local time)</li>
+                            <li class="schedule_li">Afternoon (11pm - 12:30pm local time  for group workouts)</li>
+                            <li class="schedule_li">Night (2am - 3:30pm local time  for group workouts)</li>
                         </ul>
                     </section>
                 </div>
@@ -147,7 +147,7 @@
                     <label for="password">New Password</label>
                     <input type="password" name="password" id="password_signin" placeholder="atleast 8 characters" autocomplete="off">
                     <label for="password_confirm"><span id="password_confirm-msg"> * Passwords don't match.</span>Confirm Password</label>
-                    <input type="password" name="password_confirm" id="password_confirm" autocomplete="off">
+                    <input type="password" name="password_confirm" id="password_confirm" autocomplete="off" required="required">
                     <input id="submit_btn" name="submit_member" type="submit" value="Create New Account">
 
                 </div>

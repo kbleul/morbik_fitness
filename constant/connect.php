@@ -2,7 +2,7 @@
 $host     = "localhost"; // Host name 
 $username = "root"; // Mysql username 
 $password = ""; // Mysql password 
-$db_name  = "gymdb"; // Database name 
+$db_name  = "mayuri_fitness"; // Database name 
 
 // Connect to server and select databse.
 $con = mysqli_connect($host, $username, $password, $db_name);

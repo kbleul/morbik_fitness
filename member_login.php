@@ -1,37 +1,31 @@
 <link rel="stylesheet" href="popup_style.css">
 <link rel="stylesheet" href="home.css">
+<link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
 <script src="index.js"></script>
 
     <?php
     session_start();
  error_reporting(1);
- include('head.php');
-   include('./constant/connect.php');
+   include('database_connect.php');
 
    
   if(isset($_POST['btn_login']))
   {
-  $unm = $_POST['email'];
-  //echo $_POST['passwd'];
-  //$p="admin";
-  //echo $unm;exit;
+  $uname = $_POST['uname'];
   $passw =  $_POST['password'];
-  //$passw = hash('sha256',$p);
-  //echo $passw;exit;
-
  
-   $sql = "SELECT * FROM admin WHERE email='" .$unm . "' and password = '". $passw."'";
+   $sql = "SELECT * FROM member WHERE Username='$uname' and Password ='$passw' ";
       $result = mysqli_query($con,$sql);
       $row  = mysqli_fetch_array($result);
       //print_r($row);
-       $_SESSION["id"] = $row['id'];
-       $_SESSION["username"] = $row['username'];
-       $_SESSION["password"] = $row['password'];
-       $_SESSION["email"] = $row['email'];
+       $_SESSION["id"] = $row['ID'];
+       $_SESSION["username"] = $row['Username'];
+       $_SESSION["password"] = $row['Password'];
+       $_SESSION["email"] = $row['Email'];
        //echo $_SESSION["email"];exit;
-       $_SESSION["fname"] = $row['fname'];
-       $_SESSION["lname"] = $row['lname'];
-       $_SESSION["image"] = $row['image'];
+       $_SESSION["name"] = $row['FName'].$row['LName'];
+
        $count=mysqli_num_rows($result);
   
        if(($count)==1 && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
@@ -45,33 +39,24 @@
       </h1>
       <p>Login Successfully</p>
       <p>
-       <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
-       <?php echo "<script>setTimeout(\"location.href = './admin/dashboard.php';\",1500);</script>"; ?>
+       <?php echo "<script>setTimeout(\"location.href = 'member_dashboard.php';\",1000);</script>"; ?>
       </p>
     </div>
   </div>
-     <!--   <script>
-       window.location="index.php";
-       </script> -->
+     
        <?php
       
   }
-  else {
-    echo '<script>location.href = "manager_incorrectpass.php" </script>';
+  else {  echo '<script>location.href = "member_incorrectpass.php" </script>'; }
+ }
   ?>
         
-          <?php
-           }
-  
-   }
-
-    ?>
     <article class="header_wrapper">
         <header class="flex">
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
+                    <li><a  class="nav_link" href="index.html">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
                 </ul>
@@ -91,7 +76,7 @@
     </article>
 
   
-     <div class="hero_img_container"><img src="pics/pexels-pixabay-256541.jpg" alt="library"></div>
+     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
 
         <h1 id="school_name">Morbik Fitness</h1>
 
@@ -103,7 +88,7 @@
          <form id="login_form" method="post" >
 
         
-            <input type="text" name="email" id="uname" placeholder="Username" 
+            <input type="text" name="uname" id="uname" placeholder="Username" 
             minlength= "6" autocomplete="false" autofocus required><br>
             <input type="password" name="password" id="password" placeholder="Password" minlength="8"
                     autocomplete="false" required>
@@ -114,7 +99,7 @@
                 <div class="flex">
                     
                                 <button type="submit" name="btn_login" id="submit" >log in</button>
-                                <p id="show_privilege">Manager</p>
+                                <p id="show_privilege">Member</p>
                                 <button id="change_privilege"><a href="previlage.html" >change privlage</a></button>
                 </div>
 

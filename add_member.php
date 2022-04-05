@@ -51,8 +51,41 @@ if(isset($_POST['submit_member'])) {
 
                         $main_pid=$row_two['Id'];
                         
-                        if(($program == "Aerobics" || $program == "Yoga") && $trainer == "no")
-                        { 
+                          //pivate trainer
+               if( $trainer == "yes")
+               { 
+                     $query = "SELECT * FROM program WHERE ProgramId='$main_pid' AND Name='$program' And Plan='$plan';";
+                     if($result_four= $con->query($query)){
+                         while($row_four=$result_four -> fetch_assoc() ){
+                             $pid = $row_four['ID'];
+                           
+                           $query = "SELECT * FROM discount WHERE Name='$package';";
+                            if($result_five = $con->query($query)){ 
+                                while($row_five = $result_five -> fetch_assoc()) {
+
+                                    $packagetemp = $row_five['Id'];
+
+    $query = "INSERT into member_program_junction (Mid,Pid,Start_Time,End_Time,DiscountId) VALUES ('$id','$pid','$starttime','$endtime','$packagetemp');";
+                           
+                                if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
+                                else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
+
+                                }
+                            }
+
+                           
+
+                         }
+                     }else { echo mysqli_error($con); }
+                 
+             
+                 
+               }
+                
+               else if($trainer == "no" )
+                { 
+                      if($program == "Aerobics" || $program == "Yoga" )
+                     {
                             $tempprogram = $program.'-Group';  
                             $programstr = '%'.$program.'%';
 
@@ -73,7 +106,7 @@ if(isset($_POST['submit_member'])) {
 
                                              $packagetemp = $row_five['Id'];
 
-             $query = "INSERT into member_program_junction (Mid,Pid,MainPId,Timeid,DiscountId) VALUES ('$id','$pid','$main_pid','$timeid','$packagetemp');";
+             $query = "INSERT into member_program_junction (Mid,Pid,Timeid,DiscountId) VALUES ('$id','$pid','$timeid','$packagetemp');";
                                     
                                          if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
                                          else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
@@ -87,38 +120,44 @@ if(isset($_POST['submit_member'])) {
                               }else { echo mysqli_error($con); }
                           }
                       }
-                          
-                        }
-                //pivate trainer
-              else if(($program == "Aerobics" || $program == "Yoga") && $trainer == "yes")
-                        { 
-                              $query = "SELECT * FROM program WHERE ProgramId='$main_pid' AND Name='$program' And Plan='$plan';";
-                              if($result_four= $con->query($query)){
-                                  while($row_four=$result_four -> fetch_assoc() ){
-                                      $pid = $row_four['ID'];
-                                    
-                                    $query = "SELECT * FROM discount WHERE Name='$package';";
-                                     if($result_five = $con->query($query)){ 
-                                         while($row_five = $result_five -> fetch_assoc()) {
+                    } else {
+ 
+                        $programstr = '%'.$program.'%';
 
-                                             $packagetemp = $row_five['Id'];
+                 $query = "SELECT * FROM program_time WHERE Class='$schedule' And Timeid LIKE '$programstr' ";
 
-             $query = "INSERT into member_program_junction (Mid,Pid,MainPId,Start_Time,End_Time,DiscountId) VALUES ('$id','$pid','$main_pid','$starttime','$endtime','$packagetemp');";
-                                    
-                                         if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
-                                         else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
+                  if($result_three = $con->query($query)){
+                      while($row_three = $result_three->fetch_assoc()){
+                          $timeid = $row_three['Timeid'];
 
-                                         }
+                          $query = "SELECT * FROM program WHERE ProgramId='$main_pid' AND Name='$program' And Plan='$plan';";
+                          if($result_four= $con->query($query)){
+                              while($row_four=$result_four -> fetch_assoc() ){
+                                  $pid = $row_four['ID'];
+                                
+                                $query = "SELECT * FROM discount WHERE Name='$package';";
+                                 if($result_five = $con->query($query)){ 
+                                     while($row_five = $result_five -> fetch_assoc()) {
+
+                                         $packagetemp = $row_five['Id'];
+
+         $query = "INSERT into member_program_junction (Mid,Pid,Timeid,DiscountId) VALUES ('$id','$pid','$timeid','$packagetemp');";
+                                
+                                     if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
+                                     else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
+
                                      }
+                                 }
 
-                                    
-      
-                                  }
-                              }else { echo mysqli_error($con); }
-                          
-                      
-                          
+                                
+  
+                              }
+                          }else { echo mysqli_error($con); }
+                      }
+                  }
+                    }
                         }
+              
 
 
                      }

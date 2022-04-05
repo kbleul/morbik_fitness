@@ -1,4 +1,6 @@
 
+    <?php session_start();  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
 
     <title>Morbik Fitness</title>
 </head>
-<body>
+<body id="dashboard_body">
 
     <article class="header_wrapper">
         <header class="flex">
@@ -42,36 +44,27 @@
         </section>
     </article>
 
-  
-     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
-
-        <h1 id="school_name">Morbik Fitness</h1>
-
-
-     <section class="form_container">
-         <ul class="privilege_list">
-             <li><button class="privilege_btn"><a href="">admin</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="manager_login.php">manager</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="member_login.php">member</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="student_signin.html">Employee</a><hr></button></li>
-
-         </ul>
-
- 
-     </section>
-
-
-    
-    </main>
-    <script>
+    <article class="main_wrapper">
+        <section class="side_nav-wrapper">
+            <nav>
+                        <li> <a href="dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
+                        </li> 
+                        
+                    
+                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
+                         <li><a href="payments.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
+                        <li class="has-arrow"><a href="new_health_status.php"><i class="fa fa-heart"></i><span class="hide-menu">Trainers</span></a>
+        
+                        
+            </nav>
+        </section>
+        <section class="main_content-wrapper">
+            <main>
+                <p>hello</p>
+            </main>
+        </section>
+    </article>
 
 
-    </script>
-   <footer>
-    <p>All rights reserved</p>
-    <p>Instagram <span class="media">Facebook</span><span class="media">Twitter</span></p>
-</footer>
-   
 </body>
 </html>
-
