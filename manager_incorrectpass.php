@@ -82,7 +82,7 @@
     </article>
 
   
-     <div class="hero_img_container"><img src="pics/pexels-pixabay-256541.jpg" alt="library"></div>
+     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
 
         <h1 id="school_name">Morbik Fitness</h1>
 

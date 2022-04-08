@@ -50,22 +50,13 @@
             
                         <li> <a href="dashboard.php" aria-expanded="false">Dashboard</a></li> 
         
-                        <li  class="submenu_conatiner">
-                            <div id="0" class="drop_down-container"> 
-                                <p>Members</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
-                            </div>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="new_entry.php">Add Member</a></li>
-                                    <li><a href="view_mem.php">Manage Member</a></li>
-                                
-                                </ul>
-                        </li>
-
+                        <li><a href="manage_member.php">Members</a></li>
+                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
+                                   
                         <li><a href="payments.php" aria-expanded="false">Payments</a></li>
 
                         <li class="submenu_conatiner">
-                            <div id="1" class="drop_down-container">
+                            <div id="0" class="drop_down-container">
                                 <p>Employees</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
                             </div>
@@ -76,7 +67,7 @@
                         </li>
 
                         <li class="submenu_conatiner">
-                            <div id="2" class="drop_down-container">
+                            <div id="1" class="drop_down-container">
                             <p>Plan</p>
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>    
                             </div> 
@@ -86,7 +77,7 @@
                             </ul>
                         </li>
                         <li  class="submenu_conatiner">
-                            <div id="3" class="drop_down-container">
+                            <div id="2" class="drop_down-container">
                                  <p>Overview</p>
                                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
                             </div>
@@ -98,7 +89,7 @@
                         </li>
 
                          <li class="submenu_conatiner">
-                          <div id="4" class="drop_down-container">
+                          <div id="3" class="drop_down-container">
                              <p>Exercise Routine</p>
                              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
                           </div>
@@ -142,20 +133,7 @@
         </section>
     </article>
 
-    <script>
-        const expandSubmemnu = (e) => {
-            const element_id = e.target.id;
-            console.log(element_id);
-           $(document.getElementsByClassName("collapse")[element_id]).toggle();
-        }
-
-       let submenu_container = document.getElementsByClassName("submenu_conatiner");
-
-        for(let i = 0; i < submenu_container.length; i++)
-        {
-            submenu_container[i].addEventListener("click", (e) => { expandSubmemnu(e)} )
-        }
-    </script>
+  <script type="text/javascript" src="togglesubmenu.js"></script>
 
 
 </body>

@@ -54,6 +54,8 @@ if(isset($_POST['submit_member'])) {
                           //pivate trainer
                if( $trainer == "yes")
                { 
+    
+
                      $query = "SELECT * FROM program WHERE ProgramId='$main_pid' AND Name='$program' And Plan='$plan';";
                      if($result_four= $con->query($query)){
                          while($row_four=$result_four -> fetch_assoc() ){
@@ -65,7 +67,7 @@ if(isset($_POST['submit_member'])) {
 
                                     $packagetemp = $row_five['Id'];
 
-    $query = "INSERT into member_program_junction (Mid,Pid,Start_Time,End_Time,DiscountId) VALUES ('$id','$pid','$starttime','$endtime','$packagetemp');";
+    $query = "INSERT into member_program_junction (Mid,Pid,Request_pirivate_trainer,Start_Time,End_Time,DiscountId) VALUES ('$id','$pid',1,'$starttime','$endtime','$packagetemp');";
                            
                                 if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
                                 else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
@@ -106,7 +108,7 @@ if(isset($_POST['submit_member'])) {
 
                                              $packagetemp = $row_five['Id'];
 
-             $query = "INSERT into member_program_junction (Mid,Pid,Timeid,DiscountId) VALUES ('$id','$pid','$timeid','$packagetemp');";
+             $query = "INSERT into member_program_junction (Mid,Pid,Request_pirivate_trainer,Timeid,DiscountId) VALUES ('$id','$pid',0,'$timeid','$packagetemp');";
                                     
                                          if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
                                          else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }
@@ -141,7 +143,7 @@ if(isset($_POST['submit_member'])) {
 
                                          $packagetemp = $row_five['Id'];
 
-         $query = "INSERT into member_program_junction (Mid,Pid,Timeid,DiscountId) VALUES ('$id','$pid','$timeid','$packagetemp');";
+         $query = "INSERT into member_program_junction (Mid,Pid,Request_pirivate_trainer,Timeid,DiscountId) VALUES ('$id','$pid',0,'$timeid','$packagetemp');";
                                 
                                      if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
                                      else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }

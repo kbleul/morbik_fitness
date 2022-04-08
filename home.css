@@ -972,6 +972,8 @@ th { color : indigo; }
 .side_nav-wrapper nav li ul li {
     border-bottom :none;
     padding: 0.2 0 .4 0;
+    border-bottom: 1px solid rgb(213, 213, 213);
+
 }
 .side_nav-wrapper nav li ul li:hover {
     border-bottom: 1px solid rgb(175, 175, 175);
@@ -1012,3 +1014,14 @@ th { color : indigo; }
 }
 .boxes_discription p { text-align: center; }
 .boxes_discription .count { font-size: 1.6rem; }
+
+/*--------------manage_member-main--wrapper---------------------*/
+
+.manage_member-main--wrapper {
+    margin-top: 3.2rem;
+}
+
+.manage_member-main--wrapper table {
+    width: 80%;
+    margin-left: 10%;
+}
