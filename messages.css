@@ -1,0 +1,39 @@
+.member_request-ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    text-transform: capitalize;
+  }
+  .member_request-ul:first-of-type {
+    font-weight: bold;
+    font-size: 1.1rem;
+
+  }
+  .member_request-ul li {
+    width: 18%;
+  }
+
+.span_break { margin-left: 5rem; }
+
+.main_content-wrapper h3{
+    margin: 8% 0 5% 0;
+    text-align: center;
+    font-size: 1.6rem;
+    color: cadetblue;
+}
+
+.trainer,
+.submit_assign_btn,
+.hiddenextar_info,
+.pendding_btn { display: none; }
+
+.pendding_btn { 
+  border: none;
+  background-color: inherit;
+  color: red;
+}
+
+.error_p { 
+  display: none;
+  color: red;
+} 

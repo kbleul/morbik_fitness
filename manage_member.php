@@ -1,5 +1,8 @@
 
-    <?php session_start();  ?>
+     <?php session_start(); 
+   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
+   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
