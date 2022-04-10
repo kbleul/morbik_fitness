@@ -3,7 +3,7 @@
     font-size: 2rem;
     margin-top: 3rem;
     margin-bottom: 1rem;
-
+    text-transform: full-width;
 }
 .register_employee-form { 
     display: flex;
@@ -58,7 +58,7 @@
     border: none;
     font-family: cursive;
     border-left: 2px solid currentColor;
-    transition:  1s ease 1s;
+    transition:  1s ease .5s;
 }
 
 .register_employee-form input[type="submit"]:hover,
@@ -66,3 +66,6 @@
     border-left: none;
     border-bottom:  2px solid currentColor;
 }
+
+#job { text-transform: capitalize;}
+#for_trainer { display: none; width: 100%; }
