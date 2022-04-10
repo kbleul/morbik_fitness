@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="employee.css">
+
 
     <script src="jquery-3.6.0.js"></script>
 
@@ -64,7 +66,7 @@
                             </div>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="new_employee.php">New Employee</a></li>
-                                    <li><a href="view_plan.php">Edit Employee Details</a></li>
+                                    <li><a href="view_employee.php">Edit Employee Details</a></li>
                                 </ul>
                         </li>
 
@@ -107,29 +109,32 @@
         </section>
         <section class="main_content-wrapper">
             <main>
+
+            <h2 class="main_title" >Register New Employee</h2>
                
-            <form>
+            <form class="register_employee-form">
                 <div>
 
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" required="required" autocomplete="off"
                         placeholder="xyz@mail.com">
                     <label for="username">User Name</label>
-                    <input type="text" name="username" id="username" required="required">
+                    <input type="text" name="username" id="username">
                     <label for="fname">First Name</label>
                     <input type="text" name="fname" id="fname" required="required">
                     <label for="lname">Last Name</label>
                     <input type="text" name="lname" id="lname" required="required">
                     <label for="phone">Phone Number</label>
                     <input type="tel" name="phone" id="phone" required="required">
-                </div>
-
-                <div class="right-form">
-
                     <label for="age">Date Of Birth</label>
                     <input type="date" name="dob" id="dob" required="required">
+                </div>
+
+                <div>
+
+                   
                     <label for="gender" class="" flex>Gender</label>
-                    <section class="gender_container">
+                    <section class="new_emp-gender--container">
                         <section class="gender_subcontainer">
                             <p>Male</p><input type="radio" value="male" name="gender" id="male">
                         </section>
@@ -137,10 +142,19 @@
                             <p>Female</p><input type="radio" value="female" name="gender" id="female">
                         </section>
                     </section>
-                    <label for="weight">Weight</label>
-                    <input type="number" max="150" min="40" name="weight" id="weight" placeholder="Weight in kg">
-                    <label for="height">Height</label>
-                    <input type="number" max="250" min="130" name="height" id="height" placeholder="Height in meter">
+                    <label for="job">Job Title</label>
+                    <input type="text"  name="job" id="job" required="required">
+                    <label for="salary">Salary</label>
+                    <input type="number"  name="salary" id="salary" required="required" >
+
+                    <label for="program">Program</label>
+                    <select name="program" id="progrma">
+
+                    </select>
+                    <label for="fee">Fee per hour</label>
+                    <input type="number" name="fee" id="fee" >
+
+                    <input type="submit" value="Submit">
 
                 </div>
             </form>

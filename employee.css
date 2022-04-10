@@ -1,0 +1,68 @@
+.main_title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+}
+.register_employee-form { 
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem 2rem;
+}
+
+.register_employee-form div { 
+    width: 48%;
+    box-shadow: 5px 1px 10px #888;
+    padding-bottom: 2rem;
+    margin-left: 2%;
+}
+
+.register_employee-form input,
+.register_employee-form label {
+    display: block;
+}
+
+.register_employee-form div label {
+    font-size: 1.22rem;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+
+.register_employee-form div input, .register_employee-form div select {
+    font-size: 1rem;
+    width: 80%;
+    padding: .7rem;
+    margin-left: 10%;
+}
+
+.register_employee-form .new_emp-gender--container {
+    display: flex;
+    justify-content: start;
+    font-size: 1.1rem;
+    margin-left: 20%;
+}
+
+.register_employee-form .new_emp-gender--container input {  
+  width: .8rem;
+  margin-left: 1.5rem;
+  margin-right: 2rem;
+}
+
+.register_employee-form input[type="submit"] {
+    width: 30%;
+    margin: 10% auto;
+    padding: .5rem;
+    background-color: inherit;
+    border: none;
+    font-family: cursive;
+    border-left: 2px solid currentColor;
+    transition:  1s ease 1s;
+}
+
+.register_employee-form input[type="submit"]:hover,
+.register_employee-form input[type="submit"]:focus  {
+    border-left: none;
+    border-bottom:  2px solid currentColor;
+}
