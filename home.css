@@ -154,7 +154,8 @@ h1{ margin: 0;}
     left: 39%;
     background-color: rgba(0, 0, 0,.5);
 }
-.form_container form input{
+.form_container form input,
+#firsttime_checker input {
     width: 100%;
     background-color: rgba(0, 0, 0,.5);
     color: white;
@@ -330,7 +331,8 @@ h1{ margin: 0;}
     text-decoration: none;
 }
 
-#submit {
+#submit,
+#firsttime_checker #btn_setup{
     margin-top: 3rem;
     width: 80%;
     justify-self: center;
@@ -347,9 +349,12 @@ h1{ margin: 0;}
 }
 
 #submit:hover,
-#submit:focus {  text-decoration: none; opacity: 1;}
+#submit:focus,
+#firsttime_checker #btn_setup:hover,
+#firsttime_checker #btn_setup:focus {  text-decoration: none; opacity: 1;}
 
-#change_privilege {
+#change_privilege,
+#change_form {
     border:none;
     background-color: inherit;
     color: white;

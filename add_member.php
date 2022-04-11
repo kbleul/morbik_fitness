@@ -19,7 +19,7 @@ if(isset($_POST['submit_member'])) {
     $trainer = $_POST['trainer'];
 
 
-    $schedule_temp = explode("(",$_POST['schedule'],2);
+    $schedule_temp = explode("(",$_POST['schedule'],2)
     $schedule = $schedule_temp[0];
 
     $package_temp = explode("(" , $_POST['package'], 2);

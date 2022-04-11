@@ -69,3 +69,37 @@
 
 #job { text-transform: capitalize;}
 #for_trainer { display: none; width: 100%; }
+
+#isprivate_label { margin-top: 10%; }
+
+#isprivate,
+#isprivate_label,
+#salary,
+#salary_label,
+#firsttime_checker,
+#hiddenform { display: none; }
+
+#set_up-notice,
+#set_up-notice--notfound { 
+    display: none;
+    color: red;
+    font-size:.8rem;
+}
+
+#change_form {
+    margin-top: 30%;
+    color: inherit;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+}
+
+
+#firsttime_checker #btn_setup { margin-left: 10%; }
+
+.setup_new-form input {
+    margin-top: 2rem;
+}
+ #set_up-notice { 
+    margin-top: 2rem;
+    font-size: .9rem;
+}

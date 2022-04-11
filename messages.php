@@ -3,13 +3,16 @@
    
    <?php session_start();  
    
+   //if username and email are not set for this session then user has not logged in to the system
    if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
     
 
     include('database_connect.php');
    
-   
+   //when assign button is clicked add
+     /* first insert data into trainer request table inthe database using values member id,employee id
+     time and status */
    if(isset($_POST['submit_assign'])) {
        $mebid = $_POST['mid'];
        $tid = $_POST['eid'];
@@ -19,6 +22,7 @@
    
        if( mysqli_query($con,$query))
        {
+           //second updata the member_program_junction to 0 because we have assigned the private trainer to user aleady
            $query = "UPDATE member_program_junction SET Request_pirivate_trainer = 0 WHERE Mid='$mebid';";
             mysqli_query($con,$query);
     
@@ -147,6 +151,8 @@
    
     include('database_connect.php');
    
+    //get all the member that requested a private trainer from main_members_table
+       //if Resquest_Private = 1 then that means the member has requested a private trainer
     $counter = 0;
        $query = "SELECT * FROM main_members_table where Resquest_Private = 1";
    
@@ -162,7 +168,9 @@
        $program_two = explode("-",$program,2);
                
    
-               $query = "SELECT Start_Time, End_Time FROM member_program_junction where Mid = '$id'";
+       /*After getting all the basic info about each member search for their requested time  using their id from the
+          member_program_junction table */
+                      $query = "SELECT Start_Time, End_Time FROM member_program_junction where Mid = '$id'";
                if($result_two= $con->query($query)){
                    while($row_two= $result_two -> fetch_assoc() ){
                        $starttime = $row_two['Start_Time'];
@@ -170,7 +178,6 @@
                        $class = "member_request-ul";
                        $class_span = 'span_break';
    
-                $query = "SELECT * from `private_trainer_info` where Type='$program_two[0]'";
    
                 $counter = $counter + 1;
    
@@ -187,6 +194,10 @@
                 <select id='s$counter' class='trainer' name='trainer_select'>$program_two";
    
    
+                //get all the available trainer so the manager can choose one for that specific program
+                //program can be yoga, boxing ...
+                $query = "SELECT * from `private_trainer_info` where Type='$program_two[0]'";
+
                 if($result_three = $con->query($query)){
                    while($row_three = $result_three -> fetch_assoc() ){
                        $trainerid = $row_three['ID'];

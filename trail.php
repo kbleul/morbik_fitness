@@ -17,7 +17,7 @@
 
     <title>Morbik Fitness</title>
 </head>
-<body>
+<body id="dashboard_body">
 
     <article class="header_wrapper">
         <header class="flex">
@@ -42,36 +42,46 @@
         </section>
     </article>
 
-  
-     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
+   <main>
+       <?php
+$request = new HttpRequest();
+$request->setUrl('https://edamam-recipe-search.p.rapidapi.com/search');
+$request->setMethod(HTTP_METH_GET);
 
-        <h1 id="school_name">Morbik Fitness</h1>
+$request->setQueryData([
+	'q' => 'chicken'
+]);
 
+$request->setHeaders([
+	'X-RapidAPI-Host' => 'edamam-recipe-search.p.rapidapi.com',
+	'X-RapidAPI-Key' => '6f086cff7fmshc85ad17d299aa15p12cc18jsn020d508320bc'
+]);
 
-     <section class="form_container">
-         <ul class="privilege_list">
-             <li><button class="privilege_btn"><a href="">admin</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="manager_login.php">manager</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="member_login.php">member</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="employee_login.php">Employee</a><hr></button></li>
+try {
+	$response = $request->send();
 
-         </ul>
+	echo $response->getBody();
+} catch (HttpException $ex) {
+	echo $ex;
+       ?>
+</main>
 
- 
-     </section>
+<script>
+    const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com',
+		'X-RapidAPI-Key': '6f086cff7fmshc85ad17d299aa15p12cc18jsn020d508320bc'
+	}
+};
 
-
-    
-    </main>
-    <script>
-
-
+const a = () = {
+fetch('https://edamam-recipe-search.p.rapidapi.com/search?q=chicken', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+} 
+    a();
     </script>
-   <footer>
-    <p>All rights reserved</p>
-    <p>Instagram <span class="media">Facebook</span><span class="media">Twitter</span></p>
-</footer>
-   
 </body>
 </html>
-
