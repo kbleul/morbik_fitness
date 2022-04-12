@@ -103,3 +103,61 @@
     margin-top: 2rem;
     font-size: .9rem;
 }
+
+/*-------------manage-employee----------------*/
+.employee_type-container {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}
+.employee_type_btn {
+    margin-left: 5%;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: inherit;
+    color: crimson;
+    border-radius: 10px;
+    padding: .6rem 1rem;
+    border: none;
+
+}
+
+.active {  border: 1px solid; }
+
+.employee_type_btn:hover,
+.employee_type_btn:focus {
+    opacity: .6;
+    border: 1px solid;
+
+}
+.employee_type_btn .discription { 
+    display: block;
+    font-size: .7rem; 
+}
+
+.manage_employee-ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    text-transform: capitalize;
+}
+.title_ul{ 
+     font-weight: bold;
+     font-size: 1.1rem;
+}
+.manage_employee-ul li{
+        width: 9%;
+        overflow-x: clip;
+        text-align: center;
+}
+
+#list .manage_employee-ul:hover {
+    border-bottom: 1px solid gray;
+}
+.fetch_error-p {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: cursive;
+    color: red;
+}
