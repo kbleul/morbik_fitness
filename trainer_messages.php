@@ -17,12 +17,20 @@
 
        if($result_check = $con->query($query)){
         while($row_check = $result_check -> fetch_assoc() ){
-            if($time == $row_check['Start_Time']."-".$$row_check['End_Time'])
+            $timetwo = $row_check['Start_Time']." - " .$row_check['End_Time'];
+
+            echo "<script>console.log('---'+$time)</script>";
+            echo "<script>console.log('---'+$timetwo)</script>";
+            echo "<script>console.log($timetwo === $time)</script>";
+            
+
+            if($time == $row_check['Start_Time']." - ".$row_check['End_Time'])
                     {  $issame_time = true; break; }
         }
       }
 
-    if(issame_time == true)
+      
+    if($issame_time == true)
     {  
         $query = "UPDATE trainer_request SET Status = 'Conflicting' WHERE Mid = '$memid' AND Eid = '$trainerid'";
         if(mysqli_query($con,$query))
@@ -30,7 +38,7 @@
             echo "<script>console.log('done'+$memid)</script>";
         } else  {  echo mysqli_error($con); }
     }
-      else {
+     else {
 
        $query = "UPDATE trainer_request SET Status = 'Accepted' WHERE Mid = '$memid' AND Eid = '$trainerid' ";
 
@@ -48,6 +56,8 @@
     
         echo "<script>console.log('accept'+$memid)</script>"; 
     }
+
+    
    }
 
 
@@ -62,6 +72,7 @@
     { echo mysqli_error($con);  }
 
      echo "<script>console.log('decline'+$memid)</script>"; }
+     
   
 ?>
 
@@ -79,6 +90,8 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="employee.css">
+
 
 
     <script src="jquery-3.6.0.js"></script>
@@ -124,14 +137,12 @@
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <main>
+          
+            <main id="front_page">
             <h3>REQUESTS FOR YOU</h3>
                 
         <ul class="member_request-ul">
-            <li></li>
-            <li>Gender</li>
-            <li>Requested Time</li>
-            <li></li>
+          
         </ul>
             
 
@@ -141,7 +152,7 @@
     include('database_connect.php');
 
                 $id = $_SESSION['id'];
-                $conter = 0;
+                $counter = 0;
                 $query = "SELECT * from trainer_request WHERE Eid = '$id' AND Status = 'Pending' OR Status = 'Conflicting'";
 
                 if($result= $con->query($query)){
@@ -156,24 +167,31 @@
                                 $name = $row_two['FName']. " ".$row_two['LName'];
                                 $gender = $row_two['Gender'];
                                 $memberid = $row_two['ID'];
-                              /*  $ulclass = "ul".$counter;
-                                $memberinput = "input".$counter;  */
+                                $ulclass = "ul".$counter;
+                                $memberinput = "input".$counter;  
+                                $trainerinput = "inputtwo".$counter;  
+                                $timeinput = "inputthree".$counter;  
+                                $conflictbtn = "conflict".$counter;
                                 $formid = "form".$counter;
                                  
                     
-                            $output = "<ul  class='member_request-ul'><li><span class='requestedby_span'>Requested by</span>  : $name</li>
-                            <li>$gender</li>
-                            <form method='post' id='$formid'>
-                            <input type='hidden' name='memberid' value='$memberid' />
-                            <input type='hidden'  name='trainerid' value='$id' />
-                            <input type='hidden'  name='time' value='$time' />
+             $output = "<ul  class='trainer_member_request-ul'><li><span class='requestedby_span'>Requested by</span>  : $name</li>";
+
+                            if($status != "Conflicting") {
+                            $output = $output . "<li>$gender</li> <form method='post' id='$formid'>";
+                            }
+                           
+                            $output = $output ."<input type='hidden' id='$memberinput' name='memberid' value='$memberid' />
+                            <input type='hidden'  name='trainerid' id='$trainerinput' value='$id' />
+                            <input type='hidden'  name='time' id='$timeinput' value='$time' />
                             <li>$time</li>";
 
                             if($status == "Conflicting") {
-                                $output .= "<li>Conflcting Schedules <button>View Here</button></li></ul>";
+                                $output = $output . "<li id='$conflictbtn' class='conflicting'>* Conflcting Schedules 
+                                     <button onclick='showConflicting($counter)'>View Here</button></li></ul>";
                             }
                             else {
-                                $output .= "<li class='accept_decline-list'>
+                                $output = $output . "<li class='accept_decline-list'>
                                  <button type='submit' name='submitaccept' class='accept_btn'>Accept</button>
                                  <button type='submit' name='submitdecline' class='decline_btn'>Declines</button>
                                 </li>
@@ -183,12 +201,17 @@
 
                             echo $output;
                             
-                            } else { echo mysqli_error($con);}
-                   $counter .= 1;
-                    }
-                } else { echo mysqli_error($con);}
+                            } 
+                   $counter = $counter + 1;
+                    }else { echo mysqli_error($con);}
+                } 
+            } else { echo mysqli_error($con);}
             ?>
         </main>
+
+        <article id="hidden_page">
+
+        </article>
         </section>
 
     </article>
@@ -197,11 +220,34 @@
 
   <script>
 
-      const acceptRequest = counter => {
-          $formid = "#form" + counter;
-        $(formid).submit();
+      const showConflicting = counter => {
+        const memberinput = "#input"+counter;  
+        const trainerinput = "#inputtwo"+counter;  
+        const timeinput = "#inputthree"+counter; 
+        const conflictbtn = "conflict"+counter;
 
+
+        console.log($(timeinput).val().split(" - ")[0]);
+        const xmlhttp = new XMLHttpRequest();
+                    
+        xmlhttp.onload = function() {  
+            let firsttime_response = this.responseText; 
+              $(conflictbtn).hide();
+              $("#hidden_page").html("<p>"+firsttime_response + "</p><button id='hide_hidden-page'>x</button>");
+            
+              document.getElementById("hide_hidden-page").addEventListener("click", () => {  
+                  $("#hidden_page").html(" ");
+                  $(conflictbtn).show();
+                })
+
+        }
+
+                        xmlhttp.open("GET", "conflicting.php?q=" +  $(timeinput).val().split(" - ")[0]);
+                        xmlhttp.send();
+                        
       }
+
+    
   </script>
 
 </body>

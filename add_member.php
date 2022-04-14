@@ -55,19 +55,22 @@ if(isset($_POST['submit_member'])) {
                if( $trainer == "yes")
                { 
     
-
+                        echo "luntics";
                      $query = "SELECT * FROM program WHERE ProgramId='$main_pid' AND Name='$program' And Plan='$plan';";
                      if($result_four= $con->query($query)){
+                        echo "luntics2";
                          while($row_four=$result_four -> fetch_assoc() ){
                              $pid = $row_four['ID'];
                            
                            $query = "SELECT * FROM discount WHERE Name='$package';";
                             if($result_five = $con->query($query)){ 
+                        echo "luntics3";
                                 while($row_five = $result_five -> fetch_assoc()) {
 
                                     $packagetemp = $row_five['Id'];
 
-    $query = "INSERT into member_program_junction (Mid,Pid,Request_pirivate_trainer,Start_Time,End_Time,DiscountId) VALUES ('$id','$pid',1,'$starttime','$endtime','$packagetemp');";
+    $query = "INSERT into member_program_junction (Mid,Pid,Request_pirivate_trainer,Start_Time,End_Time,DiscountId) VALUES 
+            ('$id','$pid',1,'$starttime','$endtime','$packagetemp');";
                            
                                 if( mysqli_query($con,$query)) {echo '<script>alert("Sign in Successfull")</script>'; } 
                                 else { echo "Error. Sign in Unscuccessfull".mysqli_error($con); }

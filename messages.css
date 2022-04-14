@@ -1,4 +1,5 @@
-.member_request-ul {
+.member_request-ul,
+.trainer_member_request-ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
@@ -71,4 +72,24 @@
   color: white;
   background-color: red;
   text-decoration: underline;
+}
+
+.conflicting { color : red; }
+.conflicting button { 
+  color: gray;
+  font-size: .9rem;
+  background-color: inherit;
+  border: none;
+}
+.conflicting button:hover { text-decoration: underline; }
+
+.trainer_member_request-ul li {
+  width: 25%;
+  font-size: 1.1rem; 
+}
+
+#hidden_page {
+  text-align: center;
+  font-size: smaller;
+  font-family: cursive;
 }
