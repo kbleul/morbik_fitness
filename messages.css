@@ -11,6 +11,7 @@
   }
   .member_request-ul li {
     width: 18%;
+    font-size: 1.1rem;
   }
 
 .span_break { margin-left: 5rem; }
@@ -37,3 +38,37 @@
   display: none;
   color: red;
 } 
+
+
+/*----------------trainer messages----------------*/
+.requestedby_span { 
+  font-size: 1rem; 
+  text-decoration: underline;
+}
+
+.accept_decline-list button{ 
+  background-color: inherit;
+  border: none;
+  font-size: 1rem;
+  border: 1px solid aliceblue;
+  margin-right: 10%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+.accept_btn { color: green; }
+.decline_btn { 
+  color: red;
+
+}
+.accept_btn:hover { 
+  color: white;
+  background-color:green;
+  text-decoration: underline;
+}
+.decline_btn:hover { 
+  color: white;
+  background-color: red;
+  text-decoration: underline;
+}

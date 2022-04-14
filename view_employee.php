@@ -215,9 +215,10 @@
                        }
                     }
 
-                    $fun = "$id,$fullname,$gender,$dob,$registration_data,$job,$email,$phone,$type,$salary";
-   
-                echo "<ul class=' manage_employee-ul' onClick='editInfo($fun)'>
+                    $funarr = array( 0 => $id, 1 => $fullname, 2 => $gender,3 => $dob,4 => $registration_data,
+                    5 => $job,6 => $email,7 => $phone,8 => $type,9 => $salary);
+                    
+                echo "<ul class='manage_employee-ul'>
                 <li>$fullname</li>
                 <li>$gender</li>
                 <li>$dob</li>
@@ -227,7 +228,15 @@
                 <li>$phone</li>
                 <li>$type_program</li>
                 <li>$type</li>
-                <li>$salary</li></ul>";
+                <li>$salary</li>
+                <form action='edit_employee.php' method='post'>
+                <input type='hidden' name='edit_item[]' value=$fullname >
+                <input type='hidden' name='edit_item[]' value=$gender >
+                <input type='hidden' name='edit_item[]' value=$registration_data >
+                <input type='hidden' name='edit_item[]' value=$job >
+                <input type='hidden' name='edit_item[]' value=$dob >
+                </form>         
+                </ul>";
                    } 
    
                } else { echo mysqli_error($con);}
@@ -287,9 +296,11 @@
                         xmlhttp.send();
     }
 
-    const editInfo = (id) => { 
-        console.log(id)
+    const editInfo = (arr) => { 
+        console.log(arr)
     }
+
+   
      </script>
    
    </body>

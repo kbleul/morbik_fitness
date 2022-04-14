@@ -37,7 +37,7 @@
       <p>Login Successfully</p>
       <p>
        <?php
-       if($_SESSION["Job"] == "trainer")
+       if($_SESSION["Job"] == "trainer" || $_SESSION["Job"] == "Trainer")
        { echo "<script>setTimeout(\"location.href = 'trainer.php';\",1000);</script>"; }
        
         else if($_SESSION["Job"] == "reception")
