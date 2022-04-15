@@ -47,7 +47,8 @@
   text-decoration: underline;
 }
 
-.accept_decline-list button{ 
+.accept_decline-list button,
+.conflicting_decline-btn{ 
   background-color: inherit;
   border: none;
   font-size: 1rem;
@@ -59,7 +60,8 @@
 
 
 .accept_btn { color: green; }
-.decline_btn { 
+.decline_btn,
+.conflicting_decline-btn { 
   color: red;
 
 }
@@ -93,3 +95,5 @@
   font-size: smaller;
   font-family: cursive;
 }
+
+.conflicting_decline-btn { display: none;}

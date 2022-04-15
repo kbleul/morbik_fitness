@@ -71,7 +71,8 @@
     if(!mysqli_query($con,$query))
     { echo mysqli_error($con);  }
 
-     echo "<script>console.log('decline'+$memid)</script>"; }
+     echo "<script>console.log('decline'+$memid)</script>"; 
+    }
      
   
 ?>
@@ -167,15 +168,16 @@
                                 $name = $row_two['FName']. " ".$row_two['LName'];
                                 $gender = $row_two['Gender'];
                                 $memberid = $row_two['ID'];
-                                $ulclass = "ul".$counter;
+                                $ulid = "ul".$counter;
                                 $memberinput = "input".$counter;  
                                 $trainerinput = "inputtwo".$counter;  
                                 $timeinput = "inputthree".$counter;  
-                                $conflictbtn = "conflict".$counter;
+                                $conflictbview_btn = "conflict".$counter;
+                                $conflictbdecline_btn = "conflictbtn".$counter;
                                 $formid = "form".$counter;
                                  
                     
-             $output = "<ul  class='trainer_member_request-ul'><li><span class='requestedby_span'>Requested by</span>  : $name</li>";
+             $output = "<ul id='$ulid' class='trainer_member_request-ul'><li><span class='requestedby_span'>Requested by</span>  : $name</li>";
 
                             if($status != "Conflicting") {
                             $output = $output . "<li>$gender</li> <form method='post' id='$formid'>";
@@ -187,8 +189,11 @@
                             <li>$time</li>";
 
                             if($status == "Conflicting") {
-                                $output = $output . "<li id='$conflictbtn' class='conflicting'>* Conflcting Schedules 
-                                     <button onclick='showConflicting($counter)'>View Here</button></li></ul>";
+                                $output = $output . "<li id='$conflictbview_btn' class='conflicting'>* Conflcting Schedules Detected:
+                                     <button onclick='showConflicting($counter)'>View Here</button></li>
+                                     <button id='$conflictbdecline_btn' class='conflicting_decline-btn' onclick='rejectConflicting($counter)'>Decline</button>
+                                     </ul>
+                                     <article id='hidden_page'></article>";
                             }
                             else {
                                 $output = $output . "<li class='accept_decline-list'>
@@ -209,9 +214,7 @@
             ?>
         </main>
 
-        <article id="hidden_page">
-
-        </article>
+      
         </section>
 
     </article>
@@ -220,24 +223,44 @@
 
   <script>
 
+      const rejectConflicting = counter => {
+        const memberinput = "#input"+counter;   
+        const ulid = "#ul"+counter;
+
+        const xmlhttp = new XMLHttpRequest();
+                    
+        xmlhttp.onload = function() {  
+            let firsttime_response = this.responseText;  
+             console.log(firsttime_response);
+                $(ulid).remove();
+                $("#hidden_page").remove();
+        }
+
+                        xmlhttp.open("GET", "conflicting.php?r=" +  $(memberinput).val());
+                        xmlhttp.send();
+      }
+
       const showConflicting = counter => {
         const memberinput = "#input"+counter;  
         const trainerinput = "#inputtwo"+counter;  
         const timeinput = "#inputthree"+counter; 
-        const conflictbtn = "conflict"+counter;
+        const conflictbtn = "#conflict"+counter;
+        const conflictbtn2 = "#conflictbtn"+counter;
 
 
-        console.log($(timeinput).val().split(" - ")[0]);
+        $(conflictbtn).hide();
+        $(conflictbtn2).show();
+
         const xmlhttp = new XMLHttpRequest();
                     
         xmlhttp.onload = function() {  
             let firsttime_response = this.responseText; 
-              $(conflictbtn).hide();
               $("#hidden_page").html("<p>"+firsttime_response + "</p><button id='hide_hidden-page'>x</button>");
             
               document.getElementById("hide_hidden-page").addEventListener("click", () => {  
                   $("#hidden_page").html(" ");
                   $(conflictbtn).show();
+                  $(conflictbtn2).hide();
                 })
 
         }

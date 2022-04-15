@@ -1,10 +1,14 @@
 <?php
     include('database_connect.php');
+
     session_start();
-
-    $starttime = $_REQUEST["q"];
-
     $id = $_SESSION["id"];
+
+
+    if(isset($_REQUEST["q"]))
+    {  
+
+        $starttime = $_REQUEST["q"];
 
   $query = "SELECT * FROM member_program_junction WHERE Private_Trainer_Id = '$id' AND Start_Time = '$starttime'";
 
@@ -26,9 +30,22 @@
     }
 } else { echo mysqli_error($con);}
 
-  
+    }
 
+    else if(isset($_REQUEST["r"]))
+    {  
+ 
+         $memid = $_REQUEST["r"];
 
+         $query = "UPDATE trainer_request SET Status = 'Rejected' WHERE Mid = '$memid' AND Eid = '$id' ";
+     
+         if(mysqli_query($con,$query))
+         { echo "rejected success".$id." ".$memid;  }
 
-
+         else { 
+            echo mysqli_error($con);  
+            echo "<script>console.log('decline'+$memid)</script>"; 
+         }
+    }
+    
 ?>

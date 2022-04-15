@@ -47,7 +47,9 @@
        <script src="jquery-3.6.0.js"></script>
        <script src="index.js"></script>
        <link rel="stylesheet" href="messages.css">
-   
+       <link rel="stylesheet" href="employee.css">
+
+       
    
        <title>Morbik Fitness</title>
    </head>
@@ -135,8 +137,14 @@
            </section>
            <section class="main_content-wrapper">
                <main>
-                 <h3>PRIVATE TRAINER REQUESTS</h3>
+
+               <div class="topnav">
+                    <button id="requests" onClick='changeMainContent("requests")'>Requests</button>
+                    <button id="rejected" onClick='changeMainContent("rejected")'>Declined</button>
+               </div>
+                 <h3 id="title">PRIVATE TRAINER REQUESTS</h3>
    
+            <section id="content_wrapper">
                  <ul class="member_request-ul">
                      <li>Full Name</li>
                      <li>gender</li>
@@ -226,7 +234,10 @@
            }
    
        } else { echo mysqli_error($con);}
+
                     ?>
+
+    </section>
                  
                </main>
            </section>
@@ -234,6 +245,38 @@
      <script type="text/javascript" src="togglesubmenu.js"></script>
    
      <script>
+
+         const changeMainContent = type => {
+
+            if(type === 'rejected')
+            {
+                const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                         console.log(firsttime_response);
+                            $("#content_wrapper").html(firsttime_response);
+                            $("#title").html("REJECTED PRIVATE TRAINER REQUESTS");
+                    }
+            
+                                    xmlhttp.open("GET", "fetch_managercontents.php?r=" + "rejected");
+                                    xmlhttp.send();
+            }
+            else {
+                const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                         console.log(firsttime_response);
+                         $("#content_wrapper").html(firsttime_response);
+                            $("#title").html("PRIVATE TRAINER REQUESTS");
+                    }
+            
+                                    xmlhttp.open("GET", "fetch_managercontents.php?r=" + "requests");
+                                    xmlhttp.send();
+            }
+         }
+
        let counter = 0;
        for(let element of document.getElementsByClassName("trainer")) { 
            
