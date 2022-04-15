@@ -2,17 +2,16 @@
 session_start();
 include 'database_connect.php';
 
-        $type = $_REQUEST["r"];
-
+  $type = $_REQUEST['r'];
    
-         if($type == "rejected")
-         { 
+
+    if($type == 'rejected') { 
+
              $counter = 0;
             $output = "<ul class='member_request-ul'><li>Message</li>
             <li>Program</li>
             <li>Requested Time</li>
             </ul>";
-        
              $query = "SELECT * FROM trainer_request WHERE Status = 'Rejected'";
              
              if($result= $con->query($query))
@@ -32,35 +31,41 @@ include 'database_connect.php';
                     if($result_three= $con->query($query))
                  { while($row_three = $result_three -> fetch_assoc() ){
                     $trainername = $row_three['FName']." ".$row_three['LName'];
+                    $ulid = "ul".$counter;
 
-            $output = $output. "<ul class='member_request-ul'><li>$trainername rejected $name</li><li>$program</li><li>$time</li>
-            <select id='s$counter' name='trainer_select'>";
+            $output = $output. "<ul id='$ulid' class='member_request-ul'><li>$trainername rejected $name</li><li>$program</li><li>$time</li>
+            ";
           
-            $query = "SELECT * from `private_trainer_info` where Type='$program' And ID <>'$trainerid' AND ID<>7";
+            $query = "SELECT * from `private_trainer_info` where Type='$program' And ID <>'$trainerid'";
 
             if($result_four= $con->query($query))
-            {
-                if(mysqli_num_rows($result_four) == 0) {  $output = $output . "<option class='traineroption' value='none'>None</option>"; }
+            {  $sendnotice = "notice".$counter;
+                if(mysqli_num_rows($result_four) == 0) 
+                {  $output = $output . "<p id='error$counter' class=''>* No available trainers.</p>
+                    <button id='sendnotice' onClick='sendNotice($memid)'>Send Notice</button>"; }
                 
+               else {
+                   $output = $output . "<select id='s$counter' name='trainer_select'>";
                 while($row_four = $result_four -> fetch_assoc() ){
-                $output = $output . "<li>$row_four</li>";
                 $tempname = $row_four['FName']." ".$row_four['LName'];
                $output = $output . "<option class='traineroption' value=$tempname>$tempname</option>";
-            } 
+            } }
         } else { echo mysqli_error($con);}
 
          $output = $output . "</select></ul>";
+
+                 }
+                } else { echo mysqli_error($con);}
+                 }
+                } else { echo mysqli_error($con);}
+            $counter = $counter + 1;
+            } 
+
             echo $output;
 
-                 }
-                } else { echo mysqli_error($con);}
-                 }
-                } else { echo mysqli_error($con);}
-                 
-            }
          } else { echo mysqli_error($con);}
 
-        }  else { 
+        }  else if($type == 'requests'){ 
 
             $output = ' <ul class="member_request-ul">
             <li>Full Name</li>
@@ -86,8 +91,7 @@ include 'database_connect.php';
             $program_two = explode("-",$program,2);
                     
         
-            /*After getting all the basic info about each member search for their requested time  using their id from the
-               member_program_junction table */
+       
                            $query = "SELECT Start_Time, End_Time FROM member_program_junction where Mid = '$id'";
                     if($result_two= $con->query($query)){
                         while($row_two= $result_two -> fetch_assoc() ){
@@ -147,5 +151,24 @@ include 'database_connect.php';
      
                          
         }
+
+      
+
+    else {
+        $memid = $_REQUEST["s"];
+
+        $query = "INSERT INTO member_notice (Mid,Message) VALUES ('$memid','Sorry, 
+        We dont have a private trainer available currently. We will notify you as soon as we hire new employees.')";
+
+       if( mysqli_query($con,$query))
+       { 
+         $query = "DELETE FROM trainer_request WHERE Mid = '$memid'";   
+       if( mysqli_query($con,$query))
+               echo "Notice Sent";
+       }
+       else { echo mysqli_error($con); }
+    }
+
+    
 
 ?>

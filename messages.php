@@ -314,6 +314,19 @@
    
        }
    
+       const sendNotice = memid => {
+        const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                         console.log(firsttime_response);
+                         if(firsttime_response === "Notice Sent")
+                         location.reload();
+                    }
+            
+                                    xmlhttp.open("GET", "fetch_managercontents.php?s=" + memid);
+                                    xmlhttp.send();
+        }
      </script>
    
    </body>
