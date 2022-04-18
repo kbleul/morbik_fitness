@@ -113,7 +113,7 @@
             <input type="password" name="password" id="password" placeholder="Password" minlength="8"
                     autocomplete="false" required>
              <div class="info">
-               <p id="forget_password"><a href="director_reset_password_form.html">forget password ?</a></p>
+               <p id="forget_password"><a href="employee_reset_password_form.php">forget password ?</a></p>
             </div>
 
                 <div class="flex">
