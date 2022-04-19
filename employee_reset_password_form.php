@@ -148,13 +148,25 @@ const verifyCode = (email) => {
                         console.log(firsttime_response);
                         $("#loading_two").hide();
 
-                         if(firsttime_response === "Match")
+                         if(firsttime_response.includes( "Match"))
                          { 
-    let newhtml = "<input type='password' name='new_password' id='new_password' placeholder='Enter new password' >";
-     newhtml +=  "<input type='password' name='conform_new_password' id='conform_new_password' placeholder='Confirm Password' >";
-     newhtml += "<input type='submit' name='submit_newpassword' id='submit_newpassword' value='Submit' >";
+                    const eid = firsttime_response.split("-")[1] 
+    let newhtml = "<form method='POST' action='passwordreset.php' ><input type='password' name='new_password' id='new_password' required='required' placeholder='Enter new password' >";
+     newhtml +=  "<input type='password' name='conform_new_password' id='conform_new_password' placeholder='Confirm Password' required='required' >";
+     newhtml +=  `<input type='hidden' name='eid' id='eid' value=${eid} >`;
+     newhtml += `<p id="passnotmatch">*Passwords don't match.</p>`;
+     newhtml += "<input type='submit' name='submit_newpassword' id='submit_newpassword' value='Submit' ></form>";
 
                                 $("#recovery_subcontainer").html(newhtml);
+                                $("#passnotmatch").hide();
+
+            document.getElementById("conform_new_password").addEventListener("blur", () => { 
+                if($("#conform_new_password").val() !== $("#new_password").val())
+                             {  
+                                 $("#conform_new_password").val(''); 
+                                 $("#passnotmatch").show();
+                            }
+            })
                          }
                          else if(firsttime_response === "Not matched")
                          { 

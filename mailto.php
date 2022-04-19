@@ -21,7 +21,7 @@ include 'database_connect.php';
             $query = "DELETE FROM recovery_table where Eid = $memid";
             
               if(mysqli_query($con,$query))
-                      {  echo "Match"; }
+                      {  echo "Match-".$memid; }
                       else { echo mysqli_error($con); }  
                      }
                      else { echo "Not matched"; }

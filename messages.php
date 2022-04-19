@@ -138,8 +138,8 @@
            <section class="main_content-wrapper">
                <main>
 
-               <div class="topnav">
-                    <button id="requests" onClick='changeMainContent("requests")'>Requests</button>
+               <div id="topnav">
+                    <button id="requests" class="active" onClick='changeMainContent("requests")'>Requests</button>
                     <button id="rejected" onClick='changeMainContent("rejected")'>Declined</button>
                </div>
                  <h3 id="title">PRIVATE TRAINER REQUESTS</h3>
@@ -249,7 +249,8 @@
          const changeMainContent = type => {
 
             if(type === 'rejected')
-            {
+            {  $("#rejected").addClass('active');
+                $("#requests").removeClass('active');
                 const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
@@ -263,6 +264,8 @@
                                     xmlhttp.send();
             }
             else {
+                $("#rejected").removeClass('active');
+                $("#requests").addClass('active');
                 const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  

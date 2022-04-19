@@ -136,7 +136,7 @@
                    </nav>
            </section>
            <section class="main_content-wrapper">
-               <main>
+               <main id="main_content-wrapper">
                  <h2 class="main_title">Employees List</h2>
    
                  <div class="employee_type-container">
@@ -215,10 +215,9 @@
                        }
                     }
 
-                    $funarr = array( 0 => $id, 1 => $fullname, 2 => $gender,3 => $dob,4 => $registration_data,
-                    5 => $job,6 => $email,7 => $phone,8 => $type,9 => $salary);
+                   
                     
-                echo "<ul class='manage_employee-ul'>
+                echo "<ul class='manage_employee-ul' id='$id' onclick='viewEmployee($id)'>
                 <li>$fullname</li>
                 <li>$gender</li>
                 <li>$dob</li>
@@ -298,6 +297,21 @@
 
     const editInfo = (arr) => { 
         console.log(arr)
+    }
+
+    const viewEmployee = (id) => {
+
+        const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                         console.log(firsttime_response);
+                         $("#main_content-wrapper").html(' <h2 class="main_title">Single Employee</h2>'+firsttime_response);
+                            $("#title").html("PRIVATE TRAINER REQUESTS");
+                    }
+            
+                                    xmlhttp.open("GET", "fetch_singleemployee.php?r=" + id);
+                                    xmlhttp.send();
     }
 
    
