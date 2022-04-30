@@ -20,7 +20,7 @@ include 'database_connect.php';
 
                       $to = "vegomag342@hhmel.com";
                       $subject = "Recovery Process\n\nMorbik Gym";
-                      $message = "This is your recovery code. 252624";
+                      $message = "This is your recovery code.".$randcode;
                       $header = "From: kbleulseged@gmail.com\r\nReply-To: kbleulseged@gmail.com";
 
                       $mail_sent = mail($to, $subject, $message, $header);

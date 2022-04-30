@@ -57,18 +57,40 @@
 
                
                 
-            echo "<form method='POST'  id='singleemployee_form' >
-            <input value='$fullname' type='text' >
-            <input value='$gender' type='text' >
-            <input value='$dob' type='date' >
-            <input value='$registration_data' type='date' >
-            <input value='$job' type='text' >
-            <input value='$email' type='emai' >
-            <input value='$phone' type='tel' >
-            <input value='$type_program' type='text' >
-            <input value='$type' type='text' >
-            <input value='$salary' type='number' >
-            </form>";
+            $output = "<form method='POST'  id='singleemployee_form' >
+            <input type='hidden' name='id' value='$id'>
+            <label for='name'>Full Name</label>
+            <input name='name' value='$fullname' type='text' readonly>
+            <label for='gender'>Gender</label>
+            <input name='gender' value='$gender' type='text' readonly>
+            <label for='DOB'>Date Of Birth</label>
+            <input name='DOB' value='$dob' type='date' readonly>
+            <label for='regdate'>Registration Date</label>
+            <input name='regdate' value='$registration_data' type='date' readonly>
+            <label for='job'>Job Title</label>
+            <input name='job' value='$job' type='text' readonly>
+            <label for='email'>Email</label>
+            <input name='email' value='$email' type='emai' readonly>
+            <label for='phone'>Phone</label>
+            <input name='phone' value='+251 $phone' type='tel' readonly>";
+
+            if($type_program != "" || $type_program != " " || $type_program != Null)
+            { $output = $output ."<label for='program'>Program Type</label>
+                <input name='program' value='$type_program' type='text' readonly>";  }
+            
+            if($type != "" || $type != " " || $type != null)
+            { $output = $output ."<label for='type'>Type</label>
+            <input name='type' value='$type' type='text' readonly>"; }
+
+            if($salary != "" || $salary != " " || $salary != null)
+             {
+            $output = $output ."<label for='salary'>Salary</label>
+            <input id='editsalary' name='salary' value='$salary' type='number' >";
+             }
+
+            $output = $output . "<input type='submit' name='submit' value='submit' id='submit'></form>";
+
+            echo $output;
                } 
 
            } else { echo mysqli_error($con);}

@@ -4,30 +4,20 @@
    //if username and email are not set for this session then user has not logged in to the system
    if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
-    
 
-    //include('database_connect.php');
-   
-   //when assign button is clicked add
-     /* first insert data into trainer request table inthe database using values member id,employee id
-     time and status *
-   if(isset($_POST['submit_assign'])) {
-       $mebid = $_POST['mid'];
-       $tid = $_POST['eid'];
-       $timestr = $_POST['time'];
-   
-       $query = "INSERT into trainer_request (Mid,Eid,Time,Status) VALUES ('$mebid','$tid','$timestr','Pending');";
-   
-       if( mysqli_query($con,$query))
-       {
-           //second updata the member_program_junction to 0 because we have assigned the private trainer to user aleady
-           $query = "UPDATE member_program_junction SET Request_pirivate_trainer = 0 WHERE Mid='$mebid';";
-            mysqli_query($con,$query);
-    
+ include('database_connect.php');
+
+
+   if(isset($_SESSION["submit"])) {
+       $eid = $_SESSION["id"];
+       $salary = $_SESSION["salary"];
+
+       $query = "UPDATE employee set Salary = $salary WHERE ID = '$eid'";
+
+       if(mysqli_query($con,$query)){
+           echo "<script>alert('Salary Updated Successfully');</script>";
        } else { echo mysqli_error($con);}
-   
    }
-   */
    ?>
    
    <!DOCTYPE html>
@@ -48,6 +38,7 @@
        <link rel="stylesheet" href="employee.css">
 
        <link rel="stylesheet" href="messages.css">
+       <link rel="stylesheet" href="viewemployee.css">
 
    
    

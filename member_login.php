@@ -23,6 +23,7 @@
        $_SESSION["username"] = $row['Username'];
        $_SESSION["password"] = $row['Password'];
        $_SESSION["email"] = $row['Email'];
+       $_SESSION["gender"] = $row['Gender'];
        //echo $_SESSION["email"];exit;
        $_SESSION["name"] = $row['FName'].$row['LName'];
 
@@ -90,7 +91,7 @@
         
             <input type="text" name="uname" id="uname" placeholder="Username" 
             minlength= "6" autocomplete="false" autofocus required><br>
-            <input type="password" name="password" id="password" placeholder="Password" minlength="8"
+            <input type="password" name="password" id="password" placeholder="Password" 
                     autocomplete="false" required>
              <div class="info">
                <p id="forget_password"><a href="director_reset_password_form.html">forget password ?</a></p>

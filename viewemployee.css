@@ -1,0 +1,24 @@
+#singleemployee_form {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 1px 10px #888;
+    margin-bottom: 5rem;
+    padding-bottom: 10%;
+}
+#singleemployee_form label {
+    margin-top: 5%;
+    font-size: 1.2rem;
+    margin-bottom: 1%;
+    padding-left: 2%;
+}
+#singleemployee_form input {
+    width: 70%;
+    padding: .6rem 1rem;
+    margin-left: 15%;
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 1px solid;
+}

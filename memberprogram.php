@@ -1,5 +1,13 @@
 
-    <?php session_start();  ?>
+   <?php session_start();  
+   
+   //if username and email are not set for this session then user has not logged in to the system
+   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
+   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +57,6 @@
             <nav>
                         <li> <a href="dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                        
-                    
-                         <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
                          <li><a href="payments.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
                         <li class="has-arrow"><a href="new_health_status.php"><i class="fa fa-heart"></i><span class="hide-menu">Trainers</span></a>
         
@@ -60,7 +65,37 @@
         </section>
         <section class="main_content-wrapper">
             <main>
-                <p>hello</p>
+
+            <section id="packages">
+
+
+            </section>
+  <script type="module">
+   import workoutpackage  from "./workout.js";
+
+   let workouthtml = '';
+
+   for(let key in workoutpackage) {
+       let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
+       let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
+       
+        console.log(gender)
+     if(workoutpackage[key]["forwho"] == gender || forwho_capitalized == gender){
+      let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
+      let exercises = `<div>`;
+
+       workoutpackage[key]["Exrecises"].forEach(item => {
+           exercises += `<p> ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+       })
+
+        exercises += "</div>";
+
+        workouthtml += `<section>${name}${exercises}</section>`;}
+
+   }
+        document.getElementById("packages").innerHTML =workouthtml;
+
+</script>
             </main>
         </section>
     </article>

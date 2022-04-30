@@ -56,7 +56,7 @@
                     }
                  
 
-              $str_result = $str_result . "<ul class='manage_employee-ul'>
+              $str_result = $str_result . "<ul class='manage_employee-ul' onclick='viewEmployee($id)'>
              <li>$fullname</li>
              <li>$gender</li>
              <li>$dob</li>
@@ -136,7 +136,7 @@
                     }
                  }
 
-             echo "<ul class='manage_employee-ul'>
+             echo "<ul class='manage_employee-ul' onclick='viewEmployee($id)'>
              <li>$fullname</li>
              <li>$gender</li>
              <li>$dob</li>
@@ -208,7 +208,7 @@
                     }
                  }
 
-             echo "<ul class='manage_employee-ul'>
+             echo "<ul class='manage_employee-ul' onclick='viewEmployee($id)'>
              <li>$fullname</li>
              <li>$gender</li>
              <li>$dob</li>

@@ -4,7 +4,7 @@ include('database_connect.php');
    if(isset($_POST['submit_newpassword']))
    {
        $eid = $_POST['eid'];
-       $newpassword = $_POST['newpassword'];
+       $newpassword = $_POST['new_password'];
 
        $query= "UPDATE important_employees SET Password = '$newpassword' WHERE id = '$eid'";
 
