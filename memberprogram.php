@@ -21,6 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="programs.css">
+
 
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
@@ -78,10 +80,11 @@
    for(let key in workoutpackage) {
        let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
        let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
-       
-        console.log(gender)
-     if(workoutpackage[key]["forwho"] == gender || forwho_capitalized == gender){
+
+     if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
+      let disc = `<p>${workoutpackage[key]["Discription"]}</p>`;
+      let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
       let exercises = `<div>`;
 
        workoutpackage[key]["Exrecises"].forEach(item => {
@@ -90,7 +93,7 @@
 
         exercises += "</div>";
 
-        workouthtml += `<section>${name}${exercises}</section>`;}
+        workouthtml += `<section>${name}${disc}${img}</section>`;}
 
    }
         document.getElementById("packages").innerHTML =workouthtml;

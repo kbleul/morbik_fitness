@@ -1,0 +1,12 @@
+#packages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 10%;
+}
+
+#packages section:hover { opacity: .6;}
+
+.workout_img {
+    width: 70%;
+    height: 60%;
+ }
