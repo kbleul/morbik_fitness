@@ -1,12 +1,43 @@
 #packages {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-left: 10%;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 5%;
+    row-gap: 2%;
+    margin-left: 1.5%;
 }
 
+#packages {
+    margin-top: 2rem;
+}
 #packages section:hover { opacity: .6;}
 
 .workout_img {
-    width: 70%;
+    width: 60%;
     height: 60%;
+    margin-left: 20%;
+ }
+
+ .exersice_section h2 { text-align: center; }
+ .exersice_section .discription {
+     font-family: cursive;
+     font-size: 1.1rem;
+     text-align: center; 
+ }
+
+ .exercise_div {
+     display: none;
+     width: 60%;
+     margin-left: 20%;
+     text-align: center;
+ }
+
+ .exersice_section button {
+     width: 60%;
+     margin-left: 20%;
+     background-color: inherit;
+     border: none;
+     border-bottom: 2px solid red;
+ }
+ .exersice_section button:hover { 
+    border-bottom: 2px solid green;
  }

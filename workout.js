@@ -68,7 +68,7 @@
         "forwho" : "female",
         "weeks" : "2-3 times a week",
         "rest" : "2-3min",
-        "img" : "imgs/workouts/womens_lowerbody.jpg",
+        "img" : "imgs/workouts/women_lowerbody.jpg",
         "Exrecises" : [["Squat", "2-3" , "8-10"], ["Single Leg Squat", "2-3" , "8-10"], ["Calf Raise", "2-3" , "8-10"], ["Toe Out Squat", "2-3" , "8-10"],
             ["Jumping Squat", "2-3" , "8-10"], ["Lying Leg Curl with Cruch", "2-3" , "8-10"], ["Outer Hip and Thight", "2-3" , "8-10"]],
     },
@@ -78,7 +78,7 @@
         "forwho" : "female",
         "weeks" : "2-3 times a week",
         "rest" : "2-3min",
-        "img" : "imgs/workouts/womens_lowerbody.jpg",
+        "img" : "imgs/workouts/womens_lowerbody2.jpg",
         "Exrecises" : [["Squat", "2-3" , "8-10"], ["Side Squat", "2-3" , "8-10"], ["Twisting Squat", "2-3" , "8-10"], ["Single Leg Jumping Squat", "2-3" , "8-10"],
         ["Hamstring Pull", "2-3" , "8-10"], ["Inner Thigh Pull", "2-3" , "8-10"], ["Core Extension", "2-3" , "8-10"]],
     },
@@ -98,11 +98,11 @@
         "forwho" : "both",
         "weeks" : "2-3 times a week",
         "rest" : "2-3min",
-        "img" : "imgs/workouts/corestrength.jpg",
+        "img" : "imgs/workouts/corestrength2.jpg",
         "Exrecises" : [["Surfer", "3" , "10-12"], ["Pullover With Crunch", "3" , "10-12"], ["Core Extension", "3" , "10-12"], ["Side Plank", "3" , "10-12"],
         ["Incline Push-Up", "3" , "10-12"],  ["Set-Up", "3" , "10-12"]],
     },
-    10: {
+ /*   10: {
         "Name" : "Kid's Workout",
         "Discription" : "option 1 - kids above the age of 8",
         "forwho" : "both",
@@ -122,8 +122,8 @@
         "img" : "imgs/workouts/kids2.jpg",
         "Exrecises" : [["Squat", "1-3" , "10-12"], ["Single Leg Squat", "1-3" , "10-12"], ["Single Leg Jumping Squat", "1-3" , "10-12"], ["Lying Leg Curl With Crunch", "1-3" , "10-12"],
         ["Pull-Up", "1-3" , "10-12"],  ["Incline Pull-Up", "1-3" , "10-12"],  ["Lying Triceps", "1-3" , "10-12"],  ["Seated Biceps Curl", "1-3" , "10-12"]],
-    },
-    12: {
+    }, */
+    10: {
         "Name" : "Biginner's Program",
         "Discription" : "For biginner lifters relatively new to the gym",
         "forwho" : "both",
@@ -133,7 +133,7 @@
         "Exrecises" : [["Barbell Bench Press", "3" , "8-10"], ["Barbell Back Squat", "3" , "8-10"], ["Pull-Ups", "3" , "6-10"], ["Lying Hamstring DB Curls", "3" , "10-15"],
         ["Standing Overhead Press", "3" , "6-10"],  ["Facepulls", "2" , "10-15"]],
     },
-    13: {
+    11: {
         "Name" : "Advanced Program",
         "Discription" : "For experianced lifters who have a good foundation on musle and strength.",
         "forwho" : "both",
@@ -143,7 +143,7 @@
         "Exrecises" : [["Barbell Bench Press", "4" , "6-10"], ["Barbell Back Squat", "4" , "6-8"], ["Pull-Ups", "3" , "6-10"], ["Lying Hamstring DB Curls", "4" , "8-12"],
         ["Standing Overhead Press", "3" , "6-10"],  ["Facepulls", "4" , "10-15"],  ["Drag Curls", "3" , "8-10"]],
     },
-    14: {
+    12: {
         "Name" : "Long and Lean",
         "Discription" : "Option 1 - Designed to strengthen your body while creating a longer leaner look.",
         "forwho" : "both",
@@ -154,7 +154,7 @@
         ["Kneeling Plank Press", "3" , "12-15"],  ["Pullover With Crunch", "3" , "12-15"],  ["Seated Chest Fly", "3" , "12-15"],  ["Reverse Fly", "3" , "12-15"], 
          ["Lying Triceps Extension", "3" , "12-15"],  ["Half Roll Back With Biceps Curl", "3" , "12-15"]],
     },
-    15: {
+    13: {
         "Name" : "Long and Lean",
         "Discription" : "Option 2 - Designed to strengthen your body while creating a longer leaner look.",
         "forwho" : "both",

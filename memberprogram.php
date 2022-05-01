@@ -76,6 +76,8 @@
    import workoutpackage  from "./workout.js";
 
    let workouthtml = '';
+   let counter = 0;
+
 
    for(let key in workoutpackage) {
        let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
@@ -83,20 +85,42 @@
 
      if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
-      let disc = `<p>${workoutpackage[key]["Discription"]}</p>`;
+      let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let exercises = `<div>`;
+      let addbtn = `<button class="addbtn">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
+      </button>`
+      let exercises = `<div  class="exercise_div">`;
+
 
        workoutpackage[key]["Exrecises"].forEach(item => {
-           exercises += `<p> ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+           exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
        })
 
-        exercises += "</div>";
+        exercises += `${addbtn}</div>`;
 
-        workouthtml += `<section>${name}${disc}${img}</section>`;}
+
+        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}</section>`;
+
+        counter++;
+        
+    }
 
    }
         document.getElementById("packages").innerHTML =workouthtml;
+
+          let sec = document.getElementsByClassName("exersice_section");
+
+          for(let i = 0; i < sec.length; i++) { 
+            document.getElementById(i).addEventListener('mouseover', e => { 
+                $(e.target).find(".workout_img").fadeOut(100);
+                $(e.target).find(".exercise_div").fadeIn("slow");
+                })
+                document.getElementById(i).addEventListener('mouseleave', e => { 
+                $(e.target).find(".exercise_div").fadeOut(100);
+                $(e.target).find(".workout_img").fadeIn("slow");
+                })
+          }
 
 </script>
             </main>
