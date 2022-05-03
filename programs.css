@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@700&family=Tapestry&display=swap');
 #packages {
     display: grid;
     grid-template-columns: 1fr 1fr ;
@@ -92,3 +93,92 @@
 }
 
 #slide_btns button:nth-of-type(2) {  margin-left: 5%; }
+
+/*---------------------------meal.php---------*/
+.mealplan_ul {
+    margin-top: 6%;
+    width: 40%;
+    margin-left: 30%;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+.mealplan_ul li { 
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: Roboto, "Helvetica Neue";
+    color: #830d0d;
+    line-height: 2.5rem;
+    border-left: 3px solid #5c5c5c;
+}
+
+.mealplan_ul li button{ 
+    border: none;
+    background-color: inherit;
+}
+
+.mealplan_ul li:hover { 
+    border-left: 3px solid rgba(250, 4, 159, 0.4); 
+} 
+
+#view_title {
+    text-align: center;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 3rem;
+}
+
+.type_title {
+    font-family: 'Tapestry', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #6f6f6f;
+
+}
+.meal_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.viewmeal_ul {
+    margin-right: 2rem;
+    height: 82%;
+    overflow-y: hidden;
+}
+
+.viewmeal_ul:hover { overflow-y: scroll; }
+
+
+.viewmeal_ul .ingredient {
+    line-height: 2rem;
+    margin-top: 5%;
+}
+
+.viewmeal_ul .name { font-size: 1.3rem; font-weight: bold; }
+.viewmeal_ul .nutrition { 
+    margin-top: 7%;
+}
+
+.viewmeal_ul li {
+    list-style: none;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.viewmeal_ul li:first-of-type {
+  font-size: 1.4rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.savebtn_div {
+    display: flex;
+    justify-content: right;
+margin-right: 10%;
+align-items: center;
+}
+
+.savebtn_div button {
+    background-color: inherit;
+    border: none;
+}
+.savebtn_div p {  color: red; margin-left: 1rem; font-size: 1.4rem; font-family: cursive; }
+

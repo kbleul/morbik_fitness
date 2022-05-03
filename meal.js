@@ -85,7 +85,7 @@ const meals = {
         "Discription" : "The following meal plans are for anyone who is underweight and looking to gain weight. The meal plans are designed to provide a balance of carbohydrates, protein, and fats.",
         "Breakfast" : { 
           "option1" : {
-              "Name" : "",
+              "Name" : "Wheat Toast with Scrambled Eggs ",
             "Ingredients" : ["3 slices Wheat Toast, buttered", "3 Scrambled Eggs","Glass of Orange Juice"],
             "Note" : "",
             "Recipe" : [],
@@ -106,14 +106,14 @@ const meals = {
             "Nutrition_Details" : "843 Calories - 28g Protein - 117g Carbs - 27g Fat",
         },  
         "option4" : {
-            "Name" : "",
+            "Name" : "Granola with Oats and Milk",
             "Ingredients" : ["50g Granola", "30g Oats", "150ml Whole Milk","25g Nuts", "25g Raisins","Glass of Orange Juice"],
             "Note" : "",
             "Recipe" : [],
             "Nutrition_Details" : "802 Calories - 24g Protein - 101g Carbs - 33g Fat",
         }, 
         "option5" : {
-            "Name" : "",
+            "Name" : "Poached Eggs with Bacon",
             "Ingredients" : ["3 Poached Eggs", "2 Slices Whole-Wheat Toastbuttered", "2 pieces Lean Back Bacon, grilled","Mushroom" , "Tomatoes", "1 tbsp Olive Oil", "Glass of Orange Juice"],
             "Note" : "",
             "Recipe" : [],
@@ -206,7 +206,7 @@ const meals = {
 
     },
 
-    1 : {
+    2 : {
         "Name" : "Weight Loss Meal Plan",
         "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
         "Breakfast" : { 
@@ -252,41 +252,790 @@ const meals = {
              "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
              "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
          },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
      
 
         },
 
        "Dinner" : {
         "option1" : {
-            "Name"  :"Meatloaf with Mashed Potato",
-            "Ingredients" : ["3 slices Meatloaf (1 inch each)","200g Mashed Potato","80g Peas", "2 Carrots"],
-            "Note" : "",
-            "Recipe" : [],
-            "Nutrition_Details" : "881 Calories - 78g Protein - 88g Carbs - 22g Fat",
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
         
         },
         "option2" : {
-            "Name"  :"Chicken Thighs with Rice and Vegetables",
-            "Ingredients" : ["4 Chicken Thighs (grilled/roasted)","150g (uncooked weight) Brown Rice","Roast Mediterranean Vegetables (zucchini, red onion, capsicum, eggplant etc.) in 1 tbsp Olive Oil"],
-            "Note" : "Sauce: Combine 1/4 cup plain Greek yogurt, cup salsa, and 1 tsp chilli powder together.",
-            "Recipe" : [],
-            "Nutrition_Details" : "636 Calories - 41g Protein - 49g Carbs - 29g Fat",
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
         
         },
         "option3" : {
-            "Name"  :"Chicken & Cashew Stir-Fry",
-            "Ingredients" : ["150g Chicken", "40g Cashew Nuts","100g Mixed Vegetables (cabbage, carrots, broccoli)","2 tbsp Oil", "1 tbsp Honey", "1 tbsp Soy Sauce","150g Whole-Wheat Noodles"],
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    3 : {
+        "Name" : "Low Cholesterol Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
             "Note" : "",
-            "Recipe" : [],
-            "Nutrition_Details" : "1279 Calories - 65g Protein - 141g Carbs - 50g Fat",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
         
         },
-        "option4" : {
-            "Name"  :"Roast Beef with Potatoes",
-            "Ingredients" : ["200g Roast Beef", "300g Roast Potatoes","100g Mixed Vegetables (cabbage, carrots, broccoli)"],
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    4 : {
+        "Name" : "Meal Plans for Diabetes",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
             "Note" : "",
-            "Recipe" : [],
-            "Nutrition_Details" : "1095 Calories - 55g Protein - 120g Carbs - 37g Fat",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    5 : {
+        "Name" : "Blood Pressure Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    6 : {
+        "Name" : "Low-Carb Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    7 : {
+        "Name" : "Pregnancy Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    8 : {
+        "Name" : "Vegetarian Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    9 : {
+        "Name" : "Vegan Meal Plans",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
+        
+        }
+        
+       }
+
+    },
+
+    10 : {
+        "Name" : " Low-Carb Meal Plan",
+        "Discription" : "This simple 1,500-calorie diet plan is specially tailored to help you feel energized and satisfied while cutting calories so you can lose a healthy 1 to 2 pounds per week.",
+        "Breakfast" : { 
+          "option1" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+            "Ingredients" : ["3 cups rolled oats (see Tip)","3 cups rolled oats (see Tip)", "2 ripe bananas, mashed (about 3/4 cup)","⅓ cup packed brown sugar","2 large eggs, lightly beaten",
+                 "1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+            "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+            "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature.",
+         ""],
+            "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g836 Calories - 36g Protein - 78g Carbs - 43g Fat",
+          },
+          "option2" : {
+              "Name" : "Baked Banana-Nut Oatmeal Cups",
+              "Ingredients" : ["3 cups rolled oats", "1 ½ cups low-fat milk","2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten"
+            ,"1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+              "Note" : "",
+              "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+              "Nutrition_Details" : " 176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+          },  
+          "option3" : {
+            "Name" : "Egg in a Hole Peppers with Avocado Salsa",
+            "Ingredients" : ["2 bell peppers, any color" ,"1 avocado, diced", "½ cup diced red onion", "1 jalapeño pepper, minced", "½ cup chopped fresh cilantro, plus more for garnish","2 tomatoes, seeded and diced","Juice of 1 lime","¾ teaspoon salt, divided","2 teaspoons olive oil, divided","8 large eggs","¼ teaspoon ground pepper, divided"],
+            "Note" : "",
+            "Recipe" : ["Slice tops and bottoms off bell peppers and finely dice. Remove and discard seeds and membranes. Slice each pepper into four 1/2-inch-thick rings.","Combine the diced pepper with avocado, onion, jalapeño, cilantro, tomatoes, lime juice, and 1/2 teaspoon salt in a medium bowl."
+        ,"Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 4 bell pepper rings, then crack 1 egg into the middle of each ring. Season with 1/8 teaspoon each salt and pepper. Cook until the whites are mostly set but the yolks are still runny, 2 to 3 minutes. Gently flip and cook 1 minute more for runny yolks, 1 1/2 to 2 minutes more for firmer yolks. Transfer to serving plates and repeat with the remaining pepper rings and eggs.",
+    "Serve with the avocado salsa and garnish with additional cilantro, if desired."],
+            "Nutrition_Details" : " 285 calories; protein 15.1g; carbohydrates 14.2g; dietary fiber 5.9g; sugars 5.9g; fat 19.5g; saturated fat 4.6g; cholesterol 372mg; vitamin a iu 3168IU; vitamin c 98.9mg; folate 131.4mcg; calcium 81.2mg; iron 2.6mg; magnesium 44.7mg; potassium 716.2mg; sodium 589.1mg",
+        }
+        },
+        "Lunch" : {
+           "option1" : {
+              "Name" : "Veggie & Hummus Sandwich",
+               "Ingredients" : ["2 slices whole-grain bread", "3 tablespoons hummus", "¼ avocado, mashed", "½ cup mixed salad greens", "¼ medium red bell pepper, sliced", "¼ cup sliced cucumber","¼ cup shredded carrot"],
+               "Note" : "Tip : To make ahead: Refrigerate sandwich for up to 4 hours.",
+               "Recipe" : ["Spread one slice of bread with hummus and the other with avocado. Fill the sandwich with greens, bell pepper, cucumber and carrot. Slice in half and serve."],
+               "Nutrition_Details" : " 325 calories; protein 12.8g; carbohydrates 39.7g; dietary fiber 12.1g; sugars 6.8g; fat 14.3g; saturated fat 2.2g; vitamin a iu 6388.1IU; vitamin c 49.8mg; folate 171.1mcg; calcium 107.8mg; iron 3.4mg; magnesium 105.3mg; potassium 746.3mg; sodium 407mg; thiamin 0.3mg; added sugar 2g",
+           },
+           "option2" : {
+            "Name" : "Chipotle-Lime Cauliflower Taco Bowls",
+             "Ingredients" : ["¼ cup lime juice (from about 2 limes)","1-2 tablespoons chopped chipotles in adobo sauce", "1 tablespoon honey", "2 cloves garlic","½ teaspoon salt","1 small head cauliflower, cut into bite-size pieces","1 small red onion, halved and thinly sliced","2 cups cooked quinoa, cooled1 cup no-salt-added canned black beans, rinsed","½ cup crumbled queso fresco","1 cup shredded red cabbage","1 cup shredded red cabbage","1 lime, cut into 4 wedges (Optional)"],
+             "Note" : "Tip: Look for small cans of smoked chipotle peppers in adobo sauce near other Mexican ingredients in well-stocked supermarkets. Once opened, refrigerate for up to 2 weeks or freeze for up to 6 months",
+             "Recipe" : ["Preheat oven to 450 degrees F. Line a large rimmed baking sheet with foil.","Combine lime juice, chipotles to taste, honey, garlic and salt in a blender. Process until mostly smooth. Place cauliflower in a large bowl; add the sauce and stir to coat. Transfer to the prepared baking sheet. Sprinkle onion over the cauliflower. Roast, stirring once, until the cauliflower is tender and browned in spots, 18 to 20 minutes; set aside to cool.","Divide quinoa among 4 single-serving lidded containers (1/2 cup each). Top each with one-fourth of the cauliflower mixture, 1/4 cup black beans and 2 tablespoons cheese. Seal the containers and refrigerate for up to 4 days.","To reheat 1 container, vent the lid and microwave on High until steaming, 2 1/2 to 3 minutes. Top with 1/4 cup cabbage and 1/4 avocado (sliced). Serve with a lime wedge, if desired."],
+             "Nutrition_Details" : "345 calories; protein 13.3g; carbohydrates 46.9g; dietary fiber 12.3g; sugars 8.9g; fat 13.3g; saturated fat 3.4g; cholesterol 10.5mg; vitamin a iu 406.6IU; vitamin c 54.9mg; folate 163.1mcg; calcium 160.9mg; iron 3.3mg; magnesium 114.6mg; potassium 900mg; sodium 541.7mg; thiamin 0.3mg; added sugar 4g",
+         },
+         "option3" : {
+            "Name" : "Baked Banana-Nut Oatmeal Cups",
+             "Ingredients" : ["3 cups rolled oats","1 ½ cups low-fat milk", "2 ripe bananas, mashed (about 3/4 cup)", "⅓ cup packed brown sugar","2 large eggs, lightly beaten","1 teaspoon baking powder","1 teaspoon ground cinnamon","1 teaspoon vanilla extract","½ teaspoon salt","½ cup toasted chopped pecans"],
+             "Note" : "Tip: People with celiac disease or gluten sensitivity should use oats that are labeled gluten-free, as oats are often cross-contaminated with wheat and barley.",
+             "Recipe" : ["Preheat oven to 375 degrees F. Coat a muffin tin with cooking spray.","Combine oats, milk, bananas, brown sugar, eggs, baking powder, cinnamon, vanilla and salt in a large bowl. Fold in pecans. Divide the mixture among the muffin cups (about 1/3 cup each). Bake until a toothpick inserted in the center comes out clean, about 25 minutes. Cool in the pan for 10 minutes, then turn out onto a wire rack. Serve warm or at room temperature."],
+             "Nutrition_Details" : "176 calories; protein 5.2g; carbohydrates 26.4g; dietary fiber 3.1g; sugars 10.5g; fat 6.2g; saturated fat 1.2g; cholesterol 33.4mg; vitamin a iu 118.7IU; vitamin c 1.8mg; folate 20.2mcg; calcium 85.3mg; iron 1.1mg; magnesium 36mg; potassium 227.9mg; sodium 165.6mg; thiamin 0.1mg; added sugar 6g.",
+         }
+     
+
+        },
+
+       "Dinner" : {
+        "option1" : {
+            "Name"  :"Sheet-Pan Chicken Fajita Bowls",
+            "Ingredients" : ["2 teaspoons chili powder","2 teaspoons ground cumin","¾ teaspoon salt, divided", "½ teaspoon garlic powder","½ teaspoon smoked paprika","¼ teaspoon ground pepper","2 tablespoons olive oil, divided","1 ¼ pounds chicken tenders","1 medium yellow onion, sliced","1 medium red bell pepper, sliced","1 medium green bell pepper, sliced","4 cups chopped stemmed kale","1 (15 ounce) can no-salt-added black beans, rinsed","¼ cup low-fat plain Greek yogurt",
+        "1 tablespoon lime juice","2 teaspoons water"],
+            "Note" : "For easier weeknight prep, slice vegetables the night before; cover and refrigerate.",
+            "Recipe" : ["Place a large rimmed baking sheet in the oven; preheat to 425 degrees F.","Combine chili powder, cumin, 1/2 tsp. salt, garlic powder, paprika, and ground pepper in a large bowl. Transfer 1 tsp. of the spice mixture to a medium bowl and set aside. Whisk 1 Tbsp. oil into the remaining spice mixture in the large bowl. Add chicken, onion, and red and green bell peppers; toss to coat.",
+        "Remove the pan from the oven; coat with cooking spray. Spread the chicken mixture in an even layer on the pan. Roast for 15 minutes.","Meanwhile, combine kale and black beans with the remaining 1/4 tsp. salt and 1 Tbsp. olive oil in a large bowl; toss to coat.",
+    "Remove the pan from the oven. Stir the chicken and vegetables. Spread kale and beans evenly over the top. Roast until the chicken is cooked through and the vegetables are tender, 5 to 7 minutes more.","Meanwhile, add yogurt, lime juice, and water to the reserved spice mixture; stir to combine.",
+        "Divide the chicken and vegetable mixture among 4 bowls. Drizzle with the yogurt dressing and serve."],
+            "Nutrition_Details" : " 343 calories; protein 42.7g; carbohydrates 23.7g; dietary fiber 8.2g; sugars 3.8g; fat 9.9g; saturated fat 1.4g; cholesterol 70.9mg; vitamin a iu 2774.9IU; vitamin c 72.9mg; folate 25.3mcg; calcium 187.3mg; iron 3.6mg; magnesium 62.7mg; potassium 579.8mg; sodium 605.1mg",
+        
+        },
+        "option2" : {
+            "Name"  :"Chicken & Cucumber Lettuce Wraps with Peanut Sauce",
+            "Ingredients" : ["¼ cup creamy peanut butter","2 tablespoons low-sodium soy sauce","2 tablespoons honey","2 tablespoons water","2 teaspoons toasted sesame oil","2 teaspoons olive oil","3 scallions, sliced, white and green parts separated","1 serrano pepper, seeded and minced (2 tsp.)","1 tablespoon minced fresh ginger","2 teaspoons minced fresh garlic","1 pound ground chicken breast","1 cup diced jicama","16 Bibb lettuce leaves","1 cup cooked brown rice","1 cup halved and thinly sliced English cucumber",
+              "½ cup fresh cilantro leaves","Lime wedges, for serving"],
+            "Note" : "Serves 4: 2 lettuce wraps each.",
+            "Recipe" : ["Whisk peanut butter, soy sauce, honey, water, and sesame oil in a small bowl.","Heat olive oil in a large nonstick skillet over medium heat. Add scallion whites, serrano, ginger, and garlic; cook until starting to soften, about 2 minutes. Add chicken; cook, breaking it up with a spoon or potato masher, until cooked through, 3 to 4 minutes.","Add the peanut sauce to the chicken mixture; cook until the sauce has thickened, about 3 minutes. Remove from heat. Stir in jicama and scallion greens.","To serve, make 8 stacks of 2 lettuce leaves each. Divide rice, the chicken mixture, cucumber, and cilantro among the lettuce cups. Serve with lime wedges."],
+            "Nutrition_Details" : "521 calories; protein 34g; carbohydrates 43.8g; dietary fiber 11.1g; sugars 17.9g; fat 26g; saturated fat 2.6g; cholesterol 54mg; vitamin a iu 21989.8IU; vitamin c 34.9mg; folate 510.2mcg; calcium 262.1mg; iron 10.4mg; magnesium 149.9mg; potassium 1852.6mg; sodium 484.7mg; added sugar 9.6g.",
+        
+        },
+        "option3" : {
+            "Name"  :"Curried Sweet Potato & Peanut Soup",
+            "Ingredients" : ["2 tablespoons canola oil", "1 ½ cups diced yellow onion","1 tablespoon minced garlic","1 tablespoon minced fresh ginger", "4 teaspoons red curry paste", "1 serrano chile, ribs and seeds removed, minced","1 pound sweet potatoes, peeled and cubed (1/2-inch pieces)","3 cups water","1 cup lite coconut milk","¾ cup unsalted dry-roasted peanuts",
+              "1 (15 ounce) can white beans, rinsed","¾ teaspoon salt","¼ teaspoon ground pepper","¼ cup chopped fresh cilantro","2 tablespoons lime juice","¼ cup unsalted roasted pumpkin seeds","Lime wedges"],
+            "Note" : "Tip: You can find red curry paste in the Asian section of many grocery stores, packaged in a small glass jar.",
+            "Recipe" : ["Heat oil in a large pot over medium-high heat. Add onion and cook, stirring often, until softened and translucent, about 4 minutes.","Stir in garlic, ginger, curry paste, and serrano; cook, stirring, for 1 minute. Stir in sweet potatoes and water; bring to a boil. Reduce heat to medium-low and simmer, partially covered, until the sweet potatoes are soft, 10 to 12 minutes.","Transfer half of the soup to a blender, along with coconut milk and peanuts; puree. (Use caution when pureeing hot liquids.) Return to the pot with the remaining soup. Stir in beans, salt, and pepper; heat through. Remove from the heat. Stir in cilantro and lime juice. Serve with pumpkin seeds and lime wedges."],
+            "Nutrition_Details" : "345 calories; protein 12.6g; carbohydrates 37.4g; dietary fiber 8.4g; sugars 6.8g; fat 19.4g; saturated fat 4.3g; vitamin a iu 10785IU; vitamin c 7.5mg; folate 95mcg; calcium 87.9mg; iron 2.2mg; magnesium 90mg; potassium 699.2mg; sodium 593.7mg.",
         
         }
         
@@ -296,5 +1045,7 @@ const meals = {
 
 
 
-
 }
+
+
+export default meals
