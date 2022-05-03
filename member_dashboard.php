@@ -1,5 +1,12 @@
 
-    <?php session_start();  ?>
+    <?php session_start(); 
+       //if username and email are not set for this session then user has not logged in to the system
+   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
+   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+
+
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="programs.css">
+
 
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
+
+   
 
     <title>Morbik Fitness</title>
 </head>
@@ -59,12 +70,99 @@
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <main>
-                <p>hello</p>
+            <main id="myworkout_main">
+
+            <article>
+                <button>MyWorkout</button>
+            </article>
+                <article id="packages" ></article>
+                <div id="slide_btns">     
+                    <button onclick="slideWorkout('prev')">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/></svg>
+                </button>
+                    <button onclick="slideWorkout('next')">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                    </button>
+                </div>
+
             </main>
         </section>
     </article>
 
+    <script type="module">
+      import workoutpackage  from "./workout.js";
+      let workouthtml = '';
+
+           const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                        if(firsttime_response !== "error") 
+                           {
+                                let temparr =  firsttime_response.split(" ")
+       
+
+
+                              for(let i = 0; i < temparr.length - 1; i++) 
+                              {  
+       let forwho_capitalized = workoutpackage[parseInt(temparr[i])]["forwho"].charAt(0).toUpperCase() + workoutpackage[parseInt(temparr[i])]["forwho"].slice(1);
+       let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
+
+     if(workoutpackage[parseInt(temparr[i])]["forwho"] === "both" || workoutpackage[parseInt(temparr[i])]["forwho"] === gender || forwho_capitalized === gender){
+      let name = `<h2>${workoutpackage[parseInt(temparr[i])]["Name"]}</h2>`;
+      let disc = `<p class="discription">${workoutpackage[parseInt(temparr[i])]["Discription"]}</p>`;
+      let img = `<img class="workout_img" src="${workoutpackage[parseInt(temparr[i])]["img"]}" alt="${workoutpackage[parseInt(temparr[i])]["Name"]}" />`;
+      let exercises = `<div >`;
+
+
+       workoutpackage[parseInt(temparr[i])]["Exrecises"].forEach(item => {
+           exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+       })
+
+        exercises += `</div>`;
+
+        workouthtml += `<section  class="exersice_section">${name}${disc}<div class="exercise">${img}${exercises}</div></section>`;
+
+        
+    }
+
+        } 
+
+                        $("#packages").html(workouthtml);
+                        }
+                    }
+            
+                                    xmlhttp.open("GET", "addMember_program.php?p=fetch" );
+                                    xmlhttp.send();
+
+
+    </script>
+
+    <script>
+        let current = 0;
+
+           const slideWorkout = (type) => { console.log("before" +current)
+              if(type === "next"){
+            if(current > document.getElementsByClassName("exersice_section").length - 1) { current = 0 }
+                console.log(document.getElementsByClassName("exersice_section").length + "length")
+            $(document.getElementsByClassName("exersice_section")[current]).fadeOut(500);
+           current === document.getElementsByClassName("exersice_section").length - 1 ? $(document.getElementsByClassName("exersice_section")[0]).fadeIn(400)
+           : $(document.getElementsByClassName("exersice_section")[current+1]).fadeIn(400) ;
+            current++;
+        }
+
+          else if(type === "prev") {
+            $(document.getElementsByClassName("exersice_section")[current]).fadeOut(500);
+
+           current === 0 ? $(document.getElementsByClassName("exersice_section")[document.getElementsByClassName("exersice_section").length-1]).fadeIn(1000) 
+           : $(document.getElementsByClassName("exersice_section")[current-1]).fadeIn(2000);
+            current === 0 ? current = document.getElementsByClassName("exersice_section").length - 1 : current--;
+
+          }
+          console.log("after" +current)
+
+    }
+    </script>
 
 </body>
 </html>

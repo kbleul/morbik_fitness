@@ -41,3 +41,54 @@
  .exersice_section button:hover { 
     border-bottom: 2px solid green;
  }
+
+.notice { 
+    display: none;
+    text-align: center;
+    font-size: larger;
+    font-family: Roboto, sans-serif;
+    color: red;
+}
+
+/*-----------------memberdashboard----------------*/
+#myworkout_main #packages { display: block; }
+#myworkout_main .exersice_section { 
+    display: none;
+    margin-top: 7%;
+}
+#myworkout_main .exersice_section:first-of-type { display: block; }
+#myworkout_main .exercise { display: flex; }
+
+#myworkout_main h2 { 
+    margin-top: 5%;
+    font-size: 1.9rem;
+}
+
+#myworkout_main .exercise { 
+    display: flex;
+    align-items: center;
+}
+
+#myworkout_main img { 
+    width: 50%;
+    height: 30rem;
+    margin-left: 5%;
+ }
+#myworkout_main .exercise div { 
+    width: 50%;
+    margin-left: 10%;
+    font-size: 1.3rem;
+}
+
+#slide_btns { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+#slide_btns button { 
+    background-color: inherit;
+    border: none;
+}
+
+#slide_btns button:nth-of-type(2) {  margin-left: 5%; }

@@ -6,6 +6,8 @@
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
 
 
+
+
 ?>
 
 
@@ -27,6 +29,30 @@
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
 
+    <script>
+      const addProgram =( key, index) => {
+            const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+
+                        if(firsttime_response === "added") 
+                           {  
+                               $("#"+index).find(".addbtn").hide()
+                               $("#"+index).find(".notice").show();  
+                           }
+                        else { 
+                            $("#"+index).find(".addbtn").hide()
+                            $("#"+index).find(".notice").html("Aleady Added").show();  
+                        }
+                        setTimeout(function() {  $("#"+index).find(".notice").fadeOut() }, 2500)
+
+                    }
+            
+                                    xmlhttp.open("GET", "addMember_program.php?r=" + key);
+                                    xmlhttp.send();
+          }
+    </script>
     <title>Morbik Fitness</title>
 </head>
 <body id="dashboard_body">
@@ -57,7 +83,7 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                        <li> <a href="dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
+                        <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
                          <li><a href="payments.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
                         <li class="has-arrow"><a href="new_health_status.php"><i class="fa fa-heart"></i><span class="hide-menu">Trainers</span></a>
@@ -87,7 +113,7 @@
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let addbtn = `<button class="addbtn">
+      let addbtn = `<button onClick="addProgram(${key}, ${counter})" class="addbtn">
       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
       </button>`
       let exercises = `<div  class="exercise_div">`;
@@ -100,7 +126,8 @@
         exercises += `${addbtn}</div>`;
 
 
-        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}</section>`;
+        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}
+        <p class="notice">Added</p></section>`;
 
         counter++;
         
@@ -121,6 +148,8 @@
                 $(e.target).find(".workout_img").fadeIn("slow");
                 })
           }
+
+    
 
 </script>
             </main>
