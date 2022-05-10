@@ -73,8 +73,10 @@
         <section class="main_content-wrapper">
             <main id="myworkout_main">
 
-            <article>
-                <button>MyWorkout</button>
+            <article id="topnav">
+                <button id="myworkout_btn" class="active" onClick="getMyWorkout()">MyWorkout</button>
+                <button id="mymeal_btn" onClick="getMyMealplan()">MyMealPlan</button>
+
             </article>
                 <article id="packages" ></article>
                 <div id="slide_btns">     
@@ -92,6 +94,11 @@
 
     <script type="module">
       import workoutpackage  from "./workout.js";
+      import meals  from "./meal.js";
+
+
+      window.getMyWorkout = () => {
+
       let workouthtml = '';
 
            const xmlhttp = new XMLHttpRequest();
@@ -130,11 +137,123 @@
         } 
 
                         $("#packages").html(workouthtml);
+                        $("#mymeal_btn").removeClass("active")
+                        $("#myworkout_btn").addClass("active")
                         }
                     }
             
                                     xmlhttp.open("GET", "addMember_program.php?p=fetch" );
                                     xmlhttp.send();
+
+                }
+
+                getMyWorkout()
+
+        window.getMyMealplan = () => {
+
+            const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText; 
+                        console.log(firsttime_response);
+
+                        if(firsttime_response === "Empty")
+                              { console.log("empty") }
+                        else {
+                            let mealarr = firsttime_response.split("-")
+                            mealarr.pop();
+                            mealarr = mealarr.reverse();
+                        
+                    let mymeal_sec = "<section class='mymeal_sec'>";
+
+                            for(let key of mealarr) {
+                                key = parseInt(key);
+                    const div = `<div class="mealslist_div" onClick="showMealplan(${key})"><h2>${meals[key]["Name"]}</h2>`;
+                    const p = `<p>${meals[key]["Discription"]}</p></div>`;
+                              
+                       mymeal_sec += `${div}${p}`;
+                            }
+
+                            mymeal_sec += `</section>`;
+
+
+                        $("#packages").html(mymeal_sec);
+                        $("#myworkout_btn").removeClass("active")
+                        $("#mymeal_btn").addClass("active")
+                            
+
+                        }
+                    } 
+
+                        xmlhttp.open("GET", "processMyMeal.php?f=fetch" );
+                                    xmlhttp.send();
+                     
+
+        }
+
+
+        window.showMealplan = key => {
+            let maintitle = `<button onClick="getMyMealplan()">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="yellow" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8 5l-5 5l5 5"/><path d="M3 10h8c5.523 0 10 4.477 10 10v1"/></g></svg>
+    </button><h2 id="view_title">${meals[key]["Name"]}</h2>`;
+    let subtitle = `<h3 class="type_title">Breakfast</h3>`
+    let mealitems_ul_breakfast = ``;
+    let tempingr
+      
+    for(let item in meals[key]["Breakfast"]) {
+        mealitems_ul_breakfast += `<ul class="viewmeal_ul"><li>${item}</li>`
+        mealitems_ul_breakfast += `<li class="name">${meals[key]["Breakfast"][item]["Name"]}</li>`;
+
+        tempingr = "<li class='ingredient'>Ingredients : "
+        meals[key]["Breakfast"][item]["Ingredients"].forEach(ingr => {
+              tempingr += `${ingr}`
+        })
+
+        tempingr += `</li><li class="nutrition">Nutritional Value : ${meals[key]["Breakfast"][item]["Nutrition_Details"]}</li></ul>`;
+        mealitems_ul_breakfast += tempingr;
+
+    }
+
+    tempingr = ""
+    let subtitle_two = `<h3 class="type_title">Lunch</h3>`
+    let mealitems_ul_lunch = ``;
+
+
+    for(let item in meals[key]["Lunch"]) {
+        mealitems_ul_lunch += `<ul class="viewmeal_ul"><li>${item}</li>`
+        mealitems_ul_lunch += `<li class="name">${meals[key]["Lunch"][item]["Name"]}</li>`;       
+
+        let tempingr = "<li class='ingredient'>Ingredients : "
+        meals[key]["Lunch"][item]["Ingredients"].forEach(ingr => {
+              tempingr += `${ingr}\n`
+        })
+
+        tempingr += `</li><li class="nutrition">Nutritional Value : ${meals[key]["Lunch"][item]["Nutrition_Details"]}</li></ul>`;
+        mealitems_ul_lunch += tempingr;
+    }
+
+    tempingr = ""
+    let subtitle_three = `<h3 class="type_title">Dinner</h3>`
+    let mealitems_ul_dinner = ""
+
+
+    for(let item in meals[key]["Dinner"]) {
+        mealitems_ul_dinner += `<ul class="viewmeal_ul"><li>${item}</li>`
+        mealitems_ul_dinner += `<li class="name">${meals[key]["Dinner"][item]["Name"]}</li>`;     
+
+        let tempingr = "<li  class='ingredient'>Ingredients : "
+        meals[key]["Dinner"][item]["Ingredients"].forEach(ingr => {
+              tempingr += `${ingr}\n`
+        })
+
+        tempingr += `</li><li class="nutrition">Nutritional Value : ${meals[key]["Dinner"][item]["Nutrition_Details"]}</li></ul>`;
+        mealitems_ul_dinner += tempingr;
+
+    }
+    $("#packages").html(`${maintitle}${subtitle}<div class="meal_div">${mealitems_ul_breakfast}</div>${subtitle_two}<div class="meal_div">${mealitems_ul_lunch}</div>${subtitle_three}<div class="meal_div">${mealitems_ul_dinner}</div>`)
+
+        }
+    
 
 
     </script>

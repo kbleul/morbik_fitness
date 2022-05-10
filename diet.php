@@ -30,9 +30,11 @@
 
    window.showMealPlan = (key) => {
     
-    let maintitle = `<h2 id="view_title">${meals[key]["Name"]}</h2>
+    let maintitle = `<button onClick="renderMealplan_List()">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="yellow" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m8 5l-5 5l5 5"/><path d="M3 10h8c5.523 0 10 4.477 10 10v1"/></g></svg>
+    </button><h2 id="view_title">${meals[key]["Name"]}</h2>
 
-   <div class="savebtn_div"><button>
+   <div id="savebtn_div" class="savebtn_div"><button onClick="saveMeal(${key})">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="4em" height="4em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="red" d="M16 4c6.6 0 12 5.4 12 12s-5.4 12-12 12S4 22.6 4 16S9.4 4 16 4m0-2C8.3 2 2 8.3 2 16s6.3 14 14 14s14-6.3 14-14S23.7 2 16 2z"/><path fill="red" d="M24 15h-7V8h-2v7H8v2h7v7h2v-7h7z"/></svg>
     </button><p>Save Meal</p></div>`;
     let subtitle = `<h3 class="type_title">Breakfast</h3>`
@@ -147,6 +149,7 @@
             <script type="module">
    import meals  from "./meal.js";
 
+  window.renderMealplan_List = () => {
 
    const ul = "<ul class='mealplan_ul'>";
    let li = "";
@@ -160,11 +163,32 @@ const objarr = [key,meals];
    const el = ul + li + "</ul>";
    console.log(el)
    document.getElementById("meal_packages").innerHTML = el ;  
+  }
+
+        renderMealplan_List()
   
             </script>
         </section>
     </article>
 
+    <script>
+        const saveMeal = key => {
+            const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                        console.log(firsttime_response);
+
+      if(firsttime_response === "Saved" || firsttime_response === "Already saved") 
+      { $("#savebtn_div").html(`<p>${firsttime_response}</p>`).hide(1500);  }
+
+      else { console.log(firsttime_response);  }
+                    }
+
+                    xmlhttp.open("GET", "processMyMeal.php?p=" + key );
+                                    xmlhttp.send();
+        }
+    </script>
 
 </body>
 </html>
