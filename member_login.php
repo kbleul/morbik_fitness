@@ -60,6 +60,8 @@
                     <li><a  class="nav_link" href="index.html">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
+                    <li><div id="google_translate_element"></div></li>
+
                 </ul>
             </nav>
            

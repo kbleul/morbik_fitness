@@ -14,18 +14,32 @@
 
     <script src="jquery-3.6.0.js"></script>
 
+    <!-- google translate script 1-->
+		<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+		<!-- Call back function 2 -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+		</script>
+
     <title>Morbik Fitness</title>
 </head>
 <body>
 
     <article class="header_wrapper">
+
         <header class="flex">
+
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
+                    <li> <div id="google_translate_element"></div></li>
+
                 </ul>
             </nav>
 
@@ -48,7 +62,7 @@
 
     </article>
 
-
+   
     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
 
     <h1 id="school_name"> Morbik Fitness </h1>

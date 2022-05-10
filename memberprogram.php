@@ -25,7 +25,15 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="programs.css">
 
-
+<!-- google translate script 1-->
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+		<!-- Call back function 2 -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+		</script>
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
 
@@ -58,6 +66,7 @@
 <body id="dashboard_body">
 
     <article class="header_wrapper">
+        <!-- HTML element 3 -->
         <header class="flex">
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
@@ -65,6 +74,8 @@
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
+                    <li><div id="google_translate_element"></div></li>
+
                 </ul>
             </nav>
            

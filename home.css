@@ -34,8 +34,9 @@ h1{ margin: 0;}
 .header_wrapper {
     background-color: rgb(129, 65, 65);
     position:fixed;
-    top: 0;
+    top: inherit;
     width: 100%;
+    z-index: 10;
 }
 
 .flex {
@@ -150,7 +151,7 @@ h1{ margin: 0;}
     width: 25%;
     height: 35rem;
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 39%;
     background-color: rgba(0, 0, 0,.5);
 }
@@ -1029,4 +1030,20 @@ th { color : indigo; }
 .manage_member-main--wrapper table {
     width: 80%;
     margin-left: 10%;
+}
+
+.goog-te-gadget-simple {
+    background-color: rgb(129, 65, 65);
+    border: none;
+
+}
+
+.goog-te-menu-value span {
+    text-decoration: none;
+    color: white;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span { 
+    color: white;
+    border: none; 
 }
