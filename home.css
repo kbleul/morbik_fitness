@@ -34,7 +34,7 @@ h1{ margin: 0;}
 .header_wrapper {
     background-color: rgb(129, 65, 65);
     position:fixed;
-    top: inherit;
+    top: 0;
     width: 100%;
     z-index: 10;
 }

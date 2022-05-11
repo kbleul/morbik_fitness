@@ -19,6 +19,17 @@
 
     <link rel="stylesheet" href="home.css">
 
+
+      <!-- google translate script 1-->
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+		<!-- Call back function 2 -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+        </script>
+
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
 
@@ -34,6 +45,8 @@
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
+                    <li><div id="google_translate_element"></div></li>
+                    
                 </ul>
             </nav>
            
@@ -53,13 +66,13 @@
         <section class="side_nav-wrapper">
             <nav>
             
-                <li> <a href="dashboard.php" aria-expanded="false">Dashboard</a></li> 
+                <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
 
-                <li><a href="trainer_member.php">Programs</a></li>
+                <li><a href="trainer_workout.php">Programs</a></li>
                 <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
                             
                 <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
-                <li><a href="trainer_excersise.php" aria-expanded="false">Exercise Routine</a></li>
+                <li><a href="trainer_workout.php" aria-expanded="false">Workouts</a></li>
              
             </nav>
         </section>

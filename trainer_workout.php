@@ -1,13 +1,8 @@
-
-   <?php session_start();  
-   
-   //if username and email are not set for this session then user has not logged in to the system
-   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
-   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
-
-
-
-
+<?php
+    session_start();
+    if( isset($_SESSION["email"]) == false || isset($_SESSION["username"] ) == false)
+    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+  
 ?>
 
 
@@ -25,44 +20,21 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="programs.css">
     <script src="jquery-3.6.0.js"></script>
-
-
-<!-- google translate script 1-->
+    
+    <!-- google translate script 1-->
 <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		
 		<!-- Call back function 2 -->
 		<script type="text/javascript">
-            $(".header_wrapper").css({"top" : "2rem"})
+            $(".header_wrapper").css("top" , "2rem")
+
 		function googleTranslateElementInit() {
 		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 		}
-		</script>
+        </script>
+
     <script src="index.js"></script>
 
-    <script>
-      const addProgram =( key, index) => {
-            const xmlhttp = new XMLHttpRequest();
-                    
-                    xmlhttp.onload = function() {  
-                        let firsttime_response = this.responseText;  
-
-                        if(firsttime_response === "added") 
-                           {  
-                               $("#"+index).find(".addbtn").hide()
-                               $("#"+index).find(".notice").show();  
-                           }
-                        else { 
-                            $("#"+index).find(".addbtn").hide()
-                            $("#"+index).find(".notice").html("Aleady Added").show();  
-                        }
-                        setTimeout(function() {  $("#"+index).find(".notice").fadeOut() }, 2500)
-
-                    }
-            
-                                    xmlhttp.open("GET", "addMember_program.php?r=" + key);
-                                    xmlhttp.send();
-          }
-    </script>
     <title>Morbik Fitness</title>
 </head>
 <body id="dashboard_body">
@@ -75,9 +47,8 @@
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
-                         <!-- HTML element 3 -->
-                    <li><div id="google_translate_element"></div></li>
-
+                          <!-- HTML element 3 -->
+                          <li><div id="google_translate_element"></div></li>
                 </ul>
             </nav>
            
@@ -96,23 +67,23 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                        <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
-                        </li> 
-                         <li><a href="payments.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
-                        <li class="has-arrow"><a href="new_health_status.php"><i class="fa fa-heart"></i><span class="hide-menu">Trainers</span></a>
-                        <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
-        
-                        
+            
+                <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
+
+                <li><a href="trainer_member.php">Programs</a></li>
+                <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
+                            
+                <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
+             
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <main>
+            <main id="packages">
+              
 
-            <section id="packages">
+            </main>
 
-
-            </section>
-  <script type="module">
+            <script type="module">
    import workoutpackage  from "./workout.js";
 
    let workouthtml = '';
@@ -121,15 +92,11 @@
 
    for(let key in workoutpackage) {
        let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
-       let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
 
-     if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let addbtn = `<button onClick="addProgram(${key}, ${counter})" class="addbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
-      </button>`
+     
       let exercises = `<div  class="exercise_div">`;
 
 
@@ -137,15 +104,14 @@
            exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
        })
 
-        exercises += `${addbtn}</div>`;
+        exercises += `</div>`;
 
 
-        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}
-        <p class="notice">Added</p></section>`;
+        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}</section>`;
 
         counter++;
         
-    }
+    
 
    }
         document.getElementById("packages").innerHTML =workouthtml;
@@ -166,9 +132,10 @@
     
 
 </script>
-            </main>
         </section>
     </article>
+
+  <script type="text/javascript" src="togglesubmenu.js"></script>
 
 
 </body>
