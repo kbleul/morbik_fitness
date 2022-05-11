@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="trainer.css">
+
     <script src="jquery-3.6.0.js"></script>
     
     <!-- google translate script 1-->
@@ -70,7 +72,7 @@
             
                 <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
 
-                <li><a href="trainer_member.php">Programs</a></li>
+                <li><a href="trainer_workout.php">Programs</a></li>
                 <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
                             
                 <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
@@ -78,7 +80,7 @@
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <main id="packages">
+            <main id="trainer_packages">
               
 
             </main>
@@ -86,14 +88,17 @@
             <script type="module">
    import workoutpackage  from "./workout.js";
 
-   let workouthtml = '';
+    window.renderWorkouts = () => {
+
+   let workouthtml = '<div id="packages"> <button onclick="show_addWorkout_form()">Add New Plan</button>';
    let counter = 0;
 
-
-   for(let key in workoutpackage) {
+   for(let key in workoutpackage) { 
+        if(workoutpackage[key].hasOwnProperty("forwho")) {
        let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
 
-      let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
+      let name = ` 
+                    <h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
      
@@ -110,11 +115,10 @@
         workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}</section>`;
 
         counter++;
-        
-    
+     }
 
    }
-        document.getElementById("packages").innerHTML =workouthtml;
+        document.getElementById("trainer_packages").innerHTML =workouthtml + "</div>";
 
           let sec = document.getElementsByClassName("exersice_section");
 
@@ -127,8 +131,34 @@
                 $(e.target).find(".exercise_div").hide();
                 $(e.target).find(".workout_img").fadeIn("slow");
                 })
-          }
+          } 
 
+    } 
+
+    renderWorkouts();
+
+    window.show_addWorkout_form = () => {
+            let addworkout_html = `<label for="Name">Title/Name</label><input type="text" id="Name" name="Name"  /> `
+             addworkout_html += `<label for="Discription">Discription</label>
+                    <textarea id="Discription" name="Discription"  rows="8" cols="33"></textarea>`
+             addworkout_html += `<label for="forwho">For(Gender)</label>
+                                    <select name="forwho" id="forwho">
+                        <option value="both">Both</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        </select> `
+             addworkout_html += `<label for="weeks">Days per week</label><input type="text" id="weeks" name="weeks" /> `
+             addworkout_html += `<label for="rest">Rest</label><input type="text" id="rest" name="rest" /> `
+             addworkout_html += `<ul class="exercise_ul">
+                        <li><label for="exercise">Exercise</label><input class="exercise_ul-input" type="text" id="exercise" name="exercise" /></li>
+                        <li><label for="amount">Amount</label><input class="exercise_ul-input" type="text" id="amount" name="amount" /></li>
+                        <li><label for="reps">Reptation</label><input class="exercise_ul-input" type="text" id="reps" name="reps" /></li>`;
+
+                        $("#trainer_packages").html(`<div class='formcontainer'>${addworkout_html}</div>`);
+
+
+    }
+    
     
 
 </script>

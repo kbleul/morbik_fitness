@@ -2,6 +2,7 @@
 
     
     const workoutpackage = {
+    "size" : 14,
     0: {
         "Name" : "Men's Upper Body Strength",
         "Discription" : "Option 1",
@@ -102,27 +103,6 @@
         "Exrecises" : [["Surfer", "3" , "10-12"], ["Pullover With Crunch", "3" , "10-12"], ["Core Extension", "3" , "10-12"], ["Side Plank", "3" , "10-12"],
         ["Incline Push-Up", "3" , "10-12"],  ["Set-Up", "3" , "10-12"]],
     },
- /*   10: {
-        "Name" : "Kid's Workout",
-        "Discription" : "option 1 - kids above the age of 8",
-        "forwho" : "both",
-        "weeks" : "2-3 times a week",
-        "rest" : "2-3min",
-        "img" : "imgs/workouts/kids.jpg",
-        "Exrecises" : [["Squat", "1-3" , "10-12"], ["Jumping Squat", "1-3" , "10-12"], ["Calf Raise", "1-3" , "10-12"], ["Front Pullover", "1-3" , "10-12"],
-        ["Pullover With Crunch", "1-3" , "10-12"],  ["Lying Triceps Extension", "1-3" , "10-12"],  ["Seated Chest Press", "1-3" , "10-12"],  ["Shoulder Extension", "1-3" , "10-12"],
-          ["Seated Biceps Curl", "1-3" , "10-12"]],
-    },
-    11: {
-        "Name" : "Kid's Workout",
-        "Discription" : "option 2 - kids above the age of 8",
-        "forwho" : "both",
-        "weeks" : "2-3 times a week",
-        "rest" : "2-3min",
-        "img" : "imgs/workouts/kids2.jpg",
-        "Exrecises" : [["Squat", "1-3" , "10-12"], ["Single Leg Squat", "1-3" , "10-12"], ["Single Leg Jumping Squat", "1-3" , "10-12"], ["Lying Leg Curl With Crunch", "1-3" , "10-12"],
-        ["Pull-Up", "1-3" , "10-12"],  ["Incline Pull-Up", "1-3" , "10-12"],  ["Lying Triceps", "1-3" , "10-12"],  ["Seated Biceps Curl", "1-3" , "10-12"]],
-    }, */
     10: {
         "Name" : "Biginner's Program",
         "Discription" : "For biginner lifters relatively new to the gym",
