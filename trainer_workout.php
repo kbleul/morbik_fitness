@@ -87,9 +87,10 @@
 
             <script type="module">
    import workoutpackage  from "./workout.js";
+   const wite = () => console.log(workoutpackage[workoutpackage["size"] - 1])
 
     window.renderWorkouts = () => {
-
+wite()
    let workouthtml = '<div id="packages"> <button onclick="show_addWorkout_form()">Add New Plan</button>';
    let counter = 0;
 
@@ -138,7 +139,7 @@
     renderWorkouts();
 
     window.show_addWorkout_form = () => {
-            let addworkout_html = `<label for="Name">Title/Name</label><input type="text" id="Name" name="Name"  /> `
+            let addworkout_html = `<div id="frontform"><label for="Name">Title/Name</label><input type="text" class="input" id="Name" name="Name" require="required" /> `
              addworkout_html += `<label for="Discription">Discription</label>
                     <textarea id="Discription" name="Discription"  rows="8" cols="33"></textarea>`
              addworkout_html += `<label for="forwho">For(Gender)</label>
@@ -147,19 +148,83 @@
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         </select> `
-             addworkout_html += `<label for="weeks">Days per week</label><input type="text" id="weeks" name="weeks" /> `
-             addworkout_html += `<label for="rest">Rest</label><input type="text" id="rest" name="rest" /> `
-             addworkout_html += `<ul class="exercise_ul">
-                        <li><label for="exercise">Exercise</label><input class="exercise_ul-input" type="text" id="exercise" name="exercise" /></li>
-                        <li><label for="amount">Amount</label><input class="exercise_ul-input" type="text" id="amount" name="amount" /></li>
-                        <li><label for="reps">Reptation</label><input class="exercise_ul-input" type="text" id="reps" name="reps" /></li>`;
+             addworkout_html += `<label for="weeks">Days per week</label><input class="input" type="text" id="weeks" name="weeks" require="required" /> `
+             addworkout_html += `<label for="rest">Rest</label><input class="input" type="text" id="rest" name="rest" require="required"/> `
+             addworkout_html += `<buttom id="addExercises" onclick="checkEmptyInput()">Add Exercises</button></div>`
+           
+             addworkout_html += `<ul id="exercise_ul" class="exercise_ul">
+                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input " type="text"  name="amount" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input " type="text"  name="reps" require="required" /></li>
+                       <div class="btns_wrapper">
+                        <li><button id="addbtn" onClick="addExercises()">+</button></li>
+                        <li><button onClick="addNew_MealPlan()" id="submit">Submit</button></li>
+                        </div>
+                        </ul>`;
 
-                        $("#trainer_packages").html(`<div class='formcontainer'>${addworkout_html}</div>`);
+                        $("#trainer_packages").html(`<div id="formcontainer" class='formcontainer'>${addworkout_html}</div>`);
 
 
     }
+
     
-    
+  window.checkEmptyInput = () => {
+    for(let input of document.getElementsByClassName("input")) {  
+          if($(input).val() === "" || $(input).val() === " ") { input.focus(); console.log("hii"); return }
+      }
+
+      $("#frontform").hide();
+      $("#exercise_ul").show()
+
+  }
+
+  window.addExercises = () => {
+      $(".btns_wrapper").hide();
+      let html = `<ul class="exercise_ul">
+                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input" type="text"  name="amount" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps" require="required" /></li>
+                       <div class="btns_wrapper">
+                        <li><button id="addbtn" onclick="addExercises()">+</button></li>
+                        <li><button onClick="addNew_MealPlan()" id="submit">Submit</button></li>
+                        </div>
+                        </ul>`
+                        $("#formcontainer").html( $("#formcontainer").html() + html)
+  }
+  window.addNew_MealPlan = () => { 
+ 
+    let exercisearr =[];
+    for(let ul of document.getElementsByClassName("exercise_ul")) {
+        let exercisearr_temp = []
+        for(let input of $(ul).find(".exercise_ul-input")) {
+           exercisearr_temp.push($(input).val())
+        }
+       exercisearr.push(exercisearr_temp)
+    }
+
+  
+    console.log(exercisearr)
+      let key = workoutpackage["size"];
+      let newplan = {key : {
+          "Name" : $("#Name").val(),
+          "Discription" : $("#Discription").val(),
+          "forwho" : $("#forwho").val(),
+          "weeks" : $("#forwho").val() + " times a week" ,
+          "rest" : $("#rest").val(),
+          "img" : "",
+          "Exrecises" : exercisearr,
+          "by" :{"id" :  <?php echo $_SESSION["id"] ?> }
+      }}
+
+      //console.log(newplan[key]["by"])
+
+      workoutpackage[key] = newplan;
+      workoutpackage["size"] = ++workoutpackage["size"]
+      console.log(workoutpackage["size"])
+
+      wite()
+
+  }
 
 </script>
         </section>

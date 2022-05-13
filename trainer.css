@@ -1,7 +1,9 @@
 .formcontainer {
     width: 50%;
-    border: 1px solid black;
-    margin: 10% 0 0 25%;
+    margin: 3% 0 0 25%;
+    height: 87vh;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .formcontainer label {
@@ -19,14 +21,19 @@
     font-family: cursive;
     font-size: 1.1rem;
     color: gray;
+    margin-bottom: 2vh;
+    outline-color: #d934b2;
+    text-align: center;
+
 }
 
 .formcontainer input:nth-of-type(1) { 
     border: none;
     border-bottom: 1px solid black;
-    text-align: center;
     font-size: 1.2rem;
 }
+
+.formcontainer select { margin-left: 45%;}
 
 
 .formcontainer textarea {
@@ -35,6 +42,17 @@
     font-family: cursive;
     font-size: 1rem;
     color: gray;
+    outline-color: white;
+
 }
 
+.formcontainer #exercise_ul { display: none; }
+.exercise_ul { border-bottom: 1px solid #cecccc; }
 .formcontainer li { list-style: none; }
+
+#submit {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
+    padding: 0.7rem 1rem;
+}

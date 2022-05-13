@@ -120,6 +120,7 @@
 
 
    for(let key in workoutpackage) {
+        if(key !== "size") {
        let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
        let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
 
@@ -148,6 +149,7 @@
     }
 
    }
+}
         document.getElementById("packages").innerHTML =workouthtml;
 
           let sec = document.getElementsByClassName("exersice_section");
@@ -163,7 +165,7 @@
                 })
           }
 
-    
+        
 
 </script>
             </main>

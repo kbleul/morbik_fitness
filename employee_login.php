@@ -20,7 +20,7 @@
        $_SESSION["username"] = $row['Username'];
        $_SESSION["email"] = $row['Email'];
        //echo $_SESSION["email"];exit;
-       $_SESSION["name"] = $row['FName'].$row['LName'];
+       $_SESSION["name"] = $row['FName']." ".$row['LName'];
        $_SESSION["Job"] = $row['Job_title'];
 
        $count=mysqli_num_rows($result);
