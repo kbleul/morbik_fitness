@@ -42,8 +42,9 @@
     font-family: cursive;
     font-size: 1rem;
     color: gray;
-    outline-color: white;
-
+    outline-color: #d934b2;
+    text-align: center;
+    max-height: 6rem;
 }
 
 .formcontainer #exercise_ul { display: none; }

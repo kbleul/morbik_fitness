@@ -1,7 +1,72 @@
 <?php
     session_start();
+    include('database_connect.php');
+
     if( isset($_SESSION["email"]) == false || isset($_SESSION["username"] ) == false)
     {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+
+
+    if(isset($_POST["submit"])) {
+        $title = $_POST["Name"];
+        $discription = $_POST["Discription"];
+        $forwho = $_POST["forwho"];
+        $weeks = $_POST["weeks"];
+        $rest = $_POST["rest"];
+        $counter = $_POST["counter"];
+        $trainerid = $_SESSION['id'];
+        $date = date("Y-m-d");
+        $id;
+
+
+        $query = "";
+        if($_POST['Discription'] == "" || $_POST['Discription'] == " ") {
+            $query = "INSERT INTO added_workout_plan (tid,Name,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid', '$title','$forwho','$weeks','$rest','$date')";
+
+         } else {
+        $query = "INSERT INTO added_workout_plan (tid,Name,Discription,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid','$title','$discription','$forwho','$weeks','$rest','$date')";
+         }
+
+         
+        if(mysqli_query($con,$query)) {
+            $query = "SELECT * FROM added_workout_plan WHERE Name = '$title'";
+            if($result= $con->query($query)){
+                while($row= $result -> fetch_assoc() ){
+                    $id = $row['id'];
+                }
+
+            //     $count = number_format($counter);
+            //   echo "<script>console.log('aa')</script>";
+            //   echo "<script>console.log($counter === 0)</script>";
+
+            //   echo "<script>console.log($count === 0 )</script>";
+
+                    for($i = 0 ; $i <= number_format($counter) ; $i++) {
+                            $exercises = $_POST["exercise".$i];
+                            $amount = $_POST["amount".$i];
+                            $reps = $_POST["reps".$i];
+                            $error;
+
+                   //         echo "<script>console.log($id + ' ' + $exercises + ' ' + $amount + ' ' + $reps)</script>";
+    
+                        $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($id,'$exercises',$amount,$reps)";
+
+                        if(mysqli_query($con,$query)) {  echo "<script>console.log('yess')</script>";}
+                        else {  
+                            $error = mysqli_error($con);
+                            echo "<script>console.log($error)</script>";    }
+                    }
+                  
+
+                  } else {  $error = mysqli_error($con);
+                    echo "<script>console.log($error)</script>";  }
+
+            } else {  $error = mysqli_error($con);
+                            echo "<script>console.log($error)</script>";  }
+         }
+          
+
+
+    
   
 ?>
 
@@ -80,6 +145,12 @@
             </nav>
         </section>
         <section class="main_content-wrapper">
+            <div id="topnav">
+                <button onclick="renderWorkouts()">Main</button>
+                <button>By Other Trainer</button>
+                <button onclick="renderByMe()">By Me</button>
+                <button onclick="show_addWorkout_form()">Add New Workout Plan</button>
+            </div>
             <main id="trainer_packages">
               
 
@@ -87,11 +158,9 @@
 
             <script type="module">
    import workoutpackage  from "./workout.js";
-   const wite = () => console.log(workoutpackage[workoutpackage["size"] - 1])
 
     window.renderWorkouts = () => {
-wite()
-   let workouthtml = '<div id="packages"> <button onclick="show_addWorkout_form()">Add New Plan</button>';
+   let workouthtml = '<div id="packages"> ';
    let counter = 0;
 
    for(let key in workoutpackage) { 
@@ -139,7 +208,7 @@ wite()
     renderWorkouts();
 
     window.show_addWorkout_form = () => {
-            let addworkout_html = `<div id="frontform"><label for="Name">Title/Name</label><input type="text" class="input" id="Name" name="Name" require="required" /> `
+            let addworkout_html = `<div id="frontform"><label for="Name">Title</label><input type="text" class="input" id="title" name="Name" require="required" /> `
              addworkout_html += `<label for="Discription">Discription</label>
                     <textarea id="Discription" name="Discription"  rows="8" cols="33"></textarea>`
              addworkout_html += `<label for="forwho">For(Gender)</label>
@@ -148,21 +217,22 @@ wite()
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         </select> `
-             addworkout_html += `<label for="weeks">Days per week</label><input class="input" type="text" id="weeks" name="weeks" require="required" /> `
+             addworkout_html += `<label for="weeks">Days per week</label><input class="input" type="text" id="weeks" name="weeks" require="required" />
+             <input type="hidden" id="counter" name="counter" value="0"> `
              addworkout_html += `<label for="rest">Rest</label><input class="input" type="text" id="rest" name="rest" require="required"/> `
              addworkout_html += `<buttom id="addExercises" onclick="checkEmptyInput()">Add Exercises</button></div>`
            
              addworkout_html += `<ul id="exercise_ul" class="exercise_ul">
-                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise" require="required"/></li>
-                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input " type="text"  name="amount" require="required"/></li>
-                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input " type="text"  name="reps" require="required" /></li>
+                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise0" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="amount">Sets</label><input class="exercise_ul-input " type="text"  name="amount0" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input " type="text"  name="reps0" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onClick="addExercises()">+</button></li>
-                        <li><button onClick="addNew_MealPlan()" id="submit">Submit</button></li>
+                        <li><button onClick="addNew_MealPlan()" name="submit" id="submit">Submit</button></li>
                         </div>
                         </ul>`;
 
-                        $("#trainer_packages").html(`<div id="formcontainer" class='formcontainer'>${addworkout_html}</div>`);
+                        $("#trainer_packages").html(`<div id="formcontainer" class='formcontainer'><form method="post" id="addexer_form" >${addworkout_html}</form></div>`);
 
 
     }
@@ -178,52 +248,50 @@ wite()
 
   }
 
+  let counter = 0;
   window.addExercises = () => {
-      $(".btns_wrapper").hide();
+      $(".btns_wrapper").remove();
+      const name = $("#title").val();  console.log(name);
+
+      const Discription = $("#Discription").val();
+      const weeks = $("#weeks").val();
+      const rest = $("#rest").val();
+
       let html = `<ul class="exercise_ul">
-                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise" require="required"/></li>
-                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input" type="text"  name="amount" require="required"/></li>
-                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps" require="required" /></li>
+                        <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise${++counter}" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input" type="text"  name="amount${counter}" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps${counter}" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onclick="addExercises()">+</button></li>
-                        <li><button onClick="addNew_MealPlan()" id="submit">Submit</button></li>
+                        <li><button type="submit" name="submit" onClick="addNew_MealPlan()" name="submit" id="submit">Submit</button></li>
                         </div>
                         </ul>`
-                        $("#formcontainer").html( $("#formcontainer").html() + html)
+                        $("#addexer_form").html( $("#formcontainer").html() + html)
+                        $("#title").val(name)
+                        $("#Discription").val(Discription)
+                        $("#weeks").val(weeks)
+                        $("#rest").val(rest)
+
+      $("#counter").val(counter)
+
   }
   window.addNew_MealPlan = () => { 
- 
-    let exercisearr =[];
-    for(let ul of document.getElementsByClassName("exercise_ul")) {
-        let exercisearr_temp = []
-        for(let input of $(ul).find(".exercise_ul-input")) {
-           exercisearr_temp.push($(input).val())
-        }
-       exercisearr.push(exercisearr_temp)
-    }
+     $("#addexer_form").submit();
 
-  
-    console.log(exercisearr)
-      let key = workoutpackage["size"];
-      let newplan = {key : {
-          "Name" : $("#Name").val(),
-          "Discription" : $("#Discription").val(),
-          "forwho" : $("#forwho").val(),
-          "weeks" : $("#forwho").val() + " times a week" ,
-          "rest" : $("#rest").val(),
-          "img" : "",
-          "Exrecises" : exercisearr,
-          "by" :{"id" :  <?php echo $_SESSION["id"] ?> }
-      }}
+  }
 
-      //console.log(newplan[key]["by"])
+  window.renderByMe = () => {
+    const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                        $("#trainer_packages").html(firsttime_response);
+                        console.log(firsttime_response);
 
-      workoutpackage[key] = newplan;
-      workoutpackage["size"] = ++workoutpackage["size"]
-      console.log(workoutpackage["size"])
+                    }
 
-      wite()
-
+                    xmlhttp.open("GET", "fetch_workout.php?s=bytrainer");
+                                    xmlhttp.send();
   }
 
 </script>
