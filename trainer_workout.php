@@ -146,12 +146,29 @@
         </section>
         <section class="main_content-wrapper">
             <div id="topnav">
-                <button onclick="renderWorkouts()">Main</button>
-                <button>By Other Trainer</button>
-                <button onclick="renderByMe()">By Me</button>
-                <button onclick="show_addWorkout_form()">Add New Workout Plan</button>
+                <button onclick="renderWorkouts()" class="topbtn active">Main</button>
+                <button onclick="renderByOthers()" class="topbtn">By Other Trainer</button>
+                <button onclick="renderByMe()" class="topbtn">By Me</button>
+                <button onclick="show_addWorkout_form()" class="topbtn">Add New Workout Plan</button>
             </div>
-            <main id="trainer_packages">
+
+            <div id="msgbox_wrapper">
+                <p id='msgbox'></p>
+            </div>
+            <script>
+              
+                    for(let i = 0; i < document.getElementsByClassName("topbtn").length ; i++) {
+                        document.getElementsByClassName("topbtn")[i].addEventListener("click", () => {
+                            for(let j = 0; j < document.getElementsByClassName("topbtn").length ; j++) {
+                              if(document.getElementsByClassName("topbtn")[j].classList.contains("active") ) 
+                                 {   $(document.getElementsByClassName("topbtn")[j]).removeClass("active");    }
+                        }
+                              $(document.getElementsByClassName("topbtn")[i]).addClass("active");
+                    })
+                    console.log("asjdjk")
+                }
+            </script>
+            <main id="trainer_packages" >
               
 
             </main>
@@ -256,10 +273,11 @@
       const Discription = $("#Discription").val();
       const weeks = $("#weeks").val();
       const rest = $("#rest").val();
+      const gender = $("#forwho").val()
 
       let html = `<ul class="exercise_ul">
                         <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise${++counter}" require="required"/></li>
-                        <li class="exercise_ul-li"><label for="amount">Amount</label><input class="exercise_ul-input" type="text"  name="amount${counter}" require="required"/></li>
+                        <li class="exercise_ul-li"><label for="amount">Sets</label><input class="exercise_ul-input" type="text"  name="amount${counter}" require="required"/></li>
                         <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps${counter}" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onclick="addExercises()">+</button></li>
@@ -269,6 +287,7 @@
                         $("#addexer_form").html( $("#formcontainer").html() + html)
                         $("#title").val(name)
                         $("#Discription").val(Discription)
+                        $("#forwho").val(gender)
                         $("#weeks").val(weeks)
                         $("#rest").val(rest)
 
@@ -280,20 +299,90 @@
 
   }
 
+  window.attachToggleFunction = () => {
+
+    for(let i = 0 ; i < document.getElementsByClassName("front").length; i++) { 
+                            document.getElementsByClassName("front")[i].addEventListener("click", () => {
+                                console.log("ola")
+                                $(document.getElementsByClassName("hidden")[i]).show().addClass("exercises_list").css("display","flex");
+                                $(document.getElementsByClassName("front")[i]).hide();
+
+                                $(document.getElementsByClassName("hidden")[i]).find(".backbtn").click(() => {
+                                $(document.getElementsByClassName("hidden")[i]).hide().removeClass("exercises_list");
+                                    $(document.getElementsByClassName("front")[i]).show();
+                                });
+                             
+                            })
+                        }
+  }
+
   window.renderByMe = () => {
     const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
                         $("#trainer_packages").html(firsttime_response);
-                        console.log(firsttime_response);
-
+                        attachToggleFunction();
                     }
 
                     xmlhttp.open("GET", "fetch_workout.php?s=bytrainer");
                                     xmlhttp.send();
   }
 
+  
+  window.renderByOthers = () => {
+    const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                        $("#trainer_packages").html(firsttime_response);
+                        attachToggleFunction();
+                    }
+
+                    xmlhttp.open("GET", "fetch_workout.php?o=byothers");
+                                    xmlhttp.send();
+  }
+
+  window.showSubmenu = counter => {
+    $(document.getElementsByClassName("btn_wrapper")[counter]).find(".backbtn").hide(300)
+    $(document.getElementsByClassName("btn_wrapper")[counter]).find(".hamburger_btn").hide(350)
+      $(document.getElementsByClassName("btn_wrapper")[counter]).find(".submenu_wrapper").fadeIn(500).css("display","flex")
+     
+
+      console.log(counter)
+      console.log(document.getElementsByClassName("btn_wrapper")[counter])
+
+  }
+
+  window.deleteWorkout = wid => { console.log(wid)
+
+    const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+                        console.log(typeof(firsttime_response) == "success")
+                        if(firsttime_response === "success") { console.log(firsttime_response)
+
+                            renderByMe();
+
+                            $("#msgbox").text('Workout Deleted !!').show();
+                            setTimeout(() => { $("#msgbox").fadeOut(); }, 3000)
+
+                        }
+                        else {
+                            $("#msgbox").text('Delete Workout failed. Try again later.' + firsttime_response).show();
+                            setTimeout(() => { $("#msgbox").fadeOut(); }, 1200)
+                        }
+                    }
+
+                    xmlhttp.open("GET", "edit_delete_workout.php?o=" + wid);
+                                    xmlhttp.send();
+  }
+
+  window.editMyWorkout = () => {
+    show_addWorkout_form();
+    
+  }
 </script>
         </section>
     </article>

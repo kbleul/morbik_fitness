@@ -198,6 +198,9 @@ align-items: center;
     background-color: inherit;
   }
   #topnav button:nth-of-type(2) {   margin-left: 5%;   }
+  #topnav button:nth-of-type(3) {   margin-left: 5%;   }
+  #topnav button:nth-of-type(4) {   margin-left: 5%;   }
+
   
   #topnav button:hover {  background-color: #ececec;  }
   #topnav button.active {  
@@ -234,9 +237,19 @@ align-items: center;
     margin-top: 4%;
     transition: all .5s ease;
 }
+
+.mymeal_sec .exercises_list {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 4%;
+    overflow-y: scroll;
+
+}
 .mymeal_sec .mealslist_div:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    opacity: .6; 
     margin-top: 0;
 }
 
@@ -246,3 +259,66 @@ align-items: center;
     font-family: 'Tapestry', cursive;
 }
 
+.hidden { display: none;}
+
+.mealslist_div li,
+.exercises_list li {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.exe_list { 
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    margin-top: 1rem;
+    width: 100%;
+}
+.exe_list:nth-of-type(1) { margin-top: 2.5rem; }
+.exe_list:nth-of-type(1) li { font-weight: bold; }
+
+
+.exercises_list #backbtn_yelllow { margin: 0; }
+
+.hamburger_btn {
+    border: none;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: capitalize;
+    color: honeydew;
+    background-color: inherit;
+    opacity: .8;
+    margin-bottom: 2%;
+    padding: 0.7rem 1rem;
+}
+
+.btn_wrapper { 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.submenu_wrapper { 
+    display: none;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.submenu_wrapper button {
+    border: none;
+    background-color: cadetblue;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+}
+
+#msgbox_wrapper { margin-top: 3.5rem; }
+#msgbox_wrapper p{ 
+    text-align: center;
+    font-weight: 700;
+    color: red;
+ }
