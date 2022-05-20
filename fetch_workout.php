@@ -31,10 +31,10 @@
            <div class='hidden'>
            <div class='btn_wrapper'>
             <button id='backbtn_yelllow' class='backbtn' onClick='backToFront()'>
-            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='4em' height='4em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none' stroke='yellow' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='m8 5l-5 5l5 5'/><path d='M3 10h8c5.523 0 10 4.477 10 10v1'/></g></svg>
+            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='3em' height='2.5em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none' stroke='yellow' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='m8 5l-5 5l5 5'/><path d='M3 10h8c5.523 0 10 4.477 10 10v1'/></g></svg>
             </button>
             <button class='hamburger_btn' onClick='showSubmenu($counter)'>
-            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='3em' height='3em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'><path fill='none' stroke='red' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5'/></svg></button>   
+            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'><path fill='none' stroke='red' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5'/></svg></button>   
             </button>
 
             <div class='submenu_wrapper'>
@@ -51,10 +51,10 @@
         <div class='hidden'>
         <div class='btn_wrapper'>
             <button id='backbtn_yelllow' class='backbtn' onClick='backToFront()'>
-            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='4em' height='4em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none' stroke='yellow' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='m8 5l-5 5l5 5'/><path d='M3 10h8c5.523 0 10 4.477 10 10v1'/></g></svg>
+            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='3em' height='2.5em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><g fill='none' stroke='yellow' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='m8 5l-5 5l5 5'/><path d='M3 10h8c5.523 0 10 4.477 10 10v1'/></g></svg>
             </button>
             <button class='hamburger_btn' onClick='showSubmenu($counter)'>
-            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='3em' height='3em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'><path fill='none' stroke='red' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5'/></svg></button>   
+            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 16 16'><path fill='none' stroke='red' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5'/></svg></button>   
             </button>
 
             <div class='submenu_wrapper'>

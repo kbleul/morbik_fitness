@@ -78,10 +78,32 @@
 
                     $wid = $row['id'];
                     $query = "UPDATE added_workout_plan
-                    SET Name = $title, Discription = $description, Forwho = $forwho , Weeks = $weeks , Rest = $rest where 
+                    SET Name = '$title', Discription = '$discription', Forwho = '$forwho' , Weeks = '$weeks' , Rest = '$rest' 
                     WHERE id = $wid";
 
-                    if($con->query($query)) { echo "<script>console.log('updated')</script>"; }
+                    if($con->query($query)) {
+                $query = "DELETE FROM exercise WHERE Wid = $wid";
+
+                if($con ->query($query)) {
+                    for($i = 0 ; $i <= number_format($counter) ; $i++) {
+                        $exercises = $_POST["exercise".$i];
+                        $amount = $_POST["amount".$i];
+                        $reps = $_POST["reps".$i];
+
+               //         echo "<script>console.log($id + ' ' + $exercises + ' ' + $amount + ' ' + $reps)</script>";
+
+                    $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($wid,'$exercises',$amount,$reps)";
+
+                    if(mysqli_query($con,$query)) {  echo "<script>console.log('yess')</script>";}
+                    else {  
+                        $error = mysqli_error($con);
+                        echo "<script>console.log($error)</script>";    }
+                }
+                }
+                else {  $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
+
+                echo "<script>console.log('updated')</script>"; }
+                    else {  $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
                 }
             } else { $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
 
@@ -251,7 +273,9 @@
 
     window.show_addWorkout_form = () => {
             let addworkout_html = `<div id="frontform"><label for="Name">Title</label><input type="text" class="input" id="title" name="Name" require="required" /> `
-             addworkout_html += `<label for="Discription">Discription</label>
+             addworkout_html += ` <li><input id="action" type="hidden" value='addnew' name='action' /></li>
+
+             <label for="Discription">Discription</label>
                     <textarea id="Discription" name="Discription"  rows="8" cols="33"></textarea>`
              addworkout_html += `<label for="forwho">For(Gender)</label>
                                     <select name="forwho" id="forwho">
@@ -301,8 +325,10 @@
       const Discription = $("#Discription").val();
       const weeks = $("#weeks").val();
       const rest = $("#rest").val();
-      const gender = $("#forwho").val()
-
+      const gender = $("#forwho").val();
+      const action = $("#action").val();
+console.log($("#action"))
+console.log(document.getElementById("action"))
       const exer_list_arr = [];
 
       for(let i = 0 ; i < document.getElementsByClassName("exercise_ul").length ; i++ ) {
