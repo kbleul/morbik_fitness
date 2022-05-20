@@ -47,7 +47,8 @@
     max-height: 6rem;
 }
 
-.formcontainer #exercise_ul { display: none; }
+.formcontainer #exercise_ul,
+.formcontainer .addedul { display: none; }
 .exercise_ul { border-bottom: 1px solid #cecccc; }
 .formcontainer li { list-style: none; }
 

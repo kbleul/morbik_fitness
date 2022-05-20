@@ -7,6 +7,7 @@
 
 
     if(isset($_POST["submit"])) {
+        $actiontype = $_POST['action'];
         $title = $_POST["Name"];
         $discription = $_POST["Discription"];
         $forwho = $_POST["forwho"];
@@ -17,6 +18,7 @@
         $date = date("Y-m-d");
         $id;
 
+        if($actiontype == "addnew") {
 
         $query = "";
         if($_POST['Discription'] == "" || $_POST['Discription'] == " ") {
@@ -62,6 +64,29 @@
 
             } else {  $error = mysqli_error($con);
                             echo "<script>console.log($error)</script>";  }
+
+           }
+
+           else  if($actiontype == "update") {
+
+            $query = "SELECT * FROM added_workout_plan WHERE tid= $trainerid AND Name = '$title'";
+            echo "<script>console.log('$trainerid - $title');</script>";
+
+            if($result= $con->query($query)){
+                while($row= $result -> fetch_assoc() ){
+                    echo "<script>console.log('updated3')</script>";
+
+                    $wid = $row['id'];
+                    $query = "UPDATE added_workout_plan
+                    SET Name = $title, Discription = $description, Forwho = $forwho , Weeks = $weeks , Rest = $rest where 
+                    WHERE id = $wid";
+
+                    if($con->query($query)) { echo "<script>console.log('updated')</script>"; }
+                }
+            } else { $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
+
+           }
+
          }
           
 
@@ -245,6 +270,7 @@
                         <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input " type="text"  name="reps0" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onClick="addExercises()">+</button></li>
+                        <li><input id="action" type="hidden" value='addnew' name='action' /></li>
                         <li><button onClick="addNew_MealPlan()" name="submit" id="submit">Submit</button></li>
                         </div>
                         </ul>`;
@@ -257,11 +283,13 @@
     
   window.checkEmptyInput = () => {
     for(let input of document.getElementsByClassName("input")) {  
-          if($(input).val() === "" || $(input).val() === " ") { input.focus(); console.log("hii"); return }
+          if($(input).val() === "" || $(input).val() === " ") { input.focus();  return }
       }
 
       $("#frontform").hide();
       $("#exercise_ul").show()
+
+      for(let el of document.getElementsByClassName("addedul")) {  $(el).show("addedul") }
 
   }
 
@@ -274,6 +302,19 @@
       const weeks = $("#weeks").val();
       const rest = $("#rest").val();
       const gender = $("#forwho").val()
+
+      const exer_list_arr = [];
+
+      for(let i = 0 ; i < document.getElementsByClassName("exercise_ul").length ; i++ ) {
+          let temparr = []
+          let root = document.getElementsByClassName("exercise_ul")[i];
+
+        temparr.push($(root.querySelectorAll(".exercise_ul-li")[0]).find("input").val())
+        temparr.push($(root.querySelectorAll(".exercise_ul-li")[1]).find("input").val())
+        temparr.push($(root.querySelectorAll(".exercise_ul-li")[2]).find("input").val())
+
+        exer_list_arr.push(temparr);
+      }
 
       let html = `<ul class="exercise_ul">
                         <li class="exercise_ul-li"><label for="exercise">Exercise</label><input class="exercise_ul-input " type="text"  name="exercise${++counter}" require="required"/></li>
@@ -290,6 +331,15 @@
                         $("#forwho").val(gender)
                         $("#weeks").val(weeks)
                         $("#rest").val(rest)
+
+                        for(let i = 0 ; i < exer_list_arr.length ; i++ ) {
+          let root = document.getElementsByClassName("exercise_ul")[i];
+
+        $(root.querySelectorAll(".exercise_ul-li")[0]).find("input").val(exer_list_arr[i][0])
+        $(root.querySelectorAll(".exercise_ul-li")[1]).find("input").val(exer_list_arr[i][1])
+        $(root.querySelectorAll(".exercise_ul-li")[2]).find("input").val(exer_list_arr[i][2])
+
+      }
 
       $("#counter").val(counter)
 
@@ -347,10 +397,6 @@
     $(document.getElementsByClassName("btn_wrapper")[counter]).find(".backbtn").hide(300)
     $(document.getElementsByClassName("btn_wrapper")[counter]).find(".hamburger_btn").hide(350)
       $(document.getElementsByClassName("btn_wrapper")[counter]).find(".submenu_wrapper").fadeIn(500).css("display","flex")
-     
-
-      console.log(counter)
-      console.log(document.getElementsByClassName("btn_wrapper")[counter])
 
   }
 
@@ -379,9 +425,68 @@
                                     xmlhttp.send();
   }
 
-  window.editMyWorkout = () => {
+  window.editMyWorkout = index => {
+    const root = document.getElementsByClassName("front")[parseInt(index)];
+    const root_hidden = document.getElementsByClassName("hidden")[parseInt(index)];
+
+      const title = $(root).find(".title").text();
+      const disc = $(root).find(".disc").text().split(" : ")[1];
+      const forwho = $(root).find(".forwho").text().split(" : ")[1];
+      const addedon = $(root).find(".addedon").text();
+      const weeks = $(root).find(".hidden_week").text();
+      let rest;
+
+      if($(root_hidden).find(".rest").text() !== '' && $(root_hidden).find(".rest").text() !== " ") {
+       let str = $(root_hidden).find(".rest").find("b").text().split(" ")
+
+           rest = str[0]
+      } else {   rest = $(root_hidden).find(".rest").text();   }
+console.log("rest: " + rest)
+      const exer_list_arr = [];
+
+    if(root_hidden.querySelectorAll(".exe_list").length > 1) {
+      for(let i = 1 ; i < root_hidden.querySelectorAll(".exe_list").length; i++) {
+          const subroot = root_hidden.querySelectorAll(".exe_list")[i];
+          let temparr = [];
+          for(let j = 0 ; j < subroot.querySelectorAll("li").length ; j++) {
+            temparr.push(subroot.querySelectorAll("li")[j].innerHTML);
+          }
+          exer_list_arr.push(temparr);
+      }
+    }
+
+
+
     show_addWorkout_form();
-    
+
+    $("#title").val(title)
+    $("#Discription").val(disc)
+    $("#forwho").val(forwho)
+    $("#weeks").val(weeks)
+    $("#rest").val(rest)
+
+
+    if(exer_list_arr.length === 1) {
+       const subroot =  document.getElementsByClassName("exercise_ul")[0]
+       $(subroot.querySelectorAll(".exercise_ul-li")[0]).find("input").val(exer_list_arr[0][0])
+       $(subroot.querySelectorAll(".exercise_ul-li")[1]).find("input").val(exer_list_arr[0][1])
+       $(subroot.querySelectorAll(".exercise_ul-li")[2]).find("input").val(exer_list_arr[0][2])
+    }
+    else if(exer_list_arr.length > 1) {
+        for(let i = 1; i < exer_list_arr.length; i++) {  addExercises(); }
+
+    for(let i = 0; i < document.getElementsByClassName("exercise_ul").length; i++)  { 
+        const subroot =  document.getElementsByClassName("exercise_ul")[i]
+       $(subroot.querySelectorAll(".exercise_ul-li")[0]).find("input").val(exer_list_arr[i][0])
+       $(subroot.querySelectorAll(".exercise_ul-li")[1]).find("input").val(exer_list_arr[i][1])
+       $(subroot.querySelectorAll(".exercise_ul-li")[2]).find("input").val(exer_list_arr[i][2])
+
+       if(i > 0) { $(subroot).addClass("addedul")  }
+    }      
+    }
+
+    $("#action").val("update")
+
   }
 </script>
         </section>

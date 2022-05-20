@@ -259,7 +259,8 @@ align-items: center;
     font-family: 'Tapestry', cursive;
 }
 
-.hidden { display: none;}
+.hidden ,
+.hidden_week{ display: none;}
 
 .mealslist_div li,
 .exercises_list li {
@@ -322,3 +323,14 @@ align-items: center;
     font-weight: 700;
     color: red;
  }
+
+ #addExercises {
+    display: block;
+    margin: 5% 30%;
+    width: 40%;
+    text-align: center;
+    font-size: large;
+    color: blue;
+ }
+.exe_list li:nth-of-type(1),
+ .forwho { text-transform: capitalize; }

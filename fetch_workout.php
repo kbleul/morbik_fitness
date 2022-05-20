@@ -24,7 +24,7 @@
         $indexplusid = "5 - $wid";
         
         if($dis == "" || $dis == " ") {
-            $html = $html . "<div class='front'><ul class='mealslist_div'><li><h2>$name</h2></li><li>For : $forwho</li><li> Added On : $reg</li>
+            $html = $html . "<div class='front'><ul class='mealslist_div'><li><h2 class='title'>$name</h2></li><li class='forwho'>For : $forwho</li><li class='addedon'> Added On : $reg</li><li class='hidden_week'>$weeks</li>
             </ul>
             </div> 
              
@@ -38,14 +38,14 @@
             </button>
 
             <div class='submenu_wrapper'>
-                <button onClick='editWorkout($wid)'>Edit Workout</button>
+                <button onClick='editMyWorkout($counter)'>Edit Workout</button>
                 <button onClick='deleteWorkout($wid)'>Delete Workout</button>
             </div>
        </div>
-           <p>Rest between reptition = <b>$rest min</b></p>
+           <p class='rest'>Rest between reptition = <b>$rest min</b></p>
            <ul class='exe_list'><li>Exercise</li><li>Sets</li><li>Reptition</li></ul>";     
         } else {
-        $html = $html . "<div class='front'><ul class='mealslist_div'><li><h2>$name</h2></li><li>Discription : $dis</li><li>For : $forwho</li><li> Added On : $reg</li>
+        $html = $html . "<div class='front'><ul class='mealslist_div'><li><h2 class='title'>$name</h2></li><li class='disc'>Discription : $dis</li><li class='forwho'>For : $forwho</li><li class='addedon'> Added On : $reg</li><li class='hidden_week'>$weeks</li>
         </ul>
         </div>
         <div class='hidden'>
@@ -58,11 +58,11 @@
             </button>
 
             <div class='submenu_wrapper'>
-                <button onClick='editWorkout($wid)'>Edit Workout</button>
-                <button onClick='deleteWorkout($wid)'>Delete Workout</button>
+                <button onClick='editMyWorkout($counter)'>Edit Workout</button>
+                <button onClick='deleteWorkout($counter)'>Delete Workout</button>
             </div>
        </div>
-       <p>Rest between reptition = <b>$rest min</b></p>
+       <p class='rest'>Rest between reptition = <b>$rest min</b></p>
        <ul class='exe_list'><li>Exercise</li><li>Sets</li><li>Reptition</li></ul>";
         }
 
