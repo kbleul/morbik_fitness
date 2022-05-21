@@ -52,7 +52,8 @@
 .exercise_ul { border-bottom: 1px solid #cecccc; }
 .formcontainer li { list-style: none; }
 
-#submit {
+#submit,
+#update {
     width: 50%;
     margin-left: 25%;
     margin-bottom: 2%;

@@ -338,6 +338,7 @@ h1{ margin: 0;}
 }
 
 #submit,
+#update,
 #firsttime_checker #btn_setup{
     margin-top: 3rem;
     width: 80%;
@@ -356,6 +357,7 @@ h1{ margin: 0;}
 
 #submit:hover,
 #submit:focus,
+#update:hover,
 #firsttime_checker #btn_setup:hover,
 #firsttime_checker #btn_setup:focus {  text-decoration: none; opacity: 1;}
 

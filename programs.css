@@ -345,12 +345,26 @@ align-items: center;
  .inventory_wrapper ul li { 
      list-style: none;
      text-align: center;    
-     width: 16.667%;
+     width: 16%;
     padding: 0.7rem 0;
 }
-.inventory_wrapper ul li:nth-of-type(1) { font-weight: bold; } 
+.inventory_wrapper ul li:nth-of-type(2) { font-weight: bold; } 
+.inventory_wrapper ul li:nth-of-type(2):hover { 
+    font-weight: lighter;
+    list-style-type: circle;
+} 
+
 
  .inventory_wrapper .inventory_ul { 
      display: flex;
      justify-content: center;
  }
+
+ .topnav label {
+    margin-right: 0.5rem;
+}
+
+.topnav select {
+    margin-right: 5%;
+    margin-bottom: 2%;
+}

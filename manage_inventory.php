@@ -16,7 +16,6 @@
           $last_added = date("Y-m-d");
           
           $query = "";
-          echo "<script>console.log('$name $disc $quantity $type $price $last_added')</script>";
            if($price == "" || $price == " ") 
            { $query = "INSERT INTO inventory (Name,Discription,Quantity,Type,Last_Added) VALUES ('$name','$disc','$quantity','$type','$last_added')"; echo "<script>console.log('success3')</script>";}
           else 
@@ -31,6 +30,37 @@
                 echo "<script>console.log($error)</script>";
             }
         }
+
+        
+      if(isset($_POST["update"])) {
+        $id = $_POST["eq_id"];
+        $name = $_POST["name"];
+        $disc = $_POST["disc"];
+        $quantity = $_POST["quantity"];
+        $type = $_POST["type"];
+        $price = $_POST["price"];
+        $last_added = date("Y-m-d");
+        
+        $query = "";
+         if($price == "" || $price == " ") 
+         { 
+    $query = "UPDATE inventory SET Name = '$name', Discription = '$disc', Quantity = '$quantity', Type = '$type', Last_Added = '$last_added'
+            WHERE id = $id;"; echo "<script>console.log('success3')</script>";
+            }
+        else 
+{  $query = "UPDATE inventory SET Name = '$name', Discription = '$disc', Quantity = '$quantity', Type = '$type', Price = '$price' , Last_Added = '$last_added'
+    WHERE id = $id;" ;  echo "<script>console.log('success4')</script>"; }
+    
+
+         if(mysqli_query($con,$query)) {
+          $status = "Existing Equipment updated successfully" ; 
+          echo "<script>console.log('$status')</script>"; 
+         }
+         else { 
+             $error = mysqli_error($con);
+              echo "<script>console.log($error)</script>";
+          }
+      }
     ?>
 
 <!DOCTYPE html>
@@ -144,8 +174,8 @@
         <section class="main_content-wrapper">
             <main>
                <div id='topnav'>
-                   <button>Equipments</button>
-                   <button onclick="addItem_Form()">Add New</button>
+                   <button id="viewinventory_btn" class="active" onclick="viewInventory('all')">Equipments</button>
+                   <button id="addto_inventory_btn" onclick="addItem_Form()">Add New</button>
                </div>
 
                <div id="msgbox_wrapper">
@@ -156,15 +186,17 @@
                  setTimeout(() => { $("#msgbox").fadeOut(); }, 3000)
             </script>
 
-                <div class='topnav'>
+                <div id="submenu" class='topnav'>
+                    <label for='sortby'>Sort by : </label>
                    <select name="sortby" id="sortby" onchange="viewInventory(this.value)">
                         <option value="all">All</option>
                         <option value="name">Name</option>
                         <option value="type">Type</option>
                         <option value="date">Date</option>
                    </select>
+                   <label for="types" >Catagories : </label>
                    <select name="types" id="types" onchange="viewInventory(this.value)">
-                        <option value="all">All</option>
+                        <option value="all_types">All</option>
                         <option value="weights">Weights</option>
                         <option value="machines">Machines</option>
                         <option value="others">Others</option>
@@ -179,27 +211,34 @@
 
     <script>
         const addItem_Form = () => {
-            let html = "<form method='POST'> <label for='name'>Name</label><input type='text' name='name' required='required' />";
+            let html = "<form method='POST' id='equ_form'> <label for='name'>Name</label><input id='name' type='text' name='name' required='required' />";
             html += `<label for="type">Type</label><select name='type' id='type' required='required'>
             <option value="Weights">Weights</option>
                         <option value="Machine">Machines</option>
                         <option value="Other">Other</option>
             </select>`;
-            html += `<label for="disc">Discription</label><input type="text" name="disc" required='required' />`;
-            html += `<label for="quantity">Quantity</label><input type="number" name="quantity"  value='1' />`;
-            html += `<label for="price">Price</label><input type="text" name="price" />`
+            html += `<label for="disc">Discription</label><input type="text" name="disc" id="disc" required='required' />`;
+            html += `<label for="quantity">Quantity</label><input type="number" name="quantity" id="quantity"  value='1' />`;
+            html += `<label for="price">Price</label><input type="text" name="price" id="price" />`
             html += `<input id="submit" type="submit" name="submit" value="Submit"/>`
 
 
             $("#content_area").html(`<div class='formcontainer'>${html}</div>`);
+            $("#submenu").hide();
+            $("#viewinventory_btn").removeClass("active")
+            $("#addto_inventory_btn").addClass("active");
 
         }
 
         const viewInventory  = type => {
+            $("#submenu").show();
+            $("#addto_inventory_btn").removeClass("active");
+            $("#viewinventory_btn").addClass("active")
+
             const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
-                        let firsttime_response = this.responseText;  console.log(type);
+                        let firsttime_response = this.responseText; 
                         if(firsttime_response === "unsucessfully") { 
                             $("#msgbox").text('View Inventory is not woorking at this moment. Try again later.' + firsttime_response).show();
                             setTimeout(() => { $("#msgbox").fadeOut(); }, 2000)
@@ -209,11 +248,41 @@
                         }
                     }
 
-                    xmlhttp.open("GET", "view_inventory.php?o=" + type);
+                    if(type === 'all' || type === 'name' || type === 'type' || type === 'date')
+                        {  xmlhttp.open("GET", "view_inventory.php?s=" + type); }
+                    else { xmlhttp.open("GET", "view_inventory.php?c=" + type); }
                                     xmlhttp.send();
         }
 
          viewInventory("all"); 
+
+
+        const editItem = index => {
+            const root = document.getElementById(`ul${index}`);
+            const list = root.querySelectorAll("li");
+            let id = $(list[0]).text();
+            let name = $(list[1]).text();
+            let dis = $(list[2]).text();
+            let quan = $(list[3]).text();
+            let type = $(list[4]).text();
+            let price = $(list[5]).text();
+
+            addItem_Form();
+            $("#submit").remove();
+
+            $("#equ_form").html($("#equ_form").html() + 
+            `<input id="hidden" type='hidden' name='eq_id' value='${id}' /> <input id='update' type='submit' name='update' />`)
+
+            $("#name").val(name)
+            $("#disc").val(dis)
+            $("#quantity").val(quan)
+            $("#type").val(type)
+            $("#price").val(price)
+            $("#hidden").val(id)
+
+
+
+        }
     </script>
   <script type="text/javascript" src="togglesubmenu.js"></script>
 

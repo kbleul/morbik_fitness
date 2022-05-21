@@ -2,14 +2,19 @@
  session_start(); 
  include('database_connect.php');
  
-    if(isset($_REQUEST['o'])) { 
+    if(isset($_REQUEST['s'])) { 
         $output = "";
-        if($_REQUEST['o'] == "all") {  
-            $query = "SELECT * FROM inventory";
+        $query = "";
+        $counter = 0;
+        if($_REQUEST['s'] == "all") {  $query = "SELECT * FROM inventory"; }
+        else  if($_REQUEST['s'] == "name") {  $query = "SELECT * FROM inventory ORDER BY Name";  }
+        else  if($_REQUEST['s'] == "type") {   $query = "SELECT * FROM inventory ORDER BY Type";  }
+        else {  $query = "SELECT * FROM inventory ORDER BY Last_Added DESC";    }
 
             if($result= $con->query($query)){  
         $output = "<div class='inventory_wrapper'><ul class='inventory_ul'><li>Name</li><li>Discription</li><li>Quantity</li><li>type</li><li>Price</li><li>Last Added Date</li></ul>";
                while($row= $result -> fetch_assoc() ){ 
+                    $id = $row['id'];
                     $name = $row['Name'];
                     $disc = $row['Discription'];
                     $quan = $row['Quantity'];
@@ -17,8 +22,12 @@
                     $price = $row['Price'];
                     $added = $row['Last_Added']; 
 
-        $output = $output . "<ul class='inventory_ul'><li>$name</li><li>$disc</li><li>$quantity</li><li>$type</li><li>$price</li>
+        $output = $output . "<ul class='inventory_ul ul$counter' id='ul$counter' onclick='editItem($counter)'>
+        <li class='hidden'>$id</li>
+        <li>$name</li><li>$disc</li><li>$quan</li><li>$type</li><li>$price</li>
         <li>$added</li></ul>";
+
+        $counter++;
 
                 }
 
@@ -28,76 +37,39 @@
             } else { echo "unsucessfully"; } 
         }
 
-        else  if($_REQUEST['o'] == "name") {  
-            $query = "SELECT * FROM inventory ORDER BY Name";
+   
 
-            if($result= $con->query($query)){  
-        $output = "<div class='inventory_wrapper'><ul class='inventory_ul'><li>Name</li><li>Discription</li><li>Quantity</li><li>type</li><li>Price</li><li>Last Added Date</li></ul>";
-               while($row= $result -> fetch_assoc() ){ 
-                    $name = $row['Name'];
-                    $disc = $row['Discription'];
-                    $quan = $row['Quantity'];
-                    $type = $row['Type'];
-                    $price = $row['Price'];
-                    $added = $row['Last_Added']; 
+   else if(isset($_REQUEST['c'])) { 
+    $output = "";
+    $query = "";
 
-        $output = $output . "<ul class='inventory_ul'><li>$name</li><li>$disc</li><li>$quantity</li><li>$type</li><li>$price</li>
-        <li>$added</li></ul>";
+    if($_REQUEST['c'] == "all_types") { $query = "SELECT * FROM inventory"; }
+    else if($_REQUEST['c'] == "weights") {   $query = "SELECT * FROM inventory WHERE Type = 'Weights'";  }
+    else if($_REQUEST['c'] == "machines") {    $query = "SELECT * FROM inventory WHERE Type = 'Machine'";  }
+    else { $query = "SELECT * FROM inventory WHERE Type = 'Others'"; }
 
-                }
 
-                $output = $output . "</div>";
+        if($result= $con->query($query)){  
+    $output = "<div class='inventory_wrapper'><ul class='inventory_ul'><li>Name</li><li>Discription</li><li>Quantity</li><li>Type</li><li>Price</li><li>Last Added Date</li></ul>";
+           while($row= $result -> fetch_assoc() ){ 
+                $id = $row['id'];
+                $name = $row['Name'];
+                $disc = $row['Discription'];
+                $quan = $row['Quantity'];
+                $type = $row['Type'];
+                $price = $row['Price'];
+                $added = $row['Last_Added']; 
 
-                echo $output; 
-            } else { echo "unsucessfully"; } 
-        }
+    $output = $output . "<ul class='inventory_ul'>
+    <li class='hidden'>$id</li>
+    <li>$name</li><li>$disc</li><li>$quan</li><li>$type</li><li>$price</li>
+    <li>$added</li></ul>";
 
-        else  if($_REQUEST['o'] == "type") {  
-            $query = "SELECT * FROM inventory ORDER BY Type";
+            }
 
-            if($result= $con->query($query)){  
-        $output = "<div class='inventory_wrapper'><ul class='inventory_ul'><li>Name</li><li>Discription</li><li>Quantity</li><li>type</li><li>Price</li><li>Last Added Date</li></ul>";
-               while($row= $result -> fetch_assoc() ){ 
-                    $name = $row['Name'];
-                    $disc = $row['Discription'];
-                    $quan = $row['Quantity'];
-                    $type = $row['Type'];
-                    $price = $row['Price'];
-                    $added = $row['Last_Added']; 
+            $output = $output . "</div>";
 
-        $output = $output . "<ul class='inventory_ul'><li>$name</li><li>$disc</li><li>$quantity</li><li>$type</li><li>$price</li>
-        <li>$added</li></ul>";
-
-                }
-
-                $output = $output . "</div>";
-
-                echo $output; 
-            } else { echo "unsucessfully"; } 
-        }
-        else  if($_REQUEST['o'] == "date") {  
-            $query = "SELECT * FROM inventory ORDER BY Last_Added DESC";
-
-            if($result= $con->query($query)){  
-        $output = "<div class='inventory_wrapper'><ul class='inventory_ul'><li>Name</li><li>Discription</li><li>Quantity</li><li>type</li><li>Price</li><li>Last Added Date</li></ul>";
-               while($row= $result -> fetch_assoc() ){ 
-                    $name = $row['Name'];
-                    $disc = $row['Discription'];
-                    $quan = $row['Quantity'];
-                    $type = $row['Type'];
-                    $price = $row['Price'];
-                    $added = $row['Last_Added']; 
-
-        $output = $output . "<ul class='inventory_ul'><li>$name</li><li>$disc</li><li>$quantity</li><li>$type</li><li>$price</li>
-        <li>$added</li></ul>";
-
-                }
-
-                $output = $output . "</div>";
-
-                echo $output; 
-            } else { echo "unsucessfully"; } 
-        }
+            echo $output; 
+        } else { echo "unsucessfully"; } 
     }
-
-?>
+?> 
