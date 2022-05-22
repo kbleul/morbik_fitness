@@ -1,120 +1,118 @@
-<?php
+
+   <?php 
     session_start();
     include('database_connect.php');
+   //if username and email are not set for this session then user has not logged in to the system
+   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
+   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
 
-    if( isset($_SESSION["email"]) == false || isset($_SESSION["username"] ) == false)
-    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
 
 
-    if(isset($_POST["submit"])) {
-        $actiontype = $_POST['action'];
-        $title = $_POST["Name"];
-        $discription = $_POST["Discription"];
-        $forwho = $_POST["forwho"];
-        $weeks = $_POST["weeks"];
-        $rest = $_POST["rest"];
-        $counter = $_POST["counter"];
-        $trainerid = $_SESSION['id'];
-        $date = date("Y-m-d");
-        $id;
+   if(isset($_POST["submit"])) { echo "<script>console.log('1')</script>";
+    $actiontype = $_POST['action'];
+    $title = $_POST["Name"];
+    $discription = $_POST["Discription"];
+    $forwho = $_POST["forwho"];
+    $weeks = $_POST["weeks"];
+    $rest = $_POST["rest"];
+    $counter = $_POST["counter"];
+    $trainerid = $_SESSION['id'];
+    $date = date("Y-m-d");
+    $id;
 
-        if($actiontype == "addnew") {
+    if($actiontype == "addnew") {
 
-        $query = "";
-        if($_POST['Discription'] == "" || $_POST['Discription'] == " ") {
-            $query = "INSERT INTO added_workout_plan (tid,Name,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid', '$title','$forwho','$weeks','$rest','$date')";
+    $query = "";
+    if($_POST['Discription'] == "" || $_POST['Discription'] == " ") {
+        $query = "INSERT INTO added_workout_plan (tid,Name,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid', '$title','$forwho','$weeks','$rest','$date')";
 
-         } else {
-        $query = "INSERT INTO added_workout_plan (tid,Name,Discription,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid','$title','$discription','$forwho','$weeks','$rest','$date')";
-         }
+     } else {
+    $query = "INSERT INTO added_workout_plan (tid,Name,Discription,Forwho,Weeks,Rest,registration_date) VALUES ('$trainerid','$title','$discription','$forwho','$weeks','$rest','$date')";
+     }
 
-         
-        if(mysqli_query($con,$query)) {
-            $query = "SELECT * FROM added_workout_plan WHERE Name = '$title'";
-            if($result= $con->query($query)){
-                while($row= $result -> fetch_assoc() ){
-                    $id = $row['id'];
-                }
+     
+    if(mysqli_query($con,$query)) { echo "<script>console.log('2')</script>";
+        $query = "SELECT * FROM added_workout_plan WHERE Name = '$title'";
+        if($result= $con->query($query)){
+            while($row= $result -> fetch_assoc() ){
+                $id = $row['id'];
+            }
 
-            //     $count = number_format($counter);
-            //   echo "<script>console.log('aa')</script>";
-            //   echo "<script>console.log($counter === 0)</script>";
+        //     $count = number_format($counter);
+        //   echo "<script>console.log('aa')</script>";
+        //   echo "<script>console.log($counter === 0)</script>";
 
-            //   echo "<script>console.log($count === 0 )</script>";
+        //   echo "<script>console.log($count === 0 )</script>";
 
-                    for($i = 0 ; $i <= number_format($counter) ; $i++) {
-                            $exercises = $_POST["exercise".$i];
-                            $amount = $_POST["amount".$i];
-                            $reps = $_POST["reps".$i];
-                            $error;
-
-                   //         echo "<script>console.log($id + ' ' + $exercises + ' ' + $amount + ' ' + $reps)</script>";
-    
-                        $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($id,'$exercises',$amount,$reps)";
-
-                        if(mysqli_query($con,$query)) {  echo "<script>console.log('yess')</script>";}
-                        else {  
-                            $error = mysqli_error($con);
-                            echo "<script>console.log($error)</script>";    }
-                    }
-                  
-
-                  } else {  $error = mysqli_error($con);
-                    echo "<script>console.log($error)</script>";  }
-
-            } else {  $error = mysqli_error($con);
-                            echo "<script>console.log($error)</script>";  }
-
-           }
-
-           else  if($actiontype == "update") {
-
-            $query = "SELECT * FROM added_workout_plan WHERE tid= $trainerid AND Name = '$title'";
-            echo "<script>console.log('$trainerid - $title');</script>";
-
-            if($result= $con->query($query)){
-                while($row= $result -> fetch_assoc() ){
-                    echo "<script>console.log('updated3')</script>";
-
-                    $wid = $row['id'];
-                    $query = "UPDATE added_workout_plan
-                    SET Name = '$title', Discription = '$discription', Forwho = '$forwho' , Weeks = '$weeks' , Rest = '$rest' 
-                    WHERE id = $wid";
-
-                    if($con->query($query)) {
-                $query = "DELETE FROM exercise WHERE Wid = $wid";
-
-                if($con ->query($query)) {
-                    for($i = 0 ; $i <= number_format($counter) ; $i++) {
+                for($i = 0 ; $i <= number_format($counter) ; $i++) {
                         $exercises = $_POST["exercise".$i];
                         $amount = $_POST["amount".$i];
                         $reps = $_POST["reps".$i];
+                        $error;
 
                //         echo "<script>console.log($id + ' ' + $exercises + ' ' + $amount + ' ' + $reps)</script>";
 
-                    $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($wid,'$exercises',$amount,$reps)";
+                    $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($id,'$exercises',$amount,$reps)";
 
                     if(mysqli_query($con,$query)) {  echo "<script>console.log('yess')</script>";}
                     else {  
                         $error = mysqli_error($con);
                         echo "<script>console.log($error)</script>";    }
                 }
-                }
+              
+
+              } else {  $error = mysqli_error($con);
+                echo "<script>console.log($error)</script>";  }
+
+        } else {  $error = mysqli_error($con);
+                        echo "<script>console.log($error)</script>";  }
+
+       }
+
+       else  if($actiontype == "update") {
+
+        $query = "SELECT * FROM added_workout_plan WHERE tid= $trainerid AND Name = '$title'";
+        echo "<script>console.log('$trainerid - $title');</script>";
+
+        if($result= $con->query($query)){
+            while($row= $result -> fetch_assoc() ){
+                echo "<script>console.log('updated3')</script>";
+
+                $wid = $row['id'];
+                $query = "UPDATE added_workout_plan
+                SET Name = '$title', Discription = '$discription', Forwho = '$forwho' , Weeks = '$weeks' , Rest = '$rest' 
+                WHERE id = $wid";
+
+                if($con->query($query)) {
+            $query = "DELETE FROM exercise WHERE Wid = $wid";
+
+            if($con ->query($query)) {
+                for($i = 0 ; $i <= number_format($counter) ; $i++) {
+                    $exercises = $_POST["exercise".$i];
+                    $amount = $_POST["amount".$i];
+                    $reps = $_POST["reps".$i];
+
+           //         echo "<script>console.log($id + ' ' + $exercises + ' ' + $amount + ' ' + $reps)</script>";
+
+                $query = "INSERT INTO exercise (Wid,Name,Sets,Rep) VALUES ($wid,'$exercises',$amount,$reps)";
+
+                if(mysqli_query($con,$query)) {  echo "<script>console.log('yess')</script>";}
+                else {  
+                    $error = mysqli_error($con);
+                    echo "<script>console.log($error)</script>";    }
+            }
+            }
+            else {  $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
+
+            echo "<script>console.log('updated')</script>"; }
                 else {  $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
+            }
+        } else { $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
 
-                echo "<script>console.log('updated')</script>"; }
-                    else {  $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
-                }
-            } else { $error = mysqli_error($con);  echo "<script>console.log($error)</script>"; }
+       }
 
-           }
+     }
 
-         }
-          
-
-
-    
-  
 ?>
 
 
@@ -134,21 +132,44 @@
     <link rel="stylesheet" href="trainer.css">
 
     <script src="jquery-3.6.0.js"></script>
-    
-    <!-- google translate script 1-->
+
+
+<!-- google translate script 1-->
 <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		
 		<!-- Call back function 2 -->
 		<script type="text/javascript">
-            $(".header_wrapper").css("top" , "2rem")
-
+            $(".header_wrapper").css({"top" : "2rem"})
 		function googleTranslateElementInit() {
 		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 		}
-        </script>
-
+		</script>
     <script src="index.js"></script>
 
+    <script>
+      const addProgram =( key, index) => {
+            const xmlhttp = new XMLHttpRequest();
+                    
+                    xmlhttp.onload = function() {  
+                        let firsttime_response = this.responseText;  
+
+                        if(firsttime_response === "added") 
+                           {  
+                               $("#"+index).find(".addbtn").hide()
+                               $("#"+index).find(".notice").show();  
+                           }
+                        else { 
+                            $("#"+index).find(".addbtn").hide()
+                            $("#"+index).find(".notice").html("Aleady Added").show();  
+                        }
+                        setTimeout(function() {  $("#"+index).find(".notice").fadeOut() }, 2500)
+
+                    }
+            
+                                    xmlhttp.open("GET", "addMember_program.php?r=" + key);
+                                    xmlhttp.send();
+          }
+    </script>
     <title>Morbik Fitness</title>
 </head>
 <body id="dashboard_body">
@@ -161,8 +182,9 @@
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
-                          <!-- HTML element 3 -->
-                          <li><div id="google_translate_element"></div></li>
+                         <!-- HTML element 3 -->
+                    <li><div id="google_translate_element"></div></li>
+
                 </ul>
             </nav>
            
@@ -181,61 +203,67 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-            
-                <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
+            <li> <a href="manager_dashboard.php" aria-expanded="false">Dashboard</a></li> 
+        
+        <li><a href="manage_member.php">Members</a></li>
+        <li><a href="manage_inventory.php">Inventory</a></li>
 
-                <li><a href="trainer_workout.php">Programs</a></li>
-                <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
-                            
-                <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
-             
+        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
+                   
+        <li><a href="payments.php" aria-expanded="false">Payments</a></li>
+        <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
+        <li><a href="managerworkout.php" aria-expanded="false">Employees</a></li>
+        <li><a href="managerworkout.php" aria-expanded="false">Employees</a></li>
+
+        <li  class="submenu_conatiner">
+            <div id="2" class="drop_down-container">
+                 <p>Overview</p>
+                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
+            </div>
+            <ul aria-expanded="false" class="collapse">
+                <li> <a href="over_members_month.php">Members per Month</a></li>
+                <li> <a href="over_members_year.php">Members per Year</a></li>
+                <li> <a href="revenue_month.php">Income per Month</a> </li>
+            </ul>
+        </li>
+                        
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <div id="topnav">
-                <button onclick="renderWorkouts()" class="topbtn active">Main</button>
-                <button onclick="renderByOthers()" class="topbtn">By Other Trainer</button>
-                <button onclick="renderByMe()" class="topbtn">By Me</button>
-                <button onclick="show_addWorkout_form()" class="topbtn">Add New Workout Plan</button>
+            <main>
+            <div class="topnav">
+                <button id="bygym_btn" onclick="renderAllWorkouts()">By Gym</button>
+                <button id="byothers" onclick="renderByOthers()">By Others</button>
+                <button id="addnew" onclick="renderByMe()">By Me</button>
+                <button id="addnew" onclick="show_addWorkout_form()">Add New Workout</button>
+
+
             </div>
+            <section id="packages"> </section>
+            <section id="mypackage"> </section>
 
-            <div id="msgbox_wrapper">
-                <p id='msgbox'></p>
-            </div>
-            <script>
-              
-                    for(let i = 0; i < document.getElementsByClassName("topbtn").length ; i++) {
-                        document.getElementsByClassName("topbtn")[i].addEventListener("click", () => {
-                            for(let j = 0; j < document.getElementsByClassName("topbtn").length ; j++) {
-                              if(document.getElementsByClassName("topbtn")[j].classList.contains("active") ) 
-                                 {   $(document.getElementsByClassName("topbtn")[j]).removeClass("active");    }
-                        }
-                              $(document.getElementsByClassName("topbtn")[i]).addClass("active");
-                    })
-                    console.log("asjdjk")
-                }
-            </script>
-            <main id="trainer_packages" >
-              
-
-            </main>
-
-            <script type="module">
+  <script type="module">
    import workoutpackage  from "./workout.js";
 
-    window.renderWorkouts = () => {
-   let workouthtml = '<div id="packages"> ';
+   window.renderAllWorkouts = () => {
+
+
+   let workouthtml = '';
    let counter = 0;
 
-   for(let key in workoutpackage) { 
-        if(workoutpackage[key].hasOwnProperty("forwho")) {
-       let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
 
-      let name = ` 
-                    <h2>${workoutpackage[key]["Name"]}</h2>`;
+   for(let key in workoutpackage) {
+        if(key !== "size") {
+       let forwho_capitalized = workoutpackage[key]["forwho"].charAt(0).toUpperCase() + workoutpackage[key]["forwho"].slice(1);
+       let gender = <?php echo  json_encode($_SESSION['gender']) ?>;
+
+     if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
+      let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-     
+      let addbtn = `<button onClick="addProgram(${key}, ${counter})" class="addbtn">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="4em" height="3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
+      </button>`
       let exercises = `<div  class="exercise_div">`;
 
 
@@ -243,35 +271,53 @@
            exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
        })
 
-        exercises += `</div>`;
+        exercises += `<div class='exercise_btns_wrapper'>${addbtn}<p class="notice">Added</p></div></div>`;
 
 
-        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}</section>`;
+        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}
+        </section>`;
 
         counter++;
-     }
+        
+    }
 
    }
-        document.getElementById("trainer_packages").innerHTML =workouthtml + "</div>";
+}
+       $("#mypackage").html("");
+        $("#packages").html(workouthtml).css("display","grid");
 
           let sec = document.getElementsByClassName("exersice_section");
 
+          const showHidden = index => {
+            $(sec[index]).find("h2").hide()
+                $(sec[index]).find(".discription").hide()
+                $(sec[index]).find("img").hide()
+
+                $(sec[index]).find(".exercise_div").fadeIn("slow");
+            document.getElementById(i).removeEventListener('click',() => showHidden(i))
+
+          }
+
           for(let i = 0; i < sec.length; i++) { 
-            document.getElementById(i).addEventListener('mouseover', e => { 
-                $(e.target).find(".workout_img").hide();
-                $(e.target).find(".exercise_div").fadeIn("slow");
-                })
-                document.getElementById(i).addEventListener('mouseleave', e => { 
-                $(e.target).find(".exercise_div").hide();
-                $(e.target).find(".workout_img").fadeIn("slow");
-                })
-          } 
+            document.getElementById(i).addEventListener('click',() => showHidden(i))
 
-    } 
+            sec[i].querySelector(".exercise_div").addEventListener("click", e => {
+                    $(e.target).hide()
+                    $(sec[i]).find("h2").show()
+                $(sec[i]).find(".discription").show()
+                $(sec[i]).find("img").show()
+            })
+                // document.getElementById(i).addEventListener('onclick', e => ( 
+                // $(e.target).find(".exercise_div").show();
+                // $(e.target).find(".workout_img").fadeIn("slow"); 
+                // })
+          }
+        }
+        
+        renderAllWorkouts();
 
-    renderWorkouts();
 
-    window.show_addWorkout_form = () => {
+        window.show_addWorkout_form = () => {
             let addworkout_html = `<div id="frontform"><label for="Name">Title</label><input type="text" class="input" id="title" name="Name" require="required" /> `
              addworkout_html += ` <li><input id="action" type="hidden" value='addnew' name='action' /></li>
 
@@ -298,7 +344,8 @@
                         </div>
                         </ul>`;
 
-                        $("#trainer_packages").html(`<div id="formcontainer" class='formcontainer'><form method="post" id="addexer_form" >${addworkout_html}</form></div>`);
+                        $("#packages").html("").hide();
+                        $("#mypackage").html(`<div id="formcontainer" class='formcontainer'><form method="post" id="addexer_form" >${addworkout_html}</form></div>`);
 
 
     }
@@ -346,7 +393,7 @@
                         <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps${counter}" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onclick="addExercises()">+</button></li>
-                        <li><button type="submit" name="submit" onClick="addNew_MealPlan()" name="submit" id="submit">Submit</button></li>
+                        <li><button type="submit" name="submit" onClick="addNew_MealPlan()"  id="submit">Submit</button></li>
                         </div>
                         </ul>`
                         $("#addexer_form").html( $("#formcontainer").html() + html)
@@ -369,57 +416,53 @@
 
   }
 
-
-  window.addNew_MealPlan = () => { 
-     $("#addexer_form").submit();
-
-  }
-
   window.attachToggleFunction = () => {
 
-    for(let i = 0 ; i < document.getElementsByClassName("front").length; i++) { 
-                            document.getElementsByClassName("front")[i].addEventListener("click", () => {
-                                console.log("ola")
-                                $(document.getElementsByClassName("hidden")[i]).show().addClass("exercises_list").css("display","flex");
-                                $(document.getElementsByClassName("front")[i]).hide();
+for(let i = 0 ; i < document.getElementsByClassName("front").length; i++) { 
+                        document.getElementsByClassName("front")[i].addEventListener("click", () => {
+                            console.log("ola")
+                            $(document.getElementsByClassName("hidden")[i]).show().addClass("exercises_list").css("display","flex");
+                            $(document.getElementsByClassName("front")[i]).hide();
 
-                                $(document.getElementsByClassName("hidden")[i]).find(".backbtn").click(() => {
-                                $(document.getElementsByClassName("hidden")[i]).hide().removeClass("exercises_list");
-                                    $(document.getElementsByClassName("front")[i]).show();
-                                });
-                             
-                            })
-                        }
-  }
+                            $(document.getElementsByClassName("hidden")[i]).find(".backbtn").click(() => {
+                            $(document.getElementsByClassName("hidden")[i]).hide().removeClass("exercises_list");
+                                $(document.getElementsByClassName("front")[i]).show();
+                            });
+                         
+                        })
+                    }
+}
 
-  window.renderByMe = () => {
+window.renderByMe = () => {
     const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
-                        $("#trainer_packages").html(firsttime_response);
+                        $("#packages").html("").hide();
+                        $("#mypackage").html(firsttime_response);
                         attachToggleFunction();
                     }
 
                     xmlhttp.open("GET", "fetch_workout.php?s=bytrainer");
                                     xmlhttp.send();
   }
+</script>
 
-  
-  window.renderByOthers = () => {
-    const xmlhttp = new XMLHttpRequest();
+<script>
+    const renderByOthers = () => { console.log("sajkdhasj")
+        const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
-                        let firsttime_response = this.responseText;  
-                        $("#trainer_packages").html(firsttime_response);
-                        attachToggleFunction();
+                        let firsttime_response = this.responseText; 
+                        $("#packages").html("").hide();
+                        $("#mypackage").html(firsttime_response);
                     }
 
-                    xmlhttp.open("GET", "fetch_workout.php?o=byothers");
+                    xmlhttp.open("GET", "fetch_workout.php?o=byothers_all");
                                     xmlhttp.send();
-  }
+    }
 
-  window.showSubmenu = counter => {
+    window.showSubmenu = counter => {
     $(document.getElementsByClassName("btn_wrapper")[counter]).find(".backbtn").hide(300)
     $(document.getElementsByClassName("btn_wrapper")[counter]).find(".hamburger_btn").hide(350)
       $(document.getElementsByClassName("btn_wrapper")[counter]).find(".submenu_wrapper").fadeIn(500).css("display","flex")
@@ -481,8 +524,6 @@ console.log("rest: " + rest)
       }
     }
 
-
-
     show_addWorkout_form();
 
     $("#title").val(title)
@@ -512,13 +553,11 @@ console.log("rest: " + rest)
     }
 
     $("#action").val("update")
-
-  }
+}
 </script>
+            </main>
         </section>
     </article>
-
-  <script type="text/javascript" src="togglesubmenu.js"></script>
 
 
 </body>

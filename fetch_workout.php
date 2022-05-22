@@ -98,8 +98,11 @@
     $html = "<div class='mymeal_sec'>";
 
     $id = $_SESSION['id'];
+    $query = "";
 
-$query = "SELECT * FROM workout_main WHERE TrainerId NOT IN ($id)";
+    if($_REQUEST['o'] == "byothers_all") 
+    {  $query = "SELECT * FROM workout_main";  }
+   else { $query = "SELECT * FROM workout_main WHERE TrainerId NOT IN ($id)";  }
 
 if($result= $con->query($query)){
 while($row= $result -> fetch_assoc() ){ 

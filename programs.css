@@ -32,22 +32,27 @@
  }
 
  .exersice_section button {
-     width: 60%;
-     margin-left: 20%;
+     margin-left: 10%;
      background-color: inherit;
      border: none;
      border-bottom: 2px solid red;
  }
+
  .exersice_section button:hover { 
     border-bottom: 2px solid green;
  }
 
+ .exercise_btns_wrapper {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
 .notice { 
-    display: none;
     text-align: center;
     font-size: larger;
     font-family: Roboto, sans-serif;
     color: red;
+    margin-right: 15%;
 }
 
 /*-----------------memberdashboard----------------*/
@@ -368,3 +373,5 @@ align-items: center;
     margin-right: 5%;
     margin-bottom: 2%;
 }
+
+#mypackage .mymeal_sec { margin-top: 2%; }
