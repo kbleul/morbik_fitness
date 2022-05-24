@@ -22,8 +22,13 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="trainer.css">
+
     <link rel="stylesheet" href="programs.css">
     <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="cashier.css">
+
+
 
 
 
@@ -68,7 +73,7 @@
                         <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>             
             </nav>
         </section>
-        <section class="main_content-wrapper">
+        <section class="main_content-wrapper" id="cashier_main_wrapper">
            <p id="notice" class='notice'></p>
         <section id="mypackage">
 
@@ -79,7 +84,7 @@
      $query = "SELECT * FROM main_members_table";
             if($result = $con->query($query)){
                 $output = "<div id='members_wrapper'><ul>
-                <li>Name</li><li>Gender</li><li>Program</li><li>Plan</li><li>Fee</li></ul>";
+                <li>Name</li><li>Gender</li><li>Program</li><li>Plan</li><li>Fee</li><li>Discount</li></ul>";
                 while($row = $result->fetch_assoc()) {
                     $id = $row['ID'];
                     $name = $row['FName']. " ".$row['LName'];
@@ -158,7 +163,7 @@
  
           html += ` <button id="submit" onclick="postRecipt(${id})" name='submit'>Post Reciept</button>
           `;
-         $("#mypackage").html(html)
+         $("#mypackage").html("<div class='formcontainer'>" + html + "</div>");
 
       }
 

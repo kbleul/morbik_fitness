@@ -76,6 +76,8 @@ if(isset($_POST['table']))
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css">
+
 
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
@@ -126,14 +128,14 @@ if(isset($_POST['table']))
         <section class="main_content-wrapper">
         <div class="container">
    <div class="row">
-    <h2 align="center">How to Take Backup of Mysql Database using PHP Code</h2>
+    <h2 align="center"> Backup Tables Or Full Database </h2>
     <br />
 <script>
  const checkAll = () => {
      if( $("#checkall").val() === "false") {
         for(let table of document.querySelectorAll(".checkbox_table")) {
             table.checked = true;
-        }
+        }s
 
         $("#checkall").text("Uncheck All").val("true")
     } else {
@@ -148,6 +150,7 @@ if(isset($_POST['table']))
     <button id="checkall" onclick="checkAll()" value="false">Check All</button>
     <form method="post" id="export_form">
      <h3>Select Tables for Export</h3>
+     <div id="checkbox_wrapper">
     <?php
     foreach($result as $table)
     {
@@ -158,6 +161,7 @@ if(isset($_POST['table']))
     <?php
     }
     ?>
+    </div>
      <div class="form-group">
       <input  type="submit" name="submit" id="submit" class="btn btn-info" value="Export" />
      </div>

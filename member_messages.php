@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="messages.css">
+
 
     <!-- google translate script 1-->
 		<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -87,7 +89,7 @@
                 <button onclick="fetchGroupMsgs()">Group Messages</button>
                 <button onclick="fetchPrivateMsgs()">Private Messages</button>
             </div>
-            <main id="packages">
+            <main id="mypackages">
             </main>
         </section>
     </article>
@@ -100,7 +102,7 @@
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
                          console.log(firsttime_response);
-                         $("#packages").html(firsttime_response);
+                         $("#mypackages").html(firsttime_response);
                     }
             
                                     xmlhttp.open("GET", "fetch_messages.php?r=" + "group");
@@ -115,7 +117,7 @@
       xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
                          console.log(firsttime_response);
-                         $("#packages").html(firsttime_response);
+                         $("#mypackages").html(firsttime_response);
                     }
             
                                     xmlhttp.open("GET", "fetch_messages.php?r=" + "private");

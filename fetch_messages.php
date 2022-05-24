@@ -15,7 +15,7 @@
                     $time = $row['Time'];
             
                     if($counter == 0) {
-                    $output = $output . "<ul class='msgul'><li class='msg_from'>From : $name </li><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
+                    $output = $output . "<ul class='msgul'><li class='msg_from'>From : $name </li><div class='msg_subwrapper'><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
             
                     }
                     else {
@@ -24,7 +24,7 @@
                    
                     $counter++;
                 }
-                if($output != "") { $output = $output . "</ul>"; }
+                if($output != "") { $output = $output . "</div></ul>"; }
                }
               else { $output = mysqli_error($con); }
             

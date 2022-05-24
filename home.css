@@ -1036,7 +1036,7 @@ th { color : indigo; }
 
 .manage_member-main--wrapper table {
     width: 80%;
-    margin-left: 10%;
+    margin-left: 8%;
 }
 
 .goog-te-gadget-simple {
@@ -1054,3 +1054,13 @@ th { color : indigo; }
     color: white;
     border: none; 
 }
+
+#checkbox_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+#export_form #submit { margin-left: 10%; }
+
+.row { margin-left: 5%; }

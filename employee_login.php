@@ -22,6 +22,7 @@
        //echo $_SESSION["email"];exit;
        $_SESSION["name"] = $row['FName']." ".$row['LName'];
        $_SESSION["Job"] = $row['Job_title'];
+       $_SESSION["password"] = $row['Password'];
 
        $count=mysqli_num_rows($result);
   

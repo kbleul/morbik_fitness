@@ -359,22 +359,29 @@
             $("#title").text("Message Board");
 
             let html = `<div id='msg_wraapper'><form id='msg_form' method='POST'>
-            <label for='for'>To : </label>
+           <div class="formflex"> <label for='for'>To : </label>
             <select id='for' name='for'>
                 <option value='Members'>Member</option>
                 <option value='Employees' />Employees</option>
                 <option value='Trainers' />Trainer</option>
                 <option value='Reception' />Reception</option>
                 <option value='All' />All</option>
-            </select>
-            <textarea type='text' name='msg' placeholder='Message...' required='required'></textarea>
+            </select> </div>
+            <div class="formflex">
+            <textarea id="msg_textarea" type='text' name='msg' placeholder='Message...' required='required'></textarea>
             <button id='sendbtn' type='submit' name='sendbtn'>
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="3em" height="3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M27.71 4.29a1 1 0 0 0-1.05-.23l-22 8a1 1 0 0 0 0 1.87l8.59 3.43L19.59 11L21 12.41l-6.37 6.37l3.44 8.59A1 1 0 0 0 19 28a1 1 0 0 0 .92-.66l8-22a1 1 0 0 0-.21-1.05Z"/></svg>
             </button>
+            </div>
             </form>
             </div>`
 
             $("#content_wrapper").html(html)
+
+            document.getElementById("msg_textarea").addEventListener("input", function (e) {
+                    this.style.height = "auto";
+                    this.style.height = this.scrollHeight + "px";
+                });
 
 
         }

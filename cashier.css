@@ -1,0 +1,18 @@
+
+#cashier_main_wrapper {
+    width: 80%;
+    margin-left: 10%;
+}
+#cashier_main_wrapper ul {
+    display: flex;
+    width: 100%;
+}
+
+#cashier_main_wrapper ul:nth-of-type(1) { font-weight: bold; }
+
+#cashier_main_wrapper li {
+    width: 16.6%;
+    text-align: center;
+    list-style: none;
+    padding: .4rem;
+}
