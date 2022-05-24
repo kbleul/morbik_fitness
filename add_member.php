@@ -17,6 +17,7 @@ if(isset($_POST['submit_member'])) {
     $starttime = $_POST['time_start'];
     $endtime = $_POST['time_end'];
     $trainer = $_POST['trainer'];
+ 
 
 
     $schedule_temp = explode("(",$_POST['schedule'],2)

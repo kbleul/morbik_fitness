@@ -156,8 +156,10 @@ include 'database_connect.php';
 
     else {
         $memid = $_REQUEST["s"];
+        $id = $_SESSION['id'];
+        $name = $_SESSION['name'];
 
-        $query = "INSERT INTO member_notice (Mid,Message) VALUES ('$memid','Sorry, 
+        $query = "INSERT INTO member_notice (Senderid,Name,Mid,Message) VALUES ('$id','$name','$memid','Sorry, 
         We dont have a private trainer available currently. We will notify you as soon as we hire new employees.')";
 
        if( mysqli_query($con,$query))

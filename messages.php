@@ -29,6 +29,26 @@
        } else { echo mysqli_error($con);}
    
    }
+
+   if(isset($_POST['sendbtn'])) {  echo '<script>console.log("M1")</script>';
+       $towho = $_POST['for'];
+       $msg = $_POST['msg'];
+       $id = $_SESSION['id'];
+       $name = $_SESSION['name'];
+
+       echo "<script>console.log($id.' '.$name)</script>";
+
+
+       $query = "INSERT into all_notice (id,Name,Groups,Msg) VALUES ('$id','$name','$towho','$msg');";
+       
+       if( mysqli_query($con,$query))
+       {     echo '<script>console.log("Message Sent")</script>'; } 
+       else {
+            $error = mysqli_error($con);
+            echo "<script>console.log($error)</script>"; 
+        }
+
+   }
    ?>
    
    <!DOCTYPE html>
@@ -82,7 +102,7 @@
            <section class="side_nav-wrapper">
                    <nav>
                    
-                               <li> <a href="dashboard.php" aria-expanded="false">Dashboard</a></li> 
+                               <li> <a href="manager_dashboard.php" aria-expanded="false">Dashboard</a></li> 
                
    
                                <li><a href="payments.php" aria-expanded="false">Payments</a></li>
@@ -141,6 +161,8 @@
                <div id="topnav">
                     <button id="requests" class="active" onClick='changeMainContent("requests")'>Requests</button>
                     <button id="rejected" onClick='changeMainContent("rejected")'>Declined</button>
+                    <button id="rejected" onClick='showNotice_form()'>Send Notice</button>
+
                </div>
                  <h3 id="title">PRIVATE TRAINER REQUESTS</h3>
    
@@ -330,6 +352,34 @@
                                     xmlhttp.open("GET", "fetch_managercontents.php?s=" + memid);
                                     xmlhttp.send();
         }
+
+
+        
+        const showNotice_form = () => {
+            $("#title").text("Message Board");
+
+            let html = `<div id='msg_wraapper'><form id='msg_form' method='POST'>
+            <label for='for'>To : </label>
+            <select id='for' name='for'>
+                <option value='Members'>Member</option>
+                <option value='Employees' />Employees</option>
+                <option value='Trainers' />Trainer</option>
+                <option value='Reception' />Reception</option>
+                <option value='All' />All</option>
+            </select>
+            <textarea type='text' name='msg' placeholder='Message...' required='required'></textarea>
+            <button id='sendbtn' type='submit' name='sendbtn'>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="3em" height="3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M27.71 4.29a1 1 0 0 0-1.05-.23l-22 8a1 1 0 0 0 0 1.87l8.59 3.43L19.59 11L21 12.41l-6.37 6.37l3.44 8.59A1 1 0 0 0 19 28a1 1 0 0 0 .92-.66l8-22a1 1 0 0 0-.21-1.05Z"/></svg>
+            </button>
+            </form>
+            </div>`
+
+            $("#content_wrapper").html(html)
+
+
+        }
+
+
      </script>
    
    </body>

@@ -1,4 +1,14 @@
 
+    <?php
+    include('database_connect.php');
+    
+    session_start(); 
+   if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
+   {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
+
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,21 +21,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="employee.css">
+
+
 
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
- <!-- google translate script 1-->
- <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-		
- <!-- Call back function 2 -->
- <script type="text/javascript">
- function googleTranslateElementInit() {
-   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
- }
- </script>
+
     <title>Morbik Fitness</title>
 </head>
-<body>
+<body id="dashboard_body">
 
     <article class="header_wrapper">
         <header class="flex">
@@ -35,8 +42,6 @@
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
-                    <li> <div id="google_translate_element"></div></li>
-
                 </ul>
             </nav>
            
@@ -52,36 +57,31 @@
         </section>
     </article>
 
-  
-     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="gym"></div>
+    <article class="main_wrapper">
+        <section class="side_nav-wrapper">
+            <nav>
+            
+                        <li> <a href="cashier_dashboard.php" aria-expanded="false">Dashboard</a></li> 
+                        <li><a href="cashier_addrecipt.php">Payments</a></li>
+                        <li><a href="manage_inventory.php">Inventory</a></li>
 
-        <h1 id="school_name">Morbik Fitness</h1>
+                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>             
+            </nav>
+        </section>
+        <section class="main_content-wrapper">
+           
+        <section id="mypackage"></section>
 
+        </section>
 
-     <section class="form_container">
-         <ul class="privilege_list">
-             <li><button class="privilege_btn"><a href="admin_login.php">admin</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="manager_login.php">manager</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="member_login.php">member</a><hr></button></li>
-             <li><button class="privilage_btn"><a href="employee_login.php">Employee</a><hr></button></li>
+    </article>
 
-         </ul>
-
- 
-     </section>
-
-
-    
-    </main>
     <script>
-
+      
 
     </script>
-   <footer>
-    <p>All rights reserved</p>
-    <p>Instagram <span class="media">Facebook</span><span class="media">Twitter</span></p>
-</footer>
-   
+  <script type="text/javascript" src="togglesubmenu.js"></script>
+
+
 </body>
 </html>
-

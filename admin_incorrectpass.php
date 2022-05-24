@@ -1,35 +1,28 @@
 <link rel="stylesheet" href="popup_style.css">
 <link rel="stylesheet" href="home.css">
-<link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-
 <script src="index.js"></script>
 
     <?php
     session_start();
  error_reporting(1);
-   include('database_connect.php');
+ include('database_connect.php');
 
-   
+ 
   if(isset($_POST['btn_login']))
   {
-  $uname = $_POST['uname'];
-  $passw =  $_POST['password'];
- 
-   $sql = "SELECT * FROM important_employee_main WHERE Username='$uname' and Password ='$passw' ";
-
+    $uname = $_POST['uname'];
+    $passw =  $_POST['password'];
+   
+     $sql = "SELECT * FROM important_employee_main WHERE Username='$uname' and Password ='$passw' and Job_title = 'Admin'";
       $result = mysqli_query($con,$sql);
       $row  = mysqli_fetch_array($result);
-      //print_r($row);
-       $_SESSION["id"] = $row['ID'];
-       $_SESSION["username"] = $row['Username'];
-       $_SESSION["password"] = $row['Password'];
-       $_SESSION["email"] = $row['Email'];
-       //echo $_SESSION["email"];exit;
-       $_SESSION["fname"] = $row['FName'];
-       $_SESSION["lname"] = $row['LName'];
-       $_SESSION["name"] = $row['FName']. " ". $row['LName'];
-
-       $_SESSION["job_title"] = $row['Job_title'];
+      
+      $_SESSION["id"] = $row['ID'];
+      $_SESSION["username"] = $row['Username'];
+      $_SESSION["password"] = $row['Password'];
+      $_SESSION["email"] = $row['Email'];
+      //echo $_SESSION["email"];exit;
+      $_SESSION["name"] = $row['FName'].$row['LName'];
        $count=mysqli_num_rows($result);
   
        if(($count)==1 && isset($_SESSION["email"]) && isset($_SESSION["password"])) {
@@ -44,7 +37,7 @@
       <p>Login Successfully</p>
       <p>
        <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
-       <?php echo "<script>setTimeout(\"location.href = 'manager_dashboard.php';\",1500);</script>"; ?>
+       <?php echo "<script>setTimeout(\"location.href = 'admin_dashboard.php';\",1500);</script>"; ?>
       </p>
     </div>
   </div>
@@ -54,10 +47,16 @@
        <?php
       
   }
-  else {  echo '<script>location.href = "manager_incorrectpass.php" </script>'; }
- }
+  else {
+    echo '<script>location.href = "admin_incorrectpass.php" </script>';
   ?>
         
+          <?php
+           }
+  
+   }
+
+    ?>
     <article class="header_wrapper">
         <header class="flex">
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
@@ -100,13 +99,14 @@
             <input type="password" name="password" id="password" placeholder="Password" minlength="8"
                     autocomplete="false" required>
              <div class="info">
+               <p id="incorrect" >Incorrect Username/Password</p>
                <p id="forget_password"><a href="director_reset_password_form.html">forget password ?</a></p>
             </div>
 
                 <div class="flex">
                     
                                 <button type="submit" name="btn_login" id="submit" >log in</button>
-                                <p id="show_privilege">Manager</p>
+                                <p id="show_privilege">Admin</p>
                                 <button id="change_privilege"><a href="previlage.html" >change privlage</a></button>
                 </div>
 

@@ -74,23 +74,31 @@
             <label for='phone'>Phone</label>
             <input name='phone' value='+251 $phone' type='tel' readonly>";
 
-            if($type_program != "" || $type_program != " " || $type_program != Null)
+            if(!empty($type_program ) && !is_null($type_program))
             { $output = $output ."<label for='program'>Program Type</label>
-                <input name='program' value='$type_program' type='text' readonly>";  }
+                <input name='program' value='$type_program' type='text' readonly>"; 
+             }
             
-            if($type != "" || $type != " " || $type != null)
+            if(!empty($type)  && !is_null($type))
             { $output = $output ."<label for='type'>Type</label>
             <input name='type' value='$type' type='text' readonly>"; }
 
-            if($salary != "" || $salary != " " || $salary != null)
-             {
-            $output = $output ."<label for='salary'>Salary</label>
-            <input id='editsalary' name='salary' value='$salary' type='number' >";
-             }
+           
+         
+             
+
+            if($salary == 0) {
+                $output = $output ."<label for='salary'>Salary</label>
+            <input id='editsalary' name='salary' type='number' >";
+            } else {
+                $output = $output ."<label for='salary'>Salary</label>
+                <input id='editsalary' name='salary' value='$salary' type='number' >";
+            }
 
             $output = $output . "<input type='submit' name='submit' value='submit' id='submit'></form>";
 
             echo $output;
+            echo "<script>console.log($type_program  == '' )</script>";
                } 
 
            } else { echo mysqli_error($con);}

@@ -117,3 +117,9 @@
 }
 
 .conflicting_decline-btn { display: none;}
+
+#msg_wraapper { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

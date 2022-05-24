@@ -28,7 +28,7 @@
 
 
     $query = "";
-        //if employee is a private transfer then dont add salary because they dont have a salary
+        //if employee is a private trainer then dont add salary because they dont have a salary
     if($isprivate == "private"){
 
     $query = "INSERT INTO employee (FNAME,LName,Gender,DOB,Email,Job_title,registration_data) 

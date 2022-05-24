@@ -212,8 +212,16 @@
                    
         <li><a href="payments.php" aria-expanded="false">Payments</a></li>
         <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
-        <li><a href="managerworkout.php" aria-expanded="false">Employees</a></li>
-        <li><a href="managerworkout.php" aria-expanded="false">Employees</a></li>
+        <li class="submenu_conatiner">
+                                <div id="0" class="drop_down-container">
+                                    <p>Employees</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
+                                </div>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="new_employee.php">New Employee</a></li>
+                                        <li><a href="view_employee.php">Edit Employee Details</a></li>
+                                    </ul>
+                            </li>
 
         <li  class="submenu_conatiner">
             <div id="2" class="drop_down-container">

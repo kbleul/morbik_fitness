@@ -360,9 +360,11 @@ align-items: center;
 } 
 
 
- .inventory_wrapper .inventory_ul { 
+ .inventory_wrapper .inventory_ul,
+ #msg_wraapper { 
      display: flex;
      justify-content: center;
+     align-items: center;
  }
 
  .topnav label {

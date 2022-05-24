@@ -15,7 +15,7 @@
   $uname = $_POST['uname'];
   $passw =  $_POST['password'];
  
-   $sql = "SELECT * FROM important_employee_main WHERE Username='$uname' and Password ='$passw' ";
+   $sql = "SELECT * FROM important_employee_main WHERE Username='$uname' and Password ='$passw' and Job_title = 'Admin' ";
 
       $result = mysqli_query($con,$sql);
       $row  = mysqli_fetch_array($result);
@@ -44,7 +44,7 @@
       <p>Login Successfully</p>
       <p>
        <!--  <a href="index.php"><button class="button button--success" data-for="js_success-popup"></button></a> -->
-       <?php echo "<script>setTimeout(\"location.href = 'manager_dashboard.php';\",1500);</script>"; ?>
+       <?php echo "<script>setTimeout(\"location.href = 'admin_dashboard.php';\",1500);</script>"; ?>
       </p>
     </div>
   </div>
@@ -54,7 +54,7 @@
        <?php
       
   }
-  else {  echo '<script>location.href = "manager_incorrectpass.php" </script>'; }
+  else {  echo '<script>location.href = "admin_incorrectpass.php" </script>'; }
  }
   ?>
         
@@ -106,7 +106,7 @@
                 <div class="flex">
                     
                                 <button type="submit" name="btn_login" id="submit" >log in</button>
-                                <p id="show_privilege">Manager</p>
+                                <p id="show_privilege">Admin</p>
                                 <button id="change_privilege"><a href="previlage.html" >change privlage</a></button>
                 </div>
 

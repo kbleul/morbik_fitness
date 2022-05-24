@@ -8,14 +8,14 @@
  include('database_connect.php');
 
 
-   if(isset($_SESSION["submit"])) {
-       $eid = $_SESSION["id"];
-       $salary = $_SESSION["salary"];
+   if(isset($_POST["submit"])) {
+       $eid = $_POST["id"];
+       $salary = $_POST["salary"];
 
        $query = "UPDATE employee set Salary = $salary WHERE ID = '$eid'";
 
        if(mysqli_query($con,$query)){
-           echo "<script>alert('Salary Updated Successfully');</script>";
+           echo "<script>console.log('Salary Updated Successfully');</script>";
        } else { echo mysqli_error($con);}
    }
    ?>

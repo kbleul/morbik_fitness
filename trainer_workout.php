@@ -346,7 +346,7 @@
                         <li class="exercise_ul-li"><label for="reps">Reptation</label><input class="exercise_ul-input" type="text"  name="reps${counter}" require="required" /></li>
                        <div class="btns_wrapper">
                         <li><button id="addbtn" onclick="addExercises()">+</button></li>
-                        <li><button type="submit" name="submit" onClick="addNew_MealPlan()" name="submit" id="submit">Submit</button></li>
+                        <li><button type="submit" name="submit" onClick="addNew_MealPlan()"  id="submit">Submit</button></li>
                         </div>
                         </ul>`
                         $("#addexer_form").html( $("#formcontainer").html() + html)
