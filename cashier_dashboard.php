@@ -60,11 +60,9 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-            
                         <li> <a href="cashier_dashboard.php" aria-expanded="false">Dashboard</a></li> 
                         <li><a href="cashier_addrecipt.php">Payments</a></li>
                         <li><a href="manage_inventory.php">Inventory</a></li>
-
                         <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>             
             </nav>
         </section>
