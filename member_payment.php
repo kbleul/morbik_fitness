@@ -1,5 +1,7 @@
 
     <?php session_start(); 
+
+
        //if username and email are not set for this session then user has not logged in to the system
    if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
@@ -17,9 +19,98 @@ function compareByTimeStamp($time1, $time2)
     else
         return 0;
 }
+
   
 
+function fetchPaymentForm() {
+    include('database_connect.php');
 
+    $memid = $_SESSION["id"];
+    $formhtml = "";
+
+    $query = "SELECT * FROM main_members_table WHERE ID = $memid";
+
+    if($result= $con->query($query)) { 
+        while($row = $result->fetch_assoc()) {
+            $name = $row['FName']. " ".$row['LName'];
+            $gender = $row['Gender'];
+            $program = $row['Program_Name'];
+            $plan = $row['Specific_Plan'];
+            $fee = $row['Price'];
+            $discount = $row['Discount'];
+            $discount_val = 0;
+            $total = 0;
+            $merchantOrderId = $memid. " - " . $name;
+
+            if($discount == "1")
+            {
+                 $discount = "Student - 10%";
+                 $discount_val = 0.1;
+                $total = $fee  -  ($fee* $discount_val);
+
+            }
+            else if($discount == "2") {
+                $discount = "Annual - 15%";
+                $discount_val = 0.15;
+                $total = ($fee * 12) - ( ($fee * 12) * $discount_val);
+            }
+            else{ 
+                $discount = "Normal";
+                $total = $fee;
+            }
+  
+    $formhtml = "<div id='mypayment_form' class='formcontainer'>
+    <form method='POST' action='https://test.yenepay.com/'>
+    <label for='forid'>My ID</label>
+    <input name='forname' type ='text' value='${memid}' />
+    <label for='forname'> Name</label>
+    <input name='forid' type ='text' value='${name}' />
+    <label for='program'>Program</label>
+    <input name='program' type ='text' value='${program}' />
+    <label for='plan'>Plan</label>
+    <input name='plan' type ='text' value='${plan}' />
+    <label for='fee'>Monthly Fee</label>
+    <input name='fee' type ='number' value='${fee}' /> 
+    <label for='discount'>Discount</label>
+    <input name='discount' type ='text' value='${discount}' /> ;
+    <input name='discount_type' type='hidden' value='${discount_val}' />
+    <label for='total'>Total Fee</label>
+          <input name='total' type ='text' value='${total}' /> 
+
+          
+    <input type='hidden' name='process' value='Express'>
+    <input type='hidden' name='successUrl' value='http://localhost/morbik_gym/success.php'>
+    <input type='hidden' name='ipnUrl' value='http://localhost/morbik_gym/ipn.php'>
+    <input type='hidden' name='cancelUrl' value='http://localhost/morbik_gym/cancel.php'>
+    <input type='hidden' name='merchantId' value='13893'>
+    <input type='hidden' name='merchantOrderId' value='$merchantOrderId'>
+    <input type='hidden' name='expiresAfter' value='24'>
+    <input type='hidden' name='itemId' value='$memid'>
+    <input type='hidden' name='itemName' value='Fee'>
+    <input type='hidden' name='unitPrice' value='$total'>
+    <input type='hidden' name='quantity' value='1'>
+    <input type='hidden' name='discount' value='$discount_val'>
+    <input type='hidden' name='handlingFee' value='0'>
+    <input type='hidden' name='deliveryFee' value='0'>
+    <input type='hidden' name='tax1' value='0'>
+    <input type='hidden' name='tax2' value='0'>
+    <button id='submit' onclick='payMyFee()' name='submit'>
+    <p>Pay with<p>
+    <img src='imgs/yenepay_icon.png' alt='yene pay'/></button>
+    </form></div>";
+
+
+
+    return $formhtml;
+     
+        }  
+        
+    } else {
+        $error = mysqli_error($con);
+        return $error;
+    } 
+
+ } 
     ?>
 
 <!DOCTYPE html>
@@ -34,7 +125,12 @@ function compareByTimeStamp($time1, $time2)
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="trainer.css">
+
     <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="cashier.css">
 
     <!-- google translate script 1-->
 		<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -99,12 +195,21 @@ function compareByTimeStamp($time1, $time2)
         <section class="main_content-wrapper">
             <main id="myworkout_main">
 
-            <article id="topnav">
-                <button id="myworkout_btn" class="active" onClick="getMyWorkout()">MyWorkout</button>
-                <button id="mymeal_btn" onClick="getMyMealplan()">MyMealPlan</button>
+            <!-- <article id="topnav">
+    
+            </article> -->
+                <article id="mypackage"  >
+                     
 
-            </article>
-                <article id="mypackage" >
+    <script>
+        const printTrial = () => {
+            let output =  <?php $tempout = fetchPaymentForm(); echo json_encode( $tempout ); ?> ;
+        $("#mypackage").html(output );
+
+        }
+ 
+    </script>
+
         <?php
             include('database_connect.php');
 
@@ -155,20 +260,22 @@ function compareByTimeStamp($time1, $time2)
                 usort($arr, "compareByTimeStamp");
 
 
-                if($arr[0] == $currentdate || $currentdate == $arr[2] || $arr[1] == $currentdate)  
-                { $output = $output . "<p>You can pay now</p>"; }
+                if($arr[0] == $arr[1] || $arr[1] == $arr[2] || $arr[1] == $currentdate)  
+                { $output = $output . "<p>You can pay now</p><button onclick='printTrial()'>Here </button>"; }
             
 
 
             }
 
-            if($output == "") { $output = "<p>No payment history yet. Pay your first payment now .</p>"; }
+            if($output == "") 
+            { $output = "<p>No payment history yet. Pay your first payment now .</p>"; 
+            $output = $output . "<button onclick='printTrial()'>Here </button>";
+            }
 
               echo $output;
-              echo $arr[0]. " ".$arr[1]. " ".$arr[2]. " ";
             } else {
                 $error = mysqli_error($con);
-                echo "<script>console.log('\$error)</script>";
+                echo "<script>console.log($error)</script>";
             }
         ?>
 
@@ -179,8 +286,6 @@ function compareByTimeStamp($time1, $time2)
         </section>
     </article>
 
- 
-    </script>
 
 </body>
 </html>

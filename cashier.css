@@ -16,3 +16,32 @@
     list-style: none;
     padding: .4rem;
 }
+
+
+#mypayment_form #submit {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    padding: 1rem 2rem;
+    background-color: inherit;
+    color: black;
+    font-weight: 800;
+    font-family: cursive;
+    font-style: italic;
+}
+
+#mypayment_form #submit:hover { 
+    border-left: 3px solid; 
+    border-right: 3px solid; 
+
+}
+
+#mypayment_form #submit p { width : 50%; }
+#mypayment_form img { 
+    width: 100%;
+    max-height: 3rem;
+    margin-left: 0;
+}
+

@@ -1,10 +1,97 @@
 
     <?php session_start(); 
+    include('database_connect.php');
+
        //if username and email are not set for this session then user has not logged in to the system
    if( isset($_SESSION["email"]) == false || isset($_SESSION["password"] ) == false)
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
 
 
+   function compareByTimeStamp($time1, $time2)
+{
+    if (strtotime($time1) < strtotime($time2))
+        return 1;
+    else if (strtotime($time1) > strtotime($time2)) 
+        return -1;
+    else
+        return 0;
+}
+  
+$query = "SELECT * FROM employee WHERE ID = 2";
+if($result = $con->query($query)) {
+        while($row = $result->fetch_assoc()) {
+            $managername = $row['FName']." ".$row['LName'];
+            $memid = $_SESSION['id'];
+        
+$query= "SELECT * FROM payment_history WHERE Mid = '$memid'";
+
+if($resulttwo = $con->query($query)) {
+    $rowcount=mysqli_num_rows($resulttwo);
+
+    if($rowcount == 0)
+    { 
+        $msg = "Please pay your first payment using yenepay using this website or by going to the gym in person. Thank You"; 
+        $query = "INSERT INTO member_notice (Senderid,Name,Mid,Message) VALUES (2,'$managername','$memid', '$msg');";
+            
+            if(mysqli_query($con,$query)) {
+                echo "<script>console.log('');</script>";
+            } else {
+                $error = mysqli_error($con);
+                echo "<script>console.log(\'". $error ."\')</script>";
+                    }
+}
+
+    else {
+        while($rowtwo = $resulttwo -> fetch_assoc()) {
+            $date = $rowtwo['Date'];
+            $datetwo = explode(" ",$date);
+               
+            $nextdate = new DateTime($datetwo[0]);
+                    $interval = new DateInterval('P1M');
+                    $nextdate->add($interval); //06/27/2022
+                    $nextdate = $nextdate->format('Y-m-d') . "\n";
+
+            $untildate = date_create($nextdate);
+                    date_add($untildate, date_interval_create_from_date_string('10 days'));
+                    $untildate = date_format($untildate, 'Y-m-d'); //07/07/2022
+
+                        // Input Array (currentdate, nextdate, untildate)
+                        $currentdate = date('Y-m-d'); //05/27/2022
+            $arr = array( $currentdate, $nextdate, $untildate);
+            
+            // sort array with given user-defined function
+            usort($arr, "compareByTimeStamp");
+
+
+            if($arr[0] == $arr[1] || $arr[1] == $arr[2] || $arr[1] == $currentdate)  
+            { 
+
+                $msg = "Your payment is comming up. Please pay your fees starting from ". $nextdate . " - ". $untildate;
+    $query = "INSERT INTO member_notice (Senderid,Name,Mid,Message) VALUES (2,'$managername','$memid','$msg');";
+
+    if(mysqli_query($con,$query)) {
+        echo "<script>console.log($msg);</script>";
+    } else {
+        $error = mysqli_error($con);
+        echo "<script>console.log(\'". $error ."\')</script>";
+
+    }
+             }
+        }
+    }
+
+}  else {
+    $error = mysqli_error($con);
+    echo "<script>console.log(\'". $error ."\')</script>";
+
+}
+}
+
+}  else {
+    $error = mysqli_error($con);
+    echo "<script>console.log(\'". $error ."\')</script>";
+
+}
 
     ?>
 
@@ -20,7 +107,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="trainer.css">
+
     <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="cashier.css">
 
     <!-- google translate script 1-->
 		<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
