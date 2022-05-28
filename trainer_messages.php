@@ -194,14 +194,16 @@
     $id = $_SESSION['id'];
     $query = "SELECT * from main_members_table where Private_Trainer_Id = $id";
     $output = "";
-
+    $counter = 0;
         if($result = $con -> query($query)) {
-            $output = $output . "<ul class='forwho_ul' >";
+            $output = $output . "<ul class='forwho_ul' id='forwho_ul' >";
             while($row = $result -> fetch_assoc()){
                 $memid = $row['ID'];
                 $name = $row['FName']. " ".$row['LName'];
-                    $output = $output . "<div class='forwho_subcontainer'><li>$name</li><li class='hidden'>$memid</li>";
-            }
+                    $output = $output . "<li class='forwho_li' onclick='renderSendMsg_form($memid)'>$name</li>";
+           
+           $counter++;
+                }
             $output = $output . "</ul>";
         } else { $output = mysqli_error($con);}
 
@@ -256,6 +258,17 @@
         const toggleToWho = () => {
             let result = <?php $fetchresult = fetchToWho(); echo json_encode($fetchresult); ?>; console.log("aaa : " + result); 
                  $("#forwho").html(result).toggle();
+        }
+
+        const renderSendMsg_form = index => {
+            const xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onload = function () {
+                const result = this.responseText;
+                console.log(result);
+            }
+            xmlhttp.open('GET', "renderSendMsg_form.php?i=" + index);
+            
         }
 
     </script>
