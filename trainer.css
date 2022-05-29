@@ -59,3 +59,152 @@
     margin-bottom: 2%;
     padding: 0.7rem 1rem;
 }
+
+
+
+#msgbox {  
+    width: 90%;
+    display: flex;
+}
+
+#sidenav {
+    width: 25%;
+    margin-top: 5vh;
+    height: 85vh;
+    overflow-y: hidden;
+    background-color: #fdfdfd;
+    padding-top: 4rem;
+}
+
+#sidenav_two {
+    width: 20%;
+    margin-top: 5vh;
+    height: 85vh;
+    overflow-y: hidden;
+    background-color: #fdfdfd;
+    padding-top: 4rem;
+
+}
+
+#sidenav button,
+#sidenav_two button {
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    background-color: beige;
+}
+
+#sidenav button:first-of-type,
+#sidenav_two button:first-of-type { 
+    background-color: antiquewhite;
+}
+
+ul#forwho_ul li {
+    margin-top: 1rem;
+    width: 90%;
+    margin-left: 5%;
+    font-family: cursive;
+    text-align: center;
+    font-weight: inherit;
+    font-size: 1rem;
+    padding: 0.4rem;
+}
+
+ul#forwho_ul li:hover { 
+    opacity: .5;
+}
+
+
+#msgul,
+#msgul_two {
+    width: 75%;
+    margin-top: 5vh;
+    height: 85vh;
+    overflow-y: hidden;
+    box-shadow: none;
+    margin-left: 0;
+
+}
+
+#msgul_two { 
+    width: 80%;
+    display: flex; 
+}
+
+#msgul_two #showmsg_sec {
+    width: 60%;
+}
+
+.msg_subwrapper {  overflow-x: hidden;  }
+.msg_subwrapper { 
+    text-align: center;
+    font-weight: 200;
+}
+
+#msgul li:first-of-type,
+#msgul_two li:first-of-type { width: 100%; }
+
+#msgul li.msg_text {
+   font-weight: normal;
+    width: 70%;
+    font-size: 1rem;
+}
+
+#msgul_two li.msg_text { 
+    font-weight: normal;
+    font-size: 1rem;
+    width: 75%;
+}
+
+#msgul li.msg_time{
+    width: 30%;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 52%;
+}
+
+#msgul_two li.msg_time { 
+    width: 30%;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 45%;
+}
+
+#msg_form {
+    width: 40%;
+    display: flex;
+    background-color: #fdfdfd;
+    height: -webkit-fill-available;
+    border: none;
+    border-radius: none;
+}
+
+#msgul_two form #forminput_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+}
+
+#msg_form textarea {
+    width: 93%;
+    margin-left: 3%;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid;
+    font-size: 1rem;
+    height: -webkit-fill-available;
+    margin-top: 3.8rem;
+    max-height: none;
+}
+
+
+#msgul_two #submit {     
+    background-color: inherit;
+    border: none;
+    margin-top: 0.2rem; 
+}

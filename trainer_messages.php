@@ -153,7 +153,7 @@
 
              if($rowcount == 0) { $output = "<div id='msgbox'><p>No messages yet.</p></div>"; }
             else if($rowcount > 0 ) {  $output = $output . "<div id='msgbox'><div id='sidenav'>
-                <button onclick='fetchMessages()'>My Messages</button><button onclick='toggleToWho()'>Send</button>
+                <button onclick='fetchMessages()'>My Inbox</button><button onclick='toggleToWho()'>My Members</button>
                 <div class='hidden' id='forwho'></div>
                 </div>";  }
 
@@ -174,7 +174,7 @@
 
                 if($counter == 0)
                 {
-                 $output = $output . "<ul class='msgul'><li class='msg_from'>From : $name </li><div class='msg_subwrapper'><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
+                 $output = $output . "<ul class='msgul' id='msgul'><li class='msg_from'>From : $name </li><div class='msg_subwrapper'><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
                 }
                 else {
                     $output = $output . "<li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
@@ -227,6 +227,8 @@
     <link rel="stylesheet" href="messages.css">
     <link rel="stylesheet" href="employee.css">
     <link rel="stylesheet" href="programs.css">
+    <link rel="stylesheet" href="trainer.css">
+
 
 
     <!-- google translate script 1-->
@@ -248,11 +250,13 @@
         const fetchRequests = () => {
             let result = <?php $fetchresult = fetchRequests(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
+                 $("#title").show();
         }
 
         const fetchMessages = () => {
             let result = <?php $fetchresult = fetchMessages(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
+                 $("#title").hide();
         }
 
         const toggleToWho = () => {
@@ -260,14 +264,26 @@
                  $("#forwho").html(result).toggle();
         }
 
-        const renderSendMsg_form = index => {
+        const renderSendMsg_form = index => { console.log(" renderSendMsg_form " + index)
             const xmlhttp = new XMLHttpRequest();
 
             xmlhttp.onload = function () {
                 const result = this.responseText;
-                console.log(result);
+
+               if(document.getElementById("msgul") ) 
+                   {   $("#msgul").html(result);   }
+               else if(document.getElementById("msgul_two") ) 
+                   {   $("#msgul_two").html(result);   }
+
+               if(document.getElementById("sidenav") ) 
+                 { document.getElementById("sidenav").id = "sidenav_two"; }
+               if(document.getElementById("msgul")) 
+                 { document.getElementById("msgul").id = "msgul_two"; }
+
             }
             xmlhttp.open('GET', "renderSendMsg_form.php?i=" + index);
+            xmlhttp.send();
+            console.log(document.getElementById("sidenav"))
             
         }
 
