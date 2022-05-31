@@ -192,9 +192,22 @@
     include('database_connect.php');
 
     $id = $_SESSION['id'];
-    $query = "SELECT * from main_members_table where Private_Trainer_Id = $id";
+    $isprivate = true;
+    $query = "";
     $output = "";
+
+
+    $query = "SELECT * FROM group_trainer WHERE Eid = $id";
+        if($isprivate_result = $con -> query($query)) {
+             $rowcount = mysqli_num_rows($result);
+             if($rowcount > 0) { $isprivate = false; }
+        }
+
+        if($isprivate == true) 
+    {  
+        $query = "SELECT * from main_members_table where Private_Trainer_Id = $id";  
     $counter = 0;
+
         if($result = $con -> query($query)) {
             $output = $output . "<ul class='forwho_ul' id='forwho_ul' >";
             while($row = $result -> fetch_assoc()){
@@ -206,7 +219,27 @@
                 }
             $output = $output . "</ul>";
         } else { $output = mysqli_error($con);}
+    } 
 
+    else  if($isprivate == true) 
+    {  
+        $query = "SELECT * from main_members_table where Private_Trainer_Id = $id";  
+    $counter = 0;
+
+
+
+        if($result = $con -> query($query)) {
+            $output = $output . "<ul class='forwho_ul' id='forwho_ul' >";
+            while($row = $result -> fetch_assoc()){
+                $memid = $row['ID'];
+                $name = $row['FName']. " ".$row['LName'];
+                    $output = $output . "<li class='forwho_li' onclick='renderSendMsg_form($memid)'>$name</li>";
+           
+           $counter++;
+                }
+            $output = $output . "</ul>";
+        } else { $output = mysqli_error($con);}
+    }
         return $output;
     }
 ?>
