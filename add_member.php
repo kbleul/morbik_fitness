@@ -2,7 +2,7 @@
 include 'database_connect.php'; 
 
 if(isset($_POST['submit_member'])) {
-
+    echo "<script>console.log('error1')</script>";
     $email = $_POST['email'];
     $uname = $_POST['username'];
     $fname = $_POST['fname'];
@@ -20,7 +20,7 @@ if(isset($_POST['submit_member'])) {
  
 
 
-    $schedule_temp = explode("(",$_POST['schedule'],2)
+    $schedule_temp = explode("(",$_POST['schedule'],2);
     $schedule = $schedule_temp[0];
 
     $package_temp = explode("(" , $_POST['package'], 2);
@@ -36,7 +36,9 @@ if(isset($_POST['submit_member'])) {
     ('$fname','$lname','$gender','$dob','$weight','$height','$email','$uname','$password');";
 
     if( mysqli_query($con,$query))
-    {
+    {  
+    echo "<script>console.log('error2')</script>";
+
     $query = "SELECT * FROM member where Password='$password'";
 
         if($result= $con->query($query)){
@@ -154,7 +156,7 @@ if(isset($_POST['submit_member'])) {
 
                                      }
                                  }
-
+                                 else { echo mysqli_error($con); }
                                 
   
                               }
@@ -174,8 +176,14 @@ if(isset($_POST['submit_member'])) {
         } else { echo mysqli_error($con); }
 
     
+    } else { 
+    echo "<script>console.log('error_e1')</script>";
+
     }
-}  else { echo 'error'; }
+
+
+}  else { echo "<script>console.log('error')</script>"; }
+
 
 
 ?>

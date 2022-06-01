@@ -91,14 +91,24 @@
     display: block;
     margin-bottom: 1rem;
     width: 100%;
-    padding: 0.8rem;
     border: none;
     background-color: beige;
+    display: flex;
+    align-items: center;
 }
 
 #sidenav button:first-of-type,
 #sidenav_two button:first-of-type { 
     background-color: antiquewhite;
+}
+
+#sidenav .sidenav_btn_txt,
+#sidenav_two .sidenav_btn_txt {
+    width: 90%;
+    text-align: initial;
+    font-size: .9rem;
+    font-weight: 700;
+    padding-left: 0.5rem;
 }
 
 ul#forwho_ul li {
@@ -107,7 +117,7 @@ ul#forwho_ul li {
     margin-left: 5%;
     font-family: cursive;
     text-align: center;
-    font-weight: inherit;
+    font-weight: 100;
     font-size: 1rem;
     padding: 0.4rem;
 }
@@ -152,6 +162,12 @@ ul#forwho_ul li:hover {
     font-size: 1rem;
 }
 
+#msgul_two .forwho_li:nth-of-type(odd) {
+    background-color: #cecccc;
+}
+#msgul_two .forwho_li:nth-child(even) {
+    background-color: #edb8b8;
+}
 #msgul_two li.msg_text { 
     font-weight: normal;
     font-size: 1rem;
@@ -208,3 +224,4 @@ ul#forwho_ul li:hover {
     border: none;
     margin-top: 0.2rem; 
 }
+

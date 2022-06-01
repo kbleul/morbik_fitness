@@ -9,12 +9,15 @@
         $output = '';
         $mem_name = '';
 
-     $query = "SELECT * FROM employee WHERE ID = $memid";
+     $query = "SELECT * FROM member WHERE ID = $memid";
 
      if($result = $con->query($query)) {
          while($row = $result->fetch_assoc()) {
              $mem_name = $row['FName']." ".$row['LName'];
+         echo "<script>console.log('error3 $mem_name')</script>";
+
          }
+         echo "<script>console.log('error2 $memid')</script>";
 
         $query = "SELECT * FROM member_notice WHERE Senderid = '$id' AND Mid ='$memid' ORDER BY Time ASC";
 
