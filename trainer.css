@@ -1,3 +1,10 @@
+#forwho {
+    height: -webkit-fill-available;
+    overflow: hidden;
+}
+
+#forwho:hover { overflow-y: scroll; }
+
 .formcontainer {
     width: 50%;
     margin: 3% 0 0 25%;
@@ -102,6 +109,11 @@
     background-color: antiquewhite;
 }
 
+#sidenav button:nth-of-type(2),
+#sidenav_two button:nth-of-type(2) { 
+    background-color: #f1e9fc;
+}
+
 #sidenav .sidenav_btn_txt,
 #sidenav_two .sidenav_btn_txt {
     width: 90%;
@@ -160,25 +172,23 @@ ul#forwho_ul li:hover {
    font-weight: normal;
     width: 70%;
     font-size: 1rem;
+    text-transform: none;
 }
 
-#msgul_two .forwho_li:nth-of-type(odd) {
-    background-color: #cecccc;
-}
-#msgul_two .forwho_li:nth-child(even) {
-    background-color: #edb8b8;
-}
+
 #msgul_two li.msg_text { 
     font-weight: normal;
     font-size: 1rem;
     width: 75%;
+    text-transform: none;
+
 }
 
 #msgul li.msg_time{
     width: 30%;
     font-size: 1rem;
     font-weight: normal;
-    margin-left: 52%;
+    margin-left: 45%;
 }
 
 #msgul_two li.msg_time { 
@@ -194,10 +204,10 @@ ul#forwho_ul li:hover {
     background-color: #fdfdfd;
     height: -webkit-fill-available;
     border: none;
-    border-radius: none;
+    border-radius: 0;
 }
 
-#msgul_two form #forminput_wrapper {
+#msgul_two #msg_form #forminput_wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
