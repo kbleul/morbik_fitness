@@ -112,17 +112,9 @@ if(isset($_POST['table']))
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-            
-                        <li> <a href="admin_dashboard.php" aria-expanded="false">Dashboard</a></li> 
-                        <li><a href="admin_backup.php" aria-expanded="false">Back Up</a></li>
-                        <li><a href="manage_inventory.php">Inventory</a></li>
-
-                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
-                                   
-                        <li><a href="payments.php" aria-expanded="false">Payments</a></li>
-                        <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
-                        <li><a href="managerworkout.php" aria-expanded="false">Employees</a></li>
-                
+                <li> <a href="admin_dashboard.php" aria-expanded="false">Dashboard</a></li> 
+                <li> <a href="admin_addmanager.php" aria-expanded="false">Add Manager</a></li> 
+                <li><a href="admin_backup.php" aria-expanded="false">Back Up</a></li>
             </nav>
         </section>
         <section class="main_content-wrapper">

@@ -395,7 +395,8 @@ ul.exer_ul li {
     border-bottom: 1px solid beige;
 }
 
-button#here_btn {
+button#here_btn,
+button#addManager_btn {
     width: 20%;
     padding: 0.5rem 1rem;
     margin-left: 40%;

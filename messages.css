@@ -177,7 +177,7 @@
     overflow-y: hidden;
 }
 
-.msg_subwrapper:hover { overflow-y: scroll;
+.msg_subwrapper:hover { overflow-y: scroll; }
 
 
 .msg_text {
