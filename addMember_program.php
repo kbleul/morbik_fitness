@@ -5,7 +5,7 @@ include 'database_connect.php';
   $wid = $_REQUEST['r'];
   $mid = $_SESSION['id'];
 
-   if(isset($REQUEST['r'])) {
+   if(isset($_REQUEST['r'])) {
   
   $query = "SELECT * FROM member_workout_table WHERE Mid ='$mid' AND workoutid = '$wid'";
 
@@ -21,10 +21,11 @@ include 'database_connect.php';
               $query = "INSERT INTO member_workout_table (Mid,workoutid) VALUES ('$mid','$wid')";
 
             if( mysqli_query($con,$query))
-            { echo "added"; } 
-            else { echo mysqli_error($con); }  
+            { $output = "added"; } 
+            else { $output = mysqli_error($con); }  
         }
-        else { echo $output; }
+        
+        echo $output;
 
     }
 
@@ -40,7 +41,7 @@ include 'database_connect.php';
                    $output .= $tempstr;
                 }
             }
-        else { $output = " error"; }
+        else { $output = "error"; }
 
             echo $output;
     }

@@ -8,6 +8,9 @@
     width: 100%;
 }
 
+#cashier_main_wrapper ul:hover { opacity: .5; }
+
+
 #cashier_main_wrapper ul:nth-of-type(1) { font-weight: bold; }
 
 #cashier_main_wrapper li {
@@ -45,3 +48,50 @@
     margin-left: 0;
 }
 
+#cashier_main_wrapper #msgul {
+    width: 75%;
+    margin-top: 5vh;
+    height: 85vh;
+    overflow-y: hidden;
+    box-shadow: none;
+    margin-left: 0;
+    display: block;
+}
+
+.msg_from {
+    list-style: none;
+    height: 3.8rem;
+    border-bottom: 1px solid;
+    padding-top: 1.1rem;
+    padding-left: 1.2rem;
+    background-color: #fdfdfd;
+}
+
+.msg_subwrapper {
+    text-align: center;
+    font-weight: 200;
+}
+
+
+#msgul li.msg_text {
+    font-weight: normal;
+    width: 70%;
+    font-size: 1rem;
+    text-transform: none;
+}
+#msgul li:first-of-type, #msgul_two li:first-of-type {
+    width: 100%;
+}
+.member_request-ul li {
+    width: 18%;
+    font-size: 1.1rem;
+}
+.msg_text {
+    list-style: none;
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: #dff0ff;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    overflow-wrap: break-word;
+}

@@ -174,8 +174,11 @@
 
 .msg_subwrapper {
   height: 75vh;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
+
+.msg_subwrapper:hover { overflow-y: scroll;
+
 
 .msg_text {
   list-style: none;

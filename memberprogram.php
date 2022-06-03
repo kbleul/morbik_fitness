@@ -45,7 +45,7 @@
                     
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
-
+console.log(firsttime_response)
                         if(firsttime_response === "added") 
                            {  
                                $("#"+index).find(".addbtn").hide()
@@ -96,11 +96,12 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                        <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
+            <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                         <li><a href="payments.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
+                         <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
+                         <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
+                        <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
                         <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
-        
                         
             </nav>
         </section>
@@ -126,21 +127,21 @@
      if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
-      let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let addbtn = `<button onClick="addProgram(${key}, ${counter})" class="addbtn">
+      let img = `<img class="workout_img on" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
+      let addbtn = `<button onclick="addProgram(${key}, ${counter})" class="addbtn">
       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
       </button>`
       let exercises = `<div  class="exercise_div">`;
 
 
        workoutpackage[key]["Exrecises"].forEach(item => {
-           exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+           exercises += `<ul class='exer_ul'> <li>${item[0]}</li> <li>${item[1]}/sets </li><li>Reps  - ${item[2]} </li></ul>`;
        })
 
         exercises += `${addbtn}</div>`;
 
 
-        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}
+        workouthtml += `<section id="${counter}" class="exersice_section"><div class='front_div'>${name}${disc}${img}</div>${exercises}
         <p class="notice">Added</p></section>`;
 
         counter++;
@@ -154,13 +155,32 @@
           let sec = document.getElementsByClassName("exersice_section");
 
           for(let i = 0; i < sec.length; i++) { 
-            document.getElementById(i).addEventListener('mouseover', e => { 
-                $(e.target).find(".workout_img").hide();
-                $(e.target).find(".exercise_div").fadeIn("slow");
-                })
-                document.getElementById(i).addEventListener('mouseleave', e => { 
-                $(e.target).find(".exercise_div").hide();
-                $(e.target).find(".workout_img").fadeIn("slow");
+            document.getElementById(i).addEventListener('click', e => { 
+                // console.log($(e.target).html())
+                // console.log(e.target)
+
+                if($(document.getElementById(i)).hasClass('on')) {
+                    $("#"+i).find(".front_div").fadeIn();
+                    $("#"+i).find(".exercise_div").hide("slow");
+                    $(document.getElementById(i)).removeClass('on');
+                } else {
+                    $("#"+i).find(".front_div").hide("slow");
+                    $("#"+i).find(".exercise_div").fadeIn();
+                    $(document.getElementById(i)).addClass('on');
+                }
+
+                // if($(e.target).hasClass("on")) {
+                //     $(e.target).hide("slow");
+                //     $("#"+i).find(".exercise_div").fadeIn("slow");
+                //     $(e.target).removeClass("on");
+                // console.log("2")
+                // } else {
+                //     $("#"+i).hide("slow");
+                //     $(e.target).fadeIn();
+                //     $(e.target).addClass("on");
+                // console.log("3")
+                // }
+
                 })
           }
 

@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="programs.css">
     <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="members.css">
+
 
 
     <!-- google translate script 1-->
@@ -71,13 +73,10 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                        <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
+            <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                        
-                    
                          <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
                          <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
-                        <li class="has-arrow"><a href="new_health_status.php"><i class="fa fa-heart"></i><span class="hide-menu">Trainers</span></a>
                         <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
                         <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
         
@@ -85,10 +84,7 @@
             </nav>
         </section>
         <section class="main_content-wrapper">
-            <div id="topnav" class="topnav">
-                <button onclick="fetchGroupMsgs()">Group Messages</button>
-                <button onclick="fetchPrivateMsgs()">Private Messages</button>
-            </div>
+           
             <main id="mypackages">
             </main>
         </section>
@@ -96,20 +92,28 @@
 
   <script>
 
-  const fetchGroupMsgs = () => {
+  const fetchGroupMsgs = type => {
                 const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
                          console.log(firsttime_response);
-                         $("#mypackages").html(firsttime_response);
+                         $("#mypackages").html(`<div id="sidenav" class="topnav">
+                <button onclick="fetchGroupMsgs('Manager')">Group Messages</button>
+                <ul id="sidenav_submenu">
+                 <li onclick="fetchGroupMsgs('Manager')">Manager</li>
+                 <li onclick="fetchGroupMsgs('Trainer')">My Trainer</li>
+                </ul>
+                <button onclick="fetchPrivateMsgs()">Private Messages</button>
+            </div>` + firsttime_response);
                     }
             
-                                    xmlhttp.open("GET", "fetch_messages.php?r=" + "group");
+                   if(type === 'Manager') { xmlhttp.open("GET", "fetch_messages.php?r=group");  }
+                   else { xmlhttp.open("GET", "fetch_messages.php?r=trainer"); }
                                     xmlhttp.send();
   }
 
-  fetchGroupMsgs();
+  fetchGroupMsgs('Manager');
 
   const fetchPrivateMsgs = () => {
     const xmlhttp = new XMLHttpRequest();
@@ -117,7 +121,10 @@
       xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
                          console.log(firsttime_response);
-                         $("#mypackages").html(firsttime_response);
+                         $("#mypackages").html(`<div id="sidenav" class="topnav">
+                <button onclick="fetchGroupMsgs('Manager')">Group Messages</button>
+                <button onclick="fetchGroupMsgs('Trainer')">Private Messages</button>
+            </div>` + firsttime_response);
                     }
             
                                     xmlhttp.open("GET", "fetch_messages.php?r=" + "private");

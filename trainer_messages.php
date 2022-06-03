@@ -199,27 +199,28 @@
   return $output;
     }
 
-    function fetchToWho () {
-    include('database_connect.php');
+    function fetchToWho () 
+    {
+      include('database_connect.php');
 
-    $id = $_SESSION['id'];
-    $isprivate = true;
-    $query = "";
-    $output = "";
-    $output_ = "";
+        $id = $_SESSION['id'];
+        $isprivate = true;
+        $query = "";
+        $output = "";
+        $output_ = "";
 
 
 
-    $query = "SELECT * FROM group_trainer WHERE Eid = $id";
+      $query = "SELECT * FROM group_trainer WHERE Eid = $id";
         if($isprivate_result = $con -> query($query)) {
              $rowcount = mysqli_num_rows($isprivate_result);
              if($rowcount > 0) { $isprivate = false; }
         }
 
         if($isprivate == true) 
-    {  
+         {  
         $query = "SELECT * from main_members_table where Private_Trainer_Id = $id";  
-    $counter = 0;
+          $counter = 0;
 
         if($result = $con -> query($query)) {
             $output = $output . "<ul class='forwho_ul' id='forwho_ul' >";
@@ -420,16 +421,14 @@
 
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
+           
             <nav>
             
-                <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
-
-                <li><a href="trainer_member.php">Programs</a></li>
-                            
-                <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
-                <li><a href="trainer_excersise.php" aria-expanded="false">Exercise Routine</a></li>
-             
-            </nav>
+            <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
+            <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
+            <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
+         
+        </nav>
         </section>
         <section class="main_content-wrapper">
           

@@ -67,12 +67,8 @@
             <nav>
             
                 <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
-
-                <li><a href="trainer_workout.php">Programs</a></li>
                 <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
-                            
-                <li><a href="trainer_payments.php" aria-expanded="false">Payments</a></li>
-                <li><a href="trainer_workout.php" aria-expanded="false">Workouts</a></li>
+                <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
              
             </nav>
         </section>

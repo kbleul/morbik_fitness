@@ -180,10 +180,8 @@ function fetchPaymentForm() {
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                        <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
+            <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                        
-                    
                          <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
                          <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
                         <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
@@ -195,9 +193,6 @@ function fetchPaymentForm() {
         <section class="main_content-wrapper">
             <main id="myworkout_main">
 
-            <!-- <article id="topnav">
-    
-            </article> -->
                 <article id="mypackage"  >
                      
 
@@ -234,7 +229,7 @@ function fetchPaymentForm() {
 
                     $output = $output . "<ul class='payment_ul'><li>$rid</li><li>$processedby</li><li>$fee</li><li>$date</li></ul>";
                 }
-                $output = $output . "</div><p>You can pay your next fee starting from ";
+                $output = $output . "</div><p class='non_p'>You can pay your next fee starting from ";
 
 
                     //get Date string
@@ -261,15 +256,15 @@ function fetchPaymentForm() {
 
 
                 if($arr[0] == $arr[1] || $arr[1] == $arr[2] || $arr[1] == $currentdate)  
-                { $output = $output . "<p>You can pay now</p><button onclick='printTrial()'>Here </button>"; }
+                { $output = $output . "<p class='non_p'>You can pay now</p><button id='here_btn' onclick='printTrial()'>Here </button>"; }
             
 
 
             }
 
             if($output == "") 
-            { $output = "<p>No payment history yet. Pay your first payment now .</p>"; 
-            $output = $output . "<button onclick='printTrial()'>Here </button>";
+            { $output = "<p class='non_p'>No payment history yet. Pay your first payment now .</p>"; 
+            $output = $output . "<button id='here_btn' onclick='printTrial()'>Here </button>";
             }
 
               echo $output;

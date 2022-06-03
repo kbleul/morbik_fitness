@@ -53,6 +53,7 @@
     font-family: Roboto, sans-serif;
     color: red;
     margin-right: 15%;
+    display: none;
 }
 
 /*-----------------memberdashboard----------------*/
@@ -80,7 +81,7 @@
  }
 #myworkout_main .exercise div { 
     width: 50%;
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 1.3rem;
 }
 
@@ -377,3 +378,42 @@ align-items: center;
 }
 
 #mypackage .mymeal_sec { margin-top: 2%; }
+
+
+.non_p { 
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 1.3rem;
+    color: red;
+    font-family: monospace;
+}
+ul.exer_ul { display: flex; }
+ul.exer_ul li {
+    list-style: none;
+    width: 30%;
+    padding: 0.5rem;
+    border-bottom: 1px solid beige;
+}
+
+button#here_btn {
+    width: 20%;
+    padding: 0.5rem 1rem;
+    margin-left: 40%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 50px;
+}
+ul.payment_ul.payment_ul_header { font-weight: 700; }
+
+ul.payment_ul {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5vh;
+    display: flex;
+}
+
+ul.payment_ul li {
+    list-style: none;
+    width: 25%;
+    text-align: center;
+}

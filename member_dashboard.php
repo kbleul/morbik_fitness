@@ -164,14 +164,11 @@ if($resulttwo = $con->query($query)) {
             <nav>
                         <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                        
-                    
                          <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
                          <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
                         <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
                         <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
         
-                        
             </nav>
         </section>
         <section class="main_content-wrapper">
@@ -202,7 +199,8 @@ if($resulttwo = $con->query($query)) {
 
 
       window.getMyWorkout = () => {
-          $("#slide_btns").show()
+        $("#mymeal_btn").removeClass("active")
+        $("#myworkout_btn").addClass("active")
 
       let workouthtml = '';
 
@@ -210,8 +208,17 @@ if($resulttwo = $con->query($query)) {
                     
                     xmlhttp.onload = function() {  
                         let firsttime_response = this.responseText;  
-                        if(firsttime_response !== "error") 
-                           {
+
+                        if(firsttime_response == "" || firsttime_response == " ") 
+                         {  
+                             $("#slide_btns").hide();
+                            $("#packages").html("<p class='non_p'>No workout plans saved</p>"); 
+                        }
+
+                      else  if(firsttime_response !== "error") 
+                            {
+                              $("#slide_btns").show()
+
                                 let temparr =  firsttime_response.split(" ")
        
 
@@ -229,7 +236,7 @@ if($resulttwo = $con->query($query)) {
 
 
        workoutpackage[parseInt(temparr[i])]["Exrecises"].forEach(item => {
-           exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+           exercises += `<ul class='exer_ul'> <li>${item[0]}</li><li>${item[1]}/reps</li><li> Sets  - ${item[2]} </li></ul>`;
        })
 
         exercises += `</div>`;
@@ -240,10 +247,10 @@ if($resulttwo = $con->query($query)) {
     }
 
         } 
-
+ 
                         $("#packages").html(workouthtml);
-                        $("#mymeal_btn").removeClass("active")
-                        $("#myworkout_btn").addClass("active")
+                      
+
                         }
                     }
             
@@ -256,6 +263,9 @@ if($resulttwo = $con->query($query)) {
 
         window.getMyMealplan = () => {
                 $("#slide_btns").hide()
+                $("#myworkout_btn").removeClass("active")
+                $("#mymeal_btn").addClass("active")
+
             const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
@@ -263,7 +273,8 @@ if($resulttwo = $con->query($query)) {
                         console.log(firsttime_response);
 
                         if(firsttime_response === "Empty")
-                              { console.log("empty") }
+                         {  $("#packages").html("<p class='non_p'>No meal plans saved</p>");  }
+
                         else {
                             let mealarr = firsttime_response.split("-")
                             mealarr.pop();
@@ -283,10 +294,7 @@ if($resulttwo = $con->query($query)) {
 
 
                         $("#packages").html(mymeal_sec);
-                        $("#myworkout_btn").removeClass("active")
-                        $("#mymeal_btn").addClass("active")
-                            
-
+            
                         }
                     } 
 

@@ -1,0 +1,72 @@
+#mypackages {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#sidenav {
+    height: 85vh;
+    overflow-y: hidden;
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    width: 25%;
+    margin-top: 5vh;
+}
+
+#sidenav button {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+}
+
+#sidenav button:first-of-type {  
+    margin-top: 12vh;
+    background-color: antiquewhite; 
+}
+#sidenav button:nth-of-type(2) { background-color: #f1e9fc;      }
+
+.msgul { 
+    box-shadow: none;
+    width: 75%;
+    margin-left: 0;
+}
+.msg_text {
+     width: 70%;
+     list-style: none;
+     padding: 1rem;
+     border-radius: 50px;
+     background-color: #dff0ff;
+     margin-top: 1rem;
+     margin-left: 0.5rem;
+     overflow-wrap: break-word;
+     text-align: left;
+}
+.msg_time {
+    margin-left: 53%;
+    width: 20%;
+    list-style: none;
+    font-size: small;
+    color: gainsboro;
+    margin-top: 0.2rem;
+}
+
+ul#sidenav_submenu li {
+    padding: 1rem 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+ul#sidenav_submenu li:nth-of-type(2) { margin-bottom: .8rem;  }
+
+
+ul#sidenav_submenu li:hover { background-color: beige; }
+
+.msg_subwrapper { 
+    text-align: center;
+    text-transform: capitalize;
+}

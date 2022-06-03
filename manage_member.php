@@ -51,54 +51,23 @@
         <section class="side_nav-wrapper">
                 <nav>
                 
-                            <li> <a href="dashboard.php" aria-expanded="false">Dashboard</a></li> 
-                            <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
+                <li> <a href="manager_dashboard.php" aria-expanded="false">Dashboard</a></li> 
+                        <li><a href="manage_member.php">Members</a></li>
+                        <li><a href="manage_inventory.php">Inventory</a></li>
 
-                            <li><a href="payments.php" aria-expanded="false">Payments</a></li>
-
-                            <li class="submenu_conatiner">
+                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
+                                   
+                        <li><a href="manager_payments.php" aria-expanded="false">Payments</a></li>
+                        <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
+                        <li class="submenu_conatiner">
                                 <div id="0" class="drop_down-container">
                                     <p>Employees</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
                                 </div>
                                     <ul aria-expanded="false" class="collapse">
-                                        <li><a href="new_plan.php">New Employee</a></li>
-                                        <li><a href="view_plan.php">Edit Employee Details</a></li>
+                                    <li><a href="new_employee.php">New Employee</a></li>
+                                        <li><a href="view_employee.php">Edit Employee Details</a></li>
                                     </ul>
-                            </li>
-
-                            <li class="submenu_conatiner">
-                                <div id="1" class="drop_down-container">
-                                <p>Plan</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>    
-                                </div> 
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="new_plan.php">New Plan</a></li>
-                                <li><a href="view_plan.php">Edit Subsciption Details</a></li>
-                                </ul>
-                            </li>
-                            <li  class="submenu_conatiner">
-                                <div id="2" class="drop_down-container">
-                                    <p>Overview</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
-                                </div>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li> <a href="over_members_month.php">Members per Month</a></li>
-                                    <li> <a href="over_members_year.php">Members per Year</a></li>
-                                    <li> <a href="revenue_month.php">Income per Month</a> </li>
-                                </ul>
-                            </li>
-
-                            <li class="submenu_conatiner">
-                            <div id="3" class="drop_down-container">
-                                <p>Exercise Routine</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
-                            </div>
-                                <ul  aria-expanded="false" class="collapse">
-                                <li><a href="addroutine.php">Add Routine</a> </li>
-                                <li> <a href="editroutine.php">Edit Routine</a> </li>
-                                <li> <a href="viewroutine.php">View Routine</a></li>
-                                </ul>
                             </li>
                             
                             

@@ -48,7 +48,6 @@ include 'database_connect.php';
 
         echo $output;
 
-
   }
 
   
