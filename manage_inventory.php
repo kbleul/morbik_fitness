@@ -178,7 +178,7 @@
             html += `<label for="type">Type</label><select name='type' id='type' required='required'>
             <option value="Weights">Weights</option>
                         <option value="Machine">Machines</option>
-                        <option value="Other">Other</option>
+                        <option value="Others">Others</option>
             </select>`;
             html += `<label for="disc">Discription</label><input type="text" name="disc" id="disc" required='required' />`;
             html += `<label for="quantity">Quantity</label><input type="number" name="quantity" id="quantity"  value='1' />`;

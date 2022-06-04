@@ -51,6 +51,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="manager_dashboard.css">
+
 
     <script src="jquery-3.6.0.js"></script>
     <script src="index.js"></script>
@@ -121,7 +123,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="3em" height="3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="currentColor" d="m34.59 23l-4.08-5l4-4.9a1.82 1.82 0 0 0 .23-1.94a1.93 1.93 0 0 0-1.8-1.16h-31A1.91 1.91 0 0 0 0 11.88v12.25A1.91 1.91 0 0 0 1.94 26h31.11a1.93 1.93 0 0 0 1.77-1.09a1.82 1.82 0 0 0-.23-1.91ZM2 24V12h30.78l-4.84 5.93L32.85 24Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M9.39 19.35L6.13 15H5v6.18h1.13v-4.34l3.26 4.34h1.12V15H9.39v4.35z" class="clr-i-outline clr-i-outline-path-2"/><path fill="currentColor" d="M12.18 21.18h4.66v-1.02h-3.53v-1.61h3.19v-1.03h-3.19v-1.49h3.53V15h-4.66v6.18z" class="clr-i-outline clr-i-outline-path-3"/><path fill="currentColor" d="M24.52 19.43L23.06 15h-1.22l-1.47 4.43L19.05 15h-1.23l1.96 6.18h1.11l1.56-4.59L24 21.18h1.13L27.08 15h-1.23l-1.33 4.43z" class="clr-i-outline clr-i-outline-path-4"/><path fill="none" d="M0 0h36v36H0z"/></svg>
                         <div class="boxes_discription">
                             <p class="count"><?php echo $mem_new; ?></p>
-                            <p>Members : This Month</p>
+                            <p>This Month</p>
                         </div>
                     </div>
                      <div class="boxes">
@@ -132,136 +134,177 @@
                         </div>
                       </div>   
                 </section>  
-                <section class="boxes_container">
-                   <div class="boxes">
-                        <div class='topbox'>
-                            <h2>Trainers</h2>
-                        </div>
-                        <div class='midbox'>
-                            <p>Total</p>
-                            <p>8</p>
-                        </div>
-                        <div class='lastbox'>
-                            <div class='sub_lastbox'>
-                                <p>Group</p>
-                                <p>18</p>
-                            </div>
-                            <div class='sub_lastbox'>
-                                <p>Private</p>
-                                <p>8</p>
-                            </div>
-                        </div>
-                        <div class='lastbox'>
-                            <div class='sub_lastbox'>
-                                <p>Newly added 8</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="boxes">
-                        <div class='topbox'>
-                            <h2>Inventory</h2>
-                        </div>
-                        <div class='midbox'>
-                            <p>Total</p>
-                            <p>38</p>
-                        </div>
-                        <div class='lastbox'>
-                            <div class='sub_lastbox'>
-                                <p>Machines</p>
-                                <p>18</p>
-                            </div>
-                            <div class='sub_lastbox'>
-                                <p>Weights</p>
-                                <p>8</p>
-                            </div>
-                            <div class='sub_lastbox'>
-                                <p>Others</p>
-                                <p>8</p>
-                            </div>
-                        </div>
-                        <div class='lastbox'>
-                            <div class='sub_lastbox'>
-                                <p>Newly added 18</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </section>
-
-                <section class="boxes_container">
-                  <div class="boxes_container">
+                <section class="boxes_container table_section">
+                  <div id="payment_table_container">
                     <h3>Recent Payments</h3>
                     <ul class="payment_ul table_ul">
-                      <ul class="header_ul">
+                    <ul class="header_ul">
                         <li>Name</li>
-                        <li>Program</li>
-                        <li>Amount</li>
-                        <li>Date</li>
+                        <li>Processed By</li>
+                        <li class="amount_li">Amount</li>
+                        <li class="date_li">Date</li>
                       </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Program</li>
-                        <li>Amount</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Program</li>
-                        <li>Amount</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Program</li>
-                        <li>Amount</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Program</li>
-                        <li>Amount</li>
-                        <li>Date</li>
-                      </ul>
+                            <?php 
+                                    $query = "SELECT * FROM payment_main where month(Date)= $month";
+
+                                        if($result = $con -> query($query)){
+                                            while($row = $result -> fetch_assoc()) {
+                                                $name = $row['FName']." ".$row["LName"];
+                                                $processed = $row["ProcessedBy"];
+                                                $fee = $row["Fee"];
+                                                $date = $row["Date"];
+
+                                                $output = $output . "<ul><li>$name</li><li>$processed</li>
+                                                <li class='amount_li'>$fee Birr</li><li class='date_li'>$date</li></ul>";
+
+                                            }
+                                            echo $output;
+                                        } else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+                            ?>
                    </ul>
                   </div>
-                  <div class="boxes_container">
+                  <div id="invetoray_table_container">
                     <h3>New Equipments</h3>
                     <ul class="invintory_ul table_ul">
                       <ul class="header_ul">
                         <li>Name</li>
                         <li>Quantity</li>
-                        <li>Price</li>
-                        <li>Date</li>
+                        <li class="amount_li">Price</li>
+                        <li class="date_li">Date</li>
                       </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Quantity</li>
-                        <li>Price</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Quantity</li>
-                        <li>Price</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Quantity</li>
-                        <li>Price</li>
-                        <li>Date</li>
-                      </ul>
-                      <ul>
-                        <li>Name</li>
-                        <li>Quantity</li>
-                        <li>Price</li>
-                        <li>Date</li>
-                      </ul>
+                      <?php 
+                                    $query = "SELECT * FROM inventory where month(Last_Added)= $month";
+                                        $output = "";
+
+                                        if($result = $con -> query($query)){
+                                            while($row = $result -> fetch_assoc()) {
+                                                $name = $row['Name'];
+                                                $quantity = $row["Quantity"];
+                                                $price = $row["Price"];
+                                                $date = $row["Last_Added"];
+
+                                                $output = $output . "<ul><li>$name</li><li>$quantity</li>
+                                                <li class='amount_li'>$price Birr</li><li class='date_li'>$date</li></ul>";
+
+                                            }
+                                            echo $output;
+                                        } else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+                            ?>
                    </ul>
                   </div>
                 </section>
 
+                <section class="boxes_container" id="boxes_container_midsection">
+                   <div class="boxes" id="trainer_box">
+                        <div class='topbox'>
+                            <h2>Trainers</h2>
+                        </div>
+                <?php
+        $query  = "SELECT * FROM employee WHERE Job_title = 'Trainer' OR Job_title = 'trainer'";
+        $output = "";
+        $counttotal = 0;
+        $countgroup = 0;
+        $countprivate = 0;
+        $countnewly = 0;
+
+           if($result = $con -> query($query)){ $counttotal = mysqli_num_rows($result); }
+             else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $query  = "SELECT * FROM group_trainer";
+        if($result = $con -> query($query)){ $countgroup = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $countprivate = $counttotal - $countgroup;
+
+
+        $query  = "SELECT * FROM employee WHERE month(registration_data)= $month AND Job_title = 'Trainer'";
+        if($result = $con -> query($query)){ $countnewly = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+           
+                ?>
+                        <div class='midbox'>
+                            <p>Total</p>
+                            <p><?php echo $counttotal; ?></p>
+                        </div>
+                        <div class='secondmid_box'>
+                           <div class='sub_lastbox'>
+                                <p>Group</p>
+                                <p><?php echo $countgroup; ?></p>
+                            </div>
+                            <div class='sub_lastbox'>
+                                <p>Private</p>
+                                <p><?php echo $countprivate; ?></p>
+                            </div>
+                        </div>
+                        <div class='lastbox'>
+                            <div class='sub_lastbox'>
+                                <p>Newly added <?php echo $countnewly; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+        $query  = "SELECT * FROM inventory";
+        $output = "";
+        $counttotal = 0;
+        $countmachine = 0;
+        $countweight = 0;
+        $countother = 0;
+        $countnewly = 0;
+
+
+           if($result = $con -> query($query)){ $counttotal = mysqli_num_rows($result); }
+             else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $query  = "SELECT * FROM inventory WHERE Type = 'Machine'";
+        if($result = $con -> query($query)){ $countmachine = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $query  = "SELECT * FROM inventory WHERE Type = 'Weights'";
+        if($result = $con -> query($query)){ $countweight = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $query  = "SELECT * FROM inventory WHERE Type = 'Others'";
+        if($result = $con -> query($query)){ $countother = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+
+        $query  = "SELECT * FROM inventory WHERE month(Last_Added) = $month";
+        if($result = $con -> query($query)){ $countnewly = mysqli_num_rows($result); }
+        else { echo "<script>console.log('". mysqli_error($con)."');</script>"; }
+           
+                ?>
+                    <div class="boxes" id="inventory_box">
+                        <div class='topbox'>
+                            <h2>Inventory</h2>
+                        </div>
+                        <div class='midbox'>
+                            <p>Total</p>
+                            <p><?php echo $counttotal; ?></p>
+                        </div>
+                        <div class='secondmid_box'>
+                           <div class='sub_lastbox'>
+                                <p>Machines</p>
+                                <p><?php echo $countmachine; ?></p>
+                            </div>
+                            <div class='sub_lastbox'>
+                                <p>Weights</p>
+                                <p><?php echo $countweight; ?></p>
+                            </div>
+                            <div class='sub_lastbox'>
+                                <p>Others</p>
+                                <p><?php echo $countother; ?></p>
+                            </div>
+                        </div>
+                        <div class='lastbox'>
+                            <div class='sub_lastbox'>
+                                <p>Newly added <?php echo $countnewly; ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+               
 
             </main>
         </section>

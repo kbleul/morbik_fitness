@@ -1,0 +1,136 @@
+.main_content-wrapper .table_section { margin-top: 20vh;  }
+#boxes_container_midsection { 
+    margin-top: 0;
+    margin-bottom: 15vh;
+}
+
+#boxes_container_midsection .boxes {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    justify-content: flex-start;
+}
+
+#boxes_container_midsection .boxes .topbox {
+    width: 100%;
+    text-align: center;
+    background-color: #ffbdbd;
+}
+
+#boxes_container_midsection #inventory_box .topbox {   background-color: #ffbdbd;   }
+
+#boxes_container_midsection #trainer_box .topbox {   background-color: #fff16d;   }
+
+#boxes_container_midsection .boxes .topbox h2 {
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+#boxes_container_midsection .midbox {
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    font-family: auto;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+#boxes_container_midsection .midbox p { 
+    color: tomato;
+    width : 70%; 
+}
+
+#boxes_container_midsection .secondmid_box {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#boxes_container_midsection .secondmid_box .sub_lastbox{
+    width: 50%;
+    background-color: dimgrey;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+#boxes_container_midsection #trainer_box .secondmid_box .sub_lastbox:first-of-type {  background-color: darkcyan;   }
+#boxes_container_midsection #trainer_box .lastbox { width: 100%; }
+#boxes_container_midsection  .sub_lastbox {
+    color: black;
+    font-family: inherit;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
+    background-color: white;
+}
+
+#boxes_container_midsection .lastbox .sub_lastbox {   margin-left: 25%;   }
+
+ 
+#boxes_container_midsection #inventory_box .secondmid_box .sub_lastbox {
+    text-align: center;
+    font-size: 1.1rem;
+}
+#boxes_container_midsection #inventory_box .secondmid_box .sub_lastbox:first-of-type {  background-color: black;   }
+#boxes_container_midsection #inventory_box .secondmid_box .sub_lastbox:nth-last-of-type(2) {  background-color: saddlebrown;   }
+
+
+#boxes_container_midsection #inventory_box .lastbox,
+#boxes_container_midsection #trainer_box .lastbox{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: .5rem;
+}
+
+
+.table_section {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 15vh;
+}
+
+.table_section #payment_table_container,
+.table_section #invetoray_table_container { 
+    width: 50%;  
+}
+
+.table_section h3 {
+    font-family: cursive;
+    font-size: 1.3rem;
+    color: darkgrey;
+    font-weight: 500;
+    border-right: 4px solid #ff1f88;
+    padding-right: 5%;
+    text-align: end;
+    margin-right: 5%;
+}
+
+.table_section .table_ul ul  { 
+    font-size: .9rem;
+    display: flex;  
+}
+.table_section .table_ul .header_ul  { 
+    font-weight: 600;
+    color: gold;
+    font-size: 1.1rem;
+    display: flex;
+ }
+ ul.table_ul ul li {
+    width: 25%;
+    list-style: none;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(244 244 244);
+}
+.table_section .table_ul .header_ul li {   border-bottom: 1px solid yellow;   }
+
+.table_section .table_ul .amount_li { width: 20%; }
+
+.table_section .table_ul .date_li { width: 35%; }
