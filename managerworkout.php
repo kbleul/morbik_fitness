@@ -208,8 +208,6 @@
                         <li><a href="manage_inventory.php">Inventory</a></li>
 
                         <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
-                                   
-                        <li><a href="manager_payments.php" aria-expanded="false">Payments</a></li>
                         <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
                         <li class="submenu_conatiner">
                                 <div id="0" class="drop_down-container">
@@ -225,10 +223,10 @@
         </section>
         <section class="main_content-wrapper">
             <main>
-            <div class="topnav">
+            <div id='topnav' class="topnav">
                 <button id="bygym_btn" onclick="renderAllWorkouts()">By Gym</button>
                 <button id="byothers" onclick="renderByOthers()">By Others</button>
-                <button id="addnew" onclick="renderByMe()">By Me</button>
+                <button id="byme" onclick="renderByMe()">By Me</button>
                 <button id="addnew" onclick="show_addWorkout_form()">Add New Workout</button>
 
 
@@ -240,10 +238,17 @@
    import workoutpackage  from "./workout.js";
 
    window.renderAllWorkouts = () => {
-
-
-   let workouthtml = '';
+    let workouthtml = '';
    let counter = 0;
+
+            $("#bygym_btn").addClass("active");
+            $("#byothers").removeClass("active");
+            $("#byme").removeClass("active");
+            $("#addnew").removeClass("active");
+
+   
+      $("#mypackage").html("");
+      $("#packages").show("");
 
 
    for(let key in workoutpackage) {
@@ -254,22 +259,22 @@
      if(workoutpackage[key]["forwho"] === "both" || workoutpackage[key]["forwho"] === gender || forwho_capitalized === gender){
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
-      let img = `<img class="workout_img" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let addbtn = `<button onClick="addProgram(${key}, ${counter})" class="addbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="4em" height="3em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
+      let img = `<img class="workout_img on" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
+      let addbtn = `<button onclick="addProgram(${key}, ${counter})" class="addbtn">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
       </button>`
       let exercises = `<div  class="exercise_div">`;
 
 
        workoutpackage[key]["Exrecises"].forEach(item => {
-           exercises += `<p > ${item[0]}  ${item[1]}/per rep Reps  - ${item[2]} </p>`;
+           exercises += `<ul class='exer_ul'> <li>${item[0]}</li> <li>${item[1]}/sets </li><li>Reps  - ${item[2]} </li></ul>`;
        })
 
-        exercises += `<div class='exercise_btns_wrapper'>${addbtn}<p class="notice">Added</p></div></div>`;
+        exercises += `${addbtn}</div>`;
 
 
-        workouthtml += `<section id="${counter}" class="exersice_section">${name}${disc}${img}${exercises}
-        </section>`;
+        workouthtml += `<section id="${counter}" class="exersice_section"><div class='front_div'>${name}${disc}${img}</div>${exercises}
+        <p class="notice">Added</p></section>`;
 
         counter++;
         
@@ -277,41 +282,43 @@
 
    }
 }
-       $("#mypackage").html("");
-        $("#packages").html(workouthtml).css("display","grid");
+        document.getElementById("packages").innerHTML =workouthtml;
+        $("#packages").show("");
 
           let sec = document.getElementsByClassName("exersice_section");
 
-          const showHidden = index => {
-            $(sec[index]).find("h2").hide()
-                $(sec[index]).find(".discription").hide()
-                $(sec[index]).find("img").hide()
-
-                $(sec[index]).find(".exercise_div").fadeIn("slow");
-            document.getElementById(i).removeEventListener('click',() => showHidden(i))
-
-          }
-
           for(let i = 0; i < sec.length; i++) { 
-            document.getElementById(i).addEventListener('click',() => showHidden(i))
+            document.getElementById(i).addEventListener('click', e => { 
+                // console.log($(e.target).html())
+                console.log(e.target)
 
-            sec[i].querySelector(".exercise_div").addEventListener("click", e => {
-                    $(e.target).hide()
-                    $(sec[i]).find("h2").show()
-                $(sec[i]).find(".discription").show()
-                $(sec[i]).find("img").show()
-            })
-                // document.getElementById(i).addEventListener('onclick', e => ( 
-                // $(e.target).find(".exercise_div").show();
-                // $(e.target).find(".workout_img").fadeIn("slow"); 
-                // })
+                if($(document.getElementById(i)).hasClass('on')) {
+                    $("#"+i).find(".front_div").fadeIn();
+                    $("#"+i).find(".exercise_div").hide("slow");
+                    $(document.getElementById(i)).removeClass('on');
+                } else {
+                    $("#"+i).find(".front_div").hide("slow");
+                    $("#"+i).find(".exercise_div").fadeIn();
+                    $(document.getElementById(i)).addClass('on');
+                }
+
+
+                })
           }
+
+        
+
         }
         
         renderAllWorkouts();
 
 
         window.show_addWorkout_form = () => {
+            $("#bygym_btn").removeClass("active");
+            $("#byothers").removeClass("active");
+            $("#byme").removeClass("active");
+            $("#addnew").addClass("active");
+
             let addworkout_html = `<div id="frontform"><label for="Name">Title</label><input type="text" class="input" id="title" name="Name" require="required" /> `
              addworkout_html += ` <li><input id="action" type="hidden" value='addnew' name='action' /></li>
 
@@ -428,6 +435,12 @@ for(let i = 0 ; i < document.getElementsByClassName("front").length; i++) {
 }
 
 window.renderByMe = () => {
+
+            $("#bygym_btn").removeClass("active");
+            $("#byothers").removeClass("active");
+            $("#byme").addClass("active");
+            $("#addnew").removeClass("active");
+
     const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
@@ -444,6 +457,11 @@ window.renderByMe = () => {
 
 <script>
     const renderByOthers = () => { console.log("sajkdhasj")
+        $("#bygym_btn").removeClass("active");
+            $("#byothers").addClass("active");
+            $("#byme").removeClass("active");
+            $("#addnew").removeClass("active");
+
         const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
@@ -489,6 +507,7 @@ window.renderByMe = () => {
   }
 
   window.editMyWorkout = index => {
+
     const root = document.getElementsByClassName("front")[parseInt(index)];
     const root_hidden = document.getElementsByClassName("hidden")[parseInt(index)];
 

@@ -106,8 +106,6 @@
                         <li><a href="manage_inventory.php">Inventory</a></li>
 
                         <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
-                                   
-                        <li><a href="manager_payments.php" aria-expanded="false">Payments</a></li>
                         <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
                         <li class="submenu_conatiner">
                                 <div id="0" class="drop_down-container">
@@ -128,19 +126,19 @@
                <div id="topnav">
                     <button id="requests" class="active" onClick='changeMainContent("requests")'>Requests</button>
                     <button id="rejected" onClick='changeMainContent("rejected")'>Declined</button>
-                    <button id="rejected" onClick='showNotice_form()'>Send Notice</button>
+                    <button id="send" onClick='showNotice_form()'>Send Notice</button>
 
                </div>
                  <h3 id="title">PRIVATE TRAINER REQUESTS</h3>
    
             <section id="content_wrapper">
                  <ul class="member_request-ul">
-                     <li>Full Name</li>
-                     <li>gender</li>
-                     <li>program</li>
-                     <li>plan</li>
-                     <li>Requested Time</li>
-                     <li> </li>
+                     <li class='fullname'>Full Name</li>
+                     <li class='gender'>gender</li>
+                     <li class='program'>program</li>
+                     <li class='plan'>plan</li>
+                     <li class='req_time'>Requested Time</li>
+                     <li class='trainers_list'> </li>
                      
                  </ul>
    
@@ -179,11 +177,11 @@
                 $counter = $counter + 1;
    
    
-                echo "<ul class='$class'><li>$fullname</li>
-                <li>$gender</li>
-                <li>$program</li>
-                <li>$plan</li>
-                <li>Requested time <span class='$class_span'> $starttime - $endtime </span></li>
+                echo "<ul class='$class'><li class='fullname'>$fullname</li>
+                <li class='gender'>$gender</li>
+                <li class='program'>$program</li>
+                <li class='plan'>$plan</li>
+                <li class='req_time'>Requested time <span class='$class_span'> $starttime - $endtime </span></li>
                 <li class='trainers_list'>
                 <span id='assign$counter'>Assign Trainer</span> 
                 <button id='a$counter' class='show_select_btn' onclick='showSelect($counter)'>Assign</button>
@@ -237,9 +235,12 @@
 
          const changeMainContent = type => {
 
+            $("#send").removeClass('active');
+
             if(type === 'rejected')
             {  $("#rejected").addClass('active');
                 $("#requests").removeClass('active');
+
                 const xmlhttp = new XMLHttpRequest();
                     
                     xmlhttp.onload = function() {  
@@ -323,6 +324,13 @@
 
         
         const showNotice_form = () => {
+
+            $("#send").addClass('active');
+                $("#requests").removeClass('active');
+                $("#rejected").removeClass('active');
+
+
+
             $("#title").text("Message Board");
 
             let html = `<div id='msg_wraapper'><form id='msg_form' method='POST'>

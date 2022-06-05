@@ -134,3 +134,12 @@
 .table_section .table_ul .amount_li { width: 20%; }
 
 .table_section .table_ul .date_li { width: 35%; }
+
+
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10vh;
+}
+
+table th:first-of-type { font-size: 2rem; }

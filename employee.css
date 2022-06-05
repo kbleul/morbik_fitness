@@ -139,11 +139,16 @@
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    width: 94%;
+    margin-left: 3%;
     text-transform: capitalize;
+    line-height: 2rem;
 }
 .title_ul{ 
      font-weight: bold;
      font-size: 1.1rem;
+     margin-bottom: 2vh;
+     border-bottom: 1px solid;
 }
 .manage_employee-ul li{
         width: 9%;

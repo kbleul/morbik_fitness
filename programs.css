@@ -418,3 +418,10 @@ ul.payment_ul li {
     width: 25%;
     text-align: center;
 }
+
+#topnav .active {  
+    padding: .6rem 1rem;
+    border: none;
+    border-bottom: 3px solid black;
+    background-color: #ececec;
+  }

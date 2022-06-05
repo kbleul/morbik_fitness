@@ -55,9 +55,7 @@
                         <li><a href="manage_member.php">Members</a></li>
                         <li><a href="manage_inventory.php">Inventory</a></li>
 
-                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>
-                                   
-                        <li><a href="manager_payments.php" aria-expanded="false">Payments</a></li>
+                        <li><a href="messages.php" aria-expanded="false">Messages/Requests</a></li>                                   
                         <li><a href="managerworkout.php" aria-expanded="false">Workout Plans</a></li>
                         <li class="submenu_conatiner">
                                 <div id="0" class="drop_down-container">
@@ -102,7 +100,7 @@
             $program = $row['Program_Name'];
             $plan = $row['Specific_Plan'];
 
-        echo "<tr>
+        echo "<tr class='mem_tr'>
                 <td>$fullname</td>
                 <td>$gender</td>
                 <td>$program</td>

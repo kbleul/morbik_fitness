@@ -1064,3 +1064,23 @@ th { color : indigo; }
 #export_form #submit { margin-left: 7%; }
 
 .row { margin-left: 5%; }
+
+table {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+thead { font-size: 1.7rem; }
+th {
+    color: black;
+    padding: 1rem;
+}
+th:nth-of-type(2) { color: indigo; }
+
+tr.mem_tr {
+    text-transform: capitalize;
+    text-align: center;
+}
+

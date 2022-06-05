@@ -8,9 +8,10 @@ include 'database_connect.php';
     if($type == 'rejected') { 
 
              $counter = 0;
-            $output = "<ul class='member_request-ul'><li>Message</li>
-            <li>Program</li>
-            <li>Requested Time</li>
+            $output = "<ul class='member_request-ul'><li class='msg'>Message</li>
+            <li class='program'>Program</li>
+            <li class='req_time'>Requested Time</li>
+            <li class='select'></li>
             </ul>";
              $query = "SELECT * FROM trainer_request WHERE Status = 'Rejected'";
              
@@ -33,7 +34,7 @@ include 'database_connect.php';
                     $trainername = $row_three['FName']." ".$row_three['LName'];
                     $ulid = "ul".$counter;
 
-            $output = $output. "<ul id='$ulid' class='member_request-ul'><li>$trainername rejected $name</li><li>$program</li><li>$time</li>
+            $output = $output. "<ul id='$ulid' class='member_request-ul'><li  class='msg'>$trainername rejected $name</li><li class='program'>$program</li><li class='req_time'>$time</li>
             ";
           
             $query = "SELECT * from `private_trainer_info` where Type='$program' And ID <>'$trainerid'";
@@ -41,18 +42,18 @@ include 'database_connect.php';
             if($result_four= $con->query($query))
             {  $sendnotice = "notice".$counter;
                 if(mysqli_num_rows($result_four) == 0) 
-                {  $output = $output . "<p id='error$counter' class=''>* No available trainers.</p>
-                    <button id='sendnotice' onClick='sendNotice($memid)'>Send Notice</button>"; }
+                {  $output = $output . "<li class='select'><p id='error$counter' class=''>* No available trainers.</p>
+                    <button id='sendnotice' onClick='sendNotice($memid)'>Send Notice</button></li>"; }
                 
                else {
-                   $output = $output . "<select id='s$counter' name='trainer_select'>";
+                   $output = $output . "<li class='select'><select id='s$counter' name='trainer_select'>";
                 while($row_four = $result_four -> fetch_assoc() ){
                 $tempname = $row_four['FName']." ".$row_four['LName'];
                $output = $output . "<option class='traineroption' value=$tempname>$tempname</option>";
             } }
         } else { echo mysqli_error($con);}
 
-         $output = $output . "</select></ul>";
+         $output = $output . "</select></li></ul>";
 
                  }
                 } else { echo mysqli_error($con);}
@@ -67,14 +68,14 @@ include 'database_connect.php';
 
         }  else if($type == 'requests'){ 
 
-            $output = ' <ul class="member_request-ul">
-            <li>Full Name</li>
-            <li>gender</li>
-            <li>program</li>
-            <li>plan</li>
-            <li>Requested Time</li>
-            <li> </li>
-        </ul>';
+            $output = "<ul class='member_request-ul'>
+            <li class='fullname'>Full Name</li>
+            <li class='gender'>gender</li>
+            <li class='program'>program</li>
+            <li class='plan'>plan</li>
+            <li class='req_time'>Requested Time</li>
+            <li class='trainers_list'> </li>
+        </ul>";
 
             $counter = 0;
             $query = "SELECT * FROM main_members_table where Resquest_Private = 1";
@@ -104,11 +105,11 @@ include 'database_connect.php';
                      $counter = $counter + 1;
         
         
-                     $output = $output ."<ul class='$class'><li>$fullname</li>
-                     <li>$gender</li>
-                     <li>$program</li>
-                     <li>$plan</li>
-                     <li>Requested time <span class='$class_span'> $starttime - $endtime </span></li>
+                     $output = $output ."<ul class='$class'><li class='fullname'>$fullname</li>
+                     <li class='gender'>$gender</li>
+                     <li class='program'>$program</li>
+                     <li class='plan'>$plan</li>
+                     <li class='req_time'>Requested time <span class='$class_span'> $starttime - $endtime </span></li>
                      <li class='trainers_list'>
                      <span id='assign$counter'>Assign Trainer</span> 
                      <button id='a$counter' class='show_select_btn' onclick='showSelect($counter)'>Assign</button>

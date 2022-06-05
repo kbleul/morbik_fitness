@@ -169,17 +169,6 @@ console.log(firsttime_response)
                     $(document.getElementById(i)).addClass('on');
                 }
 
-                // if($(e.target).hasClass("on")) {
-                //     $(e.target).hide("slow");
-                //     $("#"+i).find(".exercise_div").fadeIn("slow");
-                //     $(e.target).removeClass("on");
-                // console.log("2")
-                // } else {
-                //     $("#"+i).hide("slow");
-                //     $(e.target).fadeIn();
-                //     $(e.target).addClass("on");
-                // console.log("3")
-                // }
 
                 })
           }
