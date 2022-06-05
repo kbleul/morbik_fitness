@@ -173,6 +173,7 @@ ul#forwho_ul li:hover {
     width: 70%;
     font-size: 1rem;
     text-transform: none;
+    text-align: left;
 }
 
 
@@ -181,22 +182,18 @@ ul#forwho_ul li:hover {
     font-size: 1rem;
     width: 75%;
     text-transform: none;
-
+    text-align: left;
 }
 
-#msgul li.msg_time{
+#msgul li.msg_time,
+#msgul_two li.msg_time {
     width: 30%;
     font-size: 1rem;
     font-weight: normal;
     margin-left: 45%;
+    padding: 0;
 }
 
-#msgul_two li.msg_time { 
-    width: 30%;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-left: 45%;
-}
 
 #msg_form {
     width: 40%;
@@ -235,3 +232,104 @@ ul#forwho_ul li:hover {
     margin-top: 0.2rem; 
 }
 
+.trainer_mem_ul {
+    margin-top: 15vh;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 15vh;
+    max-height: 70vh; 
+    overflow: hidden;
+}
+.trainer_mem_ul:hover { overflow-y: scroll;  }
+
+.trainer_mem_ul h3{
+    font-size: 1.5rem;
+    color: gray;
+    border-left: 4px solid orangered;
+    padding-left: 2rem;
+}
+
+.trainer_mem_ul .trainer_mem_subul {
+    font-weight: 700;
+    background-color: coral;
+    color: aliceblue;
+}
+.trainer_mem_ul ul {
+    display: flex;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.trainer_mem_ul ul li{
+    width: 25%;
+    text-transform: capitalize;
+    list-style: none;
+}
+
+.lastsection .scheduale_ul {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10vh;
+}
+
+.lastsection .class {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    border: 1px solid beige;
+    margin-right: 1%;
+}
+
+.lastsection .class li {
+    width: 60%;
+   padding: .8rem;
+   border: none;
+   font-weight: 700;
+}
+.lastsection .class li.class_li {
+    width: 35%;
+    border: 1px solid;
+    list-style: none;
+   padding: .8rem;
+   background-color: aliceblue;
+    border-radius: 100rem;
+
+}
+
+.lastsection .class:nth-of-type(2) li.class_li {   background-color: wheat;        }
+.lastsection .class:nth-of-type(3) li.class_li {   background-color: whitesmoke;   }
+
+ul.trainer_mem_subul_private {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background-color: #ffa280;
+    padding: 1rem;
+    align-items: center;
+}
+
+ul.trainer_mem_subul_private li, ul.trainer_mem_subul_private_nonheader li {
+    width: 30%;
+    margin-right: 3%;
+}
+
+ul.trainer_mem_subul_private_nonheader {
+    border: 1px solid #f0efef;
+    margin-bottom: 1rem;
+    padding: 0;
+    align-items: center;
+}
+
+.trainer_mem_subul_private_nonheader li:first-of-type {
+    border: 1px solid;
+    list-style: none;
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 100rem;
+    border-color: #cacaca;
+    font-weight: 600;
+}
+
+.trainer_mem_subul_private_nonheader:nth-child(even) li:first-of-type {
+    background-color: wheat;
+}

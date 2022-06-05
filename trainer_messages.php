@@ -306,12 +306,16 @@
             let result = <?php $fetchresult = fetchRequests(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
                  $("#title").show();
+                 $("#request_btn").addClass("active")
+                 $("#message_btn").removeClass("active")
         }
 
         const fetchMessages = () => {
             let result = <?php $fetchresult = fetchMessages(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
                  $("#title").hide();
+                 $("#request_btn").removeClass("active")
+                 $("#message_btn").addClass("active")
         }
 
         const toggleToWho = () => {
@@ -432,9 +436,9 @@
         </section>
         <section class="main_content-wrapper">
           
-        <div class='topnav'>
-            <button onclick="fetchRequests()">Requests</button>
-            <button onclick="fetchMessages()">Messages</button>
+        <div id='topnav' class='topnav'>
+            <button id="request_btn" onclick="fetchRequests()">Requests</button>
+            <button id="message_btn" onclick="fetchMessages()">Messages</button>
         </div>
             <main id="front_page">
             <h3 id="title">REQUESTS FOR YOU</h3>
