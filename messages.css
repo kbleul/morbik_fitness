@@ -10,7 +10,13 @@
     justify-content: space-evenly;
     list-style: none;
     text-transform: capitalize;
+    width: 100%;
   }
+
+.trainer_member_request-ul {
+  width: 80%;
+    margin-left: 10%;
+}
   .member_request-ul:first-of-type {
     font-weight: bold;
     font-size: 1.1rem;
@@ -124,7 +130,17 @@
 .trainer_member_request-ul li {
   width: 25%;
   font-size: 1.1rem; 
+  text-align: center;
 }
+.trainer_member_request-ul form { width: 55%; }
+.trainer_member_request-ul form li{ 
+  width: 100%;
+  text-align: center;
+}
+
+.trainer_member_request-ul .accept_decline-list button { margin-right: 0; }
+
+
 
 #hidden_page {
   text-align: center;

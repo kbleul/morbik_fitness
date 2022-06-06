@@ -65,9 +65,8 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                <li> <a href="cashier_dashboard.php" aria-expanded="false">Dashboard</a></li> 
                 <li><a href="cashier_addrecipt.php">Make Payments</a></li>
-                <li><a href="cashier_recipthistory.php">Payments History</a></li>
+                <li><a href="cashier_paymenthistory.php">Payments History</a></li>               
                 <li><a href="cashier_messages.php">Messages/Requests</a></li>            
             </nav>
         </section>

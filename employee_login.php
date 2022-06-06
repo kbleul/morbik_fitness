@@ -42,7 +42,7 @@
        { echo "<script>setTimeout(\"location.href = 'trainer.php';\",1000);</script>"; }
 
         else if($_SESSION["Job"] == "Cashier" || $_SESSION["Job"] == "cashier" )
-       { echo "<script>setTimeout(\"location.href = 'cashier_dashboard.php';\",1000);</script>"; }
+       { echo "<script>setTimeout(\"location.href = 'cashier_addrecipt.php';\",1000);</script>"; }
 
        ?>
       </p>

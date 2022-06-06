@@ -64,6 +64,33 @@
         else { $output = mysqli_error($con); }
   return $output;
     }
+
+    function fetchToWho () 
+    {
+      include('database_connect.php');
+
+        $id = $_SESSION['id'];
+        $output = "";
+
+        $query = "SELECT * from member";  
+
+        if($result = $con -> query($query)) {
+            $output = $output . "<ul class='forwho_ul' id='forwho_ul' >";
+            while($row = $result -> fetch_assoc()){
+                $memid = $row['ID'];
+                $name = $row['FName']. " ".$row['LName'];
+                    $output = $output . "<li class='forwho_li' onclick='renderSendMsg_form($memid)'>$name</li>";
+
+                }
+            $output = $output . "</ul>";
+        } else { $output = mysqli_error($con);}
+
+        return $output;
+    } 
+
+  
+
+
     ?>
 
 <!DOCTYPE html>
@@ -77,14 +104,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" href="cashier.css"> -->
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="messages.css">
-
-    <link rel="stylesheet" href="programs.css">
     <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="programs.css">
     <link rel="stylesheet" href="trainer.css">
-
-    <link rel="stylesheet" href="cashier.css">
 
 
 
@@ -102,6 +127,79 @@
             let result = <?php $fetchresult = fetchMessages(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
                  $("#title").hide();
+        }
+        const fetchGroupMessages = () => {
+        const xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onload = function () {
+                const result = this.responseText;
+
+            if(document.getElementById("msgul") ) 
+                {   $("#msgul").html(result);   }
+            else if(document.getElementById("msgul_two") ) 
+                {   $("#msgul_two").html(result);   }
+
+            if(document.getElementById("sidenav") ) 
+                { document.getElementById("sidenav").id = "sidenav_two"; }
+            if(document.getElementById("msgul")) 
+                { document.getElementById("msgul").id = "msgul_two"; }
+
+            }
+            xmlhttp.open('GET', "renderSendMsg_form.php?g=group" );
+            xmlhttp.send();
+    }
+
+    const sendMessage = index => {
+           // console.log(index == "Group")
+
+            if($("#msg_textarea").val() == "" || $("#msg_textarea").val() == " ") { $("#msg_textarea").focus(); }
+            else {
+
+                $msg = $("#msg_textarea").val();
+            const xmlhttp = new XMLHttpRequest();
+
+
+            xmlhttp.onload = function() {
+                const result = this.responseText;
+                console.log(result)
+            index == "Group" ? fetchGroupMessages() :  renderSendMsg_form(index);
+            }
+
+            if(index == "Group") { 
+                xmlhttp.open('GET', "renderSendMsg_form.php?grp=" + $msg)
+            }
+            else {
+                xmlhttp.open('GET', "renderSendMsg_form.php?s=" + index + "&msg=" + $msg)
+            }
+                 xmlhttp.send()
+          }
+        }
+
+        const toggleToWho = () => {
+            let result = <?php $fetchresult = fetchToWho(); echo json_encode($fetchresult); ?>; console.log("aaa : " + result); 
+                 $("#forwho").html(result).toggle();
+        }
+
+        const renderSendMsg_form = index => { 
+            const xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onload = function () {
+                const result = this.responseText;
+
+               if(document.getElementById("msgul") ) 
+                   {   $("#msgul").html(result);   }
+               else if(document.getElementById("msgul_two") ) 
+                   {   $("#msgul_two").html(result);   }
+
+               if(document.getElementById("sidenav") ) 
+                 { document.getElementById("sidenav").id = "sidenav_two"; }
+               if(document.getElementById("msgul")) 
+                 { document.getElementById("msgul").id = "msgul_two"; }
+
+            }
+            xmlhttp.open('GET', "renderSendMsg_form.php?i=" + index);
+            xmlhttp.send();
+            
         }
     </script>
 
@@ -131,9 +229,8 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                <li> <a href="cashier_dashboard.php" aria-expanded="false">Dashboard</a></li> 
                 <li><a href="cashier_addrecipt.php">Make Payments</a></li>
-                <li><a href="cashier_messages.php">Payments History</a></li>               
+                <li><a href="cashier_paymenthistory.php">Payments History</a></li>               
                 <li><a href="cashier_messages.php">Messages/Requests</a></li>            
             </nav>
         </section>

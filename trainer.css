@@ -320,6 +320,9 @@ ul.trainer_mem_subul_private_nonheader {
     align-items: center;
 }
 
+ul.trainer_mem_subul_private_nonheader:hover { background-color: whitesmoke; }
+ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color: wheat; }
+
 .trainer_mem_subul_private_nonheader li:first-of-type {
     border: 1px solid;
     list-style: none;

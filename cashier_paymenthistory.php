@@ -7,6 +7,26 @@
    {  echo "<script>location.href = 'unautorizedaction.php';</script>"; }
 
 
+   function fetchAllMembers() {
+    include('database_connect.php');
+
+    $query = "SELECT * FROM member";
+    $output = "";
+
+      if($result= $con->query($query)) {
+          while($row = $result->fetch_assoc()) {
+              $name = $row['FName']. " ".$row["LName"];
+
+            $output = $output . "<li>".$name."</li>";
+          }
+
+          if($output != "") { 
+              $output = $output . "</ul>"; 
+                return $output;
+            }
+          else { return "No members found"; }
+      } else { return "<sript>console.log('".mysqli_error($con)."')</script>";  }
+   }
     ?>
 
 <!DOCTYPE html>
@@ -22,8 +42,13 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="messages.css">
+    <link rel="stylesheet" href="trainer.css">
+
     <link rel="stylesheet" href="programs.css">
     <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="cashier.css">
+
+
 
 
 
@@ -34,6 +59,13 @@
 </head>
 <body id="dashboard_body">
 
+<script>
+  const fetchAllMembers = () => {
+      const result = <?php $fetchresult = fetchAllMembers(); echo json_encode($fetchresult); ?>;
+      $("#members_list_ul").html(result);
+      console.log(result);
+  }
+</script>
     <article class="header_wrapper">
         <header class="flex">
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
@@ -60,24 +92,24 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
             <nav>
-                <li> <a href="cashier_dashboard.php" aria-expanded="false">Dashboard</a></li> 
                 <li><a href="cashier_addrecipt.php">Make Payments</a></li>
-                <li><a href="cashier_recipthistory.php">Make Payments</a></li>                
-                <li><a href="cashier_messages.php">Payments History</a></li>
+                <li><a href="cashier_paymenthistory.php">Payments History</a></li>               
+                <li><a href="cashier_messages.php">Messages/Requests</a></li>            
             </nav>
         </section>
-        <section class="main_content-wrapper">
-           
-        <section id="mypackage"></section>
+        <section class="main_content-wrapper" id="cashier_main_wrapper">
+           <p id="notice" class='notice'></p>
+        <section id="mypackage">
+            <ul id="members_list_ul" class="members_list_ul">
+                <script> fetchAllMembers();  </script>
+            </ul>
 
+     
+        </section>
         </section>
 
     </article>
 
-    <script>
-      
-
-    </script>
   <script type="text/javascript" src="togglesubmenu.js"></script>
 
 

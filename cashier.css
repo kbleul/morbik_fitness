@@ -18,6 +18,7 @@
     text-align: center;
     list-style: none;
     padding: .4rem;
+    text-transform: capitalize;
 }
 
 
@@ -80,7 +81,7 @@
     text-transform: none;
 }
 #msgul li:first-of-type, #msgul_two li:first-of-type {
-    width: 100%;
+    padding: 1rem;
 }
 .member_request-ul li {
     width: 18%;

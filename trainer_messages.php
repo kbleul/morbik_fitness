@@ -82,12 +82,15 @@
         $id = $_SESSION['id'];
         $counter = 0;
         $query = "SELECT * from trainer_request WHERE Eid = '$id' AND Status = 'Pending' OR Status = 'Conflicting'";
+        $output = "";
 
         if($result= $con->query($query)){
             while($row= $result -> fetch_assoc() ){
                     $mid = $row['Mid'];
                     $time = $row['Time'];
                     $status = $row['Status'];
+                    $output = "not empty";
+
         $query = "SELECT * FROM member WHERE ID ='$mid'";
 
                 if($result_two= $con->query($query)){
@@ -137,6 +140,8 @@
            $counter = $counter + 1;
             }else { return mysqli_error($con);}
         } 
+
+        if($output == "") { return "No request found.";}
     } else { return mysqli_error($con);}
     }
   
