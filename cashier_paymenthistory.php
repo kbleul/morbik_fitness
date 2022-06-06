@@ -15,9 +15,10 @@
 
       if($result= $con->query($query)) {
           while($row = $result->fetch_assoc()) {
+              $id = $row['ID'];
               $name = $row['FName']. " ".$row["LName"];
 
-            $output = $output . "<li>".$name."</li>";
+            $output = $output . "<li onclick='fetchReceipt($id)'>".$name."</li>";
           }
 
           if($output != "") { 
@@ -27,6 +28,36 @@
           else { return "No members found"; }
       } else { return "<sript>console.log('".mysqli_error($con)."')</script>";  }
    }
+
+   function fetchRecentReceipt() {
+       include("database_connect.php");
+       $month = date('m');
+       $output = "";
+
+       $query = "SELECT * FROM payment_main WHERE month(Date) = 4";
+
+        if($result = $con -> query($query)) {
+            if(mysqli_num_rows($result) == 0) { return "<P class='no_payment_p'>No recent payments made yet.</P>"; }
+            
+            while($row = $result->fetch_assoc()) {
+                $name = $row['FName']. " ".$row["LName"];
+                $by = $row['ProcessedBy'];
+                $fee = $row['Fee'];
+                $date = $row['Date'];
+
+                $output = $output ."<ul class='view_ul_ul'><li>$name</li><li>$by</li><li>$fee</li><li>$date</li></ul>";
+            }
+            return $output;
+
+        } else { return "<script>console.log('".mysqli_error($con)."');</script>"; }
+
+   }
+
+//    function fetchReceipt() {
+//        include("database_connect.php");
+
+//        $query = "SELECT * FROM payment_main WHERE payment_";
+//    }
     ?>
 
 <!DOCTYPE html>
@@ -62,9 +93,31 @@
 <script>
   const fetchAllMembers = () => {
       const result = <?php $fetchresult = fetchAllMembers(); echo json_encode($fetchresult); ?>;
-      $("#members_list_ul").html(result);
+      $("#members_list_ul").html(`<li onclick='showRecent()'>This Month</li>${result}`);
       console.log(result);
   }
+
+  const showRecent = () => {
+      const result = <?php $fetchresult = fetchRecentReceipt(); echo json_encode($fetchresult); ?>;
+      $("#view_ul").html(result);
+      console.log(result);
+  }
+  const fetchReceipt = id => { console.log("55s")
+      const xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onload = function() {
+            const result = this.responseText;
+            $("#view_ul").html(result);
+      console.log(result);
+
+        }
+
+        xmlhttp.open("GET", "fetchrecipt.php?s=" + id)
+        xmlhttp.send();
+
+  }
+      
+
 </script>
     <article class="header_wrapper">
         <header class="flex">
@@ -100,10 +153,16 @@
         <section class="main_content-wrapper" id="cashier_main_wrapper">
            <p id="notice" class='notice'></p>
         <section id="mypackage">
-            <ul id="members_list_ul" class="members_list_ul">
-                <script> fetchAllMembers();  </script>
+           <div class="box_contener">
+           <ul id="members_list_ul" class="members_list_ul">
+             <script> fetchAllMembers(); </script>
             </ul>
 
+            <ul class="view_ul" id="view_ul">
+            <script> showRecent(); </script>
+            </ul>
+           </div>
+            
      
         </section>
         </section>

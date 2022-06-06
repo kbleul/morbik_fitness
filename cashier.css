@@ -8,10 +8,14 @@
     width: 100%;
 }
 
-#cashier_main_wrapper ul:hover { opacity: .5; }
 
+#cashier_main_wrapper ul:nth-of-type(1) { 
+    font-weight: bold;
+    margin-top: 5vh;
+}
 
-#cashier_main_wrapper ul:nth-of-type(1) { font-weight: bold; }
+#cashier_main_wrapper ul.gym_mem_ul:hover { opacity: .5; }
+
 
 #cashier_main_wrapper li {
     width: 16.6%;
@@ -96,3 +100,78 @@
     margin-left: 0.5rem;
     overflow-wrap: break-word;
 }
+
+.no_payment_p {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    color: coral;
+}
+
+.box_contener {
+    display: flex;
+    width: 100%;
+    margin-top: 8vh;
+    height: 80vh;
+    overflow: hidden;
+}
+
+
+.box_contener ul#members_list_ul {
+    display: block;
+    overflow: hidden;
+    width: 55%;
+    margin-right: 5%;
+    padding-right: 3%;
+}
+
+.box_contener ul#members_list_ul:hover {  overflow-y: scroll;  }
+
+
+.box_contener ul#members_list_ul li,
+.box_contener ul.view_ul li{ 
+    width: 100%;
+    padding: 0.7rem;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.box_contener ul#members_list_ul li:hover { 
+    opacity: .5;
+    font-weight: 600;
+}
+
+
+.box_contener ul#members_list_ul li:nth-child(even) { background-color: #f4f4f4;  }
+
+#cashier_main_wrapper ul#view_ul { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+ }
+
+#cashier_main_wrapper ul#view_ul:hover {  overflow-y: scroll;   }
+
+
+
+#cashier_main_wrapper ul#view_ul .view_ul_ul {
+    justify-content: center;
+    border: 1px solid #f6f6f6;
+    padding: 0.5rem;
+    width: 97%;
+}
+
+#cashier_main_wrapper ul#view_ul .view_ul_ul li { width: 25%; }
+
+#cashier_main_wrapper ul#view_ul .view_ul_ul li:nth-of-type(4){ 
+    background-color: lightseagreen;
+    color: white;
+    font-weight: 600;
+    padding: 0.6rem;
+    width: 30%;
+ }
+
+
+
+

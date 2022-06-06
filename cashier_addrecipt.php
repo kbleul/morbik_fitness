@@ -92,7 +92,7 @@
                     $discount = $row['Discount'];
 
 
-           $output = $output . "<ul id='ul$counter' onclick='showMemberRecipt_form($counter)'>
+           $output = $output . "<ul class='gym_mem_ul' id='ul$counter' onclick='showMemberRecipt_form($counter)'>
            <div class='hidden'><li class='mid'>$id</li></div>
            <li class='name'>$name</li><li>$gender</li><li>$program</li><li>$plan</li><li class='fee'>$fee</li>
            <li class='discount'>$discount</li></ul>";
