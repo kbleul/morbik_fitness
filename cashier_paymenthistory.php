@@ -21,10 +21,7 @@
             $output = $output . "<li onclick='fetchReceipt($id)'>".$name."</li>";
           }
 
-          if($output != "") { 
-              $output = $output . "</ul>"; 
-                return $output;
-            }
+          if($output != "") {   return $output;   }
           else { return "No members found"; }
       } else { return "<sript>console.log('".mysqli_error($con)."')</script>";  }
    }
@@ -53,11 +50,7 @@
 
    }
 
-//    function fetchReceipt() {
-//        include("database_connect.php");
-
-//        $query = "SELECT * FROM payment_main WHERE payment_";
-//    }
+   
     ?>
 
 <!DOCTYPE html>
@@ -97,11 +90,40 @@
       console.log(result);
   }
 
+
   const showRecent = () => {
       const result = <?php $fetchresult = fetchRecentReceipt(); echo json_encode($fetchresult); ?>;
       $("#view_ul").html(result);
       console.log(result);
   }
+
+  const fetchMemberSuggestions =e => {
+                console.log("asd")
+
+
+    const inputstr = e.target.value;
+
+    if(inputstr === "" || inputstr === " ") {
+          fetchAllMembers();
+          return 0;
+        }
+console.log("asd")
+       const xmlhttp = new XMLHttpRequest();
+
+          xmlhttp.onload = function() {
+              const result = this.responseText;
+
+               $("#members_list_ul").html(result);
+      console.log(result);
+
+          }
+      
+          xmlhttp.open("GET", "fetchrecipt.php?search="+ inputstr)
+          xmlhttp.send();
+
+  
+  }
+
   const fetchReceipt = id => { console.log("55s")
       const xmlhttp = new XMLHttpRequest();
 
@@ -153,7 +175,19 @@
         <section class="main_content-wrapper" id="cashier_main_wrapper">
            <p id="notice" class='notice'></p>
         <section id="mypackage">
+           <div class="search_box">
+                <input id="search_member_input" type="search" placeholder="Search . . ." />
+                <button id="search_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="gray" fill-rule="evenodd" d="m16.325 14.899l5.38 5.38a1.008 1.008 0 0 1-1.427 1.426l-5.38-5.38a8 8 0 1 1 1.426-1.426ZM10 16a6 6 0 1 0 0-12a6 6 0 0 0 0 12Z"/></svg>
+                </button>
+            </div>
+
+            <script>
+             document.getElementById("search_member_input").addEventListener("input", fetchMemberSuggestions)
+            </script>
+
            <div class="box_contener">
+            
            <ul id="members_list_ul" class="members_list_ul">
              <script> fetchAllMembers(); </script>
             </ul>

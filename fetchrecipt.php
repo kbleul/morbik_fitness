@@ -21,5 +21,26 @@
 
        } else { echo "<script>console.log(".mysqli_error($con)."</script>"; }
         
-    } else { echo "none"; }
+    } 
+    
+    if(isset($_REQUEST['search'])) {
+        $searchstr = $_REQUEST['search'];
+
+        $query = "SELECT * FROM member WHERE FName LIKE '$searchstr%'";
+        $output = "";
+    
+          if($result= $con->query($query)) {
+              while($row = $result->fetch_assoc()) {
+                  $id = $row['ID'];
+                  $name = $row['FName']. " ".$row["LName"];
+    
+                $output = $output . "<li onclick='fetchReceipt($id)'>".$name."</li>";
+              }
+    
+              if($output == "") {  $output = "<p class='no_payment_p'>So empty ...</p>"; }
+             echo $output;    
+          } else { echo "<sript>console.log('".mysqli_error($con)."')</script>";  }
+    }
+
+
 ?>
