@@ -14,6 +14,15 @@ body {
     color: aliceblue;
 }
 
+div#google_translate_element {
+    z-index: 10;
+    margin-top: 0;
+}
+
+img#logo_img {
+    padding-top: 0.5rem;
+}
+
 a:active { text-decoration: none; }
 
 tr { line-height: 2rem;}
@@ -42,10 +51,12 @@ h1{ margin: 0;}
     top: 0;
     width: 100%;
     z-index: 10;
+    height: 3rem;
 }
 
 .flex {
     display: flex;
+    align-items: center;
 }
 
 #logo_link {
@@ -64,6 +75,9 @@ h1{ margin: 0;}
     align-items: baseline;
 }
 
+#logout_li { 
+    display: block;
+}
 
 .setting_div {
     margin-left: 3rem;
@@ -101,7 +115,7 @@ h1{ margin: 0;}
     background-color: inherit;
     color: khaki;
     padding: .7rem 2rem;
-    margin-top: .4rem;
+    margin-top: .2rem;
     font-weight: 900;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: smaller;
@@ -942,12 +956,13 @@ th { color : indigo; }
 .main_wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    margin-top: 3.2rem;
+    margin-top: 0;
 }
 
 .side_nav-wrapper {
     background-color: rgba(0, 0, 0,.1);
     min-height: 100vh;
+    padding-top: 3rem 
 }
 .side_nav-wrapper nav {
     margin-top: 5rem;
@@ -998,6 +1013,7 @@ th { color : indigo; }
     align-self: baseline;
 }
 
+.main_content-wrapper { padding-top: 3rem;  }
 .main_content-wrapper .boxes_container {
     display: flex;
     align-items: center;
@@ -1084,3 +1100,4 @@ tr.mem_tr {
     text-align: center;
 }
 
+#side_nav-wrapper div#google_translate_element { margin-top: 0; }

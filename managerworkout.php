@@ -169,6 +169,12 @@
                                     xmlhttp.open("GET", "addMember_program.php?r=" + key);
                                     xmlhttp.send();
           }
+
+          const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
+
+             if(do_logout) { location.href = "logout.php";  }
+    }
     </script>
     <title>Morbik Fitness</title>
 </head>
@@ -179,9 +185,6 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
-                    <li><a  class="nav_link" href="">about</a></li>
-                    <li><a class="nav_link" href="">contact</a></li>
                          <!-- HTML element 3 -->
                     <li><div id="google_translate_element"></div></li>
 
@@ -192,11 +195,6 @@
 
         
         </header>
-        <section class="setting_menu">
-            <ul>
-                <li><a href="account_info.php#schol_name" >Account Setting</a></li>
-                <li><a href="logout.php" >Log Out</a></li>
-            </ul>
         </section>
     </article>
 
@@ -219,6 +217,8 @@
                                         <li><a href="view_employee.php">Edit Employee Details</a></li>
                                     </ul>
                             </li>      
+                <li id="logout_li" onclick="showPrompt()">Log Out</li>
+
             </nav>
         </section>
         <section class="main_content-wrapper">
@@ -260,9 +260,6 @@
       let name = `<h2>${workoutpackage[key]["Name"]}</h2>`;
       let disc = `<p class="discription">${workoutpackage[key]["Discription"]}</p>`;
       let img = `<img class="workout_img on" src="${workoutpackage[key]["img"]}" alt="${workoutpackage[key]["Name"]}" />`;
-      let addbtn = `<button onclick="addProgram(${key}, ${counter})" class="addbtn">
-      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M17 15V8h-2v7H8v2h7v7h2v-7h7v-2z"/></svg>
-      </button>`
       let exercises = `<div  class="exercise_div">`;
 
 
@@ -270,11 +267,11 @@
            exercises += `<ul class='exer_ul'> <li>${item[0]}</li> <li>${item[1]}/sets </li><li>Reps  - ${item[2]} </li></ul>`;
        })
 
-        exercises += `${addbtn}</div>`;
+        exercises += `</div>`;
 
 
         workouthtml += `<section id="${counter}" class="exersice_section"><div class='front_div'>${name}${disc}${img}</div>${exercises}
-        <p class="notice">Added</p></section>`;
+       </section>`;
 
         counter++;
         

@@ -117,27 +117,14 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
-                    <li><a  class="nav_link" href="">about</a></li>
-                    <li><a class="nav_link" href="">contact</a></li>
                     <li><div id="google_translate_element"></div></li>
 
                 </ul>
             </nav>
            
-
-
-        
         </header>
-        <section class="setting_menu">
-            <ul>
-                <li><a href="account_info.php#schol_name" >Account Setting</a></li>
-                <li><a href="logout.php" >Log Out</a></li>
-            </ul>
         </section>
     </article>
-
-
 
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
@@ -148,6 +135,7 @@
                          <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
                         <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
                         <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
+                        <li id="logout_li" onclick="showPrompt()">Log Out</li>
         
             </nav>
         </section>
@@ -203,6 +191,14 @@ const objarr = [key,meals];
                     xmlhttp.open("GET", "processMyMeal.php?p=" + key );
                                     xmlhttp.send();
         }
+
+    
+        const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
+
+             if(do_logout) { location.href = "logout.php";  }
+          }
+
     </script>
 
 </body>

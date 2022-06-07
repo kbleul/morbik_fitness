@@ -14,6 +14,15 @@
         rel="stylesheet">
     <script src="jquery-3.6.0.js"></script>
 
+    <!-- google translate script 1-->
+    <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+		<!-- Call back function 2 -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+		</script>
 
     <title>Morbik Fitness</title>
 </head>
@@ -33,6 +42,8 @@
         </header>
 
     </article>
+    <div id="google_translate_element"></div>
+
     <div class="hero_img_container"><img src="imgs/workout2.jpg" alt="library"></div>
 
     <h1 id="school_name"> Morbik Fitness </h1>

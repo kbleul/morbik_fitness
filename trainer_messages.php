@@ -307,6 +307,7 @@
     <title>Morbik Fitness</title>
 
     <script>
+          
         const fetchRequests = () => {
             let result = <?php $fetchresult = fetchRequests(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
@@ -408,11 +409,8 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
-                    <li><a  class="nav_link" href="">about</a></li>
-                    <li><a class="nav_link" href="">contact</a></li>
-                    <!-- HTML element 3 -->
-                    <li><div id="google_translate_element"></div></li>
+                <div id="google_translate_element"></div>
+
                 </ul>
             </nav>
            
@@ -420,12 +418,6 @@
 
         
         </header>
-        <section class="setting_menu">
-            <ul>
-                <li><a href="account_info.php#schol_name" >Account Setting</a></li>
-                <li><a href="logout.php" >Log Out</a></li>
-            </ul>
-        </section>
     </article>
 
     <article class="main_wrapper">
@@ -436,7 +428,9 @@
             <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
             <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
             <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
-         
+            <li id="logout_li" onclick="showPrompt()">Log Out</li>
+            <li><div id="google_translate_element"></div></li>
+
         </nav>
         </section>
         <section class="main_content-wrapper">
@@ -462,6 +456,11 @@
   <script type="text/javascript" src="togglesubmenu.js"></script>
 
   <script>
+ const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
+
+             if(do_logout) { location.href = "logout.php";  }
+          }
 
       const rejectConflicting = counter => {
         const memberinput = "#input"+counter;   

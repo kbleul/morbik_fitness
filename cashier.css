@@ -111,7 +111,7 @@
 .box_contener {
     display: flex;
     width: 100%;
-    margin-top: 8vh;
+    margin-top: 2vh;
     height: 80vh;
     overflow: hidden;
 }

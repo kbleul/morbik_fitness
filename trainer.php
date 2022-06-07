@@ -60,24 +60,11 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
-                    <li><a  class="nav_link" href="">about</a></li>
-                    <li><a class="nav_link" href="">contact</a></li>
-                    <li><div id="google_translate_element"></div></li>
-                    
+                <li><div id="google_translate_element"></div></li>                    
                 </ul>
             </nav>
-           
 
-
-        
         </header>
-        <section class="setting_menu">
-            <ul>
-                <li><a href="account_info.php#schol_name" >Account Setting</a></li>
-                <li><a href="logout.php" >Log Out</a></li>
-            </ul>
-        </section>
     </article>
 
     <article class="main_wrapper">
@@ -87,6 +74,8 @@
                 <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
                 <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
                 <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
+                <li id="logout_li" onclick="showPrompt()">Log Out</li>
+
              
             </nav>
         </section>
@@ -213,7 +202,13 @@
             </main>
         </section>
     </article>
+    <script>
+      const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
 
+             if(do_logout) { location.href = "logout.php";  }
+          }
+  </script>
   <script type="text/javascript" src="togglesubmenu.js"></script>
 
 

@@ -106,7 +106,17 @@
 
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="employee.css">
+    <script src="jquery-3.6.0.js"></script>
 
+<!-- google translate script 1-->
+    <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Call back function 2 -->
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
 
     <script src="jquery-3.6.0.js"></script>
 
@@ -119,22 +129,11 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><a  class="nav_link" href="">Home</a></li>
-                    <li><a  class="nav_link" href="">about</a></li>
-                    <li><a class="nav_link" href="">contact</a></li>
+                <div id="google_translate_element"></div>
                 </ul>
             </nav>
-           
 
-
-        
         </header>
-        <section class="setting_menu">
-            <ul>
-                <li><a href="account_info.php#schol_name" >Account Setting</a></li>
-                <li><a href="logout.php" >Log Out</a></li>
-            </ul>
-        </section>
     </article>
 
     <article class="main_wrapper">
@@ -157,6 +156,7 @@
                                         <li><a href="view_employee.php">Edit Employee Details</a></li>
                                     </ul>
                             </li>
+                <li id="logout_li" onclick="showPrompt()">Log Out</li>
                         
             </nav>
         </section>
@@ -238,6 +238,12 @@
   <script type="text/javascript" src="togglesubmenu.js"></script>
 
   <script>
+       const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
+
+             if(do_logout) { location.href = "logout.php";  }
+    }
+    
         $("#program").val($(".jobtitles_option").first().val());
         $("#private").prop("checked", true);
 
