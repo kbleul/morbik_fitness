@@ -30,21 +30,31 @@
 
     <article class="header_wrapper">
 
-        <header class="flex">
+        <header class="flex submenu_hidded" id="header">
 
-            <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
-            <nav class="header_nav">
-                <ul class="nav_list flex">
+            <a href="index.html" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
+            <nav id="header_nav" class="header_nav">
+                <ul id="nav_list" class="nav_list flex">
                     <li><a  class="nav_link" href="">Home</a></li>
                     <li><a  class="nav_link" href="">about</a></li>
                     <li><a class="nav_link" href="">contact</a></li>
-
+                <li onclick="toggleMenus()" id="drop_down-main">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="m12 8l7 8H5z"/></svg>
+                </li>
                 </ul>
             </nav>
+
+           
 
             <div id="sign_in">
                 <a id="sign_in_btn" href="createnewmember.php" >Sign In</a>
                 <button id="login_btn">Log In</button>
+            </div>
+
+            <div id="burgermenu_top">
+                <button id="burgermenu_btn" onclick="toggleMenus()">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"/></svg>
+                </button>
             </div>
             <script>
             $("#login_btn").click(function(){
@@ -166,6 +176,47 @@
             <p>All rights reserved</p>
             <p>Instagram <span class="media">Facebook</span><span class="media">Twitter</span></p>
         </footer>
+
+        <script>
+            const toggleMenus = () => {
+                if($("#header").hasClass("submenu_hidded")) {
+            $("#burgermenu_top").hide();
+            $("#logo_link").hide();
+            $("#header_nav").show().css("width", "100%");
+            $("#sign_in").show();
+            $("#header").css("flex-direction","column")
+            $("#sign_in").css({
+                "width": "100%",
+                "text-align": "center"
+            })
+            $("#nav_list").css({
+                "height":"4rem",
+                "justify-content": "space-evenly"
+            })
+            $("#nav_list").find("li").css("margin-right","0")
+
+            $("#drop_down-main").show();
+            $("#header").removeClass("submenu_hidded")
+            $("#google_translate_element").hide()
+
+            }
+
+         else {
+            $("#sign_in").hide();
+            $("#burgermenu_top").show();
+           $("#logo_link").show();
+           $("#header").css("flex-direction","row")
+           
+           $("#drop_down-main").hide();
+            $("#header").addClass("submenu_hidded")
+            $("#google_translate_element").show()
+
+           
+        }
+           
+    }
+        </script>
+
  </body>
 
 </html>
