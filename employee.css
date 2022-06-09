@@ -167,3 +167,20 @@
     color: red;
 }
 
+
+@media only screen and (max-width: 768px) {
+    .register_employee-form {
+         width: 100%;
+         flex-direction: column;
+         padding: 0;
+         padding-right: .2rem;
+    }
+    
+    .notice { font-size: small; }
+    .register_employee-form div {
+        width: 96%;
+        margin-bottom: 3rem;
+    }
+
+    .register_employee-form .new_emp-gender--container {  margin-left: 10%;  }
+}

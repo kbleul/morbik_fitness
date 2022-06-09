@@ -336,3 +336,24 @@ ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color:
 .trainer_mem_subul_private_nonheader:nth-child(even) li:first-of-type {
     background-color: wheat;
 }
+
+@media only screen and (max-width: 768px) {
+    .formcontainer {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    #msgbox { width: 99%; }
+
+    /* #sidenav .sidenav_btn_txt, #sidenav_two .sidenav_btn_txt,
+    ul#forwho_ul li  { font-size: .7rem; }
+
+    ul#forwho_ul li {  list-style: none;  }
+
+    #msgul li.msg_text {
+        width: 95%;
+        font-size: .9rem;
+        padding: 1.3rem;
+    } */
+}

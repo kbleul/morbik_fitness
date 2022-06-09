@@ -426,3 +426,14 @@ ul.payment_ul li {
     border-bottom: 3px solid black;
     background-color: #ececec;
   }
+
+@media only screen and (max-width: 768px ) {
+    button#here_btn, button#addManager_btn { 
+        width:80%;
+        margin-left: 10%;
+    }
+
+    #current_manager_p.non_p { margin-top: 0; }
+
+    .notice {  margin-right: 0;  }
+}

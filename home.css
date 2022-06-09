@@ -23,6 +23,7 @@ img#logo_img {
     padding-top: 0.5rem;
 }
 
+a:hover,
 a:active { text-decoration: none; }
 
 tr { line-height: 2rem;}
@@ -81,7 +82,8 @@ h1{ margin: 0;}
 }
 
 #burgermenu_top,
-#drop_down-main { display: none; }
+#drop_down-main,
+#burgermenu_sidnav_wrapper { display: none; }
 
 
 #logout_li { 
@@ -362,7 +364,8 @@ h1{ margin: 0;}
 
 #submit,
 #update,
-#firsttime_checker #btn_setup{
+#firsttime_checker #btn_setup,
+#burgermenu_sidnav_wrapper button{
     margin-top: 3rem;
     width: 80%;
     justify-self: center;
@@ -382,7 +385,11 @@ h1{ margin: 0;}
 #submit:focus,
 #update:hover,
 #firsttime_checker #btn_setup:hover,
-#firsttime_checker #btn_setup:focus {  text-decoration: none; opacity: 1;}
+#firsttime_checker #btn_setup:focus,
+#side_nav-wrapper li:hover,
+#side_nav-wrapper li:focus,
+#burgermenu_top button:hover,
+#burgermenu_sidnav_wrapper button:hover  {  text-decoration: none; opacity: 1;}
 
 #change_privilege,
 #change_form {
@@ -969,7 +976,7 @@ th { color : indigo; }
 }
 
 .side_nav-wrapper {
-    background-color: rgba(0, 0, 0,.1);
+    background-color: rgba(234, 234, 234, 0.1);
     min-height: 100vh;
     padding-top: 3rem 
 }
@@ -1064,10 +1071,9 @@ th { color : indigo; }
     margin-left: 8%;
 }
 
-.goog-te-gadget-simple {
+#google_translate_element .goog-te-gadget-simple {
     background-color: rgb(129, 65, 65);
     border: none;
-
 }
 
 .goog-te-menu-value span {
@@ -1112,23 +1118,35 @@ tr.mem_tr {
 #side_nav-wrapper div#google_translate_element { margin-top: 0; }
 
 
-@media  only screen and (max-width: 700px) {
+@media  only screen and (max-width: 768px) {
     div#google_translate_element { margin-top: 4rem; }
+    div#google_translate_element.google_translate_element { margin-top: 0;}
 
     article.header_wrapper { height: 4rem; }
     article.header_wrapper .flex { height: 100%; }
-    article.header_wrapper img#logo_img { height: 3rem;}
+    article.header_wrapper img#logo_img { 
+        height: 2rem;
+        padding-top: 0;
+    }
     header #header_nav,
     header #sign_in {  display: none;  }
 
-    #burgermenu_top { 
+    #burgermenu_top,
+    #burgermenu_sidnav_wrapper { 
         display: block;
     }
 
-    #burgermenu_top button { 
+    #burgermenu_sidnav_wrapper { margin-top: 3rem; }
+
+    #burgermenu_top button,
+    #burgermenu_sidnav_wrapper button { 
         background-color: inherit;
         border: none;
     }
+
+    #burgermenu_sidnav_wrapper button { margin-left: 10%;  }
+
+
 
     #school_name { font-size: 4rem; }
     #event_wrapper {
@@ -1214,4 +1232,26 @@ tr.mem_tr {
         margin-left: 5%;
       }
     .hero_img_container { height: 75vh; }
+
+    .side_nav-wrapper { display: none; }
+
+    .main_wrapper { display: block;}
+    .main_content-wrapper .boxes_container { 
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .main_content-wrapper .boxes_container .boxes {
+        width: 75%;
+        margin-bottom: 5%;
+    }
+
+    #checkbox_wrapper {  display: block; }
+
+    .checkbox { padding: .3rem; }
+    #export_form #submit { 
+        margin-bottom: 5%;
+    }
+
+    .cashier_main_wrapper {  padding-top: 3rem;  }
 }

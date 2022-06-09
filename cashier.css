@@ -8,6 +8,8 @@
     width: 100%;
 }
 
+#cashier_main_wrapper ul:nth-child(even) { background-color: #e6eff4;  }
+
 
 #cashier_main_wrapper ul:nth-of-type(1) { 
     font-weight: bold;
@@ -194,5 +196,42 @@
     border: none;
  }
 
+ @media only screen and (max-width: 768px) {
+    #cashier_main_wrapper {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .main_content-wrapper { padding-top: 0;  }
+
+    #cashier_main_wrapper ul {   padding-right: .6%;   }
+
+    .search_box input {
+        width: 94%;
+        margin-left: 3%;
+    }
+
+    #box_contener.box_contener {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+/* 
+    #box_contener.box_contener {
+        
+      
+    } */
+
+    .box_contener ul#members_list_ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        max-height: 40vh;
+        overflow-y: scroll;
+        margin-bottom: 5vh;
+    }
+
+    #cashier_main_wrapper ul#view_ul { padding-bottom: 5vh;  }
+ }
 
 
