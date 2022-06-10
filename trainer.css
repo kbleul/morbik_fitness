@@ -356,6 +356,38 @@ ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color:
         margin-bottom: 5vh;
       }
 
+      #mypayment_form.formcontainer { margin-top: 8vh; }
+      #mypayment_form.formcontainer #submit {
+        width: 95%;
+        margin-left: 2%;
+        padding: 0;
+      }
+
+      .trainer_mem_ul {
+        margin-top: 8vh;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 1vh;
+        max-height: unset;
+      }
+
+      ul.trainer_mem_subul_private { font-size: 1rem;  }
+
+      ul.trainer_mem_subul_private_nonheader { font-size: .8rem;  }
+
+      .lastsection .scheduale_ul { display: block;}
+
+      .lastsection .class {
+        width: 94%;
+        margin-right: 3%;
+        margin-bottom: 5vh;
+        margin-left: 3%;
+      }
+
+      .lastsection .class li { text-align: center; }
+
+      #msgbox {   display:block;  }
+
     /* #sidenav .sidenav_btn_txt, #sidenav_two .sidenav_btn_txt,
     ul#forwho_ul li  { font-size: .7rem; }
 

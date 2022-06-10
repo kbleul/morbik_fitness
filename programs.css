@@ -469,4 +469,32 @@ ul.payment_ul li {
 
     .mymeal_sec { display: block; }
     
+    #myworkout_main .exercise {   display: block;   }
+
+    #myworkout_main img {
+        width: 96%;
+        height: 25rem;
+        margin-left: 1.5%;
+      }
+
+      #myworkout_main .exercise div {
+        width: 100%;
+        margin-left: 3%;
+        margin-top: 6vh;
+        font-size: 1.1rem;
+      }
+
+      ul.exer_ul {  padding: .5rem; }
+      #myworkout_main h2 { font-size: 1.5rem;  }
+
+      .meal_div {
+          display: block;
+          margin-bottom: 15vh;
+      }
+
+      .viewmeal_ul { 
+        margin-right: 5%;  
+        margin-bottom: 8vh; 
+        height: auto;
+    }
 }

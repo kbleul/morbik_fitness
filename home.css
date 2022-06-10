@@ -1238,10 +1238,10 @@ tr.mem_tr {
     .main_wrapper { display: block;}
 
     .main_content-wrapper  { padding-top: 0; }
-    
+
     .main_content-wrapper .boxes_container { 
         flex-direction: column;
-        margin-top: 0;
+        margin-top: 5vh;
     }
 
     .main_content-wrapper .boxes_container .boxes {
@@ -1265,4 +1265,6 @@ tr.mem_tr {
         margin-left: 0;
     }
     tr.mem_tr { font-size: .8rem;  }
+
+    #myworkout_main { margin-bottom: 5vh; }
 }

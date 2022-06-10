@@ -114,10 +114,10 @@
     <article class="header_wrapper">
 
         <header class="flex">
-            <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
+            <a href="member_dashboard.php" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                    <li><div id="google_translate_element"></div></li>
+                    <li><div id="google_translate_element" class="google_translate_element"></div></li>
 
                 </ul>
             </nav>
@@ -127,19 +127,24 @@
     </article>
 
     <article class="main_wrapper">
-        <section class="side_nav-wrapper">
+    <div id="burgermenu_sidnav_wrapper">
+            <button id="burgermenu_btn_sidenav" onclick="toggleSideMenus()">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"/></svg>
+            </button>
+        </div>
+        <section id="side_nav-wrapper" class="side_nav-wrapper">
             <nav>
             <li> <a href="member_dashboard.php" aria-expanded="false"><i class="fa fa-tachometer"></i>Dashboard</a>
                         </li> 
-                         <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
-                         <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
-                        <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
-                        <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
-                        <li id="logout_li" onclick="showPrompt()">Log Out</li>
-        
+                <li> <a class="has-arrow" href="memberprogram.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Programs</span></a></li>
+                <li><a href="member_payment.php" aria-expanded="false"><i class="fa fa-dollar"></i><span class="hide-menu">Payments</span></a></li>
+            <li class="has-arrow"><a href="member_messages.php"><i class="fa fa-heart"></i><span class="hide-menu">Messages</span></a>
+            <li class="has-arrow"><a href="diet.php"><i class="fa fa-heart"></i><span class="hide-menu">Diet Plan</span></a>
+            <li id="logout_li" onclick="showPrompt()">Log Out</li>
+
             </nav>
         </section>
-        <section class="main_content-wrapper">
+        <section id="main_content-wrapper" class="main_content-wrapper">
             <main id="diet_main">
 
             <section id="meal_packages">
@@ -175,6 +180,19 @@ const objarr = [key,meals];
     </article>
 
     <script>
+          const toggleSideMenus = () => {
+        if($("#side_nav-wrapper").hasClass("sidemenu_on"))
+        {
+            $("#side_nav-wrapper").removeClass("sidemenu_on")
+            $("#side_nav-wrapper").hide();
+            $("#main_content-wrapper").slideDown(300);
+        } else {
+            $("#side_nav-wrapper").addClass("sidemenu_on")
+            $("#side_nav-wrapper").slideDown(300);
+            $("#main_content-wrapper").hide();
+        }
+    }
+
         const saveMeal = key => {
             const xmlhttp = new XMLHttpRequest();
                     
