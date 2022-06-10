@@ -35,10 +35,10 @@
 
     <article class="header_wrapper">
         <header class="flex">
-            <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
+            <a href="manager_dashboard.php" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                <li><div id="google_translate_element"></div></li>
+                <li><div id="google_translate_element" class="google_translate_element"></div></li>
 
                 </ul>
             </nav>
@@ -50,7 +50,12 @@
     </article>
 
     <article class="main_wrapper">
-        <section class="side_nav-wrapper">
+    <div id="burgermenu_sidnav_wrapper">
+            <button id="burgermenu_btn_sidenav" onclick="toggleSideMenus()">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5"/></svg>
+            </button>
+        </div>
+        <section class="side_nav-wrapper" id="side_nav-wrapper">
                 <nav>
                 
                 <li> <a href="manager_dashboard.php" aria-expanded="false">Dashboard</a></li> 
@@ -71,7 +76,7 @@
                             </li>
                 </nav>
         </section>
-        <section class="main_content-wrapper">
+        <section id="main_content-wrapper" class="main_content-wrapper">
             <main>
                 <table>
                  <thead>
@@ -81,7 +86,7 @@
                 </thead>
                 <tbody>
                 <tr>
-    <th>Full Name</th>
+    <th>Name</th>
     <th>Gender</th>
     <th>Program</th>
     <th>Plan</th>
@@ -116,6 +121,20 @@
         </section>
     </article>
    
+    <script>
+           const toggleSideMenus = () => {
+        if($("#side_nav-wrapper").hasClass("sidemenu_on"))
+        {
+            $("#side_nav-wrapper").removeClass("sidemenu_on")
+            $("#side_nav-wrapper").hide();
+            $("#main_content-wrapper").slideDown(300);
+        } else {
+            $("#side_nav-wrapper").addClass("sidemenu_on")
+            $("#side_nav-wrapper").slideDown(300);
+            $("#main_content-wrapper").hide();
+        }
+    }
+    </script>
   <script type="text/javascript" src="togglesubmenu.js"></script>
 
 </body>

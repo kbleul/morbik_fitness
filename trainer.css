@@ -346,6 +346,16 @@ ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color:
 
     #msgbox { width: 99%; }
 
+    .formcontainer {  height: auto;  }
+
+    .formcontainer label { font-size: 1rem;  }
+
+    .formcontainer select {
+        margin-left: 40%;
+        width: 20%;
+        margin-bottom: 5vh;
+      }
+
     /* #sidenav .sidenav_btn_txt, #sidenav_two .sidenav_btn_txt,
     ul#forwho_ul li  { font-size: .7rem; }
 

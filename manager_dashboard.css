@@ -143,3 +143,16 @@ table {
 }
 
 table th:first-of-type { font-size: 2rem; }
+
+@media only screen and (max-width: 768px) {
+    .main_content-wrapper .table_section {  margin-top: 11vh;   }
+    
+    .table_section #payment_table_container, 
+    .table_section #invetoray_table_container { width: 100%; }
+
+    #payment_table_container {  margin-bottom: 6vh;  }
+
+    #boxes_container_midsection,
+    #trainer_box { margin-bottom: 10vh; }
+
+}

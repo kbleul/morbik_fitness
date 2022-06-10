@@ -1236,6 +1236,9 @@ tr.mem_tr {
     .side_nav-wrapper { display: none; }
 
     .main_wrapper { display: block;}
+
+    .main_content-wrapper  { padding-top: 0; }
+    
     .main_content-wrapper .boxes_container { 
         flex-direction: column;
         margin-top: 0;
@@ -1254,4 +1257,12 @@ tr.mem_tr {
     }
 
     .cashier_main_wrapper {  padding-top: 3rem;  }
+    
+    table {
+        width: 100%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 0;
+    }
+    tr.mem_tr { font-size: .8rem;  }
 }

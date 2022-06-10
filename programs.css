@@ -436,4 +436,37 @@ ul.payment_ul li {
     #current_manager_p.non_p { margin-top: 0; }
 
     .notice {  margin-right: 0;  }
+
+    .inventory_ul,
+    .inventory_ul:nth-of-type(1) { font-size: .8rem; }
+
+    #topnav, 
+    .topnav,
+    .exersice_section  { margin-bottom: 8vh;  }
+
+
+    #topnav button, .topnav button { 
+        margin-left: 1%;
+        margin-right: 1%;
+        padding: 0;
+    }
+
+
+    .exersice_section {  margin-bottom: 8vh; }
+
+    .exersice_section h2  { font-size: 1rem; }
+    .exersice_section .discription  { font-size: .8rem; }
+
+    .workout_img,
+    .exercise_div  {
+        width: 99%;
+        margin-left: 0;
+    }
+
+    ul.exer_ul li { width: 33%; }
+
+    #packages { display: block; }
+
+    .mymeal_sec { display: block; }
+    
 }

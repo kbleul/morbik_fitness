@@ -183,4 +183,34 @@
     }
 
     .register_employee-form .new_emp-gender--container {  margin-left: 10%;  }
+
+    .employee_type-container { 
+        margin: 0;
+        margin-bottom: 5vh;
+    }
+
+    .employee_type_btn { font-size: .7rem; }
+
+    .employee_type_btn { 
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .manage_employee-ul {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .manage_employee-ul {  font-size: .8rem;   }
+
+    .manage_employee-ul li { width: 25%; }
+
+    .manage_employee-ul li:nth-of-type(3),
+    .manage_employee-ul li:nth-of-type(4),
+    .manage_employee-ul li:nth-of-type(7),
+    .manage_employee-ul li:nth-of-type(8),
+    .manage_employee-ul li:nth-of-type(9),
+    .manage_employee-ul li:nth-of-type(10) {  display: none;  }
+
+    
 }
