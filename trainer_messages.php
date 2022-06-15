@@ -409,7 +409,7 @@
             <a href="" id="logo_link"><img  id="logo_img" src="pics/logo.svg" alt="logo" ></a>
             <nav class="header_nav">
                 <ul class="nav_list flex">
-                <div id="google_translate_element"></div>
+                <div id="google_translate_element" class="google_translate_element"></div>
 
                 </ul>
             </nav>
@@ -423,14 +423,11 @@
     <article class="main_wrapper">
         <section class="side_nav-wrapper">
            
-            <nav>
-            
+        <nav>
             <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
             <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
             <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
             <li id="logout_li" onclick="showPrompt()">Log Out</li>
-            <li><div id="google_translate_element"></div></li>
-
         </nav>
         </section>
         <section class="main_content-wrapper">

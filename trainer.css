@@ -1,5 +1,5 @@
 #forwho {
-    height: -webkit-fill-available;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -75,6 +75,7 @@
 }
 
 #sidenav {
+    display: block;
     width: 25%;
     margin-top: 5vh;
     height: 85vh;
@@ -82,6 +83,12 @@
     background-color: #fdfdfd;
     padding-top: 4rem;
 }
+
+.msgside_nav-btn {
+    background-color: inherit;
+    border: none;
+    display: none;
+ }
 
 #sidenav_two {
     width: 20%;
@@ -202,6 +209,11 @@ ul#forwho_ul li:hover {
     height: -webkit-fill-available;
     border: none;
     border-radius: 0;
+}
+
+#msgnav_btn { 
+    background-color: inherit;
+    border: none;
 }
 
 #msgul_two #msg_form #forminput_wrapper {
@@ -346,6 +358,12 @@ ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color:
 
     #msgbox { width: 99%; }
 
+    .msgside_nav-btn {   
+        display: block;
+        border-radius: 50%;  
+    }
+    
+
     .formcontainer {  height: auto;  }
 
     .formcontainer label { font-size: 1rem;  }
@@ -386,9 +404,75 @@ ul.trainer_mem_subul_private_nonheader:nth-child(even):hover { background-color:
 
       .lastsection .class li { text-align: center; }
 
-      #msgbox {   display:block;  }
+      #sidenav { 
+          display: none;
+            width: 90%;
+        }
 
-    /* #sidenav .sidenav_btn_txt, #sidenav_two .sidenav_btn_txt,
+      #sidenav_two { width: 90%; }
+
+
+      #msgul {  width: 100%;  }
+
+      .msgnav_btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .msgnav_btn { display: block;}
+
+      #msgul .msg_from { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #msgul_two {
+        width: 100%;
+        flex-direction: column;
+        height: 90vh;
+      }
+
+      #msgul_two #showmsg_sec {
+        width: 100%;
+        height: 85%;
+      }
+
+      #msgul_two .from_p {
+        width: 80%;
+        text-align: center;
+      }
+
+      #msgul_two #msg_from {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #fdfdfd;
+        border: none;
+        border-radius: 0;
+        /* height: 25%; */
+      }
+
+      #msgul li.msg_text { width: 90%;  }
+      #msgul li.msg_time, #msgul_two li.msg_time {
+        width: 60%;
+        margin-bottom: 5vh;
+        margin-left: 35%; 
+      }
+
+      #msgul_two li.msg_text {  width: 85%;   }
+
+
+      #msgul_two #msg_form #forminput_wrapper {
+        flex-direction: row;
+        height: auto;
+      }
+
+      #msgul_two #msg_form textarea { margin-top: 0;  }
+
+     /* #msgbox {   display:block;  }
+
+    #sidenav .sidenav_btn_txt, #sidenav_two .sidenav_btn_txt,
     ul#forwho_ul li  { font-size: .7rem; }
 
     ul#forwho_ul li {  list-style: none;  }

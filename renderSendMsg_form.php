@@ -25,10 +25,18 @@
         $rowcount=mysqli_num_rows($resulttwo);
 
         if($rowcount == 0)  
-        {   $output = "<section id='showmsg_sec'> <li class='msg_from'>TO : $mem_name</li><div class='msg_subwrapper'>
+        {   $output = "<section id='showmsg_sec'> <li class='msg_from'>
+            <button class='msgside_nav-btn' onClick='showMsgNav()'>
+            <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><circle cx='16' cy='8' r='2' fill='currentColor'/><circle cx='16' cy='16' r='2' fill='currentColor'/><circle cx='16' cy='24' r='2' fill='currentColor'/></svg>
+            </button>
+            <p class='from_p'>TO : $mem_name</p></li><div class='msg_subwrapper'>
             <p>No messages yet ...</p></div></ul>";   }
         else {
-      $output = "<section id='showmsg_sec'><li class='msg_from'>TO : $mem_name</li><div class='msg_subwrapper'>";        
+      $output = "<section id='showmsg_sec'> <li class='msg_from'>
+      <button class='msgside_nav-btn' onClick='showMsgNav()'>
+      <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><circle cx='16' cy='8' r='2' fill='currentColor'/><circle cx='16' cy='16' r='2' fill='currentColor'/><circle cx='16' cy='24' r='2' fill='currentColor'/></svg>
+      </button>
+      <p class='from_p'>TO : $mem_name</p></li><div class='msg_subwrapper'>";        
             }
   
             while($rowtwo = $resulttwo->fetch_assoc()) {
@@ -81,11 +89,19 @@
         $rowcount=mysqli_num_rows($result);
 
         if($rowcount == 0) {
-            $output = "<section id='showmsg_sec'> <li class='msg_from'>TO : All My Members</li><div class='msg_subwrapper'>
+            $output = "<section id='showmsg_sec'> <li class='msg_from'>
+            <button class='msgside_nav-btn' onclick='showMsgNav()'>
+                 <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><circle cx='16' cy='8' r='2' fill='currentColor'/><circle cx='16' cy='16' r='2' fill='currentColor'/><circle cx='16' cy='24' r='2' fill='currentColor'/></svg>
+                 </button>
+            <p class='from_p'>TO : All My Members</p></li><div class='msg_subwrapper'>
             <p>No messages yet ...</p></div></ul>";
         }
 
-        else { $output = "<section id='showmsg_sec'><li class='msg_from'>TO : All My Members</li><div class='msg_subwrapper'>"; }
+        else { $output = "<section id='showmsg_sec'> <li class='msg_from'>
+            <button class='msgside_nav-btn' onclick='showMsgNav()'>
+                 <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><circle cx='16' cy='8' r='2' fill='currentColor'/><circle cx='16' cy='16' r='2' fill='currentColor'/><circle cx='16' cy='24' r='2' fill='currentColor'/></svg>
+                 </button>
+            <p class='from_p'>TO : All My Members</p></li><div class='msg_subwrapper'>"; }
              while($row = $result->fetch_assoc()) {
                 $msg = $row['Msg'];
                 $time = $row['Time'];

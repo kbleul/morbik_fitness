@@ -40,6 +40,7 @@
 #topnav {
   display: flex;
   justify-content: center;
+  margin-top: 1.5rem;
 }
 
 #topnav button {
@@ -230,4 +231,18 @@
   color: gainsboro;
   margin-left: 50%;
   margin-top: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .member_request-ul li.program,
+  .member_request-ul li.gender,
+  .member_request-ul li.plan { display: none; }
+
+  .member_request-ul li,
+  .member_request-ul li.req_time,
+  .member_request-ul li.trainers_list { width: 33%; }
+
+  .main_content-wrapper h3 {  margin: 10vh 0 5vh 0; }
+
+  #msg_form { width: 100%; }
 }

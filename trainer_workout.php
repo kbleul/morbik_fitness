@@ -176,6 +176,7 @@
             <li> <a href="trainer.php" aria-expanded="false">Dashboard</a></li> 
             <li><a href="trainer_messages.php" aria-expanded="false">Messages/Requests</a></li>
             <li><a href="trainer_workout.php" aria-expanded="false">Workout Plan</a></li>
+            <li id="logout_li" onclick="showPrompt()">Log Out</li>
         </nav>
         </section>
         <section id="main_content-wrapper" class="main_content-wrapper">
@@ -506,6 +507,11 @@ console.log("rest: " + rest)
     </article>
 
     <script>
+         const showPrompt = () => {
+            let do_logout = confirm("Are you sure you want to log out ?");
+
+             if(do_logout) { location.href = "logout.php";  }
+          }
         const toggleSideMenus = () => {
         if($("#side_nav-wrapper").hasClass("sidemenu_on"))
         {

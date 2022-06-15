@@ -493,8 +493,15 @@ ul.payment_ul li {
       }
 
       .viewmeal_ul { 
-        margin-right: 5%;  
+        margin-right: 3%;  
+        margin-left: 3%;  
         margin-bottom: 8vh; 
         height: auto;
     }
+
+    .mealplan_ul {
+        width: 100%;
+        margin-left: 0;
+    }
+
 }

@@ -51,7 +51,10 @@
 
                 if($counter == 0)
                 {
-                 $output = $output . "<ul class='msgul' id='msgul'><li class='msg_from'>From : $name </li><div class='msg_subwrapper'><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
+                 $output = $output . "<ul class='msgul' id='msgul'><li class='msg_from'><button class='msgside_nav-btn' onClick='showMsgNav()'>
+                 <svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='2em' height='2em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 32 32'><circle cx='16' cy='8' r='2' fill='currentColor'/><circle cx='16' cy='16' r='2' fill='currentColor'/><circle cx='16' cy='24' r='2' fill='currentColor'/></svg>
+                 </button>
+                 <p class='from_p'>From : $name <p></li><div class='msg_subwrapper'><li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
                 }
                 else {
                     $output = $output . "<li class='msg_text'>$msg</li><li class='msg_time'>$time</li>";
@@ -89,8 +92,6 @@
     } 
 
   
-
-
     ?>
 
 <!DOCTYPE html>
@@ -131,6 +132,7 @@
             let result = <?php $fetchresult = fetchMessages(); echo json_encode($fetchresult); ?>;
                  $("#member_request-ul").html(result);
                  $("#title").hide();
+               //  $("#msgul").slideDown(800)
         }
         const fetchGroupMessages = () => {
         const xmlhttp = new XMLHttpRequest();
@@ -147,7 +149,8 @@
                 { document.getElementById("sidenav").id = "sidenav_two"; }
             if(document.getElementById("msgul")) 
                 { document.getElementById("msgul").id = "msgul_two"; }
-
+                // $("#sidenav_two").hide()
+                //  $("#msgul_two").slideDown(800)
             }
             xmlhttp.open('GET', "renderSendMsg_form.php?g=group" );
             xmlhttp.send();
@@ -199,6 +202,8 @@
                  { document.getElementById("sidenav").id = "sidenav_two"; }
                if(document.getElementById("msgul")) 
                  { document.getElementById("msgul").id = "msgul_two"; }
+
+                 $("#msgul_two").slideDown(800)
 
             }
             xmlhttp.open('GET', "renderSendMsg_form.php?i=" + index);
@@ -261,6 +266,20 @@
             $("#cashier_main_wrapper").hide();
         }
     }
+
+    const showMsgNav = arg => {
+        console.log("rrrrrrrrrrs");
+        if($("#sidenav")) {
+            $("#msgul").hide() 
+            $("#sidenav").slideDown(800)
+        } 
+        
+        if($("#sidenav_two")) {
+            $("#msgul_two").hide()
+            $("#sidenav_two").slideDown(800)
+        }
+    }
+
       const showPrompt = () => {
             let do_logout = confirm("Are you sure you want to log out ?");
 

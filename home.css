@@ -16,7 +16,7 @@ body {
 
 div#google_translate_element {
     z-index: 10;
-    margin-top: 0;
+    margin-top: 3rem;
 }
 
 img#logo_img {
@@ -53,6 +53,7 @@ h1{ margin: 0;}
     width: 100%;
     z-index: 10;
     height: 3rem;
+    width: 99.3%;
 }
 
 .flex {
@@ -1029,7 +1030,12 @@ th { color : indigo; }
     align-self: baseline;
 }
 
-.main_content-wrapper { padding-top: 3rem;  }
+.main_content-wrapper { 
+    height: 100vh;
+    overflow: scroll;
+    padding-top: 3rem;  
+}
+
 .main_content-wrapper .boxes_container {
     display: flex;
     align-items: center;
@@ -1071,9 +1077,13 @@ th { color : indigo; }
     margin-left: 8%;
 }
 
+#google_translate_element.google_translate_element {
+    margin-top: 0;
+}
 #google_translate_element .goog-te-gadget-simple {
     background-color: rgb(129, 65, 65);
     border: none;
+    margin-top: 0;
 }
 
 .goog-te-menu-value span {
